@@ -1,6 +1,6 @@
 import { useField } from 'formik';
 
-function CustomField( {label, name, fieldName, type, colorSchema}) {
+function CustomField( {label, name, fieldName, type, colorSchema, width}) {
     const [field, meta, helpers] = useField(`${name}.${fieldName}`);
 
     const nameTextField=`${name}.${fieldName}`
@@ -11,7 +11,7 @@ function CustomField( {label, name, fieldName, type, colorSchema}) {
 
   return (
     <>
-        <div className={`${colorSchema === 'light' ? 'bg-primary' : 'bg-white'} rounded-xl relative w-[7rem]`}>
+        <div className={`${colorSchema === 'light' ? 'bg-primary' : 'bg-white'} rounded-xl relative ${width}`}>
             <label
                 htmlFor={nameTextField}
                 className={`absolute z-0 transition-all ${meta.touched || meta.value ? 'text-12px top-[4px] left-[8px]' : 'top-[27%] left-[10px] text-16px'}`}
@@ -20,9 +20,9 @@ function CustomField( {label, name, fieldName, type, colorSchema}) {
             </label>
             <input
                 {...field}
-                className='bg-transparent relative z-10 rounded-xl text-16px pt-5 pb-1 p-2 w-[7rem]'
+                className={`bg-transparent relative z-10 rounded-xl text-16px pt-5 pb-1 p-2 ${width}`}
                 id={nameTextField}
-                name={nameTextField} 
+                name={nameTextField}
                 type={type}
                 disabled={false}
                 value={field.value || ''}

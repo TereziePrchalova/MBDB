@@ -1,15 +1,13 @@
 import Pressure from "../components/Pressure";
 import Humidity from "../components/Humidity";
 import Temperature from "../components/Temperature";
+import FormWrapper from "../buildingBlocks/FormWrapper";
 
 function PhysicalConditionsAtSampleHandling( {name} ) {
 
   return (
     <>
-      <div className="rounded-3xl mt-4 border-[1px] border-primary bg-white p-4">
-        <div className="mb-2 text-dark font-JostMedium text-18px">
-          Physical conditions at sample handling
-        </div>
+      <FormWrapper headline='Physical conditions at sample handling' colorSchema='light'>
         <div className="mb-2">
           <Temperature colorSchema='light' name={`${name}.temperature`} />
         </div>
@@ -19,7 +17,7 @@ function PhysicalConditionsAtSampleHandling( {name} ) {
         <div className="mb-2">
           <Humidity name={`${name}.humidity`} />
         </div>
-      </div>
+      </FormWrapper>
     </>
   );
 }

@@ -1,20 +1,20 @@
 import PhysicalConditionsAtSampleHandling from "./sectionComponents/PhysicalConditionsAtSampleHandling";
 import Instrument from "./components/Instrument";
+import FormWrapperRequired from "./buildingBlocks/FormWrapperRequired";
 
-function GeneralParameters( {value, name} ) {
+function GeneralParameters( { name } ) {
 
 
   return (
     <>
-      <div className="flex flex-col">
-        <div className="rounded-2xl bg-primary p-4">
-          <div className="mb-2 text-dark font-JostMedium text-18px">
-            General Parameters
-          </div>
+      <FormWrapperRequired headline='General Parameters'>
+        <div className="mb-2">
           <Instrument name={`${name}.instrument`}/>
+        </div>
+        <div>
           <PhysicalConditionsAtSampleHandling name={`${name}.physical_conditions_at_sample_handling`}/>
         </div>
-      </div>
+      </FormWrapperRequired>
     </>
   );
 }

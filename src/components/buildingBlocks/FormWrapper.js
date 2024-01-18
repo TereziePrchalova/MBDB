@@ -4,7 +4,7 @@ function FormWrapper( { headline, children, colorSchema } ) {
 
   return (
     <>                    
-        <div className={`${colorSchema === 'light' ? 'bg-white' : ' bg-primary' } p-4 rounded-2xl text-dark`}>
+        <div className={`${colorSchema === 'light' ? 'bg-white' : ' bg-primary' } p-3 rounded-2xl text-dark`}>
             <div className="flex mb-2">
                 <div className='mr-2 font-JostMedium text-18px'>{headline}</div>
                 <label className="mt-[0.1rem]">

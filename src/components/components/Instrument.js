@@ -28,6 +28,7 @@ function Instrument( {name} ) {
                         name={name}
                         label='Name'
                         fieldName='name'
+                        width='w-[7rem]'
                     />
                 </div>
                 <div className='mx-3'>
@@ -45,6 +46,7 @@ function Instrument( {name} ) {
                         name={name}
                         label='Model'
                         fieldName='model'
+                        width='w-[7rem]'
                     />
                 </div>
             </div>

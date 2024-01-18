@@ -12,6 +12,7 @@ function ValueUnit({ colorSchema, options, name, width }) {
                 fieldName='value'
                 type='number'
                 label='Value'
+                width='w-[7rem]'
               />
             </div>
             <div className="mr-3">

@@ -9,7 +9,7 @@ function OptionInput( {label, name, fieldName, options, colorSchema, width} ) {
 
   return (
     <>
-      <div className={`${colorSchema === 'light' ? 'bg-primary' : 'bg-white'} rounded-xl relative`}>
+      <div className={`${colorSchema === 'light' ? 'bg-primary' : 'bg-white'} ${width} rounded-xl relative`}>
         <label 
           htmlFor={nameOptionField}
           className={`absolute z-0 transition-all ${meta.value ? 'text-12px top-[4px] left-[8px]' : 'top-[27%] left-[10px] text-16px'}`}

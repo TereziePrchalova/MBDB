@@ -23,16 +23,16 @@ function ValueError( {colorSchema, name} ) {
 
             <div className="flex">
                 <div>
-                    <CustomField name={name} fieldName='lower_error' type='number' label='Min' />
+                    <CustomField name={name} fieldName='lower_error' type='number' label='Min' width='w-[7rem]' />
                 </div>
                 <div className="mx-3 my-auto">
                     --
                 </div>
                 <div>
-                    <CustomField name={name} fieldName='upper_error' type='number' label='Max' />
+                    <CustomField name={name} fieldName='upper_error' type='number' label='Max' width='w-[7rem]' />
                 </div>
                 <div className="mx-3">
-                    <CustomField name={name} fieldName='error_level' type='number' label='Error level' />
+                    <CustomField name={name} fieldName='error_level' type='number' label='Error level' width='w-[7rem]' />
                 </div>
                 <div>
                     <OptionInput name={name} fieldName='errors_are_relative' options={ErrorOptions} label='Errors are relative' width='w-[10rem]' />
