@@ -1,13 +1,28 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family:"JostBold";
+  src: url(../public//fonts/Jost-Bold.ttf) format("truetype");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family:"JostMedium";
+  src: url(../public//fonts/Jost-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family:"JostRegular";
+  src: url(../public//fonts/Jost-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family:"JostLight";
+  src: url(../public//fonts/Jost-Light.ttf) format("truetype");
+}
+
+body {
+  margin: 0;
+  font-family:"JostMedium";
 }
