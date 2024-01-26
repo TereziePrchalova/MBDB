@@ -1,5 +1,5 @@
 import CustomField from "../buildingBlocks/CustomField";
-import FormWrapperRequired from "../buildingBlocks/FormWrapperRequired";
+import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionInput from "../buildingBlocks/OptionInput";
 import StorageUntilMeasurement from "./StorageUntilMeasurement";
 
@@ -16,7 +16,7 @@ function QualityControls( { name } ) {
 
   return (
     <>
-        <FormWrapperRequired headline='Quality Controls' colorSchema=''>
+        <FormWrapper headline='Quality Controls' colorSchema=''>
             <div className="flex mb-2">
                 <div className="mr-3">
                     <OptionInput
@@ -39,7 +39,7 @@ function QualityControls( { name } ) {
             <div>
                 <StorageUntilMeasurement name={`${name}.storage_until_measurement`} />
             </div>
-        </FormWrapperRequired>           
+        </FormWrapper>           
     </>
   );
 }

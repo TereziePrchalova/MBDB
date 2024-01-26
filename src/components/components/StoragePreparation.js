@@ -1,11 +1,11 @@
 import CustomField from '../buildingBlocks/CustomField';
-import FormWrapperRequired from '../buildingBlocks/FormWrapperRequired';
+import FormWrapper from '../buildingBlocks/FormWrapper';
 
 function StoragePreparation( {colorSchema, name} ) {
 
   return (
     <>
-        <FormWrapperRequired colorSchema={colorSchema} headline='Storage preparation'>
+        <FormWrapper colorSchema={colorSchema} headline='Storage preparation'>
             <div className='flex'>
                 <div className='mr-3'>
                     <CustomField
@@ -24,7 +24,7 @@ function StoragePreparation( {colorSchema, name} ) {
                     />
                 </div>
             </div>
-        </FormWrapperRequired>
+        </FormWrapper>
     </>
   );
 }

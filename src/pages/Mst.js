@@ -1,23 +1,86 @@
 import { Formik, Form } from "formik";
-import GeneralParameters from "../components/GeneralParameters";
+import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import ProjectInformation from "../components/tabs/ProjectInformation";
+import { useEffect } from "react";
+import RawDataFiles from "../components/tabs/RawDataFiles";
+import EntitiesOfInterestTab from "../components/tabs/EntitiesOfInterest";
+import InstrumentTab from "../components/tabs/InstrumentTab";
 
 function Mst() {
+  
+  const Tabs = [
+    { value: 'raw-data-files', label: 'Raw data files' },
+    { value: 'project-information', label: 'Project information' },
+    { value: 'entities-of-interest', label: 'Entities of interest' },
+    { value: 'chemical-environment', label: 'Chemical environment' },
+    { value: 'result', label: 'Result' },
+    { value: 'instrument', label: 'Instrument' },
+    { value: 'measurement', label: 'Measurement' },
+    { value: 'data-analysis', label: 'Data analysis' },
+  ];
+
+  const location = useLocation();
+  const [state, setState] = useState({ selected: 'project-information' });
+
+  useEffect(() => {
+    const selectedTab = location?.state?.selectedTab || 'project-information';
+    setState({ selected: selectedTab });
+  }, [location]);
 
   return (
     <>
+
+      <div>
+        <div className="relative top-0 left-0 mt-4">
+          {Tabs.map(tab => (
+            <div 
+              key={tab.value} 
+              className={`bg-primary p-4 mb-3 rounded-lg cursor-pointer ${state.selected === tab.value ? 'active' : ''}`}
+              onClick={() => setState({ selected: tab.value })}
+            >
+              {tab.label}
+            </div>
+          ))}
+        </div>
+      </div>
       <Formik
         initialValues={{}}
-        onSubmit={async (values) => {
-          console.log(values)
-          await new Promise((r) => setTimeout(r, 500));
-          alert(JSON.stringify(values, null, 2));
-        }}
-      >
-        {() => (
+        onSubmit={values => 
+          setTimeout(() => {
+            console.log(values)
+            alert(JSON.stringify(values, null, 2));
+          }, 500)
+        }
+        >
+        {( { values } ) => (
           <div className="flex justify-center">
-            <Form className="m-4">
-                <GeneralParameters name='general_parameters' />
-                <button className="p-3 mt-2 w-full bg-primary rounded-xl" type="submit">Submit</button>
+            <Form className="m-4 w-[1000px]">
+              {state.selected === 'raw-data-files' && (
+                <RawDataFiles name='general_parameters' values={values} />
+              )}
+              {state.selected === 'project-information' && (
+                <ProjectInformation name='general_parameters' values={values} />
+              )}
+              {state.selected === 'entities-of-interest' && (
+                <EntitiesOfInterestTab name='general_parameters' values={values} />
+              )}
+              {state.selected === 'chemical-environment' && (
+                <div>Chemical environment</div>
+              )}
+              {state.selected === 'result' && (
+                <div>Result</div>
+              )}
+              {state.selected === 'instrument' && (
+                <InstrumentTab name='general_parameters' values={values} />
+              )}
+              {state.selected === 'measurement' && (
+                <div>Measurement</div>
+              )}
+              {state.selected === 'data-analysis' && (
+                <div>Data analysis</div>
+              )}
+              <button className="fixed top-0 right-0 p-3 m-4 bg-primary rounded-lg" type="submit">Submit</button>
             </Form>
           </div>
         )}

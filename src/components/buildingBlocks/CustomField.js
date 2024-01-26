@@ -1,35 +1,36 @@
+import TextField from '@mui/material/TextField';
 import { useField } from 'formik';
 
-function CustomField( {label, name, fieldName, type, colorSchema, width}) {
-    const [field, meta, helpers] = useField(`${name}.${fieldName}`);
+function CustomField( {label, name, fieldName, type, colorSchema, index, width}) {
 
-    const nameTextField=`${name}.${fieldName}`
-
-    const handleFocusChange = (focused) => {
-      helpers.setTouched(focused);
-    };
+  const nameTextField = index !== undefined
+  ? (fieldName !== undefined ? `${name}.${fieldName}[${index}]` : `${name}[${index}]`)
+  : (fieldName !== undefined ? `${name}.${fieldName}` : `${name}`);
+  
+    const [field, meta] = useField(nameTextField);
 
   return (
     <>
-        <div className={`${colorSchema === 'light' ? 'bg-primary' : 'bg-white'} rounded-xl relative ${width}`}>
-            <label
-                htmlFor={nameTextField}
-                className={`absolute z-0 transition-all ${meta.touched || meta.value ? 'text-12px top-[4px] left-[8px]' : 'top-[27%] left-[10px] text-16px'}`}
-            >
-                {label}
-            </label>
-            <input
-                {...field}
-                className={`bg-transparent relative z-10 rounded-xl text-16px pt-5 pb-1 p-2 ${width}`}
-                id={nameTextField}
-                name={nameTextField}
-                type={type}
-                disabled={false}
-                value={field.value || ''}
-                required
-                onFocus={() => handleFocusChange(true)}
-                onBlur={() => handleFocusChange(false)}
-            />   
+        <div className={`${width}`}>
+            <TextField
+              {...field}
+              className={`rounded-lg p-2 text-16px ${width}`}
+              sx={{
+                "& .MuiInputLabel-root": {color: '#034459'},//styles the label
+                "& .MuiOutlinedInput-root": {
+                  "& > fieldset": { borderColor: "#034459" },
+                },
+              }}
+              id={nameTextField}
+              label={label}
+              name={nameTextField}
+              type={type}
+              value={field.value || ''}
+              disabled={false}
+              variant="outlined"
+              size="small"
+              error={meta.touched && !!meta.error}
+            />
         </div>
     </>
   );

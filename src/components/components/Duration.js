@@ -1,5 +1,4 @@
 import ValueUnit from '../buildingBlocks/ValueUnit';
-import ValueError from '../buildingBlocks/ValueError';
 import FormWrapper from '../buildingBlocks/FormWrapper';
 
 function Duration( {name} ) {
@@ -17,10 +16,7 @@ function Duration( {name} ) {
   return (
     <>
         <FormWrapper colorSchema='' headline='Duration'>
-            <div className='mb-2'>
-                <ValueUnit options={unitOptions} name={name} />
-            </div>
-            <ValueError name={`${name}.value_error`} />
+            <ValueUnit options={unitOptions} name={name} />
         </FormWrapper>
     </>
   );

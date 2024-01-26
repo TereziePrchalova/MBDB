@@ -1,5 +1,4 @@
-import FormWrapperRequired from '../buildingBlocks/FormWrapperRequired';
-import ValueError from '../buildingBlocks/ValueError';
+import FormWrapper from '../buildingBlocks/FormWrapper';
 import ValueUnit from '../buildingBlocks/ValueUnit';
 
 function MolecularWeight( {colorSchema, name} ) {
@@ -13,12 +12,9 @@ function MolecularWeight( {colorSchema, name} ) {
 
   return (
     <>
-        <FormWrapperRequired colorSchema={colorSchema} headline='Molecular Weight'>
-            <div className='mb-2'>
-                <ValueUnit options={unitOptions} name={name}/>
-            </div>
-            <ValueError colorSchema={colorSchema} name={`${name}.value_error`}/>
-        </FormWrapperRequired>
+        <FormWrapper colorSchema={colorSchema} headline='Molecular Weight'>
+            <ValueUnit options={unitOptions} name={name}/>
+        </FormWrapper>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import FormWrapperRequired from "../buildingBlocks/FormWrapperRequired";
+import FormWrapper from "../buildingBlocks/FormWrapper";
 import Temperature from "../components/Temperature";
 import Duration from "../components/Duration"
 import StoragePreparation from "../components/StoragePreparation";
@@ -7,7 +7,7 @@ function StorageUntilMeasurement( { name } ) {
 
   return (
     <>
-        <FormWrapperRequired headline='Storage until Measurement' colorSchema='light'>
+        <FormWrapper headline='Storage until Measurement' colorSchema='light'>
             <div className="mb-2">
                 <Temperature name={`${name}.temperature`} />
             </div>
@@ -17,7 +17,7 @@ function StorageUntilMeasurement( { name } ) {
             <div>
                 <StoragePreparation name={`${name}.storage_preparation`} />
             </div>
-        </FormWrapperRequired>           
+        </FormWrapper>           
     </>
   );
 }

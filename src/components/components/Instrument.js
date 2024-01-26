@@ -1,4 +1,4 @@
-import FormWrapperRequired from '../buildingBlocks/FormWrapperRequired';
+import FormWrapper from '../buildingBlocks/FormWrapper';
 import OptionInput from '../buildingBlocks/OptionInput';
 import CustomField from '../buildingBlocks/CustomField';
 
@@ -20,7 +20,7 @@ function Instrument( {name} ) {
 
   return (
     <>
-        <FormWrapperRequired colorSchema='light' headline='Instrument'>
+        <FormWrapper required={true} headline='Instrument'>
             <div className='flex'>
                 <div>
                     <CustomField
@@ -28,7 +28,6 @@ function Instrument( {name} ) {
                         name={name}
                         label='Name'
                         fieldName='name'
-                        width='w-[7rem]'
                     />
                 </div>
                 <div className='mx-3'>
@@ -40,17 +39,8 @@ function Instrument( {name} ) {
                         fieldName='manufacturer'
                     />
                 </div>
-                <div>
-                    <CustomField
-                        colorSchema="light"
-                        name={name}
-                        label='Model'
-                        fieldName='model'
-                        width='w-[7rem]'
-                    />
-                </div>
             </div>
-        </FormWrapperRequired>
+        </FormWrapper>
     </>
   );
 }

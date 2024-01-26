@@ -1,5 +1,5 @@
 import CustomField from "../buildingBlocks/CustomField";
-import FormWrapperRequired from "../buildingBlocks/FormWrapperRequired";
+import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionInput from "../buildingBlocks/OptionInput";
 import MolecularWeight from "../components/MolecularWeight";
 import Supplier from "../components/Supplier";
@@ -13,7 +13,7 @@ function Composition( { name } ) {
 
   return (
     <>
-        <FormWrapperRequired headline='Composition' colorSchema='light'>
+        <FormWrapper headline='Composition' colorSchema='light'>
             <div className="flex mb-2">
                 <div>
                     <OptionInput
@@ -65,7 +65,7 @@ function Composition( { name } ) {
             <div>
                 <QualityControls name={`${name}.quality_controls`} />
             </div>
-        </FormWrapperRequired>           
+        </FormWrapper>           
     </>
   );
 }

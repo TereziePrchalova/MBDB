@@ -1,38 +1,59 @@
+import React from 'react';
 import { useField } from 'formik';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
-function OptionInput( {label, name, fieldName, options, colorSchema, width} ) {
-  const [field, meta] = useField(`${name}.${fieldName}`);
+function OptionInput({ label, name, fieldName, options, colorSchema, width }) {
+  const nameOptionField = `${name}.${fieldName}`;
+  const [field, meta, helpers] = useField(nameOptionField);
 
-  const nameOptionField=`${name}.${fieldName}`
-
-  const valueOption = ''
+  const handleChange = (event) => {
+    helpers.setValue(event.target.value);
+  };
 
   return (
-    <>
-      <div className={`${colorSchema === 'light' ? 'bg-primary' : 'bg-white'} ${width} rounded-xl relative`}>
-        <label 
-          htmlFor={nameOptionField}
-          className={`absolute z-0 transition-all ${meta.value ? 'text-12px top-[4px] left-[8px]' : 'top-[27%] left-[10px] text-16px'}`}
-        >
+    <Box className={`${width} rounded-lg relative`} sx={{ minWidth: 195 }}>
+      <FormControl fullWidth>
+        <InputLabel id={nameOptionField} htmlFor={nameOptionField}>
           {label}
-        </label>
-        <select
-          {...field}
-          className={`bg-transparent relative z-10 rounded-xl text-16px pt-5 pb-1 p-2 ${width}`}
-          name={nameOptionField}
+        </InputLabel>
+        <Select
+          labelId={nameOptionField}
+          sx={{
+            "& .MuiInputLabel-root": { color: '#034459' },
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": { borderColor: "#034459" },
+            },
+          }}
           id={nameOptionField}
-          as="select"
-          required
-          disabled={false}
-          >
-            <option hidden value={valueOption}>
-            </option>
-            {options.map(option => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-        </select>
-      </div>                 
-    </>
+          name={nameOptionField}
+          value={field.value || ''}
+          label={label}
+          onChange={handleChange}
+          size="small"
+          error={meta.touched && !!meta.error}
+          MenuProps={{
+            sx: {
+              "& .MuiMenuItem-root": {
+                color: "#034459", // text color
+                "&:hover": {
+                  backgroundColor: "#e3f2fd", // background color on hover
+                },
+              },
+            },
+          }}
+        >
+          {options.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    </Box>
   );
 }
 
