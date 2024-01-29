@@ -36,7 +36,7 @@ function Mst() {
           {Tabs.map(tab => (
             <div 
               key={tab.value} 
-              className={`bg-primary p-4 mb-3 rounded-lg cursor-pointer ${state.selected === tab.value ? 'active' : ''}`}
+              className={`text-dark p-4 mb-3 rounded-lg cursor-pointer transition-all hover:bg-primary-light ${state.selected === tab.value ? 'active bg-primary' : ''}`}
               onClick={() => setState({ selected: tab.value })}
             >
               {tab.label}
@@ -66,19 +66,19 @@ function Mst() {
                 <EntitiesOfInterestTab name='general_parameters' values={values} />
               )}
               {state.selected === 'chemical-environment' && (
-                <div>Chemical environment</div>
+                <div className="text-dark">Chemical environment</div>
               )}
               {state.selected === 'result' && (
-                <div>Result</div>
+                <div className="text-dark">Result</div>
               )}
               {state.selected === 'instrument' && (
                 <InstrumentTab name='general_parameters' values={values} />
               )}
               {state.selected === 'measurement' && (
-                <div>Measurement</div>
+                <div className="text-dark">Measurement</div>
               )}
               {state.selected === 'data-analysis' && (
-                <div>Data analysis</div>
+                <div className="text-dark">Data analysis</div>
               )}
               <button className="fixed top-0 right-0 p-3 m-4 bg-primary rounded-lg" type="submit">Submit</button>
             </Form>
