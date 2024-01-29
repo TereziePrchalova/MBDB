@@ -1,6 +1,7 @@
 import FormWrapper from '../buildingBlocks/FormWrapper';
 import OptionInput from '../buildingBlocks/OptionInput';
 import CustomField from '../buildingBlocks/CustomField';
+import Temperature from '../components/Temperature';
 
 function MethodSpecificParameters( {name} ) {
 
@@ -32,7 +33,7 @@ function MethodSpecificParameters( {name} ) {
   return (
     <>
         <FormWrapper headline='Method specific parameters'>
-            <div className='flex'>
+            <div className='flex mb-3'>
                 <div>
                     <OptionInput
                         name={name}
@@ -49,6 +50,33 @@ function MethodSpecificParameters( {name} ) {
                         fieldName='signal_type'
                     />
                 </div>
+                <div>
+                    <OptionInput
+                        name={name}
+                        options={excitationLedColorOptions}
+                        label='Excitation LED color'
+                        fieldName='excitation_led_color'
+                    />
+                </div>
+            </div>
+            <div className='flex'>
+                <div className='mr-3'>
+                    <CustomField
+                        name={name}
+                        label='Excitation LED power'
+                        fieldName='excitation_led_power'
+                    />
+                </div>
+                <div>
+                    <CustomField
+                        name={name}
+                        label='IR MST laser power'
+                        fieldName='ir_mst_laser_power'
+                    />
+                </div>
+            </div>
+            <div className='-mx-3'>
+                <Temperature name={`${name}.temperature`}/>
             </div>
         </FormWrapper>
     </>

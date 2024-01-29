@@ -1,3 +1,5 @@
+import CustomField from "../buildingBlocks/CustomField";
+import FormWrapper from "../buildingBlocks/FormWrapper";
 import Instrument from "../components/Instrument";
 import MethodSpecificParameters from "../sectionComponents/MethodSpecificParameters";
 
@@ -9,7 +11,21 @@ function InstrumentTab( { name, values} ) {
             <div className="mb-2">
                 <Instrument name={`${name}.instrument`} />
             </div>
-            <div className="mb-2">
+            <FormWrapper>
+                <div className="flex">
+                    <div className="mr-3 my-auto text-dark">
+                        Collection start time
+                    </div>
+                    <div>
+                        <CustomField
+                            name={name}
+                            type='date'
+                            fieldName='collection_start_time'
+                        />
+                    </div>
+                </div>
+            </FormWrapper>
+            <div className="mt-2">
                 <MethodSpecificParameters name='method_specific_parameters' />
             </div>
                 

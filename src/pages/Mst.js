@@ -45,7 +45,12 @@ function Mst() {
         </div>
       </div>
       <Formik
-        initialValues={{}}
+        initialValues={{
+          "general_parameters": {
+            "schema_version": "0.9.18",
+            "technique": "Microscale thermophoresis/Temperature related intensity change (MST/TRIC)"
+          }
+        }}
         onSubmit={values => 
           setTimeout(() => {
             console.log(values)
