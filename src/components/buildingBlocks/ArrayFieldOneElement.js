@@ -2,7 +2,7 @@ import React from 'react';
 import { FieldArray, getIn } from 'formik';
 import Button from '@mui/material/Button';
 
-function ArrayField({ name, values, fieldName, label, renderChild }) {
+function ArrayFieldOneElement({ name, values, fieldName, label, renderChild }) {
 
   const arrayName = `${name}.${fieldName}`;
   const value = getIn(values, arrayName);
@@ -38,6 +38,7 @@ function ArrayField({ name, values, fieldName, label, renderChild }) {
               </div>
             ))
           ) : null }
+          {(value === undefined || value.length === 0) &&  (
             <div className='mt-3'>
                 <Button
                 variant="outlined"
@@ -54,10 +55,11 @@ function ArrayField({ name, values, fieldName, label, renderChild }) {
                 + {`${label}`}
                 </Button>
             </div>
+          )}
         </>
       )}
     />
   );
 }
 
-export default ArrayField;
+export default ArrayFieldOneElement;

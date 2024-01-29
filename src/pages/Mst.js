@@ -48,7 +48,13 @@ function Mst() {
         initialValues={{
           "general_parameters": {
             "schema_version": "0.9.18",
-            "technique": "Microscale thermophoresis/Temperature related intensity change (MST/TRIC)"
+            "technique": "Microscale thermophoresis/Temperature related intensity change (MST/TRIC)",
+            "record_information": {
+              "publisher": "MBDB",
+              "resource_type_general": "Dataset",
+              "resource_type": "MST",
+              "subject_category": "Biophysics"
+            }
           }
         }}
         onSubmit={values => 

@@ -2,8 +2,9 @@ import FormWrapper from '../buildingBlocks/FormWrapper';
 import OptionInput from '../buildingBlocks/OptionInput';
 import CustomField from '../buildingBlocks/CustomField';
 import Temperature from '../components/Temperature';
+import ArrayFieldOneElement from '../buildingBlocks/ArrayFieldOneElement';
 
-function MethodSpecificParameters( {name} ) {
+function MethodSpecificParameters( {name, values} ) {
 
     const experimentTypeOptions = [
         { value: 'affinity', label: 'Affinity' },
@@ -27,8 +28,6 @@ function MethodSpecificParameters( {name} ) {
         { value: 'UV (ex 260-300nm, em 330-380nm)', label: 'UV (ex 260-300nm, em 330-380nm)' },
         { value: 'spectral_shift', label: 'Spectral shift' },
     ];
-
-
 
   return (
     <>
@@ -75,8 +74,20 @@ function MethodSpecificParameters( {name} ) {
                     />
                 </div>
             </div>
-            <div className='-mx-3'>
-                <Temperature name={`${name}.temperature`}/>
+            <div>
+                <ArrayFieldOneElement
+                    name={name}
+                    values={values}
+                    label='Temperature'
+                    fieldName='temperature'
+                    renderChild={({ name, index }) => (
+                        <div className='-mx-3'>
+                            <Temperature 
+                                name={`${name}.temperature.${index}`}
+                            />
+                        </div>
+                    )}
+                />
             </div>
         </FormWrapper>
     </>
