@@ -3,9 +3,9 @@ import Depositors from "../sectionComponents/Depositors";
 import ArrayField from "../buildingBlocks/ArrayField";
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
+import AssociatedPublication from "../components/AssociatedPublication";
 
 function ProjectInformation( {name, values} ) {
-
 
   return (
     <>
@@ -32,6 +32,9 @@ function ProjectInformation( {name, values} ) {
                     </FormWrapper>
                 )}
             />
+        </div>
+        <div>
+            <AssociatedPublication name={`${name}.associated_publication`} />
         </div>
       
     </>

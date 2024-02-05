@@ -20,7 +20,7 @@ function Instrument( {name} ) {
 
   return (
     <>
-        <FormWrapper required={true} headline='Instrument'>
+        <FormWrapper headline='Instrument'>
             <div className='flex'>
                 <div>
                     <CustomField

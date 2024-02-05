@@ -2,7 +2,6 @@ import ArrayField from "../buildingBlocks/ArrayField";
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionInput from "../buildingBlocks/OptionInput";
-import Protocol from "../buildingBlocks/Protocol";
 import MolecularWeight from "./MolecularWeight";
 import Modification from "./Modification";
 

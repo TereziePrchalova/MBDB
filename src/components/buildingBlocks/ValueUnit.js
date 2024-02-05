@@ -14,7 +14,7 @@ function ValueUnit({ colorSchema, options, name, width }) {
                 label='Value'
               />
             </div>
-            <div className="mr-3">
+            <div>
               <OptionInput
                 name={name}
                 fieldName='unit'

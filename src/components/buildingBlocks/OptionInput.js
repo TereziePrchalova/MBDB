@@ -6,12 +6,17 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-function OptionInput({ label, name, fieldName, options, colorSchema, width }) {
+function OptionInput({ label, name, fieldName, options, colorSchema, width, onOptionChange}) {
   const nameOptionField = `${name}.${fieldName}`;
   const [field, meta, helpers] = useField(nameOptionField);
 
+  
   const handleChange = (event) => {
+    const value = event.target.value;
     helpers.setValue(event.target.value);
+    if (onOptionChange) {
+      onOptionChange(value);
+    }
   };
 
   return (
@@ -21,6 +26,7 @@ function OptionInput({ label, name, fieldName, options, colorSchema, width }) {
           {label}
         </InputLabel>
         <Select
+          {...field}
           labelId={nameOptionField}
           sx={{
             "& .MuiInputLabel-root": { color: '#034459' },
@@ -47,7 +53,7 @@ function OptionInput({ label, name, fieldName, options, colorSchema, width }) {
           }}
         >
           {options.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
+            <MenuItem key={option.value} value={option.value} >
               {option.label}
             </MenuItem>
           ))}

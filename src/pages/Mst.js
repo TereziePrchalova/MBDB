@@ -53,8 +53,10 @@ function Mst() {
               "publisher": "MBDB",
               "resource_type_general": "Dataset",
               "resource_type": "MST",
-              "subject_category": "Biophysics"
-            }
+              "deposition_date": new Date(),
+              "date_available": new Date(),
+              "subject_category": "Biophysics",
+            },
           }
         }}
         onSubmit={values => 

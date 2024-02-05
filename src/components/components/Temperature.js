@@ -1,8 +1,6 @@
 import React from 'react';
 import ValueUnit from '../buildingBlocks/ValueUnit';
-import OptionInput from '../buildingBlocks/OptionInput';
 import FormWrapper from '../buildingBlocks/FormWrapper';
-import ValueError from '../buildingBlocks/ValueError';
 
 function Temperature( {name} ) {
 
