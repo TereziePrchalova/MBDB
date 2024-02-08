@@ -44,7 +44,7 @@ function Polymer( { name, values} ) {
                 <CustomField name={name} label='Source organism' fieldName='source_organism' />
             </div>
             <div className="mr-3">
-                <OptionInput name={name} label='Expression source type' fieldName='expression_source_type' options={expressionSourceTypeOptions} />
+                <OptionInput name={name} label='Expression source' fieldName='expression_source_type' options={expressionSourceTypeOptions} />
             </div>
             <div>
                 <CustomField name={name} label='Expression organism' fieldName='expression_organism' />

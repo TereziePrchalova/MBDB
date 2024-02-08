@@ -7,6 +7,7 @@ import UseDefault from "../buildingBlocks/UseDefault";
 import { useState } from "react";
 import ComplexSubstanceOfBiologicalOrigin from "../components/ComplexSubstanceOfBiologicalOrigin";
 import ComplexSubstanceOfEnvironmentalOrigin from "../components/ComplexSubstanceOfEnvironmentalOrigin";
+import MolecularAssembly from "../components/MolecularAssembly";
 
 function EntitiesOfInterestTab( { name, values } ) {
 
@@ -17,7 +18,7 @@ function EntitiesOfInterestTab( { name, values } ) {
     const entitiesOfInterestTabOptions = [
         { value: 'polymer', label: 'Polymer' },
         { value: 'chemical', label: 'Chemical' },
-        { value: 'molecural_assembly', label: 'Molecular Assembly' },
+        { value: 'moleculal_assembly', label: 'Molecular Assembly' },
         { value: 'complex_substance_of_biological_origin', label: 'Complex substance of biological origin' },
         { value: 'complex_substance_of_environmental_origin', label: 'Complex substance of environmental origin' },
         { value: 'complex_substance_of_chemical_origin', label: 'Complex substance of chemical origin' },
@@ -67,6 +68,15 @@ function EntitiesOfInterestTab( { name, values } ) {
                                 {selectedOption[index] === 'chemical' && (
                                     <div>
                                         <Chemical
+                                            name={`${arrayName}.${index}`}
+                                            values={values}
+                                            fieldName='entities_of_interest'
+                                        />
+                                    </div>
+                                )}
+                                {selectedOption[index] === 'moleculal_assembly' && (
+                                    <div>
+                                        <MolecularAssembly
                                             name={`${arrayName}.${index}`}
                                             values={values}
                                             fieldName='entities_of_interest'

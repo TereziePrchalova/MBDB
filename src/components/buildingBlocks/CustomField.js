@@ -1,7 +1,7 @@
 import TextField from '@mui/material/TextField';
 import { useField } from 'formik';
 
-function CustomField( {label, name, fieldName, type, colorSchema, index, width}) {
+function CustomField( {label, name, fieldName, type, index, width}) {
 
   const nameTextField = index !== undefined
   ? (fieldName !== undefined ? `${name}.${fieldName}[${index}]` : `${name}[${index}]`)
