@@ -10,6 +10,7 @@ function StoragePreparation( { name } ) {
                     name={name}
                     fieldName='name'
                     label='Name'
+                    tooltip='Descriptive name of the step'
                 />
             </div>
             <div>
@@ -17,6 +18,7 @@ function StoragePreparation( { name } ) {
                     name={name}
                     fieldName='description'
                     label='Description'
+                    tooltip='Short description of the step'
                 />
             </div>
         </div>

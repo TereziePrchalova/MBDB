@@ -1,7 +1,7 @@
 import ValueUnit from '../buildingBlocks/ValueUnit';
 import FormWrapper from '../buildingBlocks/FormWrapper';
 
-function Duration( {name, formWrapper = true} ) {
+function Duration( {name, formWrapper = true, tooltipHeader} ) {
 
     const unitOptions = [
         { value: 'miliseconds', label: 'miliseconds' },
@@ -15,8 +15,13 @@ function Duration( {name, formWrapper = true} ) {
 
   return (
     <>
-        <FormWrapper colorSchema='' headline={formWrapper ? 'Duration' : ''}>
-            <ValueUnit options={unitOptions} name={name} />
+        <FormWrapper colorSchema='' headline='Duration' tooltipHeader={tooltipHeader}>
+            <ValueUnit
+              options={unitOptions}
+              name={name}
+              tooltipValue='The numerical value of the time point or duration'
+              tooltipUnit='The unit of the time duration'
+            />
         </FormWrapper>
     </>
   );

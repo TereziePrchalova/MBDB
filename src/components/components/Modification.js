@@ -13,6 +13,7 @@ function Modification( { name, values } ) {
                     name={name}
                     fieldName='position'
                     label='Position'
+                    tooltip='The position where the modification occurs'
                 />
             </div>
             <div>
@@ -20,6 +21,7 @@ function Modification( { name, values } ) {
                     name={name}
                     fieldName='modification'
                     label='Modification'
+                    tooltip='The common name/type of the modification'
                 />
             </div>
         </div>
@@ -30,7 +32,10 @@ function Modification( { name, values } ) {
                 label='Protocol'
                 fieldName='protocol'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper headline={`Protocol ${index + 1}`}>
+                    <FormWrapper
+                        headline={`Protocol ${index + 1}`}
+                        tooltipHeader='List of steps that led to the modification taking place'
+                    >
                         <Protocol
                             name={`${arrayName}.${index}`}
                             label={`${index + 1}`}

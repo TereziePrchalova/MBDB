@@ -10,7 +10,10 @@ function Storage( { name, values } ) {
   return (
     <>
         <div>
-            <Temperature name={`${name}.temperature`} />
+            <Temperature
+                name={`${name}.temperature`}
+                tooltipHeader='The temperature the sample was stored at'
+            />
         </div>
         <div>
             <ArrayFieldOneElement
@@ -21,6 +24,7 @@ function Storage( { name, values } ) {
                 renderChild={({ name, index }) => (
                     <Duration
                         name={`${name}.duration.${index}`}
+                        tooltipHeader='Length of time the sample was stored before being measured'
                     />
                 )}
             />
@@ -32,7 +36,10 @@ function Storage( { name, values } ) {
                 label='Storage preparation'
                 fieldName='storage_preparation'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper headline={`Storage preparation ${index + 1}`}>
+                    <FormWrapper 
+                        headline={`Storage preparation ${index + 1}`} 
+                        tooltipHeader='The specific steps that were taken to prepare the samples for storage (e.g. flash freezing in liquid nitrogen), if applicable'
+                    >
                         <StoragePreparation
                             name={`${arrayName}.${index}`}
                             fieldName='storage_preparation'

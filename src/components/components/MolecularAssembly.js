@@ -3,17 +3,24 @@ import ArrayField from "../buildingBlocks/ArrayField";
 import MolecularWeight from "./MolecularWeight";
 import Modification from "./Modification";
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import EntitiesOfInterestTab from "../tabs/EntitiesOfInterest";
 
 function MolecularAssembly( { name, values} ) {
 
   return (
     <>
         <div>
-            <CustomField name={name} label='Name' fieldName='name' />
+            <CustomField
+                name={name}
+                label='Name'
+                fieldName='name'
+                tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
+            />
         </div>
         <div className="-mx-3">
-            <MolecularWeight name={`${name}.molecular_weight`} values={values} />
+            <MolecularWeight
+                name={`${name}.molecular_weight`}
+                tooltipHeader='The molecular weight of the molecular assembly'
+            />
         </div>
         <div>
             <ArrayField

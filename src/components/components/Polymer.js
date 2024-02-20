@@ -27,31 +27,69 @@ function Polymer( { name, values} ) {
     <>
         <div className='flex mb-3'>
           <div className='mr-3'>
-            <CustomField name={name} label='Name' fieldName='name' />
+            <CustomField
+                name={name}
+                label='Name'
+                fieldName='name'
+                tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
+            />
           </div>
           <div className="mr-3">
-            <OptionInput name={name} label='Polymer type' fieldName='polymer_type' options={polymerTypeOptions} />
+            <OptionInput
+                name={name}
+                label='Polymer type'
+                fieldName='polymer_type'
+                options={polymerTypeOptions}
+                tooltip='The type of polymer (e.g. polypeptide(L))'
+            />
           </div>
           <div>
-            <CustomField name={name} label='Sequence' fieldName='sequence' />
+            <CustomField 
+                name={name}
+                label='Sequence'
+                fieldName='sequence'
+                tooltip='Primary sequence of the polymer, using single letter codes (e.g. SAGRELLE, AGTTA). In case of non-natural amino acids or nucleotides, please place the monomer in brackets'
+            />
           </div>
         </div>
         <div className="flex">
             <div className="mr-3">
-                <CustomField name={name} label='Variant' fieldName='variant' />
+                <CustomField
+                    name={name}
+                    label='Variant'
+                    fieldName='variant'
+                    tooltip='Descriptive name indicating differences of primary sequence of the polymer as compared to the most common form, or wildtype, including mutations, purification tags, etc. (A53T, C-terminal GFP, N-terminal 6xHis-tag)'    
+                />
             </div>
             <div className="mr-3">
-                <CustomField name={name} label='Source organism' fieldName='source_organism' />
+                <CustomField
+                    name={name}
+                    label='Source organism'
+                    fieldName='source_organism'
+                />
             </div>
             <div className="mr-3">
-                <OptionInput name={name} label='Expression source' fieldName='expression_source_type' options={expressionSourceTypeOptions} />
+                <OptionInput
+                    name={name}
+                    label='Expression source'
+                    fieldName='expression_source_type'
+                    options={expressionSourceTypeOptions}
+                    tooltip='How the polymer was produced'
+                />
             </div>
             <div>
-                <CustomField name={name} label='Expression organism' fieldName='expression_organism' />
+                <CustomField
+                    name={name}
+                    label='Expression organism'
+                    fieldName='expression_organism'
+                />
             </div>
         </div>
         <div className="-mx-3">
-            <MolecularWeight name={`${name}.molecular_weight`} />
+            <MolecularWeight 
+                name={`${name}.molecular_weight`}
+                tooltipHeader='The molecular weight of the polymer'
+            />
         </div>
         <div>
             <ArrayField
@@ -60,7 +98,11 @@ function Polymer( { name, values} ) {
                 label='Synthesis'
                 fieldName='synthesis'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper colorSchema='light' headline={`Synthesis ${index + 1}`}>
+                    <FormWrapper
+                        colorSchema='light'
+                        headline={`Synthesis ${index + 1}`}
+                        tooltipHeader='Modifications (e.g. non-natural amino acids) of the polymer made during synthesis (e.g. translation) of the polymer'
+                    >
                         <Modification
                             name={`${arrayName}.${index}`}
                             values={values}
@@ -77,7 +119,11 @@ function Polymer( { name, values} ) {
                 label='Biological postprocessing'
                 fieldName='biological_postprocessing'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper colorSchema='light' headline={`Biological postprocessing ${index + 1}`}>
+                    <FormWrapper
+                        colorSchema='light'
+                        headline={`Biological postprocessing ${index + 1}`}
+                        tooltipHeader='Modifications of the polymer made after synthesis (e.g. posttranslational modifications, DNA methylation) by the organism where synthesis occurred (e.g. glycosylation)'
+                    >
                         <Modification
                             name={`${arrayName}.${index}`}
                             values={values}
@@ -94,7 +140,11 @@ function Polymer( { name, values} ) {
                 label='Chemical'
                 fieldName='chemical'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper colorSchema='light' headline={`Chemical ${index + 1}`}>
+                    <FormWrapper
+                        colorSchema='light'
+                        headline={`Chemical ${index + 1}`}
+                        tooltipHeader='Modifications of the polymer introduced by chemical, biochemical, or physical means in vitro (e.g. lysine methylation, cysteine iodoacetamide labeling, deglycosylation, covalent fluorescent labeling)'
+                    >
                         <Modification
                             name={`${arrayName}.${index}`}
                             values={values}
@@ -117,6 +167,8 @@ function Polymer( { name, values} ) {
                             index={index}
                             label={`External database ${index + 1}`}
                             fieldName='external_databases'
+                            width='w-[15rem]'
+                            tooltip='List of identifiers to records in external databases containing information about the polymer can be specified here (e.g UNIPROT:Q8KRF6)'
                         />
                     )}
                 />
@@ -134,6 +186,7 @@ function Polymer( { name, values} ) {
                             label={`Additional specification ${index + 1}`}
                             fieldName='additional_specifications'
                             width='w-[15rem]'
+                            tooltip='Additional information about the chemical can be specified here (e.g. RNase free water, recrystallization, desalting)'
                         />
                     )}
                 />

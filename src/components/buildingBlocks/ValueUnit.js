@@ -1,7 +1,7 @@
 import CustomField from "./CustomField";
 import OptionInput from "./OptionInput";
 
-function ValueUnit({ colorSchema, options, name, width }) {
+function ValueUnit({ colorSchema, options, name, width, tooltipValue, tooltipUnit }) {
 
   return (
     <>
@@ -12,6 +12,7 @@ function ValueUnit({ colorSchema, options, name, width }) {
                 fieldName='value'
                 type='number'
                 label='Value'
+                tooltip={tooltipValue}
               />
             </div>
             <div>
@@ -21,6 +22,7 @@ function ValueUnit({ colorSchema, options, name, width }) {
                 options={options}
                 label='Unit'
                 width={width}
+                tooltip={tooltipUnit}
               />
             </div>
         </div>

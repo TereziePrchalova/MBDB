@@ -7,10 +7,10 @@ function Contact( { name, values} ) {
     <>
         <div className='flex'>
           <div className='mr-3'>
-            <CustomField name={name} label='Given Name' fieldName='given_name' />
+            <CustomField name={name} label='Given Name' fieldName='given_name' tooltip='The given name(s), including middlename(s), of the person' />
           </div>
           <div>
-            <CustomField name={name} label='Family Name' fieldName='family_name' />
+            <CustomField name={name} label='Family Name' fieldName='family_name' tooltip='The family name(s) the person' />
           </div>
         </div>
         <div className="flex">
@@ -26,6 +26,7 @@ function Contact( { name, values} ) {
                             index={index}
                             label={`identifier ${index + 1}`}
                             fieldName='identifiers'
+                            tooltip='Persistent personal identifiers, currently only ORCIDs are allowed'
                         />
                     )}
                 />
@@ -42,6 +43,7 @@ function Contact( { name, values} ) {
                             index={index}
                             label={`affiliation ${index + 1}`}
                             fieldName='affiliations'
+                            tooltip='The affiliation of the person. Note that this is based on the Research Organization Registry (ROR)'
                         />
                     )}
                 />

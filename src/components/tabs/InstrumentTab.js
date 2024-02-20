@@ -1,7 +1,9 @@
+import { Tooltip } from "@mui/material";
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Instrument from "../components/Instrument";
 import MethodSpecificParameters from "../sectionComponents/MethodSpecificParameters";
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 function InstrumentTab( { name, values} ) {
 
@@ -13,8 +15,15 @@ function InstrumentTab( { name, values} ) {
             </div>
             <FormWrapper>
                 <div className="flex">
-                    <div className="mr-3 my-auto text-dark">
-                        Collection start time
+                    <div className="flex">
+                        <div className="mr-3 my-auto text-dark">
+                            Collection start time
+                        </div>
+                        <div className='-mt-1 -ml-2 mr-3'>
+                            <Tooltip title='The date when collection of the raw data began' arrow>
+                                <HelpOutlineIcon fontSize="smaller"/>
+                            </Tooltip>
+                        </div>
                     </div>
                     <div>
                         <CustomField

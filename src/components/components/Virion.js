@@ -32,7 +32,12 @@ function Virion( { name, values } ) {
     <>
         <div className='flex mb-3'>
           <div className='mr-3'>
-            <CustomField name={name} label='Name' fieldName='name' />
+            <CustomField
+                name={name}
+                label='Name'
+                fieldName='name'
+                tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
+            />
           </div>
           <div className="mr-3">
             <OptionInput
@@ -40,6 +45,7 @@ function Virion( { name, values } ) {
                 options={geneticMaterialOptions}
                 label='Genetic Material'
                 fieldName='genetic_material'
+                tooltip='The genetic material carried by the virions (None, virus genome, synthetic)'
             />
           </div>
           <div className="mr-3">
@@ -48,6 +54,7 @@ function Virion( { name, values } ) {
                 options={capsidTypeOptions}
                 label='Capsid type'
                 fieldName='capsid_type'
+                tooltip='The type of virion capsid (e.g. genetically engineered, None'
             />
           </div>
           <div>
@@ -56,6 +63,7 @@ function Virion( { name, values } ) {
                 options={envelopeOptions}
                 label='Envelope type'
                 fieldName='envelope_type'
+                tooltip='The type of virion envelope (e.g. genetically engineered, None'
             />
           </div>
         </div>
@@ -64,7 +72,12 @@ function Virion( { name, values } ) {
             <CustomField name={name} label='Host organism' fieldName='host_organism' />
           </div>
           <div className="mr-3">
-            <CustomField name={name} label='Host cell type' fieldName='host_cell_type' />
+            <CustomField
+                name={name}
+                label='Host cell type'
+                fieldName='host_cell_type'
+                tooltip='The host cell type the virion was produced in'
+            />
           </div>
           <div>
             <CustomField name={name} label='Source organism' fieldName='source_organism' />
@@ -77,7 +90,11 @@ function Virion( { name, values } ) {
                 label='Preparation protocol'
                 fieldName='preparation_protocol'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper colorSchema='light' headline={`Preparation protocol ${index + 1}`}>
+                    <FormWrapper
+                        colorSchema='light'
+                        headline={`Preparation protocol ${index + 1}`}
+                        tooltipHeader='List of the steps performed during the preparation of the complex substance'
+                    >
                         <Protocol
                             name={`${arrayName}.${index}`}
                             values={values}
@@ -118,6 +135,7 @@ function Virion( { name, values } ) {
                             label={`Additional specification ${index + 1}`}
                             fieldName='additional_specifications'
                             width='w-[15rem]'
+                            tooltip='Additional information about the complex substance can be specified here'
                         />
                     )}
                 />

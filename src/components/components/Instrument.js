@@ -20,7 +20,7 @@ function Instrument( {name} ) {
 
   return (
     <>
-        <FormWrapper headline='Instrument'>
+        <FormWrapper headline='Instrument' tooltipHeader='Information about the instrument being used to collect (measure) the raw data annotated by this record'>
             <div className='flex'>
                 <div>
                     <CustomField
@@ -28,6 +28,7 @@ function Instrument( {name} ) {
                         name={name}
                         label='Name'
                         fieldName='name'
+                        tooltip='The name of the instrument as provided by the manufacturer'
                     />
                 </div>
                 <div className='mx-3'>
@@ -37,6 +38,7 @@ function Instrument( {name} ) {
                         name={name}
                         label='Manufacturer'
                         fieldName='manufacturer'
+                        tooltip='Name of the manufacturer of the instrument used for raw data collection'
                     />
                 </div>
             </div>

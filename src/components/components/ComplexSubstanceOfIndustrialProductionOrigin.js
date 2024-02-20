@@ -5,17 +5,18 @@ import FormWrapper from "../buildingBlocks/FormWrapper";
 import Protocol from "../buildingBlocks/Protocol";
 import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
 import Storage from "../buildingBlocks/Storage";
-import Details from "./Details";
 
-function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
+function ComplexSubstanceOfIndustrialProductionOrigin( { name, values } ) {
 
-    const classOptions = [
-        { value: 'lipid_assembly', label: 'Lipid assembly' },
+    const productOptions = [
+        { value: 'beer', label: 'Beer' },
+        { value: 'cell_medium', label: 'Cell medium' },
+        { value: 'whey', label: 'Whey' },
       ];
 
   return (
     <>
-        <div className="flex mb-3">
+        <div className="flex">
             <div className='mr-3'>
                 <CustomField
                     name={name}
@@ -25,17 +26,14 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                 />
             </div>
             <div>
-                <OptionInput
-                    name={name}
-                    options={classOptions}
-                    label='Class'
-                    fieldName='class'
-                    tooltip='The chemical origin where the complex substance was derived from'
+                <OptionInput 
+                    name={name} 
+                    options={productOptions} 
+                    label='Product' 
+                    fieldName='product'
+                    tooltip='The type of product, byproduct, or waste product the complex substance was derived from'
                 />
             </div>
-        </div>
-        <div>
-            <Details name={`${name}.details`} values={values} />
         </div>
         <div>
             <ArrayField
@@ -92,7 +90,7 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                         label={`Additional specification ${index + 1}`}
                         fieldName='additional_specifications'
                         width='w-[15rem]'
-                        tooltip='Additional information about the lipid assembly, if applicable'
+                        tooltip='Additional information about the complex substance can be specified here'
                     />
                 )}
             />
@@ -101,4 +99,4 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
   );
 }
 
-export default ComplexSubstanceOfChemicalOrigin;
+export default ComplexSubstanceOfIndustrialProductionOrigin;

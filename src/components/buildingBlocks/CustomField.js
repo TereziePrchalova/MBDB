@@ -1,7 +1,9 @@
 import TextField from '@mui/material/TextField';
 import { useField } from 'formik';
+import Tooltip from '@mui/material/Tooltip';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
-function CustomField( {label, name, fieldName, type, index, width}) {
+function CustomField( {label, name, fieldName, type, index, tooltip, width}) {
 
   const nameTextField = index !== undefined
   ? (fieldName !== undefined ? `${name}.${fieldName}[${index}]` : `${name}[${index}]`)
@@ -11,6 +13,7 @@ function CustomField( {label, name, fieldName, type, index, width}) {
 
   return (
     <>
+      <div className='flex'>
         <div className={`${width}`}>
             <TextField
               {...field}
@@ -30,8 +33,19 @@ function CustomField( {label, name, fieldName, type, index, width}) {
               variant="outlined"
               size="small"
               error={meta.touched && !!meta.error}
-            />
+              />
         </div>
+        {tooltip ?
+          <div className='ml-1 -mt-1'>
+            <Tooltip title={tooltip} arrow>
+              <HelpOutlineIcon fontSize="smaller"/>
+            </Tooltip>
+          </div>
+          :
+          <div className='w-5'>
+          </div>
+        }
+      </div>
     </>
   );
 }

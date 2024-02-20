@@ -49,6 +49,7 @@ function AssociatedPublication( {name, values} ) {
                                 name={name}
                                 fieldName='journal'
                                 label='Journal'
+                                tooltip='The full name of the journal of article appears in'
                             />
                         </div>
                         <div className="mx-3">
@@ -56,6 +57,7 @@ function AssociatedPublication( {name, values} ) {
                                 name={name}
                                 fieldName='pid'
                                 label='Pid'
+                                tooltip='Persistent identifier associated with the publication (e.g. DOI, ISBN, URN)'
                             />
                         </div>
                         <div>
@@ -63,6 +65,7 @@ function AssociatedPublication( {name, values} ) {
                                 name={name}
                                 fieldName='title'
                                 label='Title'
+                                tooltip='The title of the publication'
                             />
                         </div>
                     </div>
@@ -74,6 +77,7 @@ function AssociatedPublication( {name, values} ) {
                                 name={name}
                                 fieldName='publisher'
                                 label='Publisher'
+                                tooltip='The full name of the publisher of the book'
                             />
                         </div>
                         <div className="mx-3">
@@ -81,6 +85,7 @@ function AssociatedPublication( {name, values} ) {
                                 name={name}
                                 fieldName='pid'
                                 label='Pid'
+                                tooltip='Persistent identifier associated with the publication (e.g. DOI, ISBN, URN)'
                             />
                         </div>
                         <div>
@@ -88,6 +93,7 @@ function AssociatedPublication( {name, values} ) {
                                 name={name}
                                 fieldName='title'
                                 label='Title'
+                                tooltip='The title of the publication'
                             />
                         </div>
                     </div>
@@ -100,6 +106,7 @@ function AssociatedPublication( {name, values} ) {
                                 options={degreeTypeOptions}
                                 label='Degree type'
                                 fieldName='degree_type'
+                                tooltip='The type of degree (equivalent) the thesis was submitted to attain'
                             />
                         </div>
                         <div className="mx-3">
@@ -107,6 +114,7 @@ function AssociatedPublication( {name, values} ) {
                                 name={name}
                                 fieldName='pid'
                                 label='Pid'
+                                tooltip='Persistent identifier associated with the publication (e.g. DOI, ISBN, URN)'
                             />
                         </div>
                         <div>
@@ -114,6 +122,7 @@ function AssociatedPublication( {name, values} ) {
                                 name={name}
                                 fieldName='title'
                                 label='Title'
+                                tooltip='The title of the publication'
                             />
                         </div>
                     </div>

@@ -31,7 +31,7 @@ function MethodSpecificParameters( {name, values} ) {
 
   return (
     <>
-        <FormWrapper headline='Method specific parameters'>
+        <FormWrapper headline='Method specific parameters' tooltipHeader='The parameters of the experiment that is specific to MST/TRIC/Spectral Shift'>
             <div className='flex mb-3'>
                 <div>
                     <OptionInput
@@ -39,6 +39,7 @@ function MethodSpecificParameters( {name, values} ) {
                         options={experimentTypeOptions}
                         label='Experiment type'
                         fieldName='experiment_type'
+                        tooltip='The type of physical parameter that was sought'
                     />
                 </div>
                 <div className='mx-3'>
@@ -47,6 +48,7 @@ function MethodSpecificParameters( {name, values} ) {
                         options={signalTypeOptions}
                         label='Signal type'
                         fieldName='signal_type'
+                        tooltip='The type of signal that was being measured'
                     />
                 </div>
                 <div>
@@ -55,6 +57,7 @@ function MethodSpecificParameters( {name, values} ) {
                         options={excitationLedColorOptions}
                         label='Excitation LED color'
                         fieldName='excitation_led_color'
+                        tooltip='The color of the excitation LED used for the experiment. NOTE that colors are specific to the combination in which it occurs, e.g. the GREEN in a BLUE/GREEN instrument, is not the same as the GREEN in a GREEN/RED instrument'
                     />
                 </div>
             </div>
@@ -64,6 +67,7 @@ function MethodSpecificParameters( {name, values} ) {
                         name={name}
                         label='Excitation LED power'
                         fieldName='excitation_led_power'
+                        tooltip='The power, in percentage, of the excitation LED used in experiment'
                     />
                 </div>
                 <div>
@@ -71,6 +75,7 @@ function MethodSpecificParameters( {name, values} ) {
                         name={name}
                         label='IR MST laser power'
                         fieldName='ir_mst_laser_power'
+                        tooltip="The power of the infrared LASER used in the experiment in percentages. Even though a change in nomenclature occurred in Nanotemper's control software, the underlying data is still stored in percentages. Use the following conversion; Low = 20, Medium = 40, High = 60"
                     />
                 </div>
             </div>
@@ -84,6 +89,7 @@ function MethodSpecificParameters( {name, values} ) {
                         <div className='-mx-3'>
                             <Temperature 
                                 name={`${name}.temperature.${index}`}
+                                tooltipHeader='The temperature of the sample chamber while the measurement was performed'
                             />
                         </div>
                     )}

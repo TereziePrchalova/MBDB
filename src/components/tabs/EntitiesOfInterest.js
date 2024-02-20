@@ -8,6 +8,8 @@ import { useState } from "react";
 import ComplexSubstanceOfBiologicalOrigin from "../components/ComplexSubstanceOfBiologicalOrigin";
 import ComplexSubstanceOfEnvironmentalOrigin from "../components/ComplexSubstanceOfEnvironmentalOrigin";
 import MolecularAssembly from "../components/MolecularAssembly";
+import ComplexSubstanceOfIndustrialProductionOrigin from "../components/ComplexSubstanceOfIndustrialProductionOrigin";
+import ComplexSubstanceOfChemicalOrigin from "../components/ComplexSubstanceOfChemicalOrigin";
 
 function EntitiesOfInterestTab( { name, values } ) {
 
@@ -103,7 +105,16 @@ function EntitiesOfInterestTab( { name, values } ) {
                                 )}
                                 {selectedOption[index] === 'complex_substance_of_chemical_origin' && (
                                     <div>
-                                        <ComplexSubstanceOfEnvironmentalOrigin
+                                        <ComplexSubstanceOfChemicalOrigin
+                                            name={`${arrayName}.${index}`}
+                                            values={values}
+                                            fieldName='entities_of_interest'
+                                        />
+                                    </div>
+                                )}
+                                {selectedOption[index] === 'complex_substance_of_industrial_production_origin' && (
+                                    <div>
+                                        <ComplexSubstanceOfIndustrialProductionOrigin
                                             name={`${arrayName}.${index}`}
                                             values={values}
                                             fieldName='entities_of_interest'
