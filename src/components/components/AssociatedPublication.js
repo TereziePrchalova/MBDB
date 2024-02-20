@@ -31,7 +31,7 @@ function AssociatedPublication( {name, values} ) {
 
   return (
     <>
-        <FormWrapper headline='Associated publication'>
+        <FormWrapper headline='Associated publication' tooltipHeader='If the data in this record is described in published literature (article, journal, thesis), information about the literature can be specified here'>
             <div className="mb-3">
                 <OptionInput
                     name={name}
@@ -39,6 +39,7 @@ function AssociatedPublication( {name, values} ) {
                     label='type'
                     fieldName='type'
                     onOptionChange={handleOptionChange}
+                    tooltip='The type of the publication'
                 />
             </div>
             <div>
