@@ -46,6 +46,7 @@ function Solvent( { name, values } ) {
                                         options={entitiesOfInterestTabOptions}
                                         label='type'
                                         fieldName='type'
+                                        width='w-full'
                                         onOptionChange={(value) => handleOptionChange(value, index)}
                                     />
                                 </div>
