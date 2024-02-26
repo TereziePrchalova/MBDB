@@ -1,7 +1,6 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionInput from "../buildingBlocks/OptionInput";
 import { useState } from "react";
-import CustomField from "../buildingBlocks/CustomField";
 import UseDefault from "../buildingBlocks/UseDefault";
 import Article from "./Article";
 import Book from "./Book";
