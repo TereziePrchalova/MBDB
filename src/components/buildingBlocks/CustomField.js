@@ -3,7 +3,7 @@ import { useField } from 'formik';
 import Tooltip from '@mui/material/Tooltip';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
-function CustomField( {label, name, fieldName, type, index, tooltip, width}) {
+function CustomField( {label, name, fieldName, type, index, tooltip, width, multiline}) {
 
   const nameTextField = index !== undefined
   ? (fieldName !== undefined ? `${name}.${fieldName}[${index}]` : `${name}[${index}]`)
@@ -23,6 +23,7 @@ function CustomField( {label, name, fieldName, type, index, tooltip, width}) {
                 "& .MuiOutlinedInput-root": {
                   "& > fieldset": { borderColor: "#034459" },
                 },
+                minWidth: 195,
               }}
               id={nameTextField}
               label={label}
@@ -31,6 +32,7 @@ function CustomField( {label, name, fieldName, type, index, tooltip, width}) {
               value={field.value || ''}
               disabled={false}
               variant="outlined"
+              {...(multiline && { multiline: true })}
               size="small"
               error={meta.touched && !!meta.error}
               />

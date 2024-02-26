@@ -1,5 +1,6 @@
 import Mst from "./pages/Mst";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Test from "./pages/Test"
 
 function App() {
   return (

@@ -1,8 +1,8 @@
 import { Tooltip } from "@mui/material";
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import Instrument from "../components/Instrument";
-import MethodSpecificParameters from "../sectionComponents/MethodSpecificParameters";
+import Instrument from "../instrument/Instrument";
+import MethodSpecificParameters from "../instrument/MethodSpecificParameters";
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 function InstrumentTab( { name, values} ) {

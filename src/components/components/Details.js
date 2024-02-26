@@ -1,6 +1,7 @@
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionInput from "../buildingBlocks/OptionInput";
+import ArrayField from "../buildingBlocks/ArrayField";
 import Size from "./Size";
 
 function Details({ name, values }) {
@@ -36,6 +37,24 @@ function Details({ name, values }) {
         </div>
         <div>
           <Size name={`${name}.size`} values={values} />
+        </div>
+        <div>
+            <ArrayField
+                name={name}
+                values={values}
+                label='Additional specification'
+                fieldName='additional_specifications'
+                renderChild={({ name, index }) => (
+                    <CustomField
+                        name={name}
+                        index={index}
+                        label={`Additional specification ${index + 1}`}
+                        fieldName='additional_specifications'
+                        width='w-[15rem]'
+                        tooltip='Additional information about the lipid assembly, if applicable'
+                    />
+                )}
+            />
         </div>
       </FormWrapper>
     </>

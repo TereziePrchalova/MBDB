@@ -38,8 +38,6 @@ function Modification( { name, values } ) {
                     >
                         <Protocol
                             name={`${arrayName}.${index}`}
-                            label={`${index + 1}`}
-                            fieldName='protocol'
                         />
                     </FormWrapper>
                 )}

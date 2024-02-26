@@ -1,5 +1,5 @@
 import Temperature from "../components/Temperature";
-import Duration from '../components/Duration'
+import Duration from './Duration'
 import ArrayField from "./ArrayField";
 import FormWrapper from "./FormWrapper";
 import StoragePreparation from "./StoragePreparation";
@@ -21,9 +21,9 @@ function Storage( { name, values } ) {
                 values={values}
                 label='Duration'
                 fieldName='duration'
-                renderChild={({ name, index }) => (
+                renderChild={({ arrayName, index }) => (
                     <Duration
-                        name={`${name}.duration.${index}`}
+                        name={`${arrayName}.${index}`}
                         tooltipHeader='Length of time the sample was stored before being measured'
                     />
                 )}

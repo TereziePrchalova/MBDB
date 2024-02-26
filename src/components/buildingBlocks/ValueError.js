@@ -1,4 +1,3 @@
-import { Field } from "formik";
 import CustomField from "./CustomField";
 import OptionInput from "./OptionInput";
 
@@ -13,19 +12,22 @@ function ValueError( {colorSchema, name} ) {
   return (
     <>    
         <div className='flex'>
-            <div className='flex mr-4'>
+            <div className='flex mr-3'>
                 <div className='mr-2 my-auto'>Value error</div>
-                <label className="my-auto">
-                    <Field className='mt-[0.1rem] mr-1' type="checkbox" name={`${name}.data_not_provided`} />
-                    Not available
-                </label>
             </div>
 
             <div className="flex">
                 <div>
-                    <CustomField name={name} fieldName='lower_error' type='number' label='Min' width='w-[7rem]' />
+                    <CustomField
+                        name={name}
+                        fieldName='lower_error'
+                        type='number'
+                        label='Min'
+                        width='w-[7rem]'
+                        tooltip='The lower error, i.e. the number that should be subtracted from the value to get the lower bound. The same unit as the value being described is assumed, if relative errors are provided, please provide it in fractional form (e.g.  0.01 for 1 %)'
+                    />
                 </div>
-                <div className="mx-3 my-auto">
+                <div className="ml-2 mr-3 my-auto">
                     --
                 </div>
                 <div>
