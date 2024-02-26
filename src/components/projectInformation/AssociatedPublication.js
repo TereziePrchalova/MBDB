@@ -35,6 +35,7 @@ function AssociatedPublication( {name, values} ) {
                     label='type'
                     fieldName='type'
                     onOptionChange={handleOptionChange}
+                    width='w-full'
                     tooltip='The type of the publication'
                 />
             </div>
