@@ -17,7 +17,7 @@ function ChemicalEnvironment( { name, values } ) {
                 tooltip='Name of the chemical environment (e.g. Measurement Buffer). The name must be unique within a record as it will be referred to the in method specific section in when describing the composition of the individual samples or measurement steps'
             />
         </div>
-        <div>
+        <div className="mb-3">
             <Ph
                 name={`${name}.pH`}
                 values={values}
@@ -25,10 +25,10 @@ function ChemicalEnvironment( { name, values } ) {
                 colorSchema='light'
             />
         </div>
-        <div>
+        <div className="mb-3">
             <Solvent name={`${name}.solvent`} values={values} />
         </div>
-        <div>
+        <div className="mb-3">
             <Constituent name={`${name}.contituent`} values={values} />
         </div>
         <div>

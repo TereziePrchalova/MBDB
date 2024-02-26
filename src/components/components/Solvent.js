@@ -35,7 +35,7 @@ function Solvent( { name, values } ) {
                     label="Solvent"
                     fieldName='solvent'
                     renderChild={({ arrayName, index }) => (
-                        <div className="mt-3">
+                        <div>
                             <FormWrapper 
                                 headline={`Solvent ${index + 1}`}
                                 colorSchema='light'
