@@ -62,6 +62,7 @@ function ResultTab( { name, values } ) {
                                 options={resultTabOptions}
                                 label='type'
                                 fieldName='type'
+                                width='w-full'
                                 onOptionChange={(value) => handleOptionChange(value, index)}
                             />
                         </div>
