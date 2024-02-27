@@ -6,7 +6,7 @@ import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayFieldFirstEle
 import ComponentsPolymer from "./ComponentsPolymer";
 import ComponentsChemical from "./ComponentsChemical";
 
-function Components( { name, values, colorSchema, molecularWeightColorSchema } ) {
+function Components( { name, values, colorSchema, molecularWeightColorSchema, tooltip } ) {
 
     const componentName = `${name}.components[0].type`
    
@@ -36,7 +36,7 @@ function Components( { name, values, colorSchema, molecularWeightColorSchema } )
                 label="Component"
                 fieldName='components'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper headline={`Component ${index + 1}`} colorSchema={colorSchema}>
+                    <FormWrapper headline={`Component ${index + 1}`} tooltipHeader={tooltip} colorSchema={colorSchema}>
                         <div className="mb-3">
                             <OptionInput
                                 name={`${arrayName}.${index}`}
