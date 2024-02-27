@@ -3,6 +3,7 @@ import ArrayField from "../buildingBlocks/ArrayField";
 import MolecularWeight from "../components/MolecularWeight";
 import Modification from "../components/Modification";
 import FormWrapper from "../buildingBlocks/FormWrapper";
+import Components from "../components/Components";
 
 function MolecularAssembly( { name, values} ) {
 
@@ -16,11 +17,18 @@ function MolecularAssembly( { name, values} ) {
                 tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
             />
         </div>
-        <div>
+        <div className="mb-3">
             <MolecularWeight
                 name={`${name}.molecular_weight`}
                 colorSchema='light'
                 tooltipHeader='The molecular weight of the molecular assembly'
+            />
+        </div>
+        <div>
+            <Components 
+                name={`${name}.components`} 
+                values={values}
+                colorSchema='light'
             />
         </div>
         <div>

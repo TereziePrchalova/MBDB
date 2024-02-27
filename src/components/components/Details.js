@@ -3,6 +3,7 @@ import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionInput from "../buildingBlocks/OptionInput";
 import ArrayField from "../buildingBlocks/ArrayField";
 import Size from "./Size";
+import Components from "./Components";
 
 function Details({ name, values }) {
 
@@ -35,8 +36,15 @@ function Details({ name, values }) {
               />
           </div>
         </div>
-        <div>
+        <div className="mb-3">
           <Size name={`${name}.size`} values={values} />
+        </div>
+        <div>
+          <Components
+            name={`${name}.components`}
+            values={values}
+            molecularWeightColorSchema='light'
+          />
         </div>
         <div>
             <ArrayField
