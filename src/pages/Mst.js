@@ -10,6 +10,7 @@ import ResultTab from "../components/tabs/ResultTab";
 import DataAnalysisTab from "../components/tabs/DataAnalysisTab";
 import MyProvider from "../components/buildingBlocks/MyProvider";
 import ProjectInformationTab from "../components/tabs/ProjectInformationTab";
+import MeasurementTab from "../components/tabs/MeasurementTAb";
 
 function Mst() {
   
@@ -92,7 +93,7 @@ function Mst() {
                   <InstrumentTab name='general_parameters' values={values} />
                 )}
                 {state.selected === 'measurement' && (
-                  <div className="text-dark">Measurement</div>
+                  <MeasurementTab name='method_specific_parameters' values={values} />
                 )}
                 {state.selected === 'data-analysis' && (
                   <DataAnalysisTab name='method_specific_parameters' values={values} />

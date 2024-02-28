@@ -39,6 +39,7 @@ function Concentration({ name, tooltipHeader, colorSchema, values }) {
                   name={name}
                   fieldName='value'
                   label='Value'
+                  type='number'
                   tooltip='The numerical value of the concentration, -1 if unknown'
               />
           </div>

@@ -60,7 +60,6 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name, values } ) {
                     >
                         <Protocol
                             name={`${arrayName}.${index}`}
-                            values={values}
                             fieldName='protocol'
                         />
                     </FormWrapper>
