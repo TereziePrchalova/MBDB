@@ -3,7 +3,7 @@ import Protocol from "../buildingBlocks/Protocol";
 import ArrayField from "../buildingBlocks/ArrayField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 
-function Modification( { name, values, colorSchema } ) {
+function Modification( { name, values, colorSchema, colorSchemaProtocol } ) {
 
   return (
     <>

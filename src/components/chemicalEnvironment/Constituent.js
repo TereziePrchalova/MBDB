@@ -1,17 +1,16 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import Chemical from "../entitiesOfInterest/Chemical";
-import Polymer from "../entitiesOfInterest/Polymer";
+import Chemical from "../chemicalEnvironment/Chemical";
+import Polymer from "../chemicalEnvironment/Polymer";
 import OptionInput from "../buildingBlocks/OptionInput";
 import { useState } from "react";
-import ComplexSubstanceOfBiologicalOrigin from "../entitiesOfInterest/ComplexSubstanceOfBiologicalOrigin";
+import ComplexSubstanceOfBiologicalOrigin from "../chemicalEnvironment/ComplexSubstanceOfBiologicalOrigin";
 import ComplexSubstanceOfEnvironmentalOrigin from "../entitiesOfInterest/ComplexSubstanceOfEnvironmentalOrigin";
-import MolecularAssembly from "../entitiesOfInterest/MolecularAssembly";
+import MolecularAssembly from "../chemicalEnvironment/MolecularAssembly";
 import ComplexSubstanceOfIndustrialProductionOrigin from "../entitiesOfInterest/ComplexSubstanceOfIndustrialProductionOrigin";
 import ComplexSubstanceOfChemicalOrigin from "../entitiesOfInterest/ComplexSubstanceOfChemicalOrigin";
 import ArrayField from "../buildingBlocks/ArrayField";
 
 function Constituent( { name, values } ) {
-
 
     const ChemicalEnvironmentTabOptions = [
         { value: 'polymer', label: 'Polymer' },
@@ -55,6 +54,7 @@ function Constituent( { name, values } ) {
                                     label='type'
                                     fieldName='type'
                                     onOptionChange={(value) => handleOptionChange(value, index)}
+                                    width='w-full'
                                 />
                             </div>
                             <div>
@@ -63,7 +63,6 @@ function Constituent( { name, values } ) {
                                         <Polymer
                                             name={`${arrayName}.${index}`}
                                             values={values}
-                                            fieldName='entities_of_interest'
                                         />
                                     </div>
                                 )}
@@ -72,7 +71,6 @@ function Constituent( { name, values } ) {
                                         <Chemical
                                             name={`${arrayName}.${index}`}
                                             values={values}
-                                            fieldName='entities_of_interest'
                                         />
                                     </div>
                                 )}
@@ -81,7 +79,6 @@ function Constituent( { name, values } ) {
                                         <MolecularAssembly
                                             name={`${arrayName}.${index}`}
                                             values={values}
-                                            fieldName='entities_of_interest'
                                         />
                                     </div>
                                 )}
@@ -90,7 +87,6 @@ function Constituent( { name, values } ) {
                                         <ComplexSubstanceOfBiologicalOrigin
                                             name={`${arrayName}.${index}`}
                                             values={values}
-                                            fieldName='entities_of_interest'
                                         />
                                     </div>
                                 )}
@@ -99,7 +95,6 @@ function Constituent( { name, values } ) {
                                         <ComplexSubstanceOfEnvironmentalOrigin
                                             name={`${arrayName}.${index}`}
                                             values={values}
-                                            fieldName='entities_of_interest'
                                         />
                                     </div>
                                 )}
@@ -108,7 +103,6 @@ function Constituent( { name, values } ) {
                                         <ComplexSubstanceOfChemicalOrigin
                                             name={`${arrayName}.${index}`}
                                             values={values}
-                                            fieldName='entities_of_interest'
                                         />
                                     </div>
                                 )}
@@ -117,7 +111,6 @@ function Constituent( { name, values } ) {
                                         <ComplexSubstanceOfIndustrialProductionOrigin
                                             name={`${arrayName}.${index}`}
                                             values={values}
-                                            fieldName='entities_of_interest'
                                         />
                                     </div>
                                 )}

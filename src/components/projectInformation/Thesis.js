@@ -36,7 +36,7 @@ function Thesis( { name } ) {
                     fieldName='title'
                     label='Title'
                     tooltip='The title of the publication'
-                    width='w-[18rem]'
+                    width='w-[24rem]'
                 />
             </div>
         </div>

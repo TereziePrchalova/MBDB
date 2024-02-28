@@ -55,7 +55,10 @@ function ResultTab( { name, values } ) {
                 label="Result"
                 fieldName='results'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper headline={`Result ${index + 1}`}>
+                    <FormWrapper
+                        headline={`Result ${index + 1}`}
+                        tooltipHeader='List of the results (parameter) that were derived by analyzing the raw data and which steps were taken to obtain them'
+                    >
                         <div className="mb-3">
                             <OptionInput
                                 name={`${arrayName}.${index}`}

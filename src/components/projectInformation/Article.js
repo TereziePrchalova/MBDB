@@ -11,7 +11,7 @@ function Article( { name } ) {
                     fieldName='journal'
                     label='Journal'
                     tooltip='The full name of the journal of article appears in'
-                    width='w-[15rem]'
+                    width='w-[18rem]'
                 />
             </div>
             <div className="mx-3">
@@ -28,7 +28,7 @@ function Article( { name } ) {
                     fieldName='title'
                     label='Title'
                     tooltip='The title of the publication'
-                    width='w-[15rem]'
+                    width='w-[18rem]'
                 />
             </div>
         </div>

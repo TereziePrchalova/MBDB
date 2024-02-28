@@ -5,7 +5,7 @@ import Test from "./pages/Test"
 function App() {
   return (
     <Router>
-      <div className="flex justify-center">
+      <div className="flex justify-center mx-auto xl:max-w-[1440px]">
         <Routes>
           <Route path="*" element={<Mst />} />
         </Routes>

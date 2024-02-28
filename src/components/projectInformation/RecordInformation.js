@@ -25,7 +25,7 @@ function RecordInformation( {name} ) {
                         name={name}
                         fieldName='title'
                         label='Title'
-                        width='w-[25rem]'
+                        width='w-[34rem]'
                         tooltip='Short descriptive title of the record'
                     />
                 </div>

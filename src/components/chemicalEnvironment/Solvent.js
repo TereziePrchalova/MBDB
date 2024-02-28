@@ -3,7 +3,7 @@ import OptionInput from "../buildingBlocks/OptionInput";
 import UseDefault from "../buildingBlocks/UseDefault";
 import { useState } from "react";
 import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayFieldFirstElementRequired";
-import ChemicalEnvironmentChemical from "../components/ChemicalEnvironmentChemical";
+import ChemicalEnvironmentChemical from "./Chemical";
 
 function Solvent( { name, values } ) {
 

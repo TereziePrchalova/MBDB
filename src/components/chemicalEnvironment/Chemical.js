@@ -1,9 +1,9 @@
 import ArrayField from "../buildingBlocks/ArrayField";
 import CustomField from "../buildingBlocks/CustomField";
-import Concentration from "./Concentration";
-import MolecularWeight from "./MolecularWeight";
+import Concentration from "../components/Concentration";
+import MolecularWeight from "../components/MolecularWeight";
 
-function ChemicalEnvironmentChemical( { name, values } ) {
+function Chemical( { name, values } ) {
 
   return (
     <>
@@ -86,4 +86,4 @@ function ChemicalEnvironmentChemical( { name, values } ) {
   );
 }
 
-export default ChemicalEnvironmentChemical;
+export default Chemical;

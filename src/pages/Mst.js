@@ -73,7 +73,7 @@ function Mst() {
           >
           {( { values } ) => (
             <div className="flex justify-center">
-              <Form className="m-4 w-[1000px]">
+              <Form className="m-4 w-[1100px]">
                 {state.selected === 'raw-data-files' && (
                   <RawDataFiles name='general_parameters' values={values} />
                 )}
