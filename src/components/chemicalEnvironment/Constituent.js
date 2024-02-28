@@ -1,14 +1,14 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import Chemical from "../chemicalEnvironment/Chemical";
-import Polymer from "../chemicalEnvironment/Polymer";
+import Chemical from "./constituent/Chemical";
+import Polymer from "./constituent/Polymer";
 import OptionInput from "../buildingBlocks/OptionInput";
 import { useState } from "react";
-import ComplexSubstanceOfBiologicalOrigin from "../chemicalEnvironment/ComplexSubstanceOfBiologicalOrigin";
-import ComplexSubstanceOfEnvironmentalOrigin from "../entitiesOfInterest/ComplexSubstanceOfEnvironmentalOrigin";
-import MolecularAssembly from "../chemicalEnvironment/MolecularAssembly";
-import ComplexSubstanceOfIndustrialProductionOrigin from "../entitiesOfInterest/ComplexSubstanceOfIndustrialProductionOrigin";
-import ComplexSubstanceOfChemicalOrigin from "../entitiesOfInterest/ComplexSubstanceOfChemicalOrigin";
+import ComplexSubstanceOfBiologicalOrigin from "./constituent/ComplexSubstanceOfBiologicalOrigin";
+import ComplexSubstanceOfEnvironmentalOrigin from "./constituent/ComplexSubstanceOfEnvironmentalOrigin";
+import MolecularAssembly from "./constituent/MolecularAssembly";
+import ComplexSubstanceOfChemicalOrigin from "./constituent/ComplexSubstanceOfChemicalOrigin";
 import ArrayField from "../buildingBlocks/ArrayField";
+import ComplexSubstanceOfIndustrialOrigin from "./constituent/ComplexSubstanceOfIndustrialOrigin";
 
 function Constituent( { name, values } ) {
 
@@ -19,7 +19,7 @@ function Constituent( { name, values } ) {
         { value: 'complex_substance_of_biological_origin', label: 'Complex substance of biological origin' },
         { value: 'complex_substance_of_environmental_origin', label: 'Complex substance of environmental origin' },
         { value: 'complex_substance_of_chemical_origin', label: 'Complex substance of chemical origin' },
-        { value: 'complex_substance_of_industrial_production_origin', label: 'Complex substance of industrial production origin' },
+        { value: 'complex_substance_of_industrial_origin', label: 'Complex substance of industrial origin' },
     ];
 
     const [selectedOption, setSelectedOption] = useState(['polymer']);
@@ -106,9 +106,9 @@ function Constituent( { name, values } ) {
                                         />
                                     </div>
                                 )}
-                                {selectedOption[index] === 'complex_substance_of_industrial_production_origin' && (
+                                {selectedOption[index] === 'complex_substance_of_industrial_origin' && (
                                     <div>
-                                        <ComplexSubstanceOfIndustrialProductionOrigin
+                                        <ComplexSubstanceOfIndustrialOrigin
                                             name={`${arrayName}.${index}`}
                                             values={values}
                                         />

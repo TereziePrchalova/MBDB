@@ -1,7 +1,7 @@
 import ValueUnit from './ValueUnit';
 import FormWrapper from './FormWrapper';
 
-function Duration( {name, tooltipHeader} ) {
+function Duration( {name, tooltipHeader, colorSchema } ) {
 
     const unitOptions = [
         { value: 'miliseconds', label: 'miliseconds' },
@@ -15,7 +15,7 @@ function Duration( {name, tooltipHeader} ) {
 
   return (
     <>
-        <FormWrapper colorSchema='' headline='Duration' tooltipHeader={tooltipHeader}>
+        <FormWrapper colorSchema={colorSchema} headline='Duration' tooltipHeader={tooltipHeader}>
             <ValueUnit
               options={unitOptions}
               name={name}

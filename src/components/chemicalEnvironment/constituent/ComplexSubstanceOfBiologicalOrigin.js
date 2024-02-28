@@ -1,9 +1,9 @@
-import OptionInput from "../buildingBlocks/OptionInput";
+import OptionInput from "../../buildingBlocks/OptionInput";
 import { useState } from "react";
-import UseDefault from "../buildingBlocks/UseDefault";
+import UseDefault from "../../buildingBlocks/UseDefault";
 import BodyFluid from "./BodyFluid";
-import CellFraction from "../entitiesOfInterest/CellFraction";
-import Virion from "../entitiesOfInterest/Virion";
+import CellFraction from "./CellFraction";
+import Virion from "./Virion";
 
 function ComplexSubstanceOfBiologicalOrigin( { name, values } ) {
 

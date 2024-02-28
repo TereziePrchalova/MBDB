@@ -24,7 +24,7 @@ function EntitiesOfInterestTab( { name, values } ) {
         { value: 'complex_substance_of_biological_origin', label: 'Complex substance of biological origin' },
         { value: 'complex_substance_of_environmental_origin', label: 'Complex substance of environmental origin' },
         { value: 'complex_substance_of_chemical_origin', label: 'Complex substance of chemical origin' },
-        { value: 'complex_substance_of_industrial_production_origin', label: 'Complex substance of industrial production origin' },
+        { value: 'complex_substance_of_industrial_origin', label: 'Complex substance of industrial origin' },
     ];
 
     const [selectedOption, setSelectedOption] = useState(['polymer']);
@@ -109,7 +109,7 @@ function EntitiesOfInterestTab( { name, values } ) {
                                     />
                                 </div>
                             )}
-                            {selectedOption[index] === 'complex_substance_of_industrial_production_origin' && (
+                            {selectedOption[index] === 'complex_substance_of_industrial_origin' && (
                                 <div>
                                     <ComplexSubstanceOfIndustrialProductionOrigin
                                         name={`${arrayName}.${index}`}

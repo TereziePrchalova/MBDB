@@ -1,7 +1,7 @@
-import ArrayField from "../buildingBlocks/ArrayField";
-import CustomField from "../buildingBlocks/CustomField";
-import Concentration from "../components/Concentration";
-import MolecularWeight from "../components/MolecularWeight";
+import ArrayField from "../../buildingBlocks/ArrayField";
+import CustomField from "../../buildingBlocks/CustomField";
+import Concentration from "../../components/Concentration";
+import MolecularWeight from "../../components/MolecularWeight";
 
 function Chemical( { name, values } ) {
 

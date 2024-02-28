@@ -5,7 +5,7 @@ import ArrayField from "../buildingBlocks/ArrayField";
 import Size from "./Size";
 import Components from "./Components";
 
-function Details({ name, values }) {
+function Details({ name, values, colorSchema, sizeColorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol }) {
 
     const detailsTypeOptions = [
         { value: 'micelle', label: 'Micelle' },
@@ -16,7 +16,7 @@ function Details({ name, values }) {
 
   return (
     <>
-      <FormWrapper colorSchema='light' headline='Details' tooltipHeader='The chemical origin where the complex substance was derived from'>
+      <FormWrapper colorSchema={colorSchema} headline='Details' tooltipHeader='The chemical origin where the complex substance was derived from'>
         <div className="flex mb-3">
           <div className="mr-3">
               <OptionInput
@@ -37,14 +37,16 @@ function Details({ name, values }) {
           </div>
         </div>
         <div className="mb-3">
-          <Size name={`${name}.size`} values={values} />
+          <Size name={`${name}.size`} values={values} colorSchema={sizeColorSchema} />
         </div>
         <div>
           <Components
             name={`${name}.components`}
             values={values}
-            molecularWeightColorSchema='light'
-            colorSchemaWrapper='light'
+            molecularWeightColorSchema={molecularWeightColorSchema}
+            colorSchemaWrapper={colorSchemaWrapper}
+            colorSchema={sizeColorSchema}
+            colorSchemaProtocol={colorSchemaProtocol}
             tooltip='The components of the lipid assembly'
           />
         </div>

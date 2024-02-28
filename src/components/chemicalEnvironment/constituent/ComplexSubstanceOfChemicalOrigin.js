@@ -1,11 +1,12 @@
-import OptionInput from "../buildingBlocks/OptionInput";
-import CustomField from "../buildingBlocks/CustomField";
-import ArrayField from "../buildingBlocks/ArrayField";
-import FormWrapper from "../buildingBlocks/FormWrapper";
-import Protocol from "../buildingBlocks/Protocol";
-import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
-import Storage from "../buildingBlocks/Storage";
-import Details from "../components/Details";
+import OptionInput from "../../buildingBlocks/OptionInput";
+import CustomField from "../../buildingBlocks/CustomField";
+import ArrayField from "../../buildingBlocks/ArrayField";
+import FormWrapper from "../../buildingBlocks/FormWrapper";
+import Protocol from "../../buildingBlocks/Protocol";
+import ArrayFieldOneElement from "../../buildingBlocks/ArrayFieldOneElement";
+import Storage from "../../buildingBlocks/Storage";
+import Details from "../../components/Details";
+import Concentration from "../../components/Concentration";
 
 function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
 
@@ -34,14 +35,13 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                 />
             </div>
         </div>
-        <div>
-            <Details
-                name={`${name}.details`}
-                values={values}
-                colorSchema='light'
-                molecularWeightColorSchema='light'
-                colorSchemaWrapper='light'
+        <div className="mb-3">
+            <Concentration
+                name={`${name}.concentration`}
             />
+        </div>
+        <div>
+            <Details name={`${name}.details`} values={values} sizeColorSchema='light' colorSchemaProtocol='light' />
         </div>
         <div>
             <ArrayField
@@ -51,7 +51,6 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                 fieldName='preparation_protocol'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
-                        colorSchema='light'
                         headline={`Preparation protocol ${index + 1}`}
                         tooltipHeader='List of the steps performed during the preparation of the complex substance'
                     >
@@ -71,13 +70,13 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                 fieldName='storage'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
-                        colorSchema='light'
                         headline={`Storage ${index + 1}`}
                         tooltipHeader='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
                     >
                         <Storage
                             name={`${arrayName}.${index}`}
                             values={values}
+                            colorSchema='light'
                         />
                     </FormWrapper>
                 )}

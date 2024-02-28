@@ -1,11 +1,11 @@
-import ArrayField from "../buildingBlocks/ArrayField";
-import CustomField from "../buildingBlocks/CustomField";
-import OptionInput from "../buildingBlocks/OptionInput";
-import MolecularWeight from "../components/MolecularWeight";
-import MyContext from "../buildingBlocks/MyContext";
+import ArrayField from "../../buildingBlocks/ArrayField";
+import CustomField from "../../buildingBlocks/CustomField";
+import OptionInput from "../../buildingBlocks/OptionInput";
+import MolecularWeight from "../../components/MolecularWeight";
+import MyContext from "../../buildingBlocks/MyContext";
 import { useContext } from "react";
-import Modifications from "../components/Modifications";
-import Concentration from "../components/Concentration";
+import Modifications from "../../components/Modifications";
+import Concentration from "../../components/Concentration";
 
 function Polymer( { name, values } ) {
 

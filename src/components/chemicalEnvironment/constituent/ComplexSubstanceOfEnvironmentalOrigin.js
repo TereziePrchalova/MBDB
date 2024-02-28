@@ -1,16 +1,22 @@
-import OptionInput from "../buildingBlocks/OptionInput";
-import CustomField from "../buildingBlocks/CustomField";
-import ArrayField from "../buildingBlocks/ArrayField";
-import FormWrapper from "../buildingBlocks/FormWrapper";
-import Protocol from "../buildingBlocks/Protocol";
-import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
-import Storage from "../buildingBlocks/Storage";
-import Details from "../components/Details";
+import OptionInput from "../../buildingBlocks/OptionInput";
+import CustomField from "../../buildingBlocks/CustomField";
+import Location from "../../components/Location";
+import ArrayField from "../../buildingBlocks/ArrayField";
+import FormWrapper from "../../buildingBlocks/FormWrapper";
+import Protocol from "../../buildingBlocks/Protocol";
+import ArrayFieldOneElement from "../../buildingBlocks/ArrayFieldOneElement";
+import Storage from "../../buildingBlocks/Storage";
+import Concentration from "../../components/Concentration";
 
-function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
+function ComplexSubstanceOfEnvironmentalOrigin( { name, values } ) {
 
-    const classOptions = [
-        { value: 'lipid_assembly', label: 'Lipid assembly' },
+    const sourceOptions = [
+        { value: 'fresh_water', label: 'Fresh water' },
+        { value: 'marine', label: 'Marine' },
+        { value: 'ice_core', label: 'Ice core' },
+        { value: 'sediment', label: 'Sediment' },
+        { value: 'sewage', label: 'Sewage' },
+        { value: 'soil', label: 'Soil' },
       ];
 
   return (
@@ -25,22 +31,24 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                 />
             </div>
             <div>
-                <OptionInput
-                    name={name}
-                    options={classOptions}
-                    label='Class'
-                    fieldName='class'
-                    tooltip='The chemical origin where the complex substance was derived from'
+                <OptionInput 
+                    name={name} 
+                    options={sourceOptions} 
+                    label='Source' 
+                    fieldName='source'
+                    tooltip='The environmental source where the complex substance was derived from'
                 />
             </div>
         </div>
+        <div className="mb-3">
+            <Location
+                name={`${name}.location`}
+                tooltipHeader='The longitude, from west to east, in degrees (decimal notation)'
+            />
+        </div>
         <div>
-            <Details
-                name={`${name}.details`}
-                values={values}
-                colorSchema='light'
-                molecularWeightColorSchema='light'
-                colorSchemaWrapper='light'
+            <Concentration
+                name={`${name}.concentration`}
             />
         </div>
         <div>
@@ -51,13 +59,12 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                 fieldName='preparation_protocol'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
-                        colorSchema='light'
                         headline={`Preparation protocol ${index + 1}`}
                         tooltipHeader='List of the steps performed during the preparation of the complex substance'
                     >
                         <Protocol
                             name={`${arrayName}.${index}`}
-                            values={values}
+                            fieldName='protocol'
                         />
                     </FormWrapper>
                 )}
@@ -69,15 +76,15 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                 values={values}
                 label='Storage'
                 fieldName='storage'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ name, index }) => (
                     <FormWrapper
-                        colorSchema='light'
                         headline={`Storage ${index + 1}`}
-                        tooltipHeader='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
+                        tooltipHeader='The specific steps that were taken to prepare the samples for storage (e.g. flash freezing in liquid nitrogen), if applicable'
                     >
                         <Storage
-                            name={`${arrayName}.${index}`}
+                            name={`${name}.${index}`}
                             values={values}
+                            colorSchema='light'
                         />
                     </FormWrapper>
                 )}
@@ -96,7 +103,7 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                         label={`Additional specification ${index + 1}`}
                         fieldName='additional_specifications'
                         width='w-[15rem]'
-                        tooltip='Additional information about the lipid assembly, if applicable'
+                        tooltip='Additional information about the complex substance can be specified here'
                     />
                 )}
             />
@@ -105,4 +112,4 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
   );
 }
 
-export default ComplexSubstanceOfChemicalOrigin;
+export default ComplexSubstanceOfEnvironmentalOrigin;

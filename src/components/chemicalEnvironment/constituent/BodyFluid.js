@@ -1,11 +1,11 @@
-import ArrayField from "../buildingBlocks/ArrayField";
-import CustomField from "../buildingBlocks/CustomField";
-import OptionInput from "../buildingBlocks/OptionInput";
-import FormWrapper from "../buildingBlocks/FormWrapper";
-import Protocol from "../buildingBlocks/Protocol";
-import Storage from "../buildingBlocks/Storage";
-import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
-import Concentration from "../components/Concentration";
+import ArrayField from "../../buildingBlocks/ArrayField";
+import CustomField from "../../buildingBlocks/CustomField";
+import OptionInput from "../../buildingBlocks/OptionInput";
+import FormWrapper from "../../buildingBlocks/FormWrapper";
+import Protocol from "../../buildingBlocks/Protocol";
+import Storage from "../../buildingBlocks/Storage";
+import ArrayFieldOneElement from "../../buildingBlocks/ArrayFieldOneElement";
+import Concentration from "../../components/Concentration";
 
 function BodyFluid( { name, values } ) {
 
@@ -69,14 +69,12 @@ function BodyFluid( { name, values } ) {
                 fieldName='preparation_protocol'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper 
-                        colorSchema='light' 
                         headline={`Preparation protocol ${index + 1}`}
                         tooltipHeader='List of the steps performed during the preparation of the complex substance'
                     >
                         <Protocol
                             name={`${arrayName}.${index}`}
                             values={values}
-                            fieldName='protocol'
                         />
                     </FormWrapper>
                 )}
@@ -88,12 +86,12 @@ function BodyFluid( { name, values } ) {
                 values={values}
                 label='Storage'
                 fieldName='storage'
-                renderChild={({ name, index }) => (
-                    <FormWrapper colorSchema='light' headline={`Storage ${index + 1}`}>
+                renderChild={({ arrayName, index }) => (
+                    <FormWrapper headline={`Storage ${index + 1}`}>
                         <Storage
-                            name={`${name}.storage.${index}`}
+                            name={`${arrayName}.${index}`}
                             values={values}
-                            fieldName='storage'
+                            colorSchema='light'
                         />
                     </FormWrapper>
                 )}

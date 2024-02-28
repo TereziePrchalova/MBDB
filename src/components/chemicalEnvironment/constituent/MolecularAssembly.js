@@ -1,10 +1,10 @@
-import CustomField from "../buildingBlocks/CustomField";
-import ArrayField from "../buildingBlocks/ArrayField";
-import MolecularWeight from "../components/MolecularWeight";
-import Modification from "../components/Modification";
-import FormWrapper from "../buildingBlocks/FormWrapper";
-import Components from "../components/Components";
-import Concentration from "../components/Concentration";
+import CustomField from "../../buildingBlocks/CustomField";
+import ArrayField from "../../buildingBlocks/ArrayField";
+import MolecularWeight from "../../components/MolecularWeight";
+import Modification from "../../components/Modification";
+import FormWrapper from "../../buildingBlocks/FormWrapper";
+import Components from "../../components/Components";
+import Concentration from "../../components/Concentration";
 
 function MolecularAssembly( { name, values} ) {
 

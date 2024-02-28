@@ -2,7 +2,7 @@ import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionInput from "../buildingBlocks/OptionInput";
 
-function Size( { name } ) {
+function Size( { name, colorSchema } ) {
 
     const typeOptions = [
         { value: 'radius', label: 'Radius' },
@@ -20,7 +20,7 @@ function Size( { name } ) {
 
   return (
     <>
-      <FormWrapper headline='Size' tooltipHeader='The size of the lipid assembly'>
+      <FormWrapper headline='Size' tooltipHeader='The size of the lipid assembly' colorSchema={colorSchema}>
         <div className="flex mb-3">
           <div className="mr-3">
               <OptionInput

@@ -1,10 +1,11 @@
-import ArrayField from "../buildingBlocks/ArrayField";
-import CustomField from "../buildingBlocks/CustomField";
-import OptionInput from "../buildingBlocks/OptionInput";
-import FormWrapper from "../buildingBlocks/FormWrapper";
-import Protocol from "../buildingBlocks/Protocol";
-import Storage from "../buildingBlocks/Storage";
-import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
+import ArrayField from "../../buildingBlocks/ArrayField";
+import CustomField from "../../buildingBlocks/CustomField";
+import OptionInput from "../../buildingBlocks/OptionInput";
+import FormWrapper from "../../buildingBlocks/FormWrapper";
+import Protocol from "../../buildingBlocks/Protocol";
+import Storage from "../../buildingBlocks/Storage";
+import ArrayFieldOneElement from "../../buildingBlocks/ArrayFieldOneElement";
+import Concentration from "../../components/Concentration";
 
 function Virion( { name, values } ) {
 
@@ -82,6 +83,11 @@ function Virion( { name, values } ) {
           <div>
             <CustomField name={name} label='Source organism' fieldName='source_organism' />
           </div>
+        </div>
+        <div>
+            <Concentration
+                name={`${name}.concentration`}
+            />
         </div>
         <div>
             <ArrayField
