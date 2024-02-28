@@ -61,6 +61,7 @@ function HalfMaximalEffectiveConcentrationEC50( { name, values } ) {
                     <div>
                         <ValueError
                             name={`${name}.value_error.${index}`}
+                            colorSchema='light'
                         />
                     </div>
                 )}

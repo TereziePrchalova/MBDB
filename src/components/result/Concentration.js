@@ -75,6 +75,7 @@ function Concentration( { name, values } ) {
                     <div>
                         <ValueError
                             name={`${name}.value_error.${index}`}
+                            colorSchema='light'
                         />
                     </div>
                 )}

@@ -15,7 +15,9 @@ function ValueError( {colorSchema, name} ) {
         <div className='flex'>
             <FormWrapper 
                 headline='Value error'
-                tooltipHeader='The expected error of the result in terms of a 95 % confidence interval'>
+                tooltipHeader='The expected error of the result in terms of a 95 % confidence interval'
+                colorSchema={colorSchema}
+            >
                 <div className="flex">
                     <div className="mr-3">
                         <CustomField
