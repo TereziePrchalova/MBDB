@@ -52,7 +52,6 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                         <Protocol
                             name={`${arrayName}.${index}`}
                             values={values}
-                            fieldName='protocol'
                         />
                     </FormWrapper>
                 )}
@@ -64,16 +63,15 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                 values={values}
                 label='Storage'
                 fieldName='storage'
-                renderChild={({ name, index }) => (
+                renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         colorSchema='light'
                         headline={`Storage ${index + 1}`}
                         tooltipHeader='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
                     >
                         <Storage
-                            name={`${name}.storage.${index}`}
+                            name={`${arrayName}.${index}`}
                             values={values}
-                            fieldName='storage'
                         />
                     </FormWrapper>
                 )}
