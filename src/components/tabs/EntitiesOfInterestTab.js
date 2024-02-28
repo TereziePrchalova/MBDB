@@ -10,7 +10,6 @@ import MolecularAssembly from "../entitiesOfInterest/MolecularAssembly";
 import ComplexSubstanceOfIndustrialProductionOrigin from "../entitiesOfInterest/ComplexSubstanceOfIndustrialProductionOrigin";
 import ComplexSubstanceOfChemicalOrigin from "../entitiesOfInterest/ComplexSubstanceOfChemicalOrigin";
 import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayFieldFirstElementRequired";
-import ArrayField from "../buildingBlocks/ArrayField";
 
 function EntitiesOfInterestTab( { name, values } ) {
 
@@ -41,13 +40,16 @@ function EntitiesOfInterestTab( { name, values } ) {
     return (
       <>
         <div className="-mt-3">
-            <ArrayField 
+            <ArrayFieldFirstElementRequired
                 name={name}
                 values={values}
                 label="Entity of interest"
                 fieldName='entities_of_interest'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper headline={`Entity of interest ${index + 1}`}>
+                    <FormWrapper 
+                        headline={`Entity of interest ${index + 1}`} 
+                        tooltipHeader='List of the entities that are being directly measured, as well as the entities that are being used as a variable to influence the behavior of the directly measured entities (e.g. lysozyme, NAG3,NaCl). IMPORTANT! If the pH was varied by individually prepared chemical environments these should be specified individually in chemical environments'
+                    >
                         <div className="mb-3">
                             <OptionInput
                                 name={`${arrayName}.${index}`}

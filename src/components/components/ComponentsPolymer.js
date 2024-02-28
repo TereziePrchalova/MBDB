@@ -6,7 +6,7 @@ import MyContext from "../buildingBlocks/MyContext";
 import { useContext } from "react";
 import Modifications from "../components/Modifications";
 
-function ComponentsPolymer( { name, values, molecularWeightColorSchema } ) {
+function ComponentsPolymer( { name, values, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol } ) {
 
     const polymerTypeOptions = [
         { value: 'cyclic_pseudo_peptide', label: 'Cyclic pseudo peptide' },
@@ -117,6 +117,8 @@ function ComponentsPolymer( { name, values, molecularWeightColorSchema } ) {
             <Modifications
                 name={`${name}.modifications`}
                 values={values}
+                colorSchemaWrapper={colorSchemaWrapper}
+                colorSchemaProtocol={colorSchemaProtocol}
             />
         </div>
         <div className="flex">

@@ -27,33 +27,35 @@ function AssociatedPublication( {name, values} ) {
   return (
     <>
         <FormWrapper headline='Associated publication' tooltipHeader='If the data in this record is described in published literature (article, journal, thesis), information about the literature can be specified here'>
-            <div className="mb-3">
-                <OptionInput
-                    name={name}
-                    options={associatedPublicationOptions}
-                    label='type'
-                    fieldName='type'
-                    onOptionChange={handleOptionChange}
-                    width='w-full'
-                    tooltip='The type of the publication'
-                />
-            </div>
-            <div>
-                {selectedOption === 'article' && (
-                    <Article
+            <div className="flex">
+                <div className="mr-3">
+                    <OptionInput
                         name={name}
+                        options={associatedPublicationOptions}
+                        label='type'
+                        fieldName='type'
+                        onOptionChange={handleOptionChange}
+                        width='w-full'
+                        tooltip='The type of the publication'
                     />
-                )}
-                {selectedOption === 'book' && (
-                    <Book
-                        name={name}
-                    />
-                )}
-                {selectedOption === 'thesis' && (
-                    <Thesis
-                        name={name}
-                    />
-                )}
+                </div>
+                <div>
+                    {selectedOption === 'article' && (
+                        <Article
+                            name={name}
+                        />
+                    )}
+                    {selectedOption === 'book' && (
+                        <Book
+                            name={name}
+                        />
+                    )}
+                    {selectedOption === 'thesis' && (
+                        <Thesis
+                            name={name}
+                        />
+                    )}
+                </div>
             </div>
         </FormWrapper>
     </>

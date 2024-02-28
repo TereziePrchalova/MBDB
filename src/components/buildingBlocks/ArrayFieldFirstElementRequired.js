@@ -9,7 +9,7 @@ function ArrayFieldFirstElementRequired({ name, values, fieldName, label, render
 
   return (
     <div>
-      <div className='flex'>
+      <div className='flex mt-3'>
         <div>
           {renderChild({ arrayName, name, index: 0 })}
         </div>

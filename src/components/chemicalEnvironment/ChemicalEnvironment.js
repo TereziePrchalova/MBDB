@@ -21,7 +21,6 @@ function ChemicalEnvironment( { name, values } ) {
             <Ph
                 name={`${name}.pH`}
                 values={values}
-                tooltipHeader='The pH value of the chemical environment and how the value was determined'
                 colorSchema='light'
             />
         </div>

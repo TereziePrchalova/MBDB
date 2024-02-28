@@ -4,10 +4,10 @@ import ValueUnit from '../buildingBlocks/ValueUnit';
 function MolecularWeight( {colorSchema, name, tooltipHeader} ) {
 
     const unitOptions = [
-        { value: 'gmol', label: 'g / mol' },
-        { value: 'da', label: 'Da' },
-        { value: 'kda', label: 'kDA' },
-        { value: 'mda', label: 'MDA' },
+        { value: 'g / mol', label: 'g / mol' },
+        { value: 'Da', label: 'Da' },
+        { value: 'kDa', label: 'kDa' },
+        { value: 'MDa', label: 'MDa' },
       ];
 
   return (

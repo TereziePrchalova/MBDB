@@ -23,7 +23,7 @@ function CustomField( {label, name, fieldName, type, index, tooltip, width, mult
                 "& .MuiOutlinedInput-root": {
                   "& > fieldset": { borderColor: "#034459" },
                 },
-                minWidth: 195,
+                minWidth: 190,
               }}
               id={nameTextField}
               label={label}

@@ -6,7 +6,7 @@ import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayFieldFirstEle
 import ComponentsPolymer from "./ComponentsPolymer";
 import ComponentsChemical from "./ComponentsChemical";
 
-function Components( { name, values, colorSchema, molecularWeightColorSchema, tooltip } ) {
+function Components( { name, values, colorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, tooltip } ) {
 
     const componentName = `${name}.components[0].type`
    
@@ -54,6 +54,8 @@ function Components( { name, values, colorSchema, molecularWeightColorSchema, to
                                         name={`${arrayName}.${index}`}
                                         values={values}
                                         molecularWeightColorSchema={molecularWeightColorSchema}
+                                        colorSchemaWrapper={colorSchemaWrapper}
+                                        colorSchemaProtocol={colorSchemaProtocol}
                                     />
                                 </div>
                             )}

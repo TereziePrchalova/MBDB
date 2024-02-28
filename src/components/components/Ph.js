@@ -14,7 +14,7 @@ function Ph( { name, values ,colorSchema, tooltipHeader } ) {
                         label='Value'
                         fieldName='value'
                         type='number'
-                        tooltip='The pH value of the solution'
+                        tooltip='The pH value of the chemical environment'
                     />
                 </div>
                 <div>

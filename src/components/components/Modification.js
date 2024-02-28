@@ -3,7 +3,7 @@ import Protocol from "../buildingBlocks/Protocol";
 import ArrayField from "../buildingBlocks/ArrayField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 
-function Modification( { name, values } ) {
+function Modification( { name, values, colorSchema } ) {
 
   return (
     <>
@@ -34,6 +34,7 @@ function Modification( { name, values } ) {
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Protocol ${index + 1}`}
+                        colorSchema={colorSchema}
                         tooltipHeader='List of steps that led to the modification taking place'
                     >
                         <Protocol

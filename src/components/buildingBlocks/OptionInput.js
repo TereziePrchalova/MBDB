@@ -23,7 +23,7 @@ function OptionInput({ label, name, fieldName, options, colorSchema, width, onOp
 
   return (
     <div className='flex'>
-      <Box className={`${width} rounded-lg relative`} sx={{ minWidth: 195 }}>
+      <Box className={`${width} rounded-lg relative`} sx={{ minWidth: 190 }}>
         <FormControl fullWidth>
           <InputLabel id={nameOptionField} htmlFor={nameOptionField}>
             {label}

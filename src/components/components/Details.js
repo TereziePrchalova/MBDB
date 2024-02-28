@@ -44,6 +44,7 @@ function Details({ name, values }) {
             name={`${name}.components`}
             values={values}
             molecularWeightColorSchema='light'
+            colorSchemaWrapper='light'
             tooltip='The components of the lipid assembly'
           />
         </div>

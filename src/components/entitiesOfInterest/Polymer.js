@@ -78,6 +78,7 @@ function Polymer( { name, values } ) {
                     name={name}
                     label='Source organism'
                     fieldName='source_organism'
+                    tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
                 />
             </div>
             <div className="mr-3">
@@ -94,6 +95,7 @@ function Polymer( { name, values } ) {
                     name={name}
                     label='Expression organism'
                     fieldName='expression_organism'
+                    tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
                 />
             </div>
         </div>
@@ -107,6 +109,7 @@ function Polymer( { name, values } ) {
         <div>
             <Modifications
                 name={`${name}.modifications`}
+                colorSchemaWrapper='light'
                 values={values}
             />
         </div>
