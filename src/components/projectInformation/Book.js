@@ -11,6 +11,7 @@ function Book( { name } ) {
                     fieldName='publisher'
                     label='Publisher'
                     tooltip='The full name of the publisher of the book'
+                    width='w-[15rem]'
                 />
             </div>
             <div className="mx-3">
@@ -27,6 +28,7 @@ function Book( { name } ) {
                     fieldName='title'
                     label='Title'
                     tooltip='The title of the publication'
+                    width='w-[15rem]'
                 />
             </div>
         </div>
