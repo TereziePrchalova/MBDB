@@ -1,5 +1,5 @@
-import Constituent from "../components/Constituent";
-import Solvent from "../components/Solvent";
+import Constituent from "./Constituent";
+import Solvent from "./Solvent";
 import CustomField from "../buildingBlocks/CustomField";
 import Ph from "../components/Ph";
 import ArrayField from "../buildingBlocks/ArrayField";

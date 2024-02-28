@@ -3,7 +3,7 @@ import OptionInput from "../buildingBlocks/OptionInput";
 import UseDefault from "../buildingBlocks/UseDefault";
 import { useState } from "react";
 import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayFieldFirstElementRequired";
-import ChemicalEnvironmentChemical from "./ChemicalEnvironmentChemical";
+import ChemicalEnvironmentChemical from "../components/ChemicalEnvironmentChemical";
 
 function Solvent( { name, values } ) {
 
@@ -39,6 +39,7 @@ function Solvent( { name, values } ) {
                             <FormWrapper 
                                 headline={`Solvent ${index + 1}`}
                                 colorSchema='light'
+                                tooltipHeader='Information about the solvent component(s) of the chemical environment (e.g. water, D2O, DMSO, EtOH) can be specified here'
                             >
                                 <div className="mb-3">
                                     <OptionInput

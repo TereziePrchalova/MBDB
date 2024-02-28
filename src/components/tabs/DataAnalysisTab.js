@@ -6,25 +6,23 @@ function DataAnalysisTab( { name, values} ) {
 
     return (
       <>
-        <div>
-            <div>
-                <ArrayFieldFirstElementRequired
-                    name={name}
-                    values={values}
-                    label="Data analysis"
-                    fieldName='data_analysis'
-                    renderChild={({ arrayName, index }) => (
-                        <FormWrapper headline={`Data analysis ${index + 1}`}>
-                            <div>
-                                <DataAnalysis
-                                    name={`${arrayName}.${index}`}
-                                    values={values}
-                                />
-                            </div>
-                        </FormWrapper>
-                    )}
-                />
-            </div>
+        <div className="-mt-3">
+            <ArrayFieldFirstElementRequired
+                name={name}
+                values={values}
+                label="Data analysis"
+                fieldName='data_analysis'
+                renderChild={({ arrayName, index }) => (
+                    <FormWrapper headline={`Data analysis ${index + 1}`}>
+                        <div>
+                            <DataAnalysis
+                                name={`${arrayName}.${index}`}
+                                values={values}
+                            />
+                        </div>
+                    </FormWrapper>
+                )}
+            />
         </div>
       </>
     );

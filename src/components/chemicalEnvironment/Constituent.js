@@ -2,7 +2,6 @@ import FormWrapper from "../buildingBlocks/FormWrapper";
 import Chemical from "../entitiesOfInterest/Chemical";
 import Polymer from "../entitiesOfInterest/Polymer";
 import OptionInput from "../buildingBlocks/OptionInput";
-import UseDefault from "../buildingBlocks/UseDefault";
 import { useState } from "react";
 import ComplexSubstanceOfBiologicalOrigin from "../entitiesOfInterest/ComplexSubstanceOfBiologicalOrigin";
 import ComplexSubstanceOfEnvironmentalOrigin from "../entitiesOfInterest/ComplexSubstanceOfEnvironmentalOrigin";
@@ -44,7 +43,11 @@ function Constituent( { name, values } ) {
                     label="Constituent"
                     fieldName='constituent'
                     renderChild={({ arrayName, index }) => (
-                        <FormWrapper colorSchema='light' headline={`Constituent ${index + 1}`}>
+                        <FormWrapper
+                            colorSchema='light'
+                            headline={`Constituent ${index + 1}`}
+                            tooltipHeader='List of the constituents, excluding solvent components, that made up the chemical environment (i.e. buffer system, salts, surfactants, crowding agents, serum, etc.)'
+                        >
                             <div className="mb-3">
                                 <OptionInput
                                     name={`${arrayName}.${index}`}
