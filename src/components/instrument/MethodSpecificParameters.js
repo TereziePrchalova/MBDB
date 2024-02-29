@@ -3,6 +3,7 @@ import OptionInput from '../buildingBlocks/OptionInput';
 import CustomField from '../buildingBlocks/CustomField';
 import Temperature from '../components/Temperature';
 import ArrayFieldOneElement from '../buildingBlocks/ArrayFieldOneElement';
+import ArrayFieldFirstElementRequired from '../buildingBlocks/ArrayField';
 
 function MethodSpecificParameters( {name, values} ) {
 
@@ -80,11 +81,12 @@ function MethodSpecificParameters( {name, values} ) {
                 </div>
             </div>
             <div>
-                <ArrayFieldOneElement
+                <ArrayFieldFirstElementRequired
                     name={name}
                     values={values}
                     label='Temperature'
                     fieldName='temperature'
+                    maxItems={1}
                     renderChild={({ arrayName, index }) => (
                         <div>
                             <Temperature 

@@ -1,5 +1,5 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayFieldFirstElementRequired";
+import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayField";
 import ChemicalEnvironment from "../chemicalEnvironment/ChemicalEnvironment";
 
 function ChemicalEnvironmentTab( { name, values} ) {

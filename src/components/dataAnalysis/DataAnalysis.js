@@ -3,7 +3,7 @@ import FormWrapper from "../buildingBlocks/FormWrapper";
 import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
 import DataFitting from "./DataFitting";
 import FColdAndHot from "./FColdAndHot";
-import ArrayField from "../buildingBlocks/ArrayField";
+import ArrayField from "../buildingBlocks/ArrayFieldSave";
 import DataProcessingStep from "./DataProcessingStep";
 
 function DataAnalysis( { name, values } ) {

@@ -1,10 +1,10 @@
 import CustomField from "../buildingBlocks/CustomField";
 import ValueUnit from "../buildingBlocks/ValueUnit";
 import ValueError from "../buildingBlocks/ValueError";
-import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
-import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayFieldFirstElementRequired";
-import EntityInvolved from "../components/EntityInvolved";
+import ArrayField from "../buildingBlocks/ArrayField";
+import EntityInvolved from "../buildingBlocks/EntityInvolved";
 import FormWrapper from "../buildingBlocks/FormWrapper";
+import UseDefault from "../buildingBlocks/UseDefault";
 
 function ChangeInGibbsFreeEnergyDeltaG( { name, values } ) {
 
@@ -12,6 +12,9 @@ function ChangeInGibbsFreeEnergyDeltaG( { name, values } ) {
         { value: 'kcal/mol', label: 'kcal/mol' },
         { value: 'kJ/mol', label: 'kJ/mol' },
     ];
+
+    const fieldNameEntityInvolved = 'entities_involved'
+    UseDefault(values, `${name}.${fieldNameEntityInvolved}`, [{}] );
 
   return (
     <>
@@ -34,30 +37,36 @@ function ChangeInGibbsFreeEnergyDeltaG( { name, values } ) {
             </div>
         </div>
         <div>
-            <ArrayFieldFirstElementRequired
+            <ArrayField
                 name={name}
                 values={values}
                 label='Entity involved'
-                fieldName='entities_involved'
-                renderChild={({ name, index }) => (
-                    <FormWrapper colorSchema='light' headline={`Entity involved ${index + 1}`} tooltipHeader='List of chemical or molecular assemblies the result describes and how many copies of each are involved'>
+                fieldName={fieldNameEntityInvolved}
+                required={true}
+                renderChild={({ arrayName, index }) => (
+                    <FormWrapper
+                        colorSchema='light'
+                        headline={`Entity involved ${index + 1}`}
+                        tooltipHeader='List of chemical or molecular assemblies the result describes and how many copies of each are involved'
+                    >
                         <EntityInvolved
-                            name={`${name}.entities_involved.${index}`}
+                            name={`${arrayName}.${index}`}
                         />
                     </FormWrapper>
                 )}
             />
         </div>
         <div>
-            <ArrayFieldOneElement
+            <ArrayField
                 name={name}
                 values={values}
                 label='Value error'
                 fieldName='value_error'
-                renderChild={({ name, index }) => (
+                maxItems={1}
+                renderChild={({ arrayName, index }) => (
                     <div>
                         <ValueError
-                            name={`${name}.value_error.${index}`}
+                            name={`${arrayName}.${index}`}
                             colorSchema='light'
                         />
                     </div>

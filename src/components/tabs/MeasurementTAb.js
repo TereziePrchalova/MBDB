@@ -1,18 +1,25 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayFieldFirstElementRequired";
+import ArrayField from "../buildingBlocks/ArrayField";
 import Measurement from "../measurement/Measurement";
+import UseDefault from "../buildingBlocks/UseDefault";
 
 function MeasurementTab( { name, values} ) {
+
+    const fieldName = 'measurements'
+    UseDefault(values, `${name}.${fieldName}`, [{}] );
 
     return (
       <>
         <div className="-mt-3">
-            <ArrayFieldFirstElementRequired
+            <ArrayField
                 name={name}
                 values={values}
                 label="Measurement"
-                fieldName='measurements'
-                renderChild={({ arrayName, index }) => (
+                required={true}
+                fieldName={fieldName}
+                renderChild={({ arrayName, index }) => { 
+                    console.log(values, arrayName)
+                return(
                     <FormWrapper headline={`Measurement ${index + 1}`}>
                         <div>
                             <Measurement
@@ -21,7 +28,7 @@ function MeasurementTab( { name, values} ) {
                             />
                         </div>
                     </FormWrapper>
-                )}
+                )}}
             />
         </div>
       </>

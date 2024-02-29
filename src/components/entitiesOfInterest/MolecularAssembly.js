@@ -1,5 +1,5 @@
 import CustomField from "../buildingBlocks/CustomField";
-import ArrayField from "../buildingBlocks/ArrayField";
+import ArrayField from "../buildingBlocks/ArrayFieldSave";
 import MolecularWeight from "../components/MolecularWeight";
 import Modification from "../components/Modification";
 import FormWrapper from "../buildingBlocks/FormWrapper";

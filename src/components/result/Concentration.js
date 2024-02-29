@@ -1,10 +1,10 @@
 import CustomField from "../buildingBlocks/CustomField";
 import ValueUnit from "../buildingBlocks/ValueUnit";
 import ValueError from "../buildingBlocks/ValueError";
-import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
-import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayFieldFirstElementRequired";
+import ArrayField from "../buildingBlocks/ArrayField";
 import EntityInvolved from "../buildingBlocks/EntityInvolved";
 import FormWrapper from "../buildingBlocks/FormWrapper";
+import UseDefault from "../buildingBlocks/UseDefault";
 
 function Concentration( { name, values } ) {
 
@@ -30,6 +30,9 @@ function Concentration( { name, values } ) {
         { value: '% saturated', label: '% saturated' },
     ];
 
+    const fieldNameEntityInvolved = 'entities_involved'
+    UseDefault(values, `${name}.${fieldNameEntityInvolved}`, [{}] );
+
   return (
     <>
         <div className='flex mb-3'>
@@ -51,30 +54,36 @@ function Concentration( { name, values } ) {
             </div>
         </div>
         <div>
-            <ArrayFieldFirstElementRequired
+            <ArrayField
                 name={name}
                 values={values}
                 label='Entity involved'
-                fieldName='entities_involved'
-                renderChild={({ name, index }) => (
-                    <FormWrapper colorSchema='light' headline={`Entity involved ${index + 1}`} tooltipHeader='List of chemical or molecular assemblies the result describes and how many copies of each are involved'>
+                fieldName={fieldNameEntityInvolved}
+                required={true}
+                renderChild={({ arrayName, index }) => (
+                    <FormWrapper
+                        colorSchema='light'
+                        headline={`Entity involved ${index + 1}`}
+                        tooltipHeader='List of chemical or molecular assemblies the result describes and how many copies of each are involved'
+                    >
                         <EntityInvolved
-                            name={`${name}.entities_involved.${index}`}
+                            name={`${arrayName}.${index}`}
                         />
                     </FormWrapper>
                 )}
             />
         </div>
         <div>
-            <ArrayFieldOneElement
+            <ArrayField
                 name={name}
                 values={values}
                 label='Value error'
                 fieldName='value_error'
-                renderChild={({ name, index }) => (
+                maxItems={1}
+                renderChild={({ arrayName, index }) => (
                     <div>
                         <ValueError
-                            name={`${name}.value_error.${index}`}
+                            name={`${arrayName}.${index}`}
                             colorSchema='light'
                         />
                     </div>

@@ -1,10 +1,10 @@
-import ArrayFieldFirstElementRequired from '../buildingBlocks/ArrayFieldFirstElementRequired';
+import ArrayField from '../buildingBlocks/ArrayField';
 import FormWrapper from '../buildingBlocks/FormWrapper';
 import OptionInput from '../buildingBlocks/OptionInput';
 import Ligand from './Ligand';
 import Target from './Target';
-import ArrayField from '../buildingBlocks/ArrayField';
 import Protocol from '../buildingBlocks/Protocol';
+import UseDefault from '../buildingBlocks/UseDefault';
 
 function Sample( { name, values, tooltip, colorSchema } ) {
 
@@ -24,6 +24,12 @@ function Sample( { name, values, tooltip, colorSchema } ) {
     const chemicalEnvironmentOptions = [
         { value: 'currently_out_of_service', label: 'Currently out of service' },
     ];
+
+    const fieldNameTarget = 'targets'
+    UseDefault(values, `${name}.${fieldNameTarget}`, [{}] );
+
+    const fieldNameLigand = 'ligands'
+    UseDefault(values, `${name}.${fieldNameLigand}`, [{}] );
 
   return (
     <>
@@ -53,11 +59,12 @@ function Sample( { name, values, tooltip, colorSchema } ) {
                 </div>
             </div>
             <div>
-                <ArrayFieldFirstElementRequired
+                <ArrayField
                     name={name}
                     values={values}
                     label='Target'
-                    fieldName='targets'
+                    fieldName={fieldNameTarget}
+                    required={true}
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
                             headline={`Target ${index + 1}`}
@@ -71,11 +78,12 @@ function Sample( { name, values, tooltip, colorSchema } ) {
                 />
             </div>
             <div>
-                <ArrayFieldFirstElementRequired
+                <ArrayField
                     name={name}
                     values={values}
                     label='Ligand'
-                    fieldName='ligands'
+                    fieldName={fieldNameLigand}
+                    required={true}
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
                             headline={`Ligand ${index + 1}`}

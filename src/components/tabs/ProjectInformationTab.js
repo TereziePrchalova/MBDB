@@ -1,6 +1,6 @@
 import RecordInformation from "../projectInformation/RecordInformation";
 import Depositors from "../projectInformation/Depositors";
-import ArrayField from "../buildingBlocks/ArrayField";
+import ArrayField from "../buildingBlocks/ArrayFieldSave";
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import AssociatedPublication from "../projectInformation/AssociatedPublication";

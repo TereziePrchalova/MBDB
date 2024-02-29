@@ -7,7 +7,7 @@ import ComplexSubstanceOfBiologicalOrigin from "./constituent/ComplexSubstanceOf
 import ComplexSubstanceOfEnvironmentalOrigin from "./constituent/ComplexSubstanceOfEnvironmentalOrigin";
 import MolecularAssembly from "./constituent/MolecularAssembly";
 import ComplexSubstanceOfChemicalOrigin from "./constituent/ComplexSubstanceOfChemicalOrigin";
-import ArrayField from "../buildingBlocks/ArrayField";
+import ArrayField from "../buildingBlocks/ArrayFieldSave";
 import ComplexSubstanceOfIndustrialOrigin from "./constituent/ComplexSubstanceOfIndustrialOrigin";
 
 function Constituent( { name, values } ) {

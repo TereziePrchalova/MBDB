@@ -2,7 +2,7 @@ import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionInput from "../buildingBlocks/OptionInput";
 import UseDefault from "../buildingBlocks/UseDefault";
 import { useState } from "react";
-import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayFieldFirstElementRequired";
+import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayField";
 import ChemicalEnvironmentChemical from "./constituent/Chemical";
 
 function Solvent( { name, values } ) {

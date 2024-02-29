@@ -1,4 +1,4 @@
-import ArrayField from "../buildingBlocks/ArrayField";
+import ArrayField from "../buildingBlocks/ArrayFieldSave";
 import CustomField from "../buildingBlocks/CustomField";
 import MolecularWeight from "../components/MolecularWeight";
 

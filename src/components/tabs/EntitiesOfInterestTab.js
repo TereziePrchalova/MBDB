@@ -3,13 +3,13 @@ import Chemical from "../entitiesOfInterest/Chemical";
 import Polymer from "../entitiesOfInterest/Polymer";
 import OptionInput from "../buildingBlocks/OptionInput";
 import UseDefault from "../buildingBlocks/UseDefault";
-import { useState } from "react";
 import ComplexSubstanceOfBiologicalOrigin from "../entitiesOfInterest/ComplexSubstanceOfBiologicalOrigin";
 import ComplexSubstanceOfEnvironmentalOrigin from "../entitiesOfInterest/ComplexSubstanceOfEnvironmentalOrigin";
 import MolecularAssembly from "../entitiesOfInterest/MolecularAssembly";
 import ComplexSubstanceOfIndustrialProductionOrigin from "../entitiesOfInterest/ComplexSubstanceOfIndustrialProductionOrigin";
 import ComplexSubstanceOfChemicalOrigin from "../entitiesOfInterest/ComplexSubstanceOfChemicalOrigin";
-import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayFieldFirstElementRequired";
+import ArrayField from "../buildingBlocks/ArrayField";
+import { getIn } from "formik";
 
 function EntitiesOfInterestTab( { name, values } ) {
 
@@ -27,25 +27,21 @@ function EntitiesOfInterestTab( { name, values } ) {
         { value: 'complex_substance_of_industrial_origin', label: 'Complex substance of industrial origin' },
     ];
 
-    const [selectedOption, setSelectedOption] = useState(['polymer']);
-    
-    const handleOptionChange = (value, index) => {
-        setSelectedOption(prevOptions => {
-            const updatedOptions = [...prevOptions];
-            updatedOptions[index] = value;
-            return updatedOptions;
-        });
-    };
-
     return (
       <>
         <div className="-mt-3">
-            <ArrayFieldFirstElementRequired
+            <ArrayField
                 name={name}
                 values={values}
                 label="Entity of interest"
                 fieldName='entities_of_interest'
-                renderChild={({ arrayName, index }) => (
+                initialValue={{type: 'polymer'}}
+                required={true}
+                renderChild={({ arrayName, index }) =>  {
+                    console.log(values, `${arrayName}.${index}`)
+                    const actualValue = getIn(values, `${arrayName}.${index}`)
+                    if (!actualValue) {return null}
+                    return (
                     <FormWrapper 
                         headline={`Entity of interest ${index + 1}`} 
                         tooltipHeader='List of the entities that are being directly measured, as well as the entities that are being used as a variable to influence the behavior of the directly measured entities (e.g. lysozyme, NAG3,NaCl). IMPORTANT! If the pH was varied by individually prepared chemical environments these should be specified individually in chemical environments'
@@ -57,11 +53,10 @@ function EntitiesOfInterestTab( { name, values } ) {
                                 label='type'
                                 fieldName='type'
                                 width='w-full'
-                                onOptionChange={(value) => handleOptionChange(value, index)}
                             />
                         </div>
                         <div>
-                            {selectedOption[index] === 'polymer' && (
+                            {actualValue.type === 'polymer' && (
                                 <div>
                                     <Polymer
                                         name={`${arrayName}.${index}`}
@@ -69,7 +64,7 @@ function EntitiesOfInterestTab( { name, values } ) {
                                     />
                                 </div>
                             )}
-                            {selectedOption[index] === 'chemical' && (
+                            {actualValue.type === 'chemical' && (
                                 <div>
                                     <Chemical
                                         name={`${arrayName}.${index}`}
@@ -77,7 +72,7 @@ function EntitiesOfInterestTab( { name, values } ) {
                                     />
                                 </div>
                             )}
-                            {selectedOption[index] === 'moleculal_assembly' && (
+                            {actualValue.type === 'moleculal_assembly' && (
                                 <div>
                                     <MolecularAssembly
                                         name={`${arrayName}.${index}`}
@@ -85,7 +80,7 @@ function EntitiesOfInterestTab( { name, values } ) {
                                     />
                                 </div>
                             )}
-                            {selectedOption[index] === 'complex_substance_of_biological_origin' && (
+                            {actualValue.type === 'complex_substance_of_biological_origin' && (
                                 <div>
                                     <ComplexSubstanceOfBiologicalOrigin
                                         name={`${arrayName}.${index}`}
@@ -93,7 +88,7 @@ function EntitiesOfInterestTab( { name, values } ) {
                                     />
                                 </div>
                             )}
-                            {selectedOption[index] === 'complex_substance_of_environmental_origin' && (
+                            {actualValue.type === 'complex_substance_of_environmental_origin' && (
                                 <div>
                                     <ComplexSubstanceOfEnvironmentalOrigin
                                         name={`${arrayName}.${index}`}
@@ -101,7 +96,7 @@ function EntitiesOfInterestTab( { name, values } ) {
                                     />
                                 </div>
                             )}
-                            {selectedOption[index] === 'complex_substance_of_chemical_origin' && (
+                            {actualValue.type === 'complex_substance_of_chemical_origin' && (
                                 <div>
                                     <ComplexSubstanceOfChemicalOrigin
                                         name={`${arrayName}.${index}`}
@@ -109,7 +104,7 @@ function EntitiesOfInterestTab( { name, values } ) {
                                     />
                                 </div>
                             )}
-                            {selectedOption[index] === 'complex_substance_of_industrial_origin' && (
+                            {actualValue.type === 'complex_substance_of_industrial_origin' && (
                                 <div>
                                     <ComplexSubstanceOfIndustrialProductionOrigin
                                         name={`${arrayName}.${index}`}
@@ -119,7 +114,7 @@ function EntitiesOfInterestTab( { name, values } ) {
                             )}
                         </div>
                     </FormWrapper>
-                )}
+                )}}
             />
         </div>
       </>

@@ -1,5 +1,5 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayFieldFirstElementRequired";
+import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayField";
 import DataAnalysis from "../dataAnalysis/DataAnalysis";
 
 function DataAnalysisTab( { name, values} ) {
