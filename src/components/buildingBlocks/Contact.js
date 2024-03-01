@@ -1,7 +1,7 @@
 import ArrayField from "./ArrayField";
 import CustomField from "./CustomField";
 
-function Contact( { name, values} ) {
+function Contact( { name } ) {
 
   return (
     <>
@@ -27,32 +27,28 @@ function Contact( { name, values} ) {
             <div className="mr-3">
                 <ArrayField
                     name={name}
-                    values={values}
                     label='identifier'
                     fieldName='identifiers'
-                    renderChild={({ name, index }) => (
-                        <CustomField
-                            name={name}
-                            index={index}
-                            label={`identifier ${index + 1}`}
-                            fieldName='identifiers'
-                            tooltip='Persistent personal identifiers, currently only ORCIDs are allowed'
-                        />
+                    renderChild={({ arrayName, index }) => (
+                      <CustomField
+                        name={arrayName}
+                        index={index}
+                        label={`identifier ${index + 1}`}
+                        tooltip='Persistent personal identifiers, currently only ORCIDs are allowed'
+                      />
                     )}
                 />
             </div>
             <div>
                 <ArrayField
                     name={name}
-                    values={values}
                     label='affiliation'
                     fieldName='affiliations'
-                    renderChild={({ name, index }) => (
+                    renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={name}
+                            name={arrayName}
                             index={index}
                             label={`affiliation ${index + 1}`}
-                            fieldName='affiliations'
                             tooltip='The affiliation of the person. Note that this is based on the Research Organization Registry (ROR)'
                         />
                     )}

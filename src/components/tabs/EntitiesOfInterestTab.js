@@ -4,16 +4,16 @@ import Polymer from "../entitiesOfInterest/Polymer";
 import OptionInput from "../buildingBlocks/OptionInput";
 import UseDefault from "../buildingBlocks/UseDefault";
 import ComplexSubstanceOfBiologicalOrigin from "../entitiesOfInterest/ComplexSubstanceOfBiologicalOrigin";
-import ComplexSubstanceOfEnvironmentalOrigin from "../entitiesOfInterest/ComplexSubstanceOfEnvironmentalOrigin";
 import MolecularAssembly from "../entitiesOfInterest/MolecularAssembly";
-import ComplexSubstanceOfIndustrialProductionOrigin from "../entitiesOfInterest/ComplexSubstanceOfIndustrialProductionOrigin";
+import ComplexSubstanceOfIndustrialOrigin from "../entitiesOfInterest/ComplexSubstanceOfIndustrialOrigin";
+import ComplexSubstanceOfEnvironmentalOrigin from "../entitiesOfInterest/ComplexSubstanceOfEnvironmentalOrigin";
 import ComplexSubstanceOfChemicalOrigin from "../entitiesOfInterest/ComplexSubstanceOfChemicalOrigin";
 import ArrayField from "../buildingBlocks/ArrayField";
 import { getIn, useFormikContext } from "formik";
 
 function EntitiesOfInterestTab( { name } ) {
 
-    const { values } = useFormikContext()
+    const { values } = useFormikContext();
 
     const componentName = `${name}.entities_of_interest[0].type`
    
@@ -60,7 +60,6 @@ function EntitiesOfInterestTab( { name } ) {
                                 <div>
                                     <Polymer
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
@@ -68,7 +67,6 @@ function EntitiesOfInterestTab( { name } ) {
                                 <div>
                                     <Chemical
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
@@ -76,7 +74,6 @@ function EntitiesOfInterestTab( { name } ) {
                                 <div>
                                     <MolecularAssembly
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
@@ -84,7 +81,6 @@ function EntitiesOfInterestTab( { name } ) {
                                 <div>
                                     <ComplexSubstanceOfBiologicalOrigin
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
@@ -92,7 +88,6 @@ function EntitiesOfInterestTab( { name } ) {
                                 <div>
                                     <ComplexSubstanceOfEnvironmentalOrigin
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
@@ -100,15 +95,13 @@ function EntitiesOfInterestTab( { name } ) {
                                 <div>
                                     <ComplexSubstanceOfChemicalOrigin
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
                             {actualValue.type === 'complex_substance_of_industrial_origin' && (
                                 <div>
-                                    <ComplexSubstanceOfIndustrialProductionOrigin
+                                    <ComplexSubstanceOfIndustrialOrigin
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}

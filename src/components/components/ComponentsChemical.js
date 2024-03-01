@@ -1,8 +1,8 @@
-import ArrayField from "../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../buildingBlocks/ArrayField";
 import CustomField from "../buildingBlocks/CustomField";
 import MolecularWeight from "../components/MolecularWeight";
 
-function ComponentsChemical( { name, values, molecularWeightColorSchema } ) {
+function ComponentsChemical( { name, molecularWeightColorSchema } ) {
 
   return (
     <>
@@ -52,15 +52,13 @@ function ComponentsChemical( { name, values, molecularWeightColorSchema } ) {
             <div className="mr-3">
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Additional identifier'
                     fieldName='additional_identifiers'
-                    renderChild={({ name, index }) => (
+                    renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={name}
+                            name={arrayName}
                             index={index}
                             label={`Additional identifier ${index + 1}`}
-                            fieldName='additional_identifiers'
                             tooltip='Unique and persistent identifier from an external source; options of sources are CAS number, Pubchem Compound ID, and Pubchem Substance ID'
                         />
                     )}
@@ -69,15 +67,13 @@ function ComponentsChemical( { name, values, molecularWeightColorSchema } ) {
             <div>
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Additional specification'
                     fieldName='additional_specifications'
-                    renderChild={({ name, index }) => (
+                    renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={name}
+                            name={arrayName}
                             index={index}
                             label={`Additional specification ${index + 1}`}
-                            fieldName='additional_specifications'
                             width='w-[15rem]'
                             tooltip='Additional information about the chemical can be specified here (e.g. RNase free water, recrystallization, desalting)'
                         />

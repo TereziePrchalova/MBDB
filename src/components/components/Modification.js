@@ -1,9 +1,9 @@
 import CustomField from "../buildingBlocks/CustomField";
 import Protocol from "../buildingBlocks/Protocol";
-import ArrayField from "../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../buildingBlocks/ArrayField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 
-function Modification( { name, values, colorSchema, colorSchemaProtocol } ) {
+function Modification( { name, colorSchema, colorSchemaProtocol } ) {
 
   return (
     <>
@@ -28,7 +28,6 @@ function Modification( { name, values, colorSchema, colorSchemaProtocol } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Protocol'
                 fieldName='protocol'
                 renderChild={({ arrayName, index }) => (

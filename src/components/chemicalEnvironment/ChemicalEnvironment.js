@@ -2,7 +2,7 @@ import Constituent from "./Constituent";
 import Solvent from "./Solvent";
 import CustomField from "../buildingBlocks/CustomField";
 import Ph from "../components/Ph";
-import ArrayField from "../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../buildingBlocks/ArrayField";
 
 
 function ChemicalEnvironment( { name, values } ) {
@@ -34,7 +34,6 @@ function ChemicalEnvironment( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Additional specification'
                 fieldName='additional_specifications'
                 renderChild={({ name, index }) => (

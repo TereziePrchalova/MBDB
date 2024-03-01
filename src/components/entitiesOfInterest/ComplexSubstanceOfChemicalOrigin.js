@@ -1,16 +1,15 @@
 import OptionInput from "../buildingBlocks/OptionInput";
 import CustomField from "../buildingBlocks/CustomField";
-import ArrayField from "../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../buildingBlocks/ArrayField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Protocol from "../buildingBlocks/Protocol";
-import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
 import Storage from "../buildingBlocks/Storage";
 import Details from "../components/Details";
 
-function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
+function ComplexSubstanceOfChemicalOrigin( { name } ) {
 
     const classOptions = [
-        { value: 'lipid_assembly', label: 'Lipid assembly' },
+        { value: 'Lipid assembly', label: 'Lipid assembly' },
       ];
 
   return (
@@ -37,7 +36,6 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
         <div>
             <Details
                 name={`${name}.details`}
-                values={values}
                 colorSchema='light'
                 molecularWeightColorSchema='light'
                 colorSchemaWrapper='light'
@@ -46,7 +44,6 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Preparation protocol'
                 fieldName='preparation_protocol'
                 renderChild={({ arrayName, index }) => (
@@ -57,27 +54,6 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                     >
                         <Protocol
                             name={`${arrayName}.${index}`}
-                            values={values}
-                        />
-                    </FormWrapper>
-                )}
-            />
-        </div>
-        <div>
-            <ArrayFieldOneElement
-                name={name}
-                values={values}
-                label='Storage'
-                fieldName='storage'
-                renderChild={({ arrayName, index }) => (
-                    <FormWrapper
-                        colorSchema='light'
-                        headline={`Storage ${index + 1}`}
-                        tooltipHeader='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
-                    >
-                        <Storage
-                            name={`${arrayName}.${index}`}
-                            values={values}
                         />
                     </FormWrapper>
                 )}
@@ -86,15 +62,31 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
+                label='Storage'
+                fieldName='storage'
+                maxItems={1}
+                renderChild={({ arrayName, index }) => (
+                    <FormWrapper
+                        colorSchema='light'
+                        headline={`Storage ${index + 1}`}
+                        tooltipHeader='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
+                    >
+                        <Storage
+                            name={`${arrayName}.${index}`}
+                        />
+                    </FormWrapper>
+                )}
+            />
+        </div>
+        <div>
+            <ArrayField
+                name={name}
                 label='Additional specification'
                 fieldName='additional_specifications'
-                renderChild={({ name, index }) => (
+                renderChild={({ arrayName, index }) => (
                     <CustomField
-                        name={name}
-                        index={index}
+                        name={`${arrayName}.${index}`}
                         label={`Additional specification ${index + 1}`}
-                        fieldName='additional_specifications'
                         width='w-[15rem]'
                         tooltip='Additional information about the lipid assembly, if applicable'
                     />

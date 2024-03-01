@@ -1,12 +1,11 @@
 import OptionInput from "../buildingBlocks/OptionInput";
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
 import DataFitting from "./DataFitting";
 import FColdAndHot from "./FColdAndHot";
-import ArrayField from "../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../buildingBlocks/ArrayField";
 import DataProcessingStep from "./DataProcessingStep";
 
-function DataAnalysis( { name, values } ) {
+function DataAnalysis( { name } ) {
 
     const resultOptions = [
         { value: 'currently_out_of_service', label: 'Currently out of service' },
@@ -35,11 +34,11 @@ function DataAnalysis( { name, values } ) {
           </div>
         </div>
         <div className="mb-3">
-            <ArrayFieldOneElement
+            <ArrayField
                 name={name}
-                values={values}
                 label='F cold and hot'
                 fieldName='f_cold_and_hot'
+                maxItems={1}
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         colorSchema='light'
@@ -48,18 +47,17 @@ function DataAnalysis( { name, values } ) {
                     >
                         <FColdAndHot
                             name={`${arrayName}.${index}`}
-                            values={values}
                         />
                     </FormWrapper>
                 )}
             />
         </div>
         <div className="mb-3">
-            <ArrayFieldOneElement
+            <ArrayField
                 name={name}
-                values={values}
                 label='Data fitting'
                 fieldName='data_fitting'
+                maxItems={1}
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         colorSchema='light'
@@ -68,7 +66,6 @@ function DataAnalysis( { name, values } ) {
                     >
                         <DataFitting
                             name={`${arrayName}.${index}`}
-                            values={values}
                         />
                     </FormWrapper>
                 )}
@@ -77,7 +74,6 @@ function DataAnalysis( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Data processing step'
                 fieldName='data_processing_step'
                 renderChild={({ arrayName, index }) => (
@@ -88,7 +84,6 @@ function DataAnalysis( { name, values } ) {
                     >
                         <DataProcessingStep
                             name={`${arrayName}.${index}`}
-                            values={values}
                         />
                     </FormWrapper>
                 )}

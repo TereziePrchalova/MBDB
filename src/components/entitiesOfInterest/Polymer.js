@@ -1,12 +1,10 @@
-import ArrayField from "../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../buildingBlocks/ArrayField";
 import CustomField from "../buildingBlocks/CustomField";
 import OptionInput from "../buildingBlocks/OptionInput";
 import MolecularWeight from "../components/MolecularWeight";
-import MyContext from "../buildingBlocks/MyContext";
-import { useContext } from "react";
 import Modifications from "../components/Modifications";
 
-function Polymer( { name, values } ) {
+function Polymer( { name } ) {
 
     const polymerTypeOptions = [
         { value: 'cyclic_pseudo_peptide', label: 'Cyclic pseudo peptide' },
@@ -23,12 +21,6 @@ function Polymer( { name, values } ) {
         { value: 'recombinantly', label: 'Recombinantly' },
         { value: 'synthetically', label: 'Synthetically' },
       ];
-      
-        const { setInputValue } = useContext(MyContext);
-
-        const handleChange = (e) => {
-            setInputValue(e.target.value);
-        };
 
   return (
     <>
@@ -38,7 +30,6 @@ function Polymer( { name, values } ) {
                 name={name}
                 label='Name'
                 fieldName='name'
-                onChange={handleChange}
                 tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
             />
           </div>
@@ -110,22 +101,19 @@ function Polymer( { name, values } ) {
             <Modifications
                 name={`${name}.modifications`}
                 colorSchemaWrapper='light'
-                values={values}
             />
         </div>
         <div className="flex">
             <div className="mr-3">
                 <ArrayField
                     name={name}
-                    values={values}
                     label='External Database'
                     fieldName='external_databases'
-                    renderChild={({ name, index }) => (
+                    renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={name}
+                            name={arrayName}
                             index={index}
                             label={`External database ${index + 1}`}
-                            fieldName='external_databases'
                             width='w-[15rem]'
                             tooltip='List of identifiers to records in external databases containing information about the polymer can be specified here (e.g UNIPROT:Q8KRF6)'
                         />
@@ -135,15 +123,13 @@ function Polymer( { name, values } ) {
             <div>
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Additional specification'
                     fieldName='additional_specifications'
-                    renderChild={({ name, index }) => (
+                    renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={name}
+                            name={arrayName}
                             index={index}
                             label={`Additional specification ${index + 1}`}
-                            fieldName='additional_specifications'
                             width='w-[15rem]'
                             tooltip='Additional information about the chemical can be specified here (e.g. RNase free water, recrystallization, desalting)'
                         />

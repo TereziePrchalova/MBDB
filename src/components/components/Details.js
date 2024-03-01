@@ -1,17 +1,17 @@
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionInput from "../buildingBlocks/OptionInput";
-import ArrayField from "../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../buildingBlocks/ArrayField";
 import Size from "./Size";
 import Components from "./Components";
 
-function Details({ name, values, colorSchema, sizeColorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol }) {
+function Details({ name, colorSchema, sizeColorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol }) {
 
     const detailsTypeOptions = [
-        { value: 'micelle', label: 'Micelle' },
-        { value: 'liposome', label: 'Liposome' },
-        { value: 'nanodisc', label: 'Nanodisc' },
-        { value: 'sheet', label: 'Sheet' },
+        { value: 'Micelle', label: 'Micelle' },
+        { value: 'Liposome', label: 'Liposome' },
+        { value: 'Nanodisc', label: 'Nanodisc' },
+        { value: 'Sheet', label: 'Sheet' },
       ];
 
   return (
@@ -37,12 +37,14 @@ function Details({ name, values, colorSchema, sizeColorSchema, molecularWeightCo
           </div>
         </div>
         <div className="mb-3">
-          <Size name={`${name}.size`} values={values} colorSchema={sizeColorSchema} />
+          <Size
+            name={`${name}.size`}
+            colorSchema={sizeColorSchema}
+          />
         </div>
         <div>
           <Components
             name={`${name}.components`}
-            values={values}
             molecularWeightColorSchema={molecularWeightColorSchema}
             colorSchemaWrapper={colorSchemaWrapper}
             colorSchema={sizeColorSchema}
@@ -53,15 +55,12 @@ function Details({ name, values, colorSchema, sizeColorSchema, molecularWeightCo
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Additional specification'
                 fieldName='additional_specifications'
-                renderChild={({ name, index }) => (
+                renderChild={({ arrayName, index }) => (
                     <CustomField
-                        name={name}
-                        index={index}
+                        name={`${arrayName}.${index}`}
                         label={`Additional specification ${index + 1}`}
-                        fieldName='additional_specifications'
                         width='w-[15rem]'
                         tooltip='Additional information about the lipid assembly, if applicable'
                     />

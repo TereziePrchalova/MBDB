@@ -1,31 +1,30 @@
-import ArrayField from "../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../buildingBlocks/ArrayField";
 import CustomField from "../buildingBlocks/CustomField";
 import OptionInput from "../buildingBlocks/OptionInput";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Protocol from "../buildingBlocks/Protocol";
 import Storage from "../buildingBlocks/Storage";
-import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
 
-function Virion( { name, values } ) {
+function Virion( { name } ) {
 
     const geneticMaterialOptions = [
-        { value: 'no_genetic_material', label: 'No genetic material' },
-        { value: 'virus_genome', label: 'Virus genome' },
-        { value: 'synthetic', label: 'Synthetic' },
+        { value: 'No genetic material', label: 'No genetic material' },
+        { value: 'Virus genome', label: 'Virus genome' },
+        { value: 'Synthetic', label: 'Synthetic' },
     ];
 
     const capsidTypeOptions = [
-        { value: 'none', label: 'None' },
-        { value: 'native', label: 'Native' },
-        { value: 'genetically_engineered', label: 'Genetically Engineered' },
-        { value: 'synthetic', label: 'Synthetic' },
+        { value: 'None', label: 'None' },
+        { value: 'Native', label: 'Native' },
+        { value: 'Genetically Engineered', label: 'Genetically Engineered' },
+        { value: 'Synthetic', label: 'Synthetic' },
     ];
 
     const envelopeOptions = [
-        { value: 'none', label: 'None' },
-        { value: 'native', label: 'Native' },
-        { value: 'genetically_engineered', label: 'Genetically Engineered' },
-        { value: 'synthetic', label: 'Synthetic' },
+        { value: 'None', label: 'None' },
+        { value: 'Native', label: 'Native' },
+        { value: 'Genetically Engineered', label: 'Genetically Engineered' },
+        { value: 'Synthetic', label: 'Synthetic' },
     ];
 
   return (
@@ -69,7 +68,11 @@ function Virion( { name, values } ) {
         </div>
         <div className="flex">
           <div className="mr-3">
-            <CustomField name={name} label='Host organism' fieldName='host_organism' />
+            <CustomField
+                name={name}
+                label='Host organism'
+                fieldName='host_organism'
+            />
           </div>
           <div className="mr-3">
             <CustomField
@@ -80,13 +83,16 @@ function Virion( { name, values } ) {
             />
           </div>
           <div>
-            <CustomField name={name} label='Source organism' fieldName='source_organism' />
+            <CustomField
+                name={name}
+                label='Source organism'
+                fieldName='source_organism'
+            />
           </div>
         </div>
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Preparation protocol'
                 fieldName='preparation_protocol'
                 renderChild={({ arrayName, index }) => (
@@ -97,23 +103,21 @@ function Virion( { name, values } ) {
                     >
                         <Protocol
                             name={`${arrayName}.${index}`}
-                            values={values}
                         />
                     </FormWrapper>
                 )}
             />
         </div>
         <div>
-            <ArrayFieldOneElement
+            <ArrayField
                 name={name}
-                values={values}
                 label='Storage'
                 fieldName='storage'
+                maxItems={1}
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper colorSchema='light' headline={`Storage ${index + 1}`}>
                         <Storage
                             name={`${arrayName}.${index}`}
-                            values={values}
                         />
                     </FormWrapper>
                 )}
@@ -123,15 +127,13 @@ function Virion( { name, values } ) {
             <div>
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Additional specification'
                     fieldName='additional_specifications'
-                    renderChild={({ name, index }) => (
+                    renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={name}
+                            name={arrayName}
                             index={index}
                             label={`Additional specification ${index + 1}`}
-                            fieldName='additional_specifications'
                             width='w-[15rem]'
                             tooltip='Additional information about the complex substance can be specified here'
                         />

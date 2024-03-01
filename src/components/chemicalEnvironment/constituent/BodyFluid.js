@@ -1,4 +1,4 @@
-import ArrayField from "../../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
 import OptionInput from "../../buildingBlocks/OptionInput";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
@@ -64,7 +64,6 @@ function BodyFluid( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Preparation protocol'
                 fieldName='preparation_protocol'
                 renderChild={({ arrayName, index }) => (
@@ -83,7 +82,6 @@ function BodyFluid( { name, values } ) {
         <div>
             <ArrayFieldOneElement
                 name={name}
-                values={values}
                 label='Storage'
                 fieldName='storage'
                 renderChild={({ arrayName, index }) => (
@@ -100,7 +98,6 @@ function BodyFluid( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Additional specification'
                 fieldName='additional_specifications'
                 renderChild={({ name, index }) => (

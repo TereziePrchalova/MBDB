@@ -1,17 +1,16 @@
 import OptionInput from "../buildingBlocks/OptionInput";
 import CustomField from "../buildingBlocks/CustomField";
-import ArrayField from "../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../buildingBlocks/ArrayField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Protocol from "../buildingBlocks/Protocol";
-import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
 import Storage from "../buildingBlocks/Storage";
 
-function ComplexSubstanceOfIndustrialProductionOrigin( { name, values } ) {
+function ComplexSubstanceOfIndustrialOrigin( { name } ) {
 
     const productOptions = [
-        { value: 'beer', label: 'Beer' },
-        { value: 'cell_medium', label: 'Cell medium' },
-        { value: 'whey', label: 'Whey' },
+        { value: 'Beer', label: 'Beer' },
+        { value: 'Cell medium', label: 'Cell medium' },
+        { value: 'Whey', label: 'Whey' },
       ];
 
   return (
@@ -38,7 +37,6 @@ function ComplexSubstanceOfIndustrialProductionOrigin( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Preparation protocol'
                 fieldName='preparation_protocol'
                 renderChild={({ arrayName, index }) => (
@@ -55,11 +53,11 @@ function ComplexSubstanceOfIndustrialProductionOrigin( { name, values } ) {
             />
         </div>
         <div>
-            <ArrayFieldOneElement
+            <ArrayField
                 name={name}
-                values={values}
                 label='Storage'
                 fieldName='storage'
+                maxItems={1}
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         colorSchema='light'
@@ -68,8 +66,6 @@ function ComplexSubstanceOfIndustrialProductionOrigin( { name, values } ) {
                     >
                         <Storage
                             name={`${arrayName}.${index}`}
-                            values={values}
-                            fieldName='storage'
                         />
                     </FormWrapper>
                 )}
@@ -78,15 +74,12 @@ function ComplexSubstanceOfIndustrialProductionOrigin( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Additional specification'
                 fieldName='additional_specifications'
-                renderChild={({ name, index }) => (
+                renderChild={({ arrayName, index }) => (
                     <CustomField
-                        name={name}
-                        index={index}
+                        name={`${arrayName}.${index}`}
                         label={`Additional specification ${index + 1}`}
-                        fieldName='additional_specifications'
                         width='w-[15rem]'
                         tooltip='Additional information about the complex substance can be specified here'
                     />
@@ -97,4 +90,4 @@ function ComplexSubstanceOfIndustrialProductionOrigin( { name, values } ) {
   );
 }
 
-export default ComplexSubstanceOfIndustrialProductionOrigin;
+export default ComplexSubstanceOfIndustrialOrigin;

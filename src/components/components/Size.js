@@ -20,7 +20,11 @@ function Size( { name, colorSchema } ) {
 
   return (
     <>
-      <FormWrapper headline='Size' tooltipHeader='The size of the lipid assembly' colorSchema={colorSchema}>
+      <FormWrapper
+        headline='Size'
+        tooltipHeader='The size of the lipid assembly'
+        colorSchema={colorSchema}
+      >
         <div className="flex mb-3">
           <div className="mr-3">
               <OptionInput

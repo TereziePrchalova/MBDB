@@ -1,11 +1,11 @@
 import CustomField from "../buildingBlocks/CustomField";
-import ArrayField from "../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../buildingBlocks/ArrayField";
 import MolecularWeight from "../components/MolecularWeight";
 import Modification from "../components/Modification";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Components from "../components/Components";
 
-function MolecularAssembly( { name, values} ) {
+function MolecularAssembly( { name } ) {
 
   return (
     <>
@@ -27,7 +27,6 @@ function MolecularAssembly( { name, values} ) {
         <div>
             <Components 
                 name={`${name}.components`} 
-                values={values}
                 colorSchema='light'
                 colorSchemaProtocol='light'
                 tooltip='Description of the individual components (e.g. polypeptide, heme, lipids, metal ions etc.) the molecular assembly is composed of (e.g. Hemoglobin alpha) and how many copies of each component were present'
@@ -36,14 +35,12 @@ function MolecularAssembly( { name, values} ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Chemical Modification'
                 fieldName='chemical_modifications'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper colorSchema='light' headline={`Chemical modification ${index + 1}`}>
                         <Modification
                             name={`${arrayName}.${index}`}
-                            values={values}
                         />
                     </FormWrapper>
                 )}
@@ -53,15 +50,14 @@ function MolecularAssembly( { name, values} ) {
             <div className="mr-3">
                 <ArrayField
                     name={name}
-                    values={values}
                     label='External Database'
                     fieldName='external_databases'
-                    renderChild={({ name, index }) => (
+                    renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={name}
+                            name={arrayName}
                             index={index}
                             label={`External database ${index + 1}`}
-                            fieldName='external_databases'
+                            width='w-[15rem]'
                         />
                     )}
                 />
@@ -69,15 +65,13 @@ function MolecularAssembly( { name, values} ) {
             <div>
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Additional specification'
                     fieldName='additional_specifications'
-                    renderChild={({ name, index }) => (
+                    renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={name}
+                            name={arrayName}
                             index={index}
                             label={`Additional specification ${index + 1}`}
-                            fieldName='additional_specifications'
                             width='w-[15rem]'
                         />
                     )}

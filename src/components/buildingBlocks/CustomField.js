@@ -35,7 +35,7 @@ function CustomField( {label, name, fieldName, type, index, tooltip, width, mult
               {...(multiline && { multiline: true })}
               size="small"
               error={meta.touched && !!meta.error}
-              />
+            />
         </div>
         {tooltip ?
           <div className='ml-1 -mt-1'>

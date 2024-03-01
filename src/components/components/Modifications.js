@@ -1,15 +1,14 @@
-import ArrayField from "../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../buildingBlocks/ArrayField";
 import Modification from "./Modification";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 
-function Modifications( { name, values, colorSchemaWrapper, colorSchemaProtocol } ) {
+function Modifications( { name, colorSchemaWrapper, colorSchemaProtocol } ) {
 
   return (
     <>
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Synthesis'
                 fieldName='synthesis'
                 renderChild={({ arrayName, index }) => (
@@ -21,7 +20,6 @@ function Modifications( { name, values, colorSchemaWrapper, colorSchemaProtocol 
                         <Modification
                             name={`${arrayName}.${index}`}
                             colorSchema={colorSchemaProtocol}
-                            values={values}
                         />
                     </FormWrapper>
                 )}
@@ -30,7 +28,6 @@ function Modifications( { name, values, colorSchemaWrapper, colorSchemaProtocol 
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Biological postprocessing'
                 fieldName='biological_postprocessing'
                 renderChild={({ arrayName, index }) => (
@@ -42,7 +39,6 @@ function Modifications( { name, values, colorSchemaWrapper, colorSchemaProtocol 
                         <Modification
                             name={`${arrayName}.${index}`}
                             colorSchema={colorSchemaProtocol}
-                            values={values}
                         />
                     </FormWrapper>
                 )}
@@ -51,7 +47,6 @@ function Modifications( { name, values, colorSchemaWrapper, colorSchemaProtocol 
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Chemical'
                 fieldName='chemical'
                 renderChild={({ arrayName, index }) => (
@@ -63,7 +58,6 @@ function Modifications( { name, values, colorSchemaWrapper, colorSchemaProtocol 
                         <Modification
                             name={`${arrayName}.${index}`}
                             colorSchema={colorSchemaProtocol}
-                            values={values}
                         />
                     </FormWrapper>
                 )}

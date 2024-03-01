@@ -4,7 +4,7 @@ import ArrayField from "./ArrayField";
 import FormWrapper from "./FormWrapper";
 import StoragePreparation from "./StoragePreparation";
 
-function Storage( { name, values, colorSchema } ) {
+function Storage( { name, colorSchema } ) {
 
   return (
     <>
@@ -18,7 +18,6 @@ function Storage( { name, values, colorSchema } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Duration'
                 fieldName='duration'
                 maxItems={1}
@@ -34,7 +33,6 @@ function Storage( { name, values, colorSchema } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Storage preparation'
                 fieldName='storage_preparation'
                 renderChild={({ arrayName, index }) => (

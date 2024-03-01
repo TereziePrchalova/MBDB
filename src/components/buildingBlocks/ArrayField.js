@@ -4,8 +4,8 @@ import Button from '@mui/material/Button';
 
 function ArrayField({ name, fieldName, label, renderChild, initialValue, required, maxItems }) {
 
-  const { values } = useFormikContext()
-  
+  const { values } = useFormikContext();
+
   const arrayName = `${name}.${fieldName}`;
   const value = getIn(values, arrayName);
 
@@ -47,7 +47,7 @@ function ArrayField({ name, fieldName, label, renderChild, initialValue, require
               <div className='mt-3'>
                 <Button
                   variant="outlined"
-                  onClick={() => push({...initialValue})}
+                  onClick={() => push(initialValue !== undefined ? { ...initialValue } : '')}
                   sx= {{ 
                       borderColor: '#034459',
                       color: '#034459',

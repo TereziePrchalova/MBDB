@@ -1,12 +1,14 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionInput from "../buildingBlocks/OptionInput";
 import UseDefault from "../buildingBlocks/UseDefault";
-import { useState } from "react";
-import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayField";
 import ComponentsPolymer from "./ComponentsPolymer";
 import ComponentsChemical from "./ComponentsChemical";
+import { getIn, useFormikContext } from "formik";
+import ArrayField from "../buildingBlocks/ArrayField";
 
-function Components( { name, values, colorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, tooltip } ) {
+function Components( { name, colorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, tooltip } ) {
+
+    const { values } = useFormikContext()
 
     const componentName = `${name}.components[0].type`
    
@@ -17,25 +19,19 @@ function Components( { name, values, colorSchema, molecularWeightColorSchema, co
         { value: 'chemical', label: 'Chemical' },
     ];
 
-    const [selectedOption, setSelectedOption] = useState(['polymer']);
-    
-    const handleOptionChange = (value, index) => {
-        setSelectedOption(prevOptions => {
-            const updatedOptions = [...prevOptions];
-            updatedOptions[index] = value;
-            return updatedOptions;
-        });
-    };
-
     return (
       <>
         <div>
-            <ArrayFieldFirstElementRequired
+            <ArrayField
                 name={name}
-                values={values}
                 label="Component"
                 fieldName='components'
-                renderChild={({ arrayName, index }) => (
+                required={true}
+                initialValue={{type: 'polymer'}}
+                renderChild={({ arrayName, index }) => {
+                    const actualValue = getIn(values, `${arrayName}.${index}`)
+                    if (!actualValue) {return null}
+                    return (
                     <FormWrapper headline={`Component ${index + 1}`} tooltipHeader={tooltip} colorSchema={colorSchema}>
                         <div className="mb-3">
                             <OptionInput
@@ -44,33 +40,30 @@ function Components( { name, values, colorSchema, molecularWeightColorSchema, co
                                 label='type'
                                 fieldName='type'
                                 width='w-full'
-                                onOptionChange={(value) => handleOptionChange(value, index)}
                             />
                         </div>
                         <div>
-                            {selectedOption[index] === 'polymer' && (
+                            {actualValue.type === 'polymer' && (
                                 <div>
                                     <ComponentsPolymer
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                         molecularWeightColorSchema={molecularWeightColorSchema}
                                         colorSchemaWrapper={colorSchemaWrapper}
                                         colorSchemaProtocol={colorSchemaProtocol}
                                     />
                                 </div>
                             )}
-                            {selectedOption[index] === 'chemical' && (
+                            {actualValue.type === 'chemical' && (
                                 <div>
                                     <ComponentsChemical
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                         molecularWeightColorSchema={molecularWeightColorSchema}
                                     />
                                 </div>
                             )}
                         </div>
                     </FormWrapper>
-                )}
+                )}}
             />
         </div>
       </>

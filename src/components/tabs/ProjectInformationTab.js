@@ -1,11 +1,11 @@
 import RecordInformation from "../projectInformation/RecordInformation";
 import Depositors from "../projectInformation/Depositors";
-import ArrayField from "../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../buildingBlocks/ArrayField";
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import AssociatedPublication from "../projectInformation/AssociatedPublication";
 
-function ProjectInformationTab( {name, values} ) {
+function ProjectInformationTab( { name } ) {
 
   return (
     <>
@@ -13,16 +13,15 @@ function ProjectInformationTab( {name, values} ) {
             <RecordInformation name={`${name}.record_information`} />
         </div>
         <div className="mb-2">
-            <Depositors name={`${name}.depositors`} values={values} />
+            <Depositors name={`${name}.depositors`} />
         </div>
         <div className="mb-2">
             <ArrayField
                 name={name}
-                values={values}
                 label='Funding reference'
                 fieldName='funding_reference'
                 renderChild={({ name, index }) => (
-                    <FormWrapper headline={`Funding reference ${index + 1}`}>
+                    <FormWrapper headline={`Funding reference ${index + 1}`} >
                         <CustomField
                             name={name}
                             index={index}
@@ -35,7 +34,7 @@ function ProjectInformationTab( {name, values} ) {
             />
         </div>
         <div>
-            <AssociatedPublication name={`${name}.associated_publication`} values={values}/>
+            <AssociatedPublication name={`${name}.associated_publication`} />
         </div>
       
     </>

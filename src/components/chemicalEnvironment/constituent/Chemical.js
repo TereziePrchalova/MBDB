@@ -1,9 +1,9 @@
-import ArrayField from "../../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
 import Concentration from "../../components/Concentration";
 import MolecularWeight from "../../components/MolecularWeight";
 
-function Chemical( { name, values } ) {
+function Chemical( { name } ) {
 
   return (
     <>
@@ -49,7 +49,6 @@ function Chemical( { name, values } ) {
             <div className="mr-3">
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Additional identifier'
                     fieldName='additional_identifiers'
                     renderChild={({ name, index }) => (
@@ -66,7 +65,6 @@ function Chemical( { name, values } ) {
             <div>
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Additional specification'
                     fieldName='additional_specifications'
                     renderChild={({ name, index }) => (

@@ -2,7 +2,7 @@ import CustomField from '../buildingBlocks/CustomField';
 import FormWrapper from '../buildingBlocks/FormWrapper';
 import OptionInput from '../buildingBlocks/OptionInput';
 
-function RecordInformation( {name} ) {
+function RecordInformation( { name } ) {
 
     const accessRightsOptions = [
         { value: 'open_access', label: 'Open access' },

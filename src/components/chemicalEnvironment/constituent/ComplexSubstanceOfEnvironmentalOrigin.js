@@ -1,10 +1,9 @@
 import OptionInput from "../../buildingBlocks/OptionInput";
 import CustomField from "../../buildingBlocks/CustomField";
 import Location from "../../components/Location";
-import ArrayField from "../../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../../buildingBlocks/ArrayField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Protocol from "../../buildingBlocks/Protocol";
-import ArrayFieldOneElement from "../../buildingBlocks/ArrayFieldOneElement";
 import Storage from "../../buildingBlocks/Storage";
 import Concentration from "../../components/Concentration";
 
@@ -54,7 +53,6 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Preparation protocol'
                 fieldName='preparation_protocol'
                 renderChild={({ arrayName, index }) => (
@@ -71,11 +69,11 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name, values } ) {
             />
         </div>
         <div>
-            <ArrayFieldOneElement
+            <ArrayField
                 name={name}
-                values={values}
                 label='Storage'
                 fieldName='storage'
+                maxItems={1}
                 renderChild={({ name, index }) => (
                     <FormWrapper
                         headline={`Storage ${index + 1}`}
@@ -93,7 +91,6 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Additional specification'
                 fieldName='additional_specifications'
                 renderChild={({ name, index }) => (

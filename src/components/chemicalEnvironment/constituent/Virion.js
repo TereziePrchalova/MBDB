@@ -1,10 +1,9 @@
-import ArrayField from "../../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
 import OptionInput from "../../buildingBlocks/OptionInput";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Protocol from "../../buildingBlocks/Protocol";
 import Storage from "../../buildingBlocks/Storage";
-import ArrayFieldOneElement from "../../buildingBlocks/ArrayFieldOneElement";
 import Concentration from "../../components/Concentration";
 
 function Virion( { name, values } ) {
@@ -92,7 +91,6 @@ function Virion( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Preparation protocol'
                 fieldName='preparation_protocol'
                 renderChild={({ arrayName, index }) => (
@@ -110,11 +108,11 @@ function Virion( { name, values } ) {
             />
         </div>
         <div>
-            <ArrayFieldOneElement
+            <ArrayField
                 name={name}
-                values={values}
                 label='Storage'
                 fieldName='storage'
+                maxItems={1}
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper colorSchema='light' headline={`Storage ${index + 1}`}>
                         <Storage
@@ -129,7 +127,6 @@ function Virion( { name, values } ) {
             <div>
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Additional specification'
                     fieldName='additional_specifications'
                     renderChild={({ name, index }) => (

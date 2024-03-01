@@ -4,15 +4,15 @@ import OptionInput from "../buildingBlocks/OptionInput";
 function FColdAndHot( { name } ) {
 
     const unitOptions = [
-        { value: 'nanoseconds', label: 'Nanoseconds' },
-        { value: 'microseconds', label: 'Microseconds' },
-        { value: 'milliseconds', label: 'Milliseconds' },
-        { value: 'seconds', label: 'Seconds' },
-        { value: 'minutes', label: 'Minutes' },
-        { value: 'hours', label: 'Hours' },
-        { value: 'days', label: 'Days' },
-        { value: 'months', label: 'Months' },
-        { value: 'years', label: 'Years' },
+        { value: 'Nanoseconds', label: 'Nanoseconds' },
+        { value: 'Microseconds', label: 'Microseconds' },
+        { value: 'Milliseconds', label: 'Milliseconds' },
+        { value: 'Seconds', label: 'Seconds' },
+        { value: 'Minutes', label: 'Minutes' },
+        { value: 'Gours', label: 'Hours' },
+        { value: 'Days', label: 'Days' },
+        { value: 'Months', label: 'Months' },
+        { value: 'Years', label: 'Years' },
     ];
 
   return (

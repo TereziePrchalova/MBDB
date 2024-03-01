@@ -1,7 +1,7 @@
 import CustomField from '../buildingBlocks/CustomField';
 import OptionInput from '../buildingBlocks/OptionInput';
 
-function DataFitting( {name} ) {
+function DataFitting( { name } ) {
 
     const qualityOptions = [
         { value: 'R^2', label: 'R^2' },

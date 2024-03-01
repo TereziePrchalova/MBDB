@@ -1,26 +1,25 @@
-import ArrayField from "../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../buildingBlocks/ArrayField";
 import CustomField from "../buildingBlocks/CustomField";
 import OptionInput from "../buildingBlocks/OptionInput";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Protocol from "../buildingBlocks/Protocol";
 import Storage from "../buildingBlocks/Storage";
-import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
 
-function CellFraction( { name, values } ) {
+function CellFraction( { name } ) {
 
     const fractionOptions = [
-        { value: 'ribosome', label: 'Ribosome' },
-        { value: 'cell_wall', label: 'Cell wall' },
+        { value: 'Ribosome', label: 'Ribosome' },
+        { value: 'Cell wall', label: 'Cell wall' },
         { value: 'VesicleCell lysate/Cytoplasm', label: 'VesicleCell lysate/Cytoplasm' },
-        { value: 'cell_membrane', label: 'Cell Membrane' },
-        { value: 'extracellular_matrix', label: 'Extracellular matrix' },
-        { value: 'lysosome', label: 'Lysosome' },
-        { value: 'golgi_apparatus', label: 'Golgi Apparatus' },
-        { value: 'mitochondrion', label: 'Mitochondrion' },
-        { value: 'rough_endoplasmic_reticulum', label: 'Rough Endoplasmic Reticulum' },
-        { value: 'smooth_endoplasmic_reticulum', label: 'Smooth Endoplasmic Reticulum' },
-        { value: 'vacuole', label: 'Vacuole' },
-        { value: 'chloroplast', label: 'Chloroplast' },
+        { value: 'Cell Membrane', label: 'Cell Membrane' },
+        { value: 'Extracellular matrix', label: 'Extracellular matrix' },
+        { value: 'Lysosome', label: 'Lysosome' },
+        { value: 'Golgi Apparatus', label: 'Golgi Apparatus' },
+        { value: 'Mitochondrion', label: 'Mitochondrion' },
+        { value: 'Rough Endoplasmic Reticulum', label: 'Rough Endoplasmic Reticulum' },
+        { value: 'Smooth Endoplasmic Reticulum', label: 'Smooth Endoplasmic Reticulum' },
+        { value: 'Vacuole', label: 'Vacuole' },
+        { value: 'Chloroplast', label: 'Chloroplast' },
     ];
 
   return (
@@ -90,7 +89,6 @@ function CellFraction( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Preparation protocol'
                 fieldName='preparation_protocol'
                 renderChild={({ arrayName, index }) => (
@@ -101,25 +99,21 @@ function CellFraction( { name, values } ) {
                     >
                         <Protocol
                             name={`${arrayName}.${index}`}
-                            values={values}
-                            fieldName='protocol'
                         />
                     </FormWrapper>
                 )}
             />
         </div>
         <div>
-            <ArrayFieldOneElement
+            <ArrayField
                 name={name}
-                values={values}
                 label='Storage'
                 fieldName='storage'
-                renderChild={({ name, index }) => (
+                maxItems={1}
+                renderChild={({ arrayName, index }) => (
                     <FormWrapper colorSchema='light' headline={`Storage ${index + 1}`}>
                         <Storage
-                            name={`${name}.storage.${index}`}
-                            values={values}
-                            fieldName='storage'
+                            name={`${arrayName}.${index}`}
                         />
                     </FormWrapper>
                 )}
@@ -129,15 +123,13 @@ function CellFraction( { name, values } ) {
             <div>
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Additional specification'
                     fieldName='additional_specifications'
-                    renderChild={({ name, index }) => (
+                    renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={name}
+                            name={arrayName}
                             index={index}
                             label={`Additional specification ${index + 1}`}
-                            fieldName='additional_specifications'
                             width='w-[15rem]'
                             tooltip='Additional information about the complex substance can be specified here'
                         />

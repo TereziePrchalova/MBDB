@@ -1,5 +1,5 @@
 import CustomField from "../../buildingBlocks/CustomField";
-import ArrayField from "../../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../../buildingBlocks/ArrayField";
 import MolecularWeight from "../../components/MolecularWeight";
 import Modification from "../../components/Modification";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
@@ -42,7 +42,6 @@ function MolecularAssembly( { name, values} ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Chemical Modification'
                 fieldName='chemical_modifications'
                 renderChild={({ arrayName, index }) => (
@@ -60,7 +59,6 @@ function MolecularAssembly( { name, values} ) {
             <div className="mr-3">
                 <ArrayField
                     name={name}
-                    values={values}
                     label='External Database'
                     fieldName='external_databases'
                     renderChild={({ name, index }) => (
@@ -76,7 +74,6 @@ function MolecularAssembly( { name, values} ) {
             <div>
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Additional specification'
                     fieldName='additional_specifications'
                     renderChild={({ name, index }) => (

@@ -2,10 +2,14 @@ import FormWrapper from "../buildingBlocks/FormWrapper";
 import ArrayField from "../buildingBlocks/ArrayField";
 import DataAnalysis from "../dataAnalysis/DataAnalysis";
 import UseDefault from "../buildingBlocks/UseDefault";
+import { useFormikContext } from "formik";
 
-function DataAnalysisTab( { name, values} ) {
+function DataAnalysisTab( { name } ) {
+
+    const { values } = useFormikContext();
 
     const fieldName = 'chemical_environment'
+    
     UseDefault(values, `${name}.${fieldName}`, [{}] );
 
     return (
@@ -13,7 +17,6 @@ function DataAnalysisTab( { name, values} ) {
         <div className="-mt-3">
             <ArrayField
                 name={name}
-                values={values}
                 label="Data analysis"
                 fieldName={fieldName}
                 renderChild={({ arrayName, index }) => (
@@ -21,7 +24,6 @@ function DataAnalysisTab( { name, values} ) {
                         <div>
                             <DataAnalysis
                                 name={`${arrayName}.${index}`}
-                                values={values}
                             />
                         </div>
                     </FormWrapper>

@@ -1,21 +1,20 @@
 import OptionInput from "../buildingBlocks/OptionInput";
 import CustomField from "../buildingBlocks/CustomField";
 import Location from "../components/Location";
-import ArrayField from "../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../buildingBlocks/ArrayField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Protocol from "../buildingBlocks/Protocol";
-import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
 import Storage from "../buildingBlocks/Storage";
 
-function ComplexSubstanceOfEnvironmentalOrigin( { name, values } ) {
+function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
 
     const sourceOptions = [
-        { value: 'fresh_water', label: 'Fresh water' },
-        { value: 'marine', label: 'Marine' },
-        { value: 'ice_core', label: 'Ice core' },
-        { value: 'sediment', label: 'Sediment' },
-        { value: 'sewage', label: 'Sewage' },
-        { value: 'soil', label: 'Soil' },
+        { value: 'Fresh water', label: 'Fresh water' },
+        { value: 'Marine', label: 'Marine' },
+        { value: 'Ice core', label: 'Ice core' },
+        { value: 'Sediment', label: 'Sediment' },
+        { value: 'Sewage', label: 'Sewage' },
+        { value: 'Soil', label: 'Soil' },
       ];
 
   return (
@@ -49,7 +48,6 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Preparation protocol'
                 fieldName='preparation_protocol'
                 renderChild={({ arrayName, index }) => (
@@ -60,28 +58,6 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name, values } ) {
                     >
                         <Protocol
                             name={`${arrayName}.${index}`}
-                            fieldName='protocol'
-                        />
-                    </FormWrapper>
-                )}
-            />
-        </div>
-        <div>
-            <ArrayFieldOneElement
-                name={name}
-                values={values}
-                label='Storage'
-                fieldName='storage'
-                renderChild={({ name, index }) => (
-                    <FormWrapper
-                        colorSchema='light'
-                        headline={`Storage ${index + 1}`}
-                        tooltipHeader='The specific steps that were taken to prepare the samples for storage (e.g. flash freezing in liquid nitrogen), if applicable'
-                    >
-                        <Storage
-                            name={`${name}.storage.${index}`}
-                            values={values}
-                            fieldName='storage'
                         />
                     </FormWrapper>
                 )}
@@ -90,15 +66,32 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
+                label='Storage'
+                fieldName='storage'
+                maxItems={1}
+                renderChild={({ arrayName, index }) => (
+                    <FormWrapper
+                        colorSchema='light'
+                        headline={`Storage ${index + 1}`}
+                        tooltipHeader='The specific steps that were taken to prepare the samples for storage (e.g. flash freezing in liquid nitrogen), if applicable'
+                    >
+                        <Storage
+                            name={`${arrayName}.${index}`}
+                        />
+                    </FormWrapper>
+                )}
+            />
+        </div>
+        <div>
+            <ArrayField
+                name={name}
                 label='Additional specification'
                 fieldName='additional_specifications'
-                renderChild={({ name, index }) => (
+                renderChild={({ arrayName, index }) => (
                     <CustomField
-                        name={name}
+                        name={arrayName}
                         index={index}
                         label={`Additional specification ${index + 1}`}
-                        fieldName='additional_specifications'
                         width='w-[15rem]'
                         tooltip='Additional information about the complex substance can be specified here'
                     />
