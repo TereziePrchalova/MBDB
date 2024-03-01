@@ -5,8 +5,11 @@ import ArrayField from "../buildingBlocks/ArrayField";
 import EntityInvolved from "../buildingBlocks/EntityInvolved";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import UseDefault from "../buildingBlocks/UseDefault";
+import { useFormikContext } from "formik";
 
-function ChangeInGibbsFreeEnergyDeltaG( { name, values } ) {
+function ChangeInGibbsFreeEnergyDeltaG( { name } ) {
+
+    const { values } = useFormikContext()
 
     const unitOptions = [
         { value: 'kcal/mol', label: 'kcal/mol' },
@@ -39,7 +42,6 @@ function ChangeInGibbsFreeEnergyDeltaG( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Entity involved'
                 fieldName={fieldNameEntityInvolved}
                 required={true}
@@ -59,7 +61,6 @@ function ChangeInGibbsFreeEnergyDeltaG( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Value error'
                 fieldName='value_error'
                 maxItems={1}

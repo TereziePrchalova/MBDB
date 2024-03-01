@@ -1,13 +1,14 @@
-import ArrayField from "../../buildingBlocks/ArrayFieldSave";
+import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
 import OptionInput from "../../buildingBlocks/OptionInput";
 import MolecularWeight from "../../components/MolecularWeight";
-import MyContext from "../../buildingBlocks/MyContext";
-import { useContext } from "react";
 import Modifications from "../../components/Modifications";
 import Concentration from "../../components/Concentration";
+import { useFormikContext } from "formik";
 
-function Polymer( { name, values } ) {
+function Polymer( { name } ) {
+
+    const { values } = useFormikContext()
 
     const polymerTypeOptions = [
         { value: 'cyclic_pseudo_peptide', label: 'Cyclic pseudo peptide' },
@@ -24,12 +25,6 @@ function Polymer( { name, values } ) {
         { value: 'recombinantly', label: 'Recombinantly' },
         { value: 'synthetically', label: 'Synthetically' },
       ];
-      
-        const { setInputValue } = useContext(MyContext);
-
-        const handleChange = (e) => {
-            setInputValue(e.target.value);
-        };
 
   return (
     <>
@@ -39,7 +34,6 @@ function Polymer( { name, values } ) {
                 name={name}
                 label='Name'
                 fieldName='name'
-                onChange={handleChange}
                 tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
             />
           </div>

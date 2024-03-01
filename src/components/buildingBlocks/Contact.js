@@ -1,4 +1,4 @@
-import ArrayField from "./ArrayFieldSave";
+import ArrayField from "./ArrayField";
 import CustomField from "./CustomField";
 
 function Contact( { name, values} ) {
@@ -7,10 +7,20 @@ function Contact( { name, values} ) {
     <>
         <div className='flex'>
           <div className='mr-3'>
-            <CustomField name={name} label='Given Name' fieldName='given_name' tooltip='The given name(s), including middlename(s), of the person' />
+            <CustomField
+              name={name}
+              label='Given Name'
+              fieldName='given_name'
+              tooltip='The given name(s), including middlename(s), of the person'
+            />
           </div>
           <div>
-            <CustomField name={name} label='Family Name' fieldName='family_name' tooltip='The family name(s) the person' />
+            <CustomField
+              name={name}
+              label='Family Name'
+              fieldName='family_name'
+              tooltip='The family name(s) the person'
+            />
           </div>
         </div>
         <div className="flex">

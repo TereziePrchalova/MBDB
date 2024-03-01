@@ -1,9 +1,8 @@
 import Temperature from "../components/Temperature";
 import Duration from './Duration'
-import ArrayField from "./ArrayFieldSave";
+import ArrayField from "./ArrayField";
 import FormWrapper from "./FormWrapper";
 import StoragePreparation from "./StoragePreparation";
-import ArrayFieldOneElement from "./ArrayFieldOneElement";
 
 function Storage( { name, values, colorSchema } ) {
 
@@ -17,11 +16,12 @@ function Storage( { name, values, colorSchema } ) {
             />
         </div>
         <div>
-            <ArrayFieldOneElement
+            <ArrayField
                 name={name}
                 values={values}
                 label='Duration'
                 fieldName='duration'
+                maxItems={1}
                 renderChild={({ arrayName, index }) => (
                     <Duration
                         name={`${arrayName}.${index}`}

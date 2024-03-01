@@ -1,14 +1,15 @@
 import CustomField from "../buildingBlocks/CustomField";
 import ValueUnit from "../buildingBlocks/ValueUnit";
 import ValueError from "../buildingBlocks/ValueError";
-import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
-import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayField";
 import EntityInvolved from "../buildingBlocks/EntityInvolved";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import UseDefault from "../buildingBlocks/UseDefault";
 import ArrayField from "../buildingBlocks/ArrayField";
+import { useFormikContext } from "formik";
 
-function ChangeInEntropyDeltaS( { name, values } ) {
+function ChangeInEntropyDeltaS( { name } ) {
+
+    const { values } = useFormikContext()
 
     const unitOptions = [
         { value: 'kcal/molK', label: 'kcal/molK' },
@@ -41,7 +42,6 @@ function ChangeInEntropyDeltaS( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Entity involved'
                 fieldName={fieldNameEntityInvolved}
                 required={true}
@@ -61,7 +61,6 @@ function ChangeInEntropyDeltaS( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Value error'
                 fieldName='value_error'
                 maxItems={1}

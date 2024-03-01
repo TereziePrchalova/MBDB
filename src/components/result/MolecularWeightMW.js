@@ -5,8 +5,11 @@ import ArrayField from "../buildingBlocks/ArrayField";
 import EntityInvolved from "../buildingBlocks/EntityInvolved";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import UseDefault from "../buildingBlocks/UseDefault";
+import { useFormikContext } from "formik";
 
-function MolecularWeightMW( { name, values } ) {
+function MolecularWeightMW( { name } ) {
+
+    const { values } = useFormikContext()
 
     const unitOptions = [
         { value: 'g/mol', label: 'g/mol' },
@@ -41,7 +44,6 @@ function MolecularWeightMW( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Entity involved'
                 fieldName={fieldNameEntityInvolved}
                 required={true}
@@ -61,7 +63,6 @@ function MolecularWeightMW( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Value error'
                 fieldName='value_error'
                 maxItems={1}

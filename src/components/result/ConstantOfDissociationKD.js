@@ -5,8 +5,11 @@ import EntityInvolved from "../buildingBlocks/EntityInvolved";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import ArrayField from "../buildingBlocks/ArrayField";
 import UseDefault from "../buildingBlocks/UseDefault";
+import { useFormikContext } from "formik";
 
-function ConstantOfDissociationKD( { name, values } ) {
+function ConstantOfDissociationKD( { name } ) {
+
+    const { values } = useFormikContext()
 
     const unitOptions = [
         { value: 'M', label: 'M' },
@@ -45,7 +48,6 @@ function ConstantOfDissociationKD( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Entity involved'
                 fieldName={fieldNameEntityInvolved}
                 required={true}
@@ -61,7 +63,6 @@ function ConstantOfDissociationKD( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Value error'
                 fieldName='value_error'
                 maxItems={1}

@@ -35,7 +35,7 @@ function ProjectInformationTab( {name, values} ) {
             />
         </div>
         <div>
-            <AssociatedPublication name={`${name}.associated_publication`} />
+            <AssociatedPublication name={`${name}.associated_publication`} values={values}/>
         </div>
       
     </>

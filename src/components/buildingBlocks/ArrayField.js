@@ -1,9 +1,11 @@
 import React from 'react';
-import { FieldArray, getIn } from 'formik';
+import { FieldArray, getIn, useFormikContext } from 'formik';
 import Button from '@mui/material/Button';
 
-function ArrayField({ name, values, fieldName, label, renderChild, initialValue, required, maxItems }) {
+function ArrayField({ name, fieldName, label, renderChild, initialValue, required, maxItems }) {
 
+  const { values } = useFormikContext()
+  
   const arrayName = `${name}.${fieldName}`;
   const value = getIn(values, arrayName);
 

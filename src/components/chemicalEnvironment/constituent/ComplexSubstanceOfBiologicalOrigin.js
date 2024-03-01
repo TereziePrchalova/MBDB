@@ -1,27 +1,25 @@
 import OptionInput from "../../buildingBlocks/OptionInput";
-import { useState } from "react";
 import UseDefault from "../../buildingBlocks/UseDefault";
 import BodyFluid from "./BodyFluid";
 import CellFraction from "./CellFraction";
 import Virion from "./Virion";
+import { useFormikContext, getIn } from "formik";
 
-function ComplexSubstanceOfBiologicalOrigin( { name, values } ) {
+function ComplexSubstanceOfBiologicalOrigin( { name } ) {
+
+    const { values } = useFormikContext()
 
     const componentName = `${name}.derived_from`
    
     UseDefault(values, componentName, 'body_fluid')
+
+    const actualValue = getIn(values, componentName)
 
     const complexSubstanceOfBiologicalOriginOptions = [
         { value: 'body_fluid', label: 'Body fluid' },
         { value: 'cell_fraction', label: 'Cell fraction' },
         { value: 'virion', label: 'Virion' },
     ];
-
-    const [selectedOption, setSelectedOption] = useState('body_fluid');
-
-    const handleOptionChange = (value) => {
-        setSelectedOption(value);
-    };
 
   return (
     <>
@@ -32,21 +30,20 @@ function ComplexSubstanceOfBiologicalOrigin( { name, values } ) {
                 label='Derived from'
                 fieldName='derived_from'
                 width='w-full'
-                onOptionChange={handleOptionChange}
             />
         </div>
 
-        {selectedOption === 'body_fluid' && (
+        {actualValue === 'body_fluid' && (
             <>
                 <BodyFluid name={name} values={values} />
             </>
         )}
-        {selectedOption === 'cell_fraction' && (
+        {actualValue === 'cell_fraction' && (
             <>
                 <CellFraction name={name} values={values} />
             </>
         )}
-        {selectedOption === 'virion' && (
+        {actualValue === 'virion' && (
             <>
                 <Virion name={name} values={values} />
             </>

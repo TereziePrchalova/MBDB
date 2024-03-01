@@ -5,8 +5,11 @@ import ArrayField from "../buildingBlocks/ArrayField";
 import EntityInvolved from "../buildingBlocks/EntityInvolved";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import UseDefault from "../buildingBlocks/UseDefault";
+import { useFormikContext } from "formik";
 
-function Concentration( { name, values } ) {
+function Concentration( { name } ) {
+
+    const { values } = useFormikContext()
 
     const unitOptions = [
         { value: 'M', label: 'M' },
@@ -56,7 +59,6 @@ function Concentration( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Entity involved'
                 fieldName={fieldNameEntityInvolved}
                 required={true}
@@ -76,7 +78,6 @@ function Concentration( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Value error'
                 fieldName='value_error'
                 maxItems={1}

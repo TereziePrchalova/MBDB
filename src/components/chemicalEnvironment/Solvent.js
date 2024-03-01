@@ -1,11 +1,13 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionInput from "../buildingBlocks/OptionInput";
 import UseDefault from "../buildingBlocks/UseDefault";
-import { useState } from "react";
-import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayField";
-import ChemicalEnvironmentChemical from "./constituent/Chemical";
+import ArrayField from "../buildingBlocks/ArrayField";
+import Chemical from "./constituent/Chemical";
+import { getIn, useFormikContext } from "formik";
 
-function Solvent( { name, values } ) {
+function Solvent( { name } ) {
+
+    const { values } = useFormikContext()
 
     const componentName = `${name}.solvent[0].type`
    
@@ -15,26 +17,20 @@ function Solvent( { name, values } ) {
         { value: 'chemical', label: 'Chemical' },
     ];
 
-    const [selectedOption, setSelectedOption] = useState(['chemical']);
-    
-    const handleOptionChange = (value, index) => {
-        setSelectedOption(prevOptions => {
-            const updatedOptions = [...prevOptions];
-            updatedOptions[index] = value;
-            return updatedOptions;
-        });
-    };
-
     return (
       <>
         <div>
             <div>
-                <ArrayFieldFirstElementRequired
+                <ArrayField
                     name={name}
-                    values={values}
                     label="Solvent"
                     fieldName='solvent'
-                    renderChild={({ arrayName, index }) => (
+                    initialValue={{type: 'chemical'}}
+                    required={true}
+                    renderChild={({ arrayName, index }) => {
+                        const actualValue = getIn(values, `${arrayName}.${index}`)
+                        if (!actualValue) {return null}
+                        return (
                         <div>
                             <FormWrapper 
                                 headline={`Solvent ${index + 1}`}
@@ -48,15 +44,13 @@ function Solvent( { name, values } ) {
                                         label='type'
                                         fieldName='type'
                                         width='w-full'
-                                        onOptionChange={(value) => handleOptionChange(value, index)}
                                     />
                                 </div>
                                 <div>
-                                    {selectedOption[index] === 'chemical' && (
+                                    {actualValue.type === 'chemical' && (
                                         <div>
-                                            <ChemicalEnvironmentChemical
+                                            <Chemical
                                                 name={`${arrayName}.${index}`}
-                                                values={values}
                                             />
                                         </div>
                                     )}
@@ -64,7 +58,7 @@ function Solvent( { name, values } ) {
                             </FormWrapper>
                         </div>
 
-                    )}
+                    )}}
                 />
             </div>
         </div>

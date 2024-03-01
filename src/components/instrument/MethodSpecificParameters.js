@@ -2,8 +2,7 @@ import FormWrapper from '../buildingBlocks/FormWrapper';
 import OptionInput from '../buildingBlocks/OptionInput';
 import CustomField from '../buildingBlocks/CustomField';
 import Temperature from '../components/Temperature';
-import ArrayFieldOneElement from '../buildingBlocks/ArrayFieldOneElement';
-import ArrayFieldFirstElementRequired from '../buildingBlocks/ArrayField';
+import ArrayField from '../buildingBlocks/ArrayField';
 
 function MethodSpecificParameters( {name, values} ) {
 
@@ -32,7 +31,10 @@ function MethodSpecificParameters( {name, values} ) {
 
   return (
     <>
-        <FormWrapper headline='Method specific parameters' tooltipHeader='The parameters of the experiment that is specific to MST/TRIC/Spectral Shift'>
+        <FormWrapper
+            headline='Method specific parameters'
+            tooltipHeader='The parameters of the experiment that is specific to MST/TRIC/Spectral Shift'
+        >
             <div className='flex mb-3'>
                 <div>
                     <OptionInput
@@ -81,7 +83,7 @@ function MethodSpecificParameters( {name, values} ) {
                 </div>
             </div>
             <div>
-                <ArrayFieldFirstElementRequired
+                <ArrayField
                     name={name}
                     values={values}
                     label='Temperature'

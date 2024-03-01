@@ -68,7 +68,7 @@ function Virion( { name, values } ) {
             />
           </div>
         </div>
-        <div className="flex">
+        <div className="flex mb-3">
           <div className="mr-3">
             <CustomField name={name} label='Host organism' fieldName='host_organism' />
           </div>

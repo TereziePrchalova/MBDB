@@ -1,15 +1,23 @@
 import CustomField from './CustomField';
 import OptionInput from './OptionInput';
-import MyContext from './MyContext';
-import { useContext } from 'react';
+import { useFormikContext, getIn } from 'formik';
 
-function EntityInvolved( {name } ) {
+function EntityInvolved( { name } ) {
 
-    const { inputValue } = useContext(MyContext);
+      const { values } = useFormikContext()
+      
+      const entitiesValue = getIn(values, `general_parameters.entities_of_interest`)
 
-    const unitOptions = [
-        { value: 'currently_out_off_service', label: 'Currently out off service' },
-      ];
+      let unitOptions = [];
+
+      if (entitiesValue && entitiesValue.length > 0) {
+        unitOptions = entitiesValue.map(entity => ({
+            value: entity.name,
+            label: entity.name,
+        }));
+    } else {
+        unitOptions = [{ label: 'Select Entity, if applicable' }];
+    }
 
   return (
     <>

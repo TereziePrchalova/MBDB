@@ -1,4 +1,3 @@
-import { useState } from "react";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionInput from "../buildingBlocks/OptionInput";
 import UseDefault from "../buildingBlocks/UseDefault";
@@ -14,28 +13,30 @@ import ChangeInEntropyDeltaS from "../result/ChangeInEntropyDeltaS";
 import MolecularWeightMW from "../result/MolecularWeightMW";
 import HalfMaximalEffectiveConcentrationEC50 from "../result/HalfMaximalEffectiveConcentrationEC50";
 import HillCoefficient from "../result/HillCoefficient";
-import { getIn } from "formik";
+import { getIn, useFormikContext } from "formik";
 import ChangeInGibbsFreeEnergyDeltaG from "../result/ChangeInGibbsFreeEnergyDeltaG";
 
-function ResultTab( { name, values } ) {
+function ResultTab( { name } ) {
+
+    const { values } = useFormikContext()
 
     const componentName = `${name}.results[0].type`
    
-    UseDefault(values, componentName, 'Concentration')
+    UseDefault(values, componentName, 'concentration')
 
     const resultTabOptions = [
-        { value: 'Concentration', label: 'Concentration' },
-        { value: 'Stoichiometry', label: 'Stoichiometry' },
-        { value: 'Constant of association KA', label: 'Constant of association KA' },
-        { value: 'Constant of dissociation KD', label: 'Constant of dissociation KD' },
-        { value: 'Association rate kOn', label: 'Association rate kOn' },
-        { value: 'Dissociation rate kOff', label: 'Dissociation rate kOff' },
-        { value: 'Change in enthalpy deltaH', label: 'Change in enthalpy deltaH' },
-        { value: 'Change in entropy deltaS', label: 'Change in entropy deltaS' },
-        { value: 'Change in Gibbs free energy deltaG', label: 'Change in Gibbs free energy deltaG' },
-        { value: 'Molecular weight MW', label: 'Molecular weight MW' },
-        { value: 'Half maximal effective concentration EC50', label: 'Half maximal effective concentration EC50' },
-        { value: 'Hill coefficient', label: 'Hill coefficient' },
+        { value: 'concentration', label: 'Concentration' },
+        { value: 'stoichiometry', label: 'Stoichiometry' },
+        { value: 'constant_of_association_KA', label: 'Constant of association KA' },
+        { value: 'constant_of_dissociation_KD', label: 'Constant of dissociation KD' },
+        { value: 'association_rate_kOn', label: 'Association rate kOn' },
+        { value: 'dissociation_rate_kOff', label: 'Dissociation rate kOff' },
+        { value: 'change_in_enthalpy_deltaH', label: 'Change in enthalpy deltaH' },
+        { value: 'change_in_entropy_deltaS', label: 'Change in entropy deltaS' },
+        { value: 'change_in_gibbs_free_energy_deltaG', label: 'Change in Gibbs free energy deltaG' },
+        { value: 'molecular_weight_MW', label: 'Molecular weight MW' },
+        { value: 'half_maximal_effective_concentration_EC50', label: 'Half maximal effective concentration EC50' },
+        { value: 'hill_coefficient', label: 'Hill coefficient' },
     ];
 
     return (
@@ -43,10 +44,9 @@ function ResultTab( { name, values } ) {
         <div className="-mt-3">
             <ArrayField 
                 name={name}
-                values={values}
                 label="Result"
                 fieldName='results'
-                initialValue={{type: 'Concentration'}}
+                initialValue={{type: 'concentration'}}
                 renderChild={({ arrayName, index }) => {
                     const actualValue = getIn(values, `${arrayName}.${index}`)
                     if (!actualValue) {return null}
@@ -65,99 +65,87 @@ function ResultTab( { name, values } ) {
                             />
                         </div>
                         <div>
-                            {actualValue.type === 'Concentration' && (
+                            {actualValue.type === 'concentration' && (
                                 <div>
                                     <Concentration
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'Stoichiometry' && (
+                            {actualValue.type === 'stoichiometry' && (
                                 <div>
                                     <Stoichiometry
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'Constant of association KA' && (
+                            {actualValue.type === 'constant_of_association_KA' && (
                                 <div>
                                     <ConstantOfAssociationKA
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'Constant of dissociation KD' && (
+                            {actualValue.type === 'constant_of_dissociation_KD' && (
                                 <div>
                                     <ConstantOfDissociationKD
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'Association rate kOn' && (
+                            {actualValue.type === 'association_rate_kOn' && (
                                 <div>
                                     <AssociationRateKOn
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'Dissociation rate kOff' && (
+                            {actualValue.type === 'dissociation_rate_kOff' && (
                                 <div>
                                     <DissociationRateKOff
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'Change in enthalpy deltaH' && (
+                            {actualValue.type === 'change_in_enthalpy_deltaH' && (
                                 <div>
                                     <ChangeInEnthalpyDeltaH
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'Change in entropy deltaS' && (
+                            {actualValue.type === 'change_in_entropy_deltaS' && (
                                 <div>
                                     <ChangeInEntropyDeltaS
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'Change in Gibbs free energy deltaG' && (
+                            {actualValue.type === 'change_in_gibbs_free_energy_deltaG' && (
                                 <div>
                                     <ChangeInGibbsFreeEnergyDeltaG
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'Molecular weight MW' && (
+                            {actualValue.type === 'molecular_weight_MW' && (
                                 <div>
                                     <MolecularWeightMW
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'Half maximal effective concentration EC50' && (
+                            {actualValue.type === 'half_maximal_effective_concentration_EC50' && (
                                 <div>
                                     <HalfMaximalEffectiveConcentrationEC50
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'Hill coefficient' && (
+                            {actualValue.type === 'hill_coefficient' && (
                                 <div>
                                     <HillCoefficient
                                         name={`${arrayName}.${index}`}
-                                        values={values}
                                     />
                                 </div>
                             )}

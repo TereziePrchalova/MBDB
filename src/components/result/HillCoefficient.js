@@ -5,8 +5,11 @@ import ArrayField from "../buildingBlocks/ArrayField";
 import EntityInvolved from "../buildingBlocks/EntityInvolved";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import UseDefault from "../buildingBlocks/UseDefault";
+import { useFormikContext } from "formik";
 
-function HillCoefficient( { name, values } ) {
+function HillCoefficient( { name } ) {
+
+    const { values } = useFormikContext()
 
     const unitOptions = [
         { value: 'unitless', label: 'unitless' },
@@ -38,7 +41,6 @@ function HillCoefficient( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Entity involved'
                 fieldName={fieldNameEntityInvolved}
                 required={true}
@@ -58,7 +60,6 @@ function HillCoefficient( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Value error'
                 fieldName='value_error'
                 maxItems={1}

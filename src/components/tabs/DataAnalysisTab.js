@@ -1,17 +1,21 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import ArrayFieldFirstElementRequired from "../buildingBlocks/ArrayField";
+import ArrayField from "../buildingBlocks/ArrayField";
 import DataAnalysis from "../dataAnalysis/DataAnalysis";
+import UseDefault from "../buildingBlocks/UseDefault";
 
 function DataAnalysisTab( { name, values} ) {
+
+    const fieldName = 'chemical_environment'
+    UseDefault(values, `${name}.${fieldName}`, [{}] );
 
     return (
       <>
         <div className="-mt-3">
-            <ArrayFieldFirstElementRequired
+            <ArrayField
                 name={name}
                 values={values}
                 label="Data analysis"
-                fieldName='data_analysis'
+                fieldName={fieldName}
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper headline={`Data analysis ${index + 1}`}>
                         <div>

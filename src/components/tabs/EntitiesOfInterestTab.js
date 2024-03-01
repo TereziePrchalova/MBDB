@@ -9,9 +9,11 @@ import MolecularAssembly from "../entitiesOfInterest/MolecularAssembly";
 import ComplexSubstanceOfIndustrialProductionOrigin from "../entitiesOfInterest/ComplexSubstanceOfIndustrialProductionOrigin";
 import ComplexSubstanceOfChemicalOrigin from "../entitiesOfInterest/ComplexSubstanceOfChemicalOrigin";
 import ArrayField from "../buildingBlocks/ArrayField";
-import { getIn } from "formik";
+import { getIn, useFormikContext } from "formik";
 
-function EntitiesOfInterestTab( { name, values } ) {
+function EntitiesOfInterestTab( { name } ) {
+
+    const { values } = useFormikContext()
 
     const componentName = `${name}.entities_of_interest[0].type`
    
@@ -32,13 +34,11 @@ function EntitiesOfInterestTab( { name, values } ) {
         <div className="-mt-3">
             <ArrayField
                 name={name}
-                values={values}
                 label="Entity of interest"
                 fieldName='entities_of_interest'
                 initialValue={{type: 'polymer'}}
                 required={true}
                 renderChild={({ arrayName, index }) =>  {
-                    console.log(values, `${arrayName}.${index}`)
                     const actualValue = getIn(values, `${arrayName}.${index}`)
                     if (!actualValue) {return null}
                     return (

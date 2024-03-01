@@ -5,8 +5,11 @@ import EntityInvolved from "../buildingBlocks/EntityInvolved";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import UseDefault from "../buildingBlocks/UseDefault";
 import ArrayField from "../buildingBlocks/ArrayField";
+import { useFormikContext } from "formik";
 
-function HalfMaximalEffectiveConcentrationEC50( { name, values } ) {
+function HalfMaximalEffectiveConcentrationEC50( { name } ) {
+
+    const { values } = useFormikContext()
 
     const unitOptions = [
         { value: 'w/w %', label: 'w/w %' },
@@ -42,7 +45,6 @@ function HalfMaximalEffectiveConcentrationEC50( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Entity involved'
                 fieldName={fieldNameEntityInvolved}
                 required={true}
@@ -62,7 +64,6 @@ function HalfMaximalEffectiveConcentrationEC50( { name, values } ) {
         <div>
             <ArrayField
                 name={name}
-                values={values}
                 label='Value error'
                 fieldName='value_error'
                 maxItems={1}
