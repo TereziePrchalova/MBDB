@@ -1,5 +1,5 @@
 
-function RawDataFiles( { name, values} ) {
+function RawDataFiles( { name } ) {
 
   return (
     <>

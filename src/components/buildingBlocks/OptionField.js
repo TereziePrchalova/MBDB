@@ -8,18 +8,9 @@ import Select from '@mui/material/Select';
 import { Tooltip } from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
-function OptionInput({ label, name, fieldName, options, colorSchema, width, onOptionChange, tooltip}) {
+function OptionField({ label, name, fieldName, options, width, tooltip}) {
   const nameOptionField = `${name}.${fieldName}`;
-  const [field, meta, helpers] = useField(nameOptionField);
-
-  
-  const handleChange = (event) => {
-    const value = event.target.value;
-    helpers.setValue(event.target.value);
-    if (onOptionChange) {
-      onOptionChange(value);
-    }
-  };
+  const [field, meta] = useField(nameOptionField);
 
   return (
     <div className='flex'>
@@ -41,7 +32,6 @@ function OptionInput({ label, name, fieldName, options, colorSchema, width, onOp
             name={nameOptionField}
             value={field.value || ''}
             label={label}
-            onChange={handleChange}
             size="small"
             error={meta.touched && !!meta.error}
             MenuProps={{
@@ -77,4 +67,4 @@ function OptionInput({ label, name, fieldName, options, colorSchema, width, onOp
   );
 }
 
-export default OptionInput;
+export default OptionField;

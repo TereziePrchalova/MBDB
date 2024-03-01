@@ -1,9 +1,9 @@
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import OptionInput from "../buildingBlocks/OptionInput";
 import ArrayField from "../buildingBlocks/ArrayField";
 import Size from "./Size";
 import Components from "./Components";
+import OptionField from "../buildingBlocks/OptionField";
 
 function Details({ name, colorSchema, sizeColorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol }) {
 
@@ -19,7 +19,7 @@ function Details({ name, colorSchema, sizeColorSchema, molecularWeightColorSchem
       <FormWrapper colorSchema={colorSchema} headline='Details' tooltipHeader='The chemical origin where the complex substance was derived from'>
         <div className="flex mb-3">
           <div className="mr-3">
-              <OptionInput
+              <OptionField
                   name={name}
                   options={detailsTypeOptions}
                   fieldName='type'

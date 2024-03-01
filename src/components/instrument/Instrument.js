@@ -1,6 +1,6 @@
 import FormWrapper from '../buildingBlocks/FormWrapper';
-import OptionInput from '../buildingBlocks/OptionInput';
 import CustomField from '../buildingBlocks/CustomField';
+import OptionField from '../buildingBlocks/OptionField';
 
 function Instrument( {name} ) {
 
@@ -32,7 +32,7 @@ function Instrument( {name} ) {
                     />
                 </div>
                 <div className='mx-3'>
-                    <OptionInput
+                    <OptionField
                         colorSchema='light'
                         options={manufacturersOptions}
                         name={name}

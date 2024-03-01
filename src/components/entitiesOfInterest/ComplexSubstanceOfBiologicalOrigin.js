@@ -1,9 +1,9 @@
-import OptionInput from "../buildingBlocks/OptionInput";
 import { getIn, useFormikContext } from "formik";
 import UseDefault from "../buildingBlocks/UseDefault";
 import BodyFluid from "./BodyFluid";
 import CellFraction from "./CellFraction";
 import Virion from "./Virion";
+import OptionField from "../buildingBlocks/OptionField";
 
 function ComplexSubstanceOfBiologicalOrigin( { name } ) {
 
@@ -24,7 +24,7 @@ function ComplexSubstanceOfBiologicalOrigin( { name } ) {
   return (
     <>
         <div className="mb-3">
-            <OptionInput
+            <OptionField
                 name={name}
                 options={complexSubstanceOfBiologicalOriginOptions}
                 label='Derived from'

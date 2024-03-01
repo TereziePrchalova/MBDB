@@ -2,10 +2,14 @@ import FormWrapper from "../buildingBlocks/FormWrapper";
 import ArrayField from "../buildingBlocks/ArrayField";
 import Measurement from "../measurement/Measurement";
 import UseDefault from "../buildingBlocks/UseDefault";
+import { useFormikContext } from "formik";
 
-function MeasurementTab( { name, values} ) {
+function MeasurementTab( { name } ) {
+
+    const { values } = useFormikContext();
 
     const fieldName = 'measurements'
+
     UseDefault(values, `${name}.${fieldName}`, [{}] );
 
     return (
@@ -13,22 +17,18 @@ function MeasurementTab( { name, values} ) {
         <div className="-mt-3">
             <ArrayField
                 name={name}
-                values={values}
                 label="Measurement"
                 required={true}
                 fieldName={fieldName}
-                renderChild={({ arrayName, index }) => { 
-                    console.log(values, arrayName)
-                return(
+                renderChild={({ arrayName, index }) => (
                     <FormWrapper headline={`Measurement ${index + 1}`}>
                         <div>
                             <Measurement
                                 name={`${arrayName}.${index}`}
-                                values={values}
                             />
                         </div>
                     </FormWrapper>
-                )}}
+                )}
             />
         </div>
       </>

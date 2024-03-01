@@ -1,9 +1,9 @@
 import ArrayField from "../buildingBlocks/ArrayField";
 import CustomField from "../buildingBlocks/CustomField";
-import OptionInput from "../buildingBlocks/OptionInput";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Protocol from "../buildingBlocks/Protocol";
 import Storage from "../buildingBlocks/Storage";
+import OptionField from "../buildingBlocks/OptionField";
 
 function Virion( { name } ) {
 
@@ -39,7 +39,7 @@ function Virion( { name } ) {
             />
           </div>
           <div className="mr-3">
-            <OptionInput
+            <OptionField
                 name={name}
                 options={geneticMaterialOptions}
                 label='Genetic Material'
@@ -48,7 +48,7 @@ function Virion( { name } ) {
             />
           </div>
           <div className="mr-3">
-            <OptionInput
+            <OptionField
                 name={name}
                 options={capsidTypeOptions}
                 label='Capsid type'
@@ -57,7 +57,7 @@ function Virion( { name } ) {
             />
           </div>
           <div>
-            <OptionInput
+            <OptionField
                 name={name}
                 options={envelopeOptions}
                 label='Envelope type'
@@ -131,8 +131,7 @@ function Virion( { name } ) {
                     fieldName='additional_specifications'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label={`Additional specification ${index + 1}`}
                             width='w-[15rem]'
                             tooltip='Additional information about the complex substance can be specified here'

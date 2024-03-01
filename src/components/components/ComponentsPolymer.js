@@ -1,8 +1,8 @@
 import ArrayField from "../buildingBlocks/ArrayField";
 import CustomField from "../buildingBlocks/CustomField";
-import OptionInput from "../buildingBlocks/OptionInput";
 import MolecularWeight from "../components/MolecularWeight";
 import Modifications from "../components/Modifications";
+import OptionField from "../buildingBlocks/OptionField";
 
 function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol } ) {
 
@@ -34,7 +34,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
             />
           </div>
           <div className="mr-3">
-            <OptionInput
+            <OptionField
                 name={name}
                 label='Polymer type'
                 fieldName='polymer_type'
@@ -81,7 +81,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                 />
             </div>
             <div className="mr-3">
-                <OptionInput
+                <OptionField
                     name={name}
                     label='Expression source'
                     fieldName='expression_source_type'

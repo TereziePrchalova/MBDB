@@ -1,4 +1,3 @@
-import OptionInput from "../../buildingBlocks/OptionInput";
 import CustomField from "../../buildingBlocks/CustomField";
 import Location from "../../components/Location";
 import ArrayField from "../../buildingBlocks/ArrayField";
@@ -6,16 +5,17 @@ import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Protocol from "../../buildingBlocks/Protocol";
 import Storage from "../../buildingBlocks/Storage";
 import Concentration from "../../components/Concentration";
+import OptionField from "../../buildingBlocks/OptionField";
 
-function ComplexSubstanceOfEnvironmentalOrigin( { name, values } ) {
+function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
 
     const sourceOptions = [
-        { value: 'fresh_water', label: 'Fresh water' },
-        { value: 'marine', label: 'Marine' },
-        { value: 'ice_core', label: 'Ice core' },
-        { value: 'sediment', label: 'Sediment' },
-        { value: 'sewage', label: 'Sewage' },
-        { value: 'soil', label: 'Soil' },
+        { value: 'Fresh water', label: 'Fresh water' },
+        { value: 'Marine', label: 'Marine' },
+        { value: 'Ice core', label: 'Ice core' },
+        { value: 'Sediment', label: 'Sediment' },
+        { value: 'Sewage', label: 'Sewage' },
+        { value: 'Soil', label: 'Soil' },
       ];
 
   return (
@@ -30,7 +30,7 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name, values } ) {
                 />
             </div>
             <div>
-                <OptionInput 
+                <OptionField
                     name={name} 
                     options={sourceOptions} 
                     label='Source' 
@@ -62,7 +62,6 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name, values } ) {
                     >
                         <Protocol
                             name={`${arrayName}.${index}`}
-                            fieldName='protocol'
                         />
                     </FormWrapper>
                 )}
@@ -74,14 +73,13 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name, values } ) {
                 label='Storage'
                 fieldName='storage'
                 maxItems={1}
-                renderChild={({ name, index }) => (
+                renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Storage ${index + 1}`}
                         tooltipHeader='The specific steps that were taken to prepare the samples for storage (e.g. flash freezing in liquid nitrogen), if applicable'
                     >
                         <Storage
-                            name={`${name}.${index}`}
-                            values={values}
+                            name={`${arrayName}.${index}`}
                             colorSchema='light'
                         />
                     </FormWrapper>
@@ -93,12 +91,10 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name, values } ) {
                 name={name}
                 label='Additional specification'
                 fieldName='additional_specifications'
-                renderChild={({ name, index }) => (
+                renderChild={({ arrayName, index }) => (
                     <CustomField
-                        name={name}
-                        index={index}
+                        name={`${arrayName}.${index}`}
                         label={`Additional specification ${index + 1}`}
-                        fieldName='additional_specifications'
                         width='w-[15rem]'
                         tooltip='Additional information about the complex substance can be specified here'
                     />

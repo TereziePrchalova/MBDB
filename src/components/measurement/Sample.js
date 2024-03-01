@@ -1,12 +1,15 @@
 import ArrayField from '../buildingBlocks/ArrayField';
 import FormWrapper from '../buildingBlocks/FormWrapper';
-import OptionInput from '../buildingBlocks/OptionInput';
 import Ligand from './Ligand';
 import Target from './Target';
 import Protocol from '../buildingBlocks/Protocol';
 import UseDefault from '../buildingBlocks/UseDefault';
+import { getIn, useFormikContext } from 'formik';
+import OptionField from '../buildingBlocks/OptionField';
 
-function Sample( { name, values, tooltip, colorSchema } ) {
+function Sample( { name, tooltip, colorSchema } ) {
+
+    const { values } = useFormikContext();
 
     const measurementContainerOptions = [
         { value: 'Monolith Standard Capillary', label: 'Monolith Standard Capillary' },
@@ -21,9 +24,18 @@ function Sample( { name, values, tooltip, colorSchema } ) {
         { value: 'Other', label: 'Other' },
     ];
 
-    const chemicalEnvironmentOptions = [
-        { value: 'currently_out_of_service', label: 'Currently out of service' },
-    ];
+    const chemicalEnvironmentsValue = getIn(values, `general_parameters.chemical_environment`)
+
+    let chemicalEnvironmentOptions = [];
+
+    if (chemicalEnvironmentsValue && chemicalEnvironmentsValue.length > 0) {
+        chemicalEnvironmentOptions = chemicalEnvironmentsValue.map(chemicalEnvironment => ({
+            value: chemicalEnvironment.name,
+            label: chemicalEnvironment.name,
+        }));
+    } else {
+        chemicalEnvironmentOptions = [{ label: 'Select Chemical environment, if applicable' }];
+    }
 
     const fieldNameTarget = 'targets'
     UseDefault(values, `${name}.${fieldNameTarget}`, [{}] );
@@ -40,7 +52,7 @@ function Sample( { name, values, tooltip, colorSchema } ) {
         >
             <div className='flex mb-3'>
                 <div className='mr-3'>
-                    <OptionInput
+                    <OptionField
                         name={name}
                         fieldName='chemical_environment'
                         label='Chemical environment'
@@ -49,7 +61,7 @@ function Sample( { name, values, tooltip, colorSchema } ) {
                     />
                 </div>
                 <div>
-                    <OptionInput
+                    <OptionField
                         name={name}
                         fieldName='measurement_container'
                         options={measurementContainerOptions}
@@ -61,7 +73,6 @@ function Sample( { name, values, tooltip, colorSchema } ) {
             <div>
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Target'
                     fieldName={fieldNameTarget}
                     required={true}
@@ -80,7 +91,6 @@ function Sample( { name, values, tooltip, colorSchema } ) {
             <div>
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Ligand'
                     fieldName={fieldNameLigand}
                     required={true}
@@ -99,7 +109,6 @@ function Sample( { name, values, tooltip, colorSchema } ) {
             <div>
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Preparation protocol'
                     fieldName='preparation_protocol'
                     renderChild={({ arrayName, index }) => (
@@ -109,7 +118,6 @@ function Sample( { name, values, tooltip, colorSchema } ) {
                         >
                             <Protocol
                                 name={`${arrayName}.${index}`}
-                                fieldName='protocol'
                             />
                         </FormWrapper>
                     )}

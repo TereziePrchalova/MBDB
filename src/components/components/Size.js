@@ -1,13 +1,13 @@
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import OptionInput from "../buildingBlocks/OptionInput";
+import OptionField from "../buildingBlocks/OptionField";
 
 function Size( { name, colorSchema } ) {
 
     const typeOptions = [
-        { value: 'radius', label: 'Radius' },
-        { value: 'diameter', label: 'Diameter' },
-        { value: 'path_length', label: 'Path length' },
+        { value: 'Radius', label: 'Radius' },
+        { value: 'Diameter', label: 'Diameter' },
+        { value: 'Path length', label: 'Path length' },
       ];
 
     const unitOptions = [
@@ -27,7 +27,7 @@ function Size( { name, colorSchema } ) {
       >
         <div className="flex mb-3">
           <div className="mr-3">
-              <OptionInput
+              <OptionField
                   name={name}
                   options={typeOptions}
                   fieldName='type'
@@ -44,7 +44,7 @@ function Size( { name, colorSchema } ) {
               />
           </div>
           <div>
-              <OptionInput
+              <OptionField
                   name={name}
                   options={unitOptions}
                   fieldName='unit'

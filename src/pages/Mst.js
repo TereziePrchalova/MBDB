@@ -73,7 +73,7 @@ function Mst() {
           <div className="flex justify-center">
             <Form className="m-4 w-[1100px]">
               {state.selected === 'raw-data-files' && (
-                <RawDataFiles name='general_parameters' values={values} />
+                <RawDataFiles name='general_parameters' />
               )}
               {state.selected === 'project-information' && (
                 <ProjectInformationTab name='general_parameters' />
@@ -82,16 +82,16 @@ function Mst() {
                 <EntitiesOfInterestTab name='general_parameters' />
               )}
               {state.selected === 'chemical-environment' && (
-                <ChemicalEnvironmentTab name='general_parameters' values={values} />
+                <ChemicalEnvironmentTab name='general_parameters' />
               )}
               {state.selected === 'result' && (
                 <ResultTab name='general_parameters'/>
               )}
               {state.selected === 'instrument' && (
-                <InstrumentTab name='general_parameters' values={values} />
+                <InstrumentTab name='general_parameters' />
               )}
               {state.selected === 'measurement' && (
-                <MeasurementTab name='method_specific_parameters' values={values} />
+                <MeasurementTab name='method_specific_parameters' />
               )}
               {state.selected === 'data-analysis' && (
                 <DataAnalysisTab name='method_specific_parameters' />

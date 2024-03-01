@@ -1,5 +1,5 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import OptionInput from "../buildingBlocks/OptionInput";
+import OptionField from "../buildingBlocks/OptionField";
 import UseDefault from "../buildingBlocks/UseDefault";
 import Article from "./Article";
 import Book from "./Book";
@@ -17,9 +17,9 @@ function AssociatedPublication( { name } ) {
     const actualValue = getIn(values, componentName)
 
     const associatedPublicationOptions = [
-        { value: 'article', label: 'article' },
-        { value: 'book', label: 'book' },
-        { value: 'thesis', label: 'thesis' },
+        { value: 'article', label: 'Article' },
+        { value: 'book', label: 'Book' },
+        { value: 'thesis', label: 'Thesis' },
     ];
 
   return (
@@ -30,7 +30,7 @@ function AssociatedPublication( { name } ) {
         >
             <div className="flex">
                 <div className="mr-3">
-                    <OptionInput
+                    <OptionField
                         name={name}
                         options={associatedPublicationOptions}
                         label='type'

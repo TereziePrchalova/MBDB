@@ -1,5 +1,5 @@
 import CustomField from "../buildingBlocks/CustomField";
-import OptionInput from "../buildingBlocks/OptionInput";
+import OptionField from "../buildingBlocks/OptionField";
 
 function FColdAndHot( { name } ) {
 
@@ -18,7 +18,7 @@ function FColdAndHot( { name } ) {
   return (
     <>
         <div className='mb-3'>
-            <OptionInput
+            <OptionField
                 name={name}
                 options={unitOptions}
                 label='Time unit'

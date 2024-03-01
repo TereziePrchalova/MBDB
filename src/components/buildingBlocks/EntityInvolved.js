@@ -1,31 +1,31 @@
 import CustomField from './CustomField';
-import OptionInput from './OptionInput';
+import OptionField from './OptionField';
 import { useFormikContext, getIn } from 'formik';
 
 function EntityInvolved( { name } ) {
 
-      const { values } = useFormikContext()
+      const { values } = useFormikContext();
       
       const entitiesValue = getIn(values, `general_parameters.entities_of_interest`)
 
-      let unitOptions = [];
+      let entityOptions = [];
 
       if (entitiesValue && entitiesValue.length > 0) {
-        unitOptions = entitiesValue.map(entity => ({
-            value: entity.name,
-            label: entity.name,
-        }));
-    } else {
-        unitOptions = [{ label: 'Select Entity, if applicable' }];
-    }
+            entityOptions = entitiesValue.map(entity => ({
+                value: entity.name,
+                label: entity.name,
+            }));
+        } else {
+            entityOptions = [{ label: 'Select Entity, if applicable' }];
+        }
 
   return (
     <>
         <div className='flex'>
             <div className="mr-3">
-                <OptionInput
+                <OptionField
                     name={name}
-                    options={unitOptions}
+                    options={entityOptions}
                     fieldName='entity'
                     label='Entity'
                 />

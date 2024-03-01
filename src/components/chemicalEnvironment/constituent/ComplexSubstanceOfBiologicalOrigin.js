@@ -1,4 +1,4 @@
-import OptionInput from "../../buildingBlocks/OptionInput";
+import OptionField from "../../buildingBlocks/OptionField";
 import UseDefault from "../../buildingBlocks/UseDefault";
 import BodyFluid from "./BodyFluid";
 import CellFraction from "./CellFraction";
@@ -24,7 +24,7 @@ function ComplexSubstanceOfBiologicalOrigin( { name } ) {
   return (
     <>
         <div className="mb-3">
-            <OptionInput
+            <OptionField
                 name={name}
                 options={complexSubstanceOfBiologicalOriginOptions}
                 label='Derived from'
@@ -35,17 +35,17 @@ function ComplexSubstanceOfBiologicalOrigin( { name } ) {
 
         {actualValue === 'body_fluid' && (
             <>
-                <BodyFluid name={name} values={values} />
+                <BodyFluid name={name} />
             </>
         )}
         {actualValue === 'cell_fraction' && (
             <>
-                <CellFraction name={name} values={values} />
+                <CellFraction name={name} />
             </>
         )}
         {actualValue === 'virion' && (
             <>
-                <Virion name={name} values={values} />
+                <Virion name={name} />
             </>
         )}
     </>

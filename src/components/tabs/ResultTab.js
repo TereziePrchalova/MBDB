@@ -1,5 +1,4 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import OptionInput from "../buildingBlocks/OptionInput";
 import UseDefault from "../buildingBlocks/UseDefault";
 import ArrayField from "../buildingBlocks/ArrayField";
 import Concentration from "../result/Concentration";
@@ -15,6 +14,7 @@ import HalfMaximalEffectiveConcentrationEC50 from "../result/HalfMaximalEffectiv
 import HillCoefficient from "../result/HillCoefficient";
 import { getIn, useFormikContext } from "formik";
 import ChangeInGibbsFreeEnergyDeltaG from "../result/ChangeInGibbsFreeEnergyDeltaG";
+import OptionField from "../buildingBlocks/OptionField";
 
 function ResultTab( { name } ) {
 
@@ -56,7 +56,7 @@ function ResultTab( { name } ) {
                         tooltipHeader='List of the results (parameter) that were derived by analyzing the raw data and which steps were taken to obtain them'
                     >
                         <div className="mb-3">
-                            <OptionInput
+                            <OptionField
                                 name={`${arrayName}.${index}`}
                                 options={resultTabOptions}
                                 label='type'

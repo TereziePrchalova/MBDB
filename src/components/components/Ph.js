@@ -1,9 +1,9 @@
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import ValueError from "../buildingBlocks/ValueError";
-import ArrayFieldOneElement from "../buildingBlocks/ArrayFieldOneElement";
+import ArrayField from "../buildingBlocks/ArrayField";
 
-function Ph( { name, values ,colorSchema, tooltipHeader } ) {
+function Ph( { name, colorSchema, tooltipHeader } ) {
 
     return(
         <>
@@ -19,15 +19,15 @@ function Ph( { name, values ,colorSchema, tooltipHeader } ) {
                     />
                 </div>
                 <div>
-                    <ArrayFieldOneElement
+                    <ArrayField
                         name={name}
-                        values={values}
                         label='Value error'
                         fieldName='value_error'
-                        renderChild={({ name, index }) => (
+                        maxItems={1}
+                        renderChild={({ arrayName, index }) => (
                             <div>
                                 <ValueError
-                                    name={`${name}.value_error.${index}`}
+                                    name={`${arrayName}.${index}`}
                                 />
                             </div>
                         )}

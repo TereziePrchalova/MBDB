@@ -1,17 +1,29 @@
-import OptionInput from "../buildingBlocks/OptionInput";
+import OptionField from "../buildingBlocks/OptionField";
 import Concentration from "../components/Concentration";
+import { useFormikContext, getIn } from 'formik';
 
-function Ligand( { name, values } ) {
+function Ligand( { name } ) {
 
-    const entityOptions = [
-        { value: 'currently_out_of_service', label: 'Currently out of service' },
-    ];
+  const { values } = useFormikContext()
+      
+  const entitiesValue = getIn(values, `general_parameters.entities_of_interest`)
+
+  let entityOptions = [];
+
+  if (entitiesValue && entitiesValue.length > 0) {
+        entityOptions = entitiesValue.map(entity => ({
+            value: entity.name,
+            label: entity.name,
+        }));
+    } else {
+        entityOptions = [{ label: 'Select Entity, if applicable' }];
+    }
 
   return (
     <>
         <div>
           <div className="mb-3">
-            <OptionInput
+            <OptionField
                 name={name}
                 options={entityOptions}
                 label='Entity'

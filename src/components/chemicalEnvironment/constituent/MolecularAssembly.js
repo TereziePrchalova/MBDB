@@ -33,7 +33,6 @@ function MolecularAssembly( { name, values} ) {
         <div>
             <Components 
                 name={`${name}.components`} 
-                values={values}
                 colorSchemaWrapper='light'
                 molecularWeightColorSchema='light'
                 tooltip='Description of the individual components (e.g. polypeptide, heme, lipids, metal ions etc.) the molecular assembly is composed of (e.g. Hemoglobin alpha) and how many copies of each component were present'
@@ -48,7 +47,6 @@ function MolecularAssembly( { name, values} ) {
                     <FormWrapper headline={`Chemical modification ${index + 1}`}>
                         <Modification
                             name={`${arrayName}.${index}`}
-                            values={values}
                             colorSchema='light'
                         />
                     </FormWrapper>
@@ -61,12 +59,11 @@ function MolecularAssembly( { name, values} ) {
                     name={name}
                     label='External Database'
                     fieldName='external_databases'
-                    renderChild={({ name, index }) => (
+                    renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={name}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label={`External database ${index + 1}`}
-                            fieldName='external_databases'
+                            width='w-[15rem]'
                         />
                     )}
                 />
@@ -76,12 +73,10 @@ function MolecularAssembly( { name, values} ) {
                     name={name}
                     label='Additional specification'
                     fieldName='additional_specifications'
-                    renderChild={({ name, index }) => (
+                    renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={name}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label={`Additional specification ${index + 1}`}
-                            fieldName='additional_specifications'
                             width='w-[15rem]'
                         />
                     )}

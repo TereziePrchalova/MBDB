@@ -5,7 +5,7 @@ import Ph from "../components/Ph";
 import ArrayField from "../buildingBlocks/ArrayField";
 
 
-function ChemicalEnvironment( { name, values } ) {
+function ChemicalEnvironment( { name } ) {
 
   return (
     <>
@@ -21,27 +21,24 @@ function ChemicalEnvironment( { name, values } ) {
         <div className="mb-3">
             <Ph
                 name={`${name}.pH`}
-                values={values}
                 colorSchema='light'
             />
         </div>
         <div className="mb-3">
-            <Solvent name={`${name}.solvent`} values={values} />
+            <Solvent name={`${name}.solvent`} />
         </div>
         <div className="mb-3">
-            <Constituent name={`${name}.contituent`} values={values} />
+            <Constituent name={`${name}.contituent`} />
         </div>
         <div>
             <ArrayField
                 name={name}
                 label='Additional specification'
                 fieldName='additional_specifications'
-                renderChild={({ name, index }) => (
+                renderChild={({ arrayName, index }) => (
                     <CustomField
-                        name={name}
-                        index={index}
+                        name={`${arrayName}.${index}`}
                         label={`Additional specification ${index + 1}`}
-                        fieldName='additional_specifications'
                         width='w-[15rem]'
                         tooltip='Additional information about the chemical environment can be specified here (e.g. prepared just prior to conducting the measurement, additional treatments like UV irradiation, specific storage container of chemical environment if that influenced the measurement etc.)'
                     />

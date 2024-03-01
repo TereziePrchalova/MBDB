@@ -1,19 +1,19 @@
 import CustomField from '../buildingBlocks/CustomField';
 import FormWrapper from '../buildingBlocks/FormWrapper';
-import OptionInput from '../buildingBlocks/OptionInput';
+import OptionField from '../buildingBlocks/OptionField';
 
 function RecordInformation( { name } ) {
 
     const accessRightsOptions = [
-        { value: 'open_access', label: 'Open access' },
-        { value: 'embargoed_access', label: 'Embargoed access' },
-        { value: 'restricted_access', label: 'Restricted access' },
+        { value: 'Open access', label: 'Open access' },
+        { value: 'Embargoed access', label: 'Embargoed access' },
+        { value: 'Restricted access', label: 'Restricted access' },
     ];
 
     const metadataAccessRightsOptions = [
-        { value: 'open_access', label: 'Open access' },
-        { value: 'embargoed_access', label: 'Embargoed access' },
-        { value: 'restricted_access', label: 'Restricted access' },
+        { value: 'Open access', label: 'Open access' },
+        { value: 'Embargoed access', label: 'Embargoed access' },
+        { value: 'Restricted access', label: 'Restricted access' },
     ];
 
   return (
@@ -30,7 +30,7 @@ function RecordInformation( { name } ) {
                     />
                 </div>
                 <div className='mr-3'>
-                    <OptionInput
+                    <OptionField
                         options={accessRightsOptions}
                         name={name}
                         fieldName='access_rights'
@@ -40,7 +40,7 @@ function RecordInformation( { name } ) {
                     />
                 </div>
                 <div>
-                    <OptionInput
+                    <OptionField
                         options={metadataAccessRightsOptions}
                         name={name}
                         fieldName='metadata_access_rights'

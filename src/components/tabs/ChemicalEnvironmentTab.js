@@ -2,10 +2,14 @@ import FormWrapper from "../buildingBlocks/FormWrapper";
 import ArrayField from "../buildingBlocks/ArrayField";
 import ChemicalEnvironment from "../chemicalEnvironment/ChemicalEnvironment";
 import UseDefault from "../buildingBlocks/UseDefault";
+import { useFormikContext } from 'formik';
 
-function ChemicalEnvironmentTab( { name, values} ) {
+function ChemicalEnvironmentTab( { name } ) {
+
+    const { values } = useFormikContext();
 
     const fieldName = 'chemical_environment'
+
     UseDefault(values, `${name}.${fieldName}`, [{}] );
 
     return (
@@ -13,7 +17,6 @@ function ChemicalEnvironmentTab( { name, values} ) {
         <div className="-mt-3">
             <ArrayField
                 name={name}
-                values={values}
                 label="Chemical environment"
                 required={true}
                 fieldName={fieldName}
@@ -22,7 +25,6 @@ function ChemicalEnvironmentTab( { name, values} ) {
                         <div>
                             <ChemicalEnvironment
                                 name={`${arrayName}.${index}`}
-                                values={values}
                             />
                         </div>
                     </FormWrapper>

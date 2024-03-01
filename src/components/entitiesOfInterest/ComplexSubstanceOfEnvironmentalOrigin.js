@@ -1,10 +1,10 @@
-import OptionInput from "../buildingBlocks/OptionInput";
 import CustomField from "../buildingBlocks/CustomField";
 import Location from "../components/Location";
 import ArrayField from "../buildingBlocks/ArrayField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Protocol from "../buildingBlocks/Protocol";
 import Storage from "../buildingBlocks/Storage";
+import OptionField from "../buildingBlocks/OptionField";
 
 function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
 
@@ -29,7 +29,7 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
                 />
             </div>
             <div>
-                <OptionInput 
+                <OptionField
                     name={name} 
                     options={sourceOptions} 
                     label='Source' 

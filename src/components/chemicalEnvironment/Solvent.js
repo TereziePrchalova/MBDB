@@ -1,5 +1,5 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import OptionInput from "../buildingBlocks/OptionInput";
+import OptionField from "../buildingBlocks/OptionField";
 import UseDefault from "../buildingBlocks/UseDefault";
 import ArrayField from "../buildingBlocks/ArrayField";
 import Chemical from "./constituent/Chemical";
@@ -38,7 +38,7 @@ function Solvent( { name } ) {
                                 tooltipHeader='Information about the solvent component(s) of the chemical environment (e.g. water, D2O, DMSO, EtOH) can be specified here'
                             >
                                 <div className="mb-3">
-                                    <OptionInput
+                                    <OptionField
                                         name={`${arrayName}.${index}`}
                                         options={entitiesOfInterestTabOptions}
                                         label='type'

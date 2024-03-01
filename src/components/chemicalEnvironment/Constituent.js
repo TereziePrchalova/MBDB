@@ -1,7 +1,6 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Chemical from "./constituent/Chemical";
 import Polymer from "./constituent/Polymer";
-import OptionInput from "../buildingBlocks/OptionInput";
 import ComplexSubstanceOfBiologicalOrigin from "./constituent/ComplexSubstanceOfBiologicalOrigin";
 import ComplexSubstanceOfEnvironmentalOrigin from "./constituent/ComplexSubstanceOfEnvironmentalOrigin";
 import MolecularAssembly from "./constituent/MolecularAssembly";
@@ -9,19 +8,25 @@ import ComplexSubstanceOfChemicalOrigin from "./constituent/ComplexSubstanceOfCh
 import ArrayField from "../buildingBlocks/ArrayField";
 import ComplexSubstanceOfIndustrialOrigin from "./constituent/ComplexSubstanceOfIndustrialOrigin";
 import { getIn, useFormikContext } from "formik";
+import UseDefault from "../buildingBlocks/UseDefault";
+import OptionField from "../buildingBlocks/OptionField";
 
 function Constituent( { name } ) {
 
-    const { values } = useFormikContext()
+    const { values } = useFormikContext();
+
+    const componentName = `${name}.chemical_environment[0].type`
+   
+    UseDefault(values, componentName, 'polymer')
 
     const ChemicalEnvironmentTabOptions = [
-        { value: 'Polymer', label: 'Polymer' },
-        { value: 'Chemical', label: 'Chemical' },
-        { value: 'Molecular Assembly', label: 'Molecular Assembly' },
-        { value: 'Complex substance of biological origin', label: 'Complex substance of biological origin' },
-        { value: 'Complex substance of environmental origin', label: 'Complex substance of environmental origin' },
-        { value: 'Complex substance of chemical origin', label: 'Complex substance of chemical origin' },
-        { value: 'Complex substance of industrial origin', label: 'Complex substance of industrial origin' },
+        { value: 'polymer', label: 'Polymer' },
+        { value: 'chemical', label: 'Chemical' },
+        { value: 'molecular_assembly', label: 'Molecular Assembly' },
+        { value: 'complex_substance_of_biological_origin', label: 'Complex substance of biological origin' },
+        { value: 'complex_substance_of_environmental_origin', label: 'Complex substance of environmental origin' },
+        { value: 'complex_substance_of_chemical_origin', label: 'Complex substance of chemical origin' },
+        { value: 'complex_substance_of_industrial_origin', label: 'Complex substance of industrial origin' },
     ];
 
     return (
@@ -32,7 +37,7 @@ function Constituent( { name } ) {
                     name={name}
                     label="Constituent"
                     fieldName='constituent'
-                    initialValue={{type: 'Polymer'}}
+                    initialValue={{type: 'polymer'}}
                     renderChild={({ arrayName, index }) => {
                         const actualValue = getIn(values, `${arrayName}.${index}`)
                         if (!actualValue) {return null}
@@ -43,7 +48,7 @@ function Constituent( { name } ) {
                             tooltipHeader='List of the constituents, excluding solvent components, that made up the chemical environment (i.e. buffer system, salts, surfactants, crowding agents, serum, etc.)'
                         >
                             <div className="mb-3">
-                                <OptionInput
+                                <OptionField
                                     name={`${arrayName}.${index}`}
                                     options={ChemicalEnvironmentTabOptions}
                                     label='type'
@@ -52,49 +57,49 @@ function Constituent( { name } ) {
                                 />
                             </div>
                             <div>
-                                {actualValue.type === 'Polymer' && (
+                                {actualValue.type === 'polymer' && (
                                     <div>
                                         <Polymer
                                             name={`${arrayName}.${index}`}
                                         />
                                     </div>
                                 )}
-                                {actualValue.type === 'Chemical' && (
+                                {actualValue.type === 'chemical' && (
                                     <div>
                                         <Chemical
                                             name={`${arrayName}.${index}`}
                                         />
                                     </div>
                                 )}
-                                {actualValue.type === 'Molecular Assembly' && (
+                                {actualValue.type === 'molecular_assembly' && (
                                     <div>
                                         <MolecularAssembly
                                             name={`${arrayName}.${index}`}
                                         />
                                     </div>
                                 )}
-                                {actualValue.type === 'Complex substance of biological origin' && (
+                                {actualValue.type === 'complex_substance_of_biological_origin' && (
                                     <div>
                                         <ComplexSubstanceOfBiologicalOrigin
                                             name={`${arrayName}.${index}`}
                                         />
                                     </div>
                                 )}
-                                {actualValue.type === 'Complex substance of environmental origin' && (
+                                {actualValue.type === 'complex_substance_of_environmental_origin' && (
                                     <div>
                                         <ComplexSubstanceOfEnvironmentalOrigin
                                             name={`${arrayName}.${index}`}
                                         />
                                     </div>
                                 )}
-                                {actualValue.type === 'Complex substance of chemical origin' && (
+                                {actualValue.type === 'complex_substance_of_chemical_origin' && (
                                     <div>
                                         <ComplexSubstanceOfChemicalOrigin
                                             name={`${arrayName}.${index}`}
                                         />
                                     </div>
                                 )}
-                                {actualValue.type === 'Complex substance of industrial origin' && (
+                                {actualValue.type === 'complex_substance_of_industrial_origin' && (
                                     <div>
                                         <ComplexSubstanceOfIndustrialOrigin
                                             name={`${arrayName}.${index}`}

@@ -10,7 +10,7 @@ function UseDefault(values, name, content) {
         if (existingValue === undefined) {
             setFieldValue(name, content)
         }
-    }, [])
+    }, [content, name, setFieldValue, values])
 }
 
 export default UseDefault;

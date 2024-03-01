@@ -1,7 +1,6 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Chemical from "../entitiesOfInterest/Chemical";
 import Polymer from "../entitiesOfInterest/Polymer";
-import OptionInput from "../buildingBlocks/OptionInput";
 import UseDefault from "../buildingBlocks/UseDefault";
 import ComplexSubstanceOfBiologicalOrigin from "../entitiesOfInterest/ComplexSubstanceOfBiologicalOrigin";
 import MolecularAssembly from "../entitiesOfInterest/MolecularAssembly";
@@ -10,6 +9,7 @@ import ComplexSubstanceOfEnvironmentalOrigin from "../entitiesOfInterest/Complex
 import ComplexSubstanceOfChemicalOrigin from "../entitiesOfInterest/ComplexSubstanceOfChemicalOrigin";
 import ArrayField from "../buildingBlocks/ArrayField";
 import { getIn, useFormikContext } from "formik";
+import OptionField from "../buildingBlocks/OptionField";
 
 function EntitiesOfInterestTab( { name } ) {
 
@@ -22,7 +22,7 @@ function EntitiesOfInterestTab( { name } ) {
     const entitiesOfInterestTabOptions = [
         { value: 'polymer', label: 'Polymer' },
         { value: 'chemical', label: 'Chemical' },
-        { value: 'moleculal_assembly', label: 'Molecular Assembly' },
+        { value: 'molecular_assembly', label: 'Molecular Assembly' },
         { value: 'complex_substance_of_biological_origin', label: 'Complex substance of biological origin' },
         { value: 'complex_substance_of_environmental_origin', label: 'Complex substance of environmental origin' },
         { value: 'complex_substance_of_chemical_origin', label: 'Complex substance of chemical origin' },
@@ -47,7 +47,7 @@ function EntitiesOfInterestTab( { name } ) {
                         tooltipHeader='List of the entities that are being directly measured, as well as the entities that are being used as a variable to influence the behavior of the directly measured entities (e.g. lysozyme, NAG3,NaCl). IMPORTANT! If the pH was varied by individually prepared chemical environments these should be specified individually in chemical environments'
                     >
                         <div className="mb-3">
-                            <OptionInput
+                            <OptionField
                                 name={`${arrayName}.${index}`}
                                 options={entitiesOfInterestTabOptions}
                                 label='type'
@@ -70,7 +70,7 @@ function EntitiesOfInterestTab( { name } ) {
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'moleculal_assembly' && (
+                            {actualValue.type === 'molecular_assembly' && (
                                 <div>
                                     <MolecularAssembly
                                         name={`${arrayName}.${index}`}

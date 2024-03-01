@@ -1,31 +1,31 @@
 import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
-import OptionInput from "../../buildingBlocks/OptionInput";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Protocol from "../../buildingBlocks/Protocol";
 import Storage from "../../buildingBlocks/Storage";
 import Concentration from "../../components/Concentration";
+import OptionField from "../../buildingBlocks/OptionField";
 
-function Virion( { name, values } ) {
+function Virion( { name } ) {
 
     const geneticMaterialOptions = [
-        { value: 'no_genetic_material', label: 'No genetic material' },
-        { value: 'virus_genome', label: 'Virus genome' },
-        { value: 'synthetic', label: 'Synthetic' },
+        { value: 'No genetic material', label: 'No genetic material' },
+        { value: 'Virus genome', label: 'Virus genome' },
+        { value: 'Synthetic', label: 'Synthetic' },
     ];
 
     const capsidTypeOptions = [
-        { value: 'none', label: 'None' },
-        { value: 'native', label: 'Native' },
-        { value: 'genetically_engineered', label: 'Genetically Engineered' },
-        { value: 'synthetic', label: 'Synthetic' },
+        { value: 'None', label: 'None' },
+        { value: 'Native', label: 'Native' },
+        { value: 'Genetically Engineered', label: 'Genetically Engineered' },
+        { value: 'Synthetic', label: 'Synthetic' },
     ];
 
     const envelopeOptions = [
-        { value: 'none', label: 'None' },
-        { value: 'native', label: 'Native' },
-        { value: 'genetically_engineered', label: 'Genetically Engineered' },
-        { value: 'synthetic', label: 'Synthetic' },
+        { value: 'None', label: 'None' },
+        { value: 'Native', label: 'Native' },
+        { value: 'Genetically Engineered', label: 'Genetically Engineered' },
+        { value: 'Synthetic', label: 'Synthetic' },
     ];
 
   return (
@@ -40,7 +40,7 @@ function Virion( { name, values } ) {
             />
           </div>
           <div className="mr-3">
-            <OptionInput
+            <OptionField
                 name={name}
                 options={geneticMaterialOptions}
                 label='Genetic Material'
@@ -49,7 +49,7 @@ function Virion( { name, values } ) {
             />
           </div>
           <div className="mr-3">
-            <OptionInput
+            <OptionField
                 name={name}
                 options={capsidTypeOptions}
                 label='Capsid type'
@@ -58,7 +58,7 @@ function Virion( { name, values } ) {
             />
           </div>
           <div>
-            <OptionInput
+            <OptionField
                 name={name}
                 options={envelopeOptions}
                 label='Envelope type'
@@ -101,7 +101,6 @@ function Virion( { name, values } ) {
                     >
                         <Protocol
                             name={`${arrayName}.${index}`}
-                            values={values}
                         />
                     </FormWrapper>
                 )}
@@ -117,7 +116,6 @@ function Virion( { name, values } ) {
                     <FormWrapper colorSchema='light' headline={`Storage ${index + 1}`}>
                         <Storage
                             name={`${arrayName}.${index}`}
-                            values={values}
                         />
                     </FormWrapper>
                 )}
@@ -129,12 +127,10 @@ function Virion( { name, values } ) {
                     name={name}
                     label='Additional specification'
                     fieldName='additional_specifications'
-                    renderChild={({ name, index }) => (
+                    renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={name}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label={`Additional specification ${index + 1}`}
-                            fieldName='additional_specifications'
                             width='w-[15rem]'
                             tooltip='Additional information about the complex substance can be specified here'
                         />

@@ -1,9 +1,9 @@
 import ValueUnit from '../buildingBlocks/ValueUnit';
 import ValueError from '../buildingBlocks/ValueError';
 import FormWrapper from '../buildingBlocks/FormWrapper';
-import OptionInput from '../buildingBlocks/OptionInput';
+import OptionField from '../buildingBlocks/OptionField';
 
-function Humidity( {name} ) {
+function Humidity( { name } ) {
 
     const unitOptions = [
         { value: '%', label: '%' },
@@ -15,12 +15,12 @@ function Humidity( {name} ) {
         { value: 'Measurement', label: 'Measurement' },
         { value: 'Calculation', label: 'Calculation' },
         { value: 'Assumption', label: 'Assumption' },
-        { value: 'other', label: 'Other' },
+        { value: 'Other', label: 'Other' },
     ];
 
     const controlledOptions = [
-        { value: 'yes', label: 'Yes' },
-        { value: 'no', label: 'No' },
+        { value: 'Yes', label: 'Yes' },
+        { value: 'No', label: 'No' },
     ];
 
   return (
@@ -32,7 +32,7 @@ function Humidity( {name} ) {
                 </div>
                 <div className='flex'>
                     <div className='mr-3'>
-                        <OptionInput
+                        <OptionField
                             options={obtainedOptions}
                             name={name}
                             label='Obtained by'
@@ -41,7 +41,7 @@ function Humidity( {name} ) {
                         />
                     </div>
                     <div>
-                        <OptionInput 
+                        <OptionField
                             options={controlledOptions}
                             name={name}
                             label='Controlled'

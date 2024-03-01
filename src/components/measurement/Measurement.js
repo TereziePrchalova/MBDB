@@ -1,7 +1,7 @@
 import CustomField from "../buildingBlocks/CustomField";
 import Sample from "./Sample";
 
-function Measurement( { name, values } ) {
+function Measurement( { name } ) {
 
   return (
     <>
@@ -26,7 +26,6 @@ function Measurement( { name, values } ) {
         <div>
             <Sample
                 name={`${name}.sample`}
-                values={values}
                 colorSchema='light'
                 tooltip='Information about the sample including concentrations of ligands and targets, and which chemical environment the sample was composed of'
             />

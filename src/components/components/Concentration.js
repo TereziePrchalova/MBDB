@@ -1,8 +1,8 @@
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import OptionInput from "../buildingBlocks/OptionInput";
+import OptionField from "../buildingBlocks/OptionField";
 
-function Concentration({ name, tooltipHeader, colorSchema, values }) {
+function Concentration({ name, tooltipHeader, colorSchema }) {
 
     const unitOptions = [
         { value: 'M', label: 'M' },
@@ -44,7 +44,7 @@ function Concentration({ name, tooltipHeader, colorSchema, values }) {
               />
           </div>
           <div>
-              <OptionInput
+              <OptionField
                   name={name}
                   options={unitOptions}
                   fieldName='unit'

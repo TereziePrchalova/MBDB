@@ -1,4 +1,3 @@
-import OptionInput from "../../buildingBlocks/OptionInput";
 import CustomField from "../../buildingBlocks/CustomField";
 import ArrayField from "../../buildingBlocks/ArrayField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
@@ -6,8 +5,9 @@ import Protocol from "../../buildingBlocks/Protocol";
 import Storage from "../../buildingBlocks/Storage";
 import Details from "../../components/Details";
 import Concentration from "../../components/Concentration";
+import OptionField from "../../buildingBlocks/OptionField";
 
-function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
+function ComplexSubstanceOfChemicalOrigin( { name } ) {
 
     const classOptions = [
         { value: 'lipid_assembly', label: 'Lipid assembly' },
@@ -25,7 +25,7 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                 />
             </div>
             <div>
-                <OptionInput
+                <OptionField
                     name={name}
                     options={classOptions}
                     label='Class'
@@ -40,7 +40,7 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
             />
         </div>
         <div>
-            <Details name={`${name}.details`} values={values} sizeColorSchema='light' colorSchemaProtocol='light' />
+            <Details name={`${name}.details`} sizeColorSchema='light' colorSchemaProtocol='light' />
         </div>
         <div>
             <ArrayField
@@ -54,7 +54,6 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                     >
                         <Protocol
                             name={`${arrayName}.${index}`}
-                            values={values}
                         />
                     </FormWrapper>
                 )}
@@ -73,7 +72,6 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                     >
                         <Storage
                             name={`${arrayName}.${index}`}
-                            values={values}
                             colorSchema='light'
                         />
                     </FormWrapper>
@@ -85,12 +83,10 @@ function ComplexSubstanceOfChemicalOrigin( { name, values } ) {
                 name={name}
                 label='Additional specification'
                 fieldName='additional_specifications'
-                renderChild={({ name, index }) => (
+                renderChild={({ arrayName, index }) => (
                     <CustomField
-                        name={name}
-                        index={index}
+                        name={`${arrayName}.${index}`}
                         label={`Additional specification ${index + 1}`}
-                        fieldName='additional_specifications'
                         width='w-[15rem]'
                         tooltip='Additional information about the lipid assembly, if applicable'
                     />

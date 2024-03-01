@@ -1,21 +1,46 @@
-import OptionInput from "../buildingBlocks/OptionInput";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import DataFitting from "./DataFitting";
 import FColdAndHot from "./FColdAndHot";
 import ArrayField from "../buildingBlocks/ArrayField";
 import DataProcessingStep from "./DataProcessingStep";
+import OptionField from "../buildingBlocks/OptionField";
+import { getIn, useFormikContext } from "formik";
 
 function DataAnalysis( { name } ) {
 
-    const resultOptions = [
-        { value: 'currently_out_of_service', label: 'Currently out of service' },
-    ];
+    const { values } = useFormikContext();
+      
+    const resultsValue = getIn(values, `general_parameters.results`)
+
+    let resultOptions = [];
+
+    if (resultsValue && resultsValue.length > 0) {
+        resultOptions = resultsValue.map(result => ({
+            value: result.name,
+            label: result.name,
+        }));
+    } else {
+        resultOptions = [{ label: 'Select Result, if applicable' }];
+    }
+
+    const measurementsValue = getIn(values, `method_specific_parameters.measurements`)
+
+    let measurementOptions = [];
+
+    if (measurementsValue && measurementsValue.length > 0) {
+        measurementOptions = measurementsValue.map(result => ({
+            value: result.name,
+            label: result.name,
+        }));
+    } else {
+        measurementOptions = [{ label: 'Select Measurement, if applicable' }];
+    }
 
   return (
     <>
         <div className='flex mb-3'>
           <div className="mr-3">
-            <OptionInput
+            <OptionField
                 name={name}
                 options={resultOptions}
                 label='Result'
@@ -24,9 +49,9 @@ function DataAnalysis( { name } ) {
             />
           </div>
           <div>
-            <OptionInput
+            <OptionField
                 name={name}
-                options={resultOptions}
+                options={measurementOptions}
                 label='Measurement'
                 fieldName='measurement'
                 tooltip='List of the measurements that was analyzed together for a specific parameter'

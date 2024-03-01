@@ -1,13 +1,12 @@
 import CustomField from "./CustomField";
 import FormWrapper from "./FormWrapper";
-import OptionInput from "./OptionInput";
-
+import OptionField from "./OptionField";
 
 function ValueError( {colorSchema, name} ) {
 
     const ErrorOptions = [
-        { value: 'yes', label: 'Yes' },
-        { value: 'no', label: 'No' },
+        { value: 'Yes', label: 'Yes' },
+        { value: 'No', label: 'No' },
     ];
 
   return (
@@ -43,7 +42,7 @@ function ValueError( {colorSchema, name} ) {
                         />
                     </div>
                     <div>
-                        <OptionInput
+                        <OptionField
                             name={name}
                             fieldName='errors_are_relative'
                             options={ErrorOptions}

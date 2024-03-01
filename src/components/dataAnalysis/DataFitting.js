@@ -1,5 +1,5 @@
 import CustomField from '../buildingBlocks/CustomField';
-import OptionInput from '../buildingBlocks/OptionInput';
+import OptionField from '../buildingBlocks/OptionField';
 
 function DataFitting( { name } ) {
 
@@ -54,7 +54,7 @@ function DataFitting( { name } ) {
                 />
             </div>
             <div>
-                <OptionInput
+                <OptionField
                     name={name}
                     options={qualityOptions}
                     fieldName='quality_type'

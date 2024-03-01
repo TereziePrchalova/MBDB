@@ -1,25 +1,25 @@
 import ArrayField from "../buildingBlocks/ArrayField";
 import CustomField from "../buildingBlocks/CustomField";
-import OptionInput from "../buildingBlocks/OptionInput";
 import MolecularWeight from "../components/MolecularWeight";
 import Modifications from "../components/Modifications";
+import OptionField from "../buildingBlocks/OptionField";
 
 function Polymer( { name } ) {
 
     const polymerTypeOptions = [
-        { value: 'cyclic_pseudo_peptide', label: 'Cyclic pseudo peptide' },
-        { value: 'peptide_nucleic_acid', label: 'Peptide nucleic acid' },
-        { value: 'polydeoxyribonucleotide', label: 'Polydeoxyribonucleotide' },
-        { value: 'polydeoxyribonucleotide_polyribonucleotide_hybrid', label: 'Polydeoxyribonucleotide / polyribonucleotide hybrid' },
-        { value: 'polypeptide(D)', label: 'Polypeptide(D)' },
-        { value: 'polypeptide(L)', label: 'Polypeptide(L)' },
-        { value: 'polyribonucleotide', label: 'Polyribonucleotide' },
+        { value: 'Cyclic pseudo peptide', label: 'Cyclic pseudo peptide' },
+        { value: 'Peptide nucleic acid', label: 'Peptide nucleic acid' },
+        { value: 'Polydeoxyribonucleotide', label: 'Polydeoxyribonucleotide' },
+        { value: 'Polydeoxyribonucleotide / polyribonucleotide hybrid', label: 'Polydeoxyribonucleotide / polyribonucleotide hybrid' },
+        { value: 'Polypeptide(D)', label: 'Polypeptide(D)' },
+        { value: 'Polypeptide(L)', label: 'Polypeptide(L)' },
+        { value: 'Polyribonucleotide', label: 'Polyribonucleotide' },
       ];
 
       const expressionSourceTypeOptions = [
-        { value: 'natively', label: 'Natively' },
-        { value: 'recombinantly', label: 'Recombinantly' },
-        { value: 'synthetically', label: 'Synthetically' },
+        { value: 'Natively', label: 'Natively' },
+        { value: 'Recombinantly', label: 'Recombinantly' },
+        { value: 'Synthetically', label: 'Synthetically' },
       ];
 
   return (
@@ -34,7 +34,7 @@ function Polymer( { name } ) {
             />
           </div>
           <div>
-            <OptionInput
+            <OptionField
                 name={name}
                 label='Polymer type'
                 fieldName='polymer_type'
@@ -73,7 +73,7 @@ function Polymer( { name } ) {
                 />
             </div>
             <div className="mr-3">
-                <OptionInput
+                <OptionField
                     name={name}
                     label='Expression source'
                     fieldName='expression_source_type'
@@ -111,8 +111,7 @@ function Polymer( { name } ) {
                     fieldName='external_databases'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label={`External database ${index + 1}`}
                             width='w-[15rem]'
                             tooltip='List of identifiers to records in external databases containing information about the polymer can be specified here (e.g UNIPROT:Q8KRF6)'
@@ -127,8 +126,7 @@ function Polymer( { name } ) {
                     fieldName='additional_specifications'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label={`Additional specification ${index + 1}`}
                             width='w-[15rem]'
                             tooltip='Additional information about the chemical can be specified here (e.g. RNase free water, recrystallization, desalting)'

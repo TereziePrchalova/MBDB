@@ -1,9 +1,9 @@
 import ArrayField from "../buildingBlocks/ArrayField";
 import CustomField from "../buildingBlocks/CustomField";
-import OptionInput from "../buildingBlocks/OptionInput";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Protocol from "../buildingBlocks/Protocol";
 import Storage from "../buildingBlocks/Storage";
+import OptionField from "../buildingBlocks/OptionField";
 
 function CellFraction( { name } ) {
 
@@ -35,7 +35,7 @@ function CellFraction( { name } ) {
                     />
                 </div>
                 <div className="mr-3">
-                    <OptionInput
+                    <OptionField
                         name={name}
                         options={fractionOptions}
                         label='Fraction'

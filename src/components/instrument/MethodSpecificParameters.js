@@ -1,21 +1,21 @@
 import FormWrapper from '../buildingBlocks/FormWrapper';
-import OptionInput from '../buildingBlocks/OptionInput';
+import OptionField from '../buildingBlocks/OptionField';
 import CustomField from '../buildingBlocks/CustomField';
 import Temperature from '../components/Temperature';
 import ArrayField from '../buildingBlocks/ArrayField';
 
-function MethodSpecificParameters( {name, values} ) {
+function MethodSpecificParameters( { name } ) {
 
     const experimentTypeOptions = [
-        { value: 'affinity', label: 'Affinity' },
+        { value: 'Affinity', label: 'Affinity' },
         { value: 'Concentration', label: 'Concentration' },
         { value: 'Other', label: 'Other' },
     ];
 
     const signalTypeOptions = [
-        { value: 'initial_intensity', label: 'Initial intensity' },
-        { value: 'tric_mst', label: 'TRIC / MST' },
-        { value: 'spectral_shift', label: 'Spectral shift' },
+        { value: 'Initial intensity', label: 'Initial intensity' },
+        { value: 'TRIC / MST', label: 'TRIC / MST' },
+        { value: 'Spectral shift', label: 'Spectral shift' },
     ];
 
     const excitationLedColorOptions = [
@@ -26,7 +26,7 @@ function MethodSpecificParameters( {name, values} ) {
         { value: 'BLUE (ex 480-500nm, em 515-550nm)', label: 'BLUE (ex 480-500nm, em 515-550nm)' },
         { value: 'BLUE (ex 460-500nm, em 515-560nm)', label: 'BLUE (ex 460-500nm, em 515-560nm)' },
         { value: 'UV (ex 260-300nm, em 330-380nm)', label: 'UV (ex 260-300nm, em 330-380nm)' },
-        { value: 'spectral_shift', label: 'Spectral shift' },
+        { value: 'Spectral shift', label: 'Spectral shift' },
     ];
 
   return (
@@ -37,7 +37,7 @@ function MethodSpecificParameters( {name, values} ) {
         >
             <div className='flex mb-3'>
                 <div>
-                    <OptionInput
+                    <OptionField
                         name={name}
                         options={experimentTypeOptions}
                         label='Experiment type'
@@ -46,7 +46,7 @@ function MethodSpecificParameters( {name, values} ) {
                     />
                 </div>
                 <div className='mx-3'>
-                    <OptionInput
+                    <OptionField
                         name={name}
                         options={signalTypeOptions}
                         label='Signal type'
@@ -55,7 +55,7 @@ function MethodSpecificParameters( {name, values} ) {
                     />
                 </div>
                 <div>
-                    <OptionInput
+                    <OptionField
                         name={name}
                         options={excitationLedColorOptions}
                         label='Excitation LED color'
@@ -85,7 +85,6 @@ function MethodSpecificParameters( {name, values} ) {
             <div>
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Temperature'
                     fieldName='temperature'
                     maxItems={1}

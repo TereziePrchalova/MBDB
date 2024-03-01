@@ -1,18 +1,17 @@
-import OptionInput from "../../buildingBlocks/OptionInput";
 import CustomField from "../../buildingBlocks/CustomField";
 import ArrayField from "../../buildingBlocks/ArrayField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Protocol from "../../buildingBlocks/Protocol";
-import ArrayFieldOneElement from "../../buildingBlocks/ArrayFieldOneElement";
 import Storage from "../../buildingBlocks/Storage";
 import Concentration from "../../components/Concentration";
+import OptionField from "../../buildingBlocks/OptionField";
 
-function ComplexSubstanceOfIndustrialOrigin( { name, values } ) {
+function ComplexSubstanceOfIndustrialOrigin( { name } ) {
 
     const productOptions = [
-        { value: 'beer', label: 'Beer' },
-        { value: 'cell_medium', label: 'Cell medium' },
-        { value: 'whey', label: 'Whey' },
+        { value: 'Beer', label: 'Beer' },
+        { value: 'Cell medium', label: 'Cell medium' },
+        { value: 'Whey', label: 'Whey' },
       ];
 
   return (
@@ -27,7 +26,7 @@ function ComplexSubstanceOfIndustrialOrigin( { name, values } ) {
                 />
             </div>
             <div>
-                <OptionInput 
+                <OptionField
                     name={name} 
                     options={productOptions} 
                     label='Product' 
@@ -71,7 +70,6 @@ function ComplexSubstanceOfIndustrialOrigin( { name, values } ) {
                     >
                         <Storage
                             name={`${arrayName}.${index}`}
-                            values={values}
                             colorSchema='light'
                         />
                     </FormWrapper>
@@ -83,12 +81,10 @@ function ComplexSubstanceOfIndustrialOrigin( { name, values } ) {
                 name={name}
                 label='Additional specification'
                 fieldName='additional_specifications'
-                renderChild={({ name, index }) => (
+                renderChild={({ arrayName, index }) => (
                     <CustomField
-                        name={name}
-                        index={index}
+                        name={`${arrayName}.${index}`}
                         label={`Additional specification ${index + 1}`}
-                        fieldName='additional_specifications'
                         width='w-[15rem]'
                         tooltip='Additional information about the complex substance can be specified here'
                     />

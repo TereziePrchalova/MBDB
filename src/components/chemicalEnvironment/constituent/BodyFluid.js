@@ -1,23 +1,22 @@
 import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
-import OptionInput from "../../buildingBlocks/OptionInput";
+import OptionField from "../../buildingBlocks/OptionField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Protocol from "../../buildingBlocks/Protocol";
 import Storage from "../../buildingBlocks/Storage";
-import ArrayFieldOneElement from "../../buildingBlocks/ArrayFieldOneElement";
 import Concentration from "../../components/Concentration";
 
-function BodyFluid( { name, values } ) {
+function BodyFluid( { name } ) {
 
     const fluidOptions = [
-        { value: 'blood', label: 'Blood' },
-        { value: 'fecal_matter', label: 'Fecal matter' },
-        { value: 'milk', label: 'Milk' },
-        { value: 'plasma', label: 'Plasma' },
-        { value: 'saliva', label: 'Saliva' },
-        { value: 'serum', label: 'Serum' },
-        { value: 'urine', label: 'Urine' },
-        { value: 'plant_extract', label: 'Plant extract' },
+        { value: 'Blood', label: 'Blood' },
+        { value: 'Fecal matter', label: 'Fecal matter' },
+        { value: 'Milk', label: 'Milk' },
+        { value: 'Plasma', label: 'Plasma' },
+        { value: 'Saliva', label: 'Saliva' },
+        { value: 'Serum', label: 'Serum' },
+        { value: 'Urine', label: 'Urine' },
+        { value: 'Plant extract', label: 'Plant extract' },
     ];
 
   return (
@@ -32,7 +31,7 @@ function BodyFluid( { name, values } ) {
             />
           </div>
           <div className="mr-3">
-            <OptionInput
+            <OptionField
                 name={name}
                 options={fluidOptions}
                 label='Fluid'
@@ -73,22 +72,21 @@ function BodyFluid( { name, values } ) {
                     >
                         <Protocol
                             name={`${arrayName}.${index}`}
-                            values={values}
                         />
                     </FormWrapper>
                 )}
             />
         </div>
         <div>
-            <ArrayFieldOneElement
+            <ArrayField
                 name={name}
                 label='Storage'
                 fieldName='storage'
+                maxItems={1}
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper headline={`Storage ${index + 1}`}>
                         <Storage
                             name={`${arrayName}.${index}`}
-                            values={values}
                             colorSchema='light'
                         />
                     </FormWrapper>
@@ -100,12 +98,10 @@ function BodyFluid( { name, values } ) {
                 name={name}
                 label='Additional specification'
                 fieldName='additional_specifications'
-                renderChild={({ name, index }) => (
+                renderChild={({ arrayName, index }) => (
                     <CustomField
-                        name={name}
-                        index={index}
+                        name={`${arrayName}.${index}`}
                         label={`Additional specification ${index + 1}`}
-                        fieldName='additional_specifications'
                         width='w-[15rem]'
                         tooltip='Additional information about the complex substance can be specified here'
                     />

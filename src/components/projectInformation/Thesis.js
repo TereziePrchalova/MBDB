@@ -1,5 +1,5 @@
 import CustomField from "../buildingBlocks/CustomField";
-import OptionInput from "../buildingBlocks/OptionInput";
+import OptionField from "../buildingBlocks/OptionField";
 
 function Thesis( { name } ) {
 
@@ -14,7 +14,7 @@ function Thesis( { name } ) {
     <>
         <div className="flex">
             <div>
-                <OptionInput
+                <OptionField
                     name={name}
                     options={degreeTypeOptions}
                     label='Degree type'

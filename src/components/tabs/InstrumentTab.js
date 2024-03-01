@@ -5,7 +5,7 @@ import Instrument from "../instrument/Instrument";
 import MethodSpecificParameters from "../instrument/MethodSpecificParameters";
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
-function InstrumentTab( { name, values} ) {
+function InstrumentTab( { name } ) {
 
     return (
       <>
@@ -35,7 +35,7 @@ function InstrumentTab( { name, values} ) {
                 </div>
             </FormWrapper>
             <div className="mt-2">
-                <MethodSpecificParameters values={values} name='method_specific_parameters' />
+                <MethodSpecificParameters name='method_specific_parameters' />
             </div>
           </div>
       </>

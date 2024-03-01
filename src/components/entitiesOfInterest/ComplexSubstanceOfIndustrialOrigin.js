@@ -1,9 +1,9 @@
-import OptionInput from "../buildingBlocks/OptionInput";
 import CustomField from "../buildingBlocks/CustomField";
 import ArrayField from "../buildingBlocks/ArrayField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Protocol from "../buildingBlocks/Protocol";
 import Storage from "../buildingBlocks/Storage";
+import OptionField from "../buildingBlocks/OptionField";
 
 function ComplexSubstanceOfIndustrialOrigin( { name } ) {
 
@@ -25,7 +25,7 @@ function ComplexSubstanceOfIndustrialOrigin( { name } ) {
                 />
             </div>
             <div>
-                <OptionInput 
+                <OptionField
                     name={name} 
                     options={productOptions} 
                     label='Product' 

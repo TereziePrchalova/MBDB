@@ -1,29 +1,26 @@
 import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
-import OptionInput from "../../buildingBlocks/OptionInput";
 import MolecularWeight from "../../components/MolecularWeight";
 import Modifications from "../../components/Modifications";
 import Concentration from "../../components/Concentration";
-import { useFormikContext } from "formik";
+import OptionField from "../../buildingBlocks/OptionField";
 
 function Polymer( { name } ) {
 
-    const { values } = useFormikContext()
-
     const polymerTypeOptions = [
-        { value: 'cyclic_pseudo_peptide', label: 'Cyclic pseudo peptide' },
-        { value: 'peptide_nucleic_acid', label: 'Peptide nucleic acid' },
-        { value: 'polydeoxyribonucleotide', label: 'Polydeoxyribonucleotide' },
-        { value: 'polydeoxyribonucleotide_polyribonucleotide_hybrid', label: 'Polydeoxyribonucleotide / polyribonucleotide hybrid' },
-        { value: 'polypeptide(D)', label: 'Polypeptide(D)' },
-        { value: 'polypeptide(L)', label: 'Polypeptide(L)' },
-        { value: 'polyribonucleotide', label: 'Polyribonucleotide' },
+        { value: 'Cyclic pseudo peptide', label: 'Cyclic pseudo peptide' },
+        { value: 'Peptide nucleic acid', label: 'Peptide nucleic acid' },
+        { value: 'Polydeoxyribonucleotide', label: 'Polydeoxyribonucleotide' },
+        { value: 'Polydeoxyribonucleotide / polyribonucleotide hybrid', label: 'Polydeoxyribonucleotide / polyribonucleotide hybrid' },
+        { value: 'Polypeptide(D)', label: 'Polypeptide(D)' },
+        { value: 'Polypeptide(L)', label: 'Polypeptide(L)' },
+        { value: 'Polyribonucleotide', label: 'Polyribonucleotide' },
       ];
 
       const expressionSourceTypeOptions = [
-        { value: 'natively', label: 'Natively' },
-        { value: 'recombinantly', label: 'Recombinantly' },
-        { value: 'synthetically', label: 'Synthetically' },
+        { value: 'Natively', label: 'Natively' },
+        { value: 'Recombinantly', label: 'Recombinantly' },
+        { value: 'Synthetically', label: 'Synthetically' },
       ];
 
   return (
@@ -38,7 +35,7 @@ function Polymer( { name } ) {
             />
           </div>
           <div>
-            <OptionInput
+            <OptionField
                 name={name}
                 label='Polymer type'
                 fieldName='polymer_type'
@@ -77,7 +74,7 @@ function Polymer( { name } ) {
                 />
             </div>
             <div className="mr-3">
-                <OptionInput
+                <OptionField
                     name={name}
                     label='Expression source'
                     fieldName='expression_source_type'
@@ -109,7 +106,6 @@ function Polymer( { name } ) {
         <div>
             <Modifications
                 name={`${name}.modifications`}
-                values={values}
                 colorSchemaProtocol='light'
             />
         </div>
@@ -117,15 +113,12 @@ function Polymer( { name } ) {
             <div className="mr-3">
                 <ArrayField
                     name={name}
-                    values={values}
                     label='External Database'
                     fieldName='external_databases'
-                    renderChild={({ name, index }) => (
+                    renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={name}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label={`External database ${index + 1}`}
-                            fieldName='external_databases'
                             width='w-[15rem]'
                             tooltip='List of identifiers to records in external databases containing information about the polymer can be specified here (e.g UNIPROT:Q8KRF6)'
                         />
@@ -135,15 +128,12 @@ function Polymer( { name } ) {
             <div>
                 <ArrayField
                     name={name}
-                    values={values}
                     label='Additional specification'
                     fieldName='additional_specifications'
-                    renderChild={({ name, index }) => (
+                    renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={name}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label={`Additional specification ${index + 1}`}
-                            fieldName='additional_specifications'
                             width='w-[15rem]'
                             tooltip='Additional information about the chemical can be specified here (e.g. RNase free water, recrystallization, desalting)'
                         />

@@ -31,8 +31,7 @@ function Contact( { name } ) {
                     fieldName='identifiers'
                     renderChild={({ arrayName, index }) => (
                       <CustomField
-                        name={arrayName}
-                        index={index}
+                        name={`${arrayName}.${index}`}
                         label={`identifier ${index + 1}`}
                         tooltip='Persistent personal identifiers, currently only ORCIDs are allowed'
                       />
@@ -46,10 +45,9 @@ function Contact( { name } ) {
                     fieldName='affiliations'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
-                            label={`affiliation ${index + 1}`}
-                            tooltip='The affiliation of the person. Note that this is based on the Research Organization Registry (ROR)'
+                          name={`${arrayName}.${index}`}
+                          label={`affiliation ${index + 1}`}
+                          tooltip='The affiliation of the person. Note that this is based on the Research Organization Registry (ROR)'
                         />
                     )}
                 />
