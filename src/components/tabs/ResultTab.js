@@ -54,7 +54,7 @@ function ResultTab( { name } ) {
                             <OptionField
                                 name={`${arrayName}.${index}`}
                                 options={resultTabOptions}
-                                label='type'
+                                label='Type'
                                 fieldName='type'
                                 width='w-full'
                             />
