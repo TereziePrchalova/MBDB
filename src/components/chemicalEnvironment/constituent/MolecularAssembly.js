@@ -18,17 +18,19 @@ function MolecularAssembly( { name, values} ) {
                 tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
             />
         </div>
-        <div className="mb-3">
-            <MolecularWeight
-                name={`${name}.molecular_weight`}
-                tooltipHeader='The molecular weight of the molecular assembly'
-            />
-        </div>
-        <div className="mb-3">
-            <Concentration
-                name={`${name}.concentration`}
-                tooltipHeader='The molecular weight of the molecular assembly'
-            />
+        <div className="flex">
+            <div className="mr-3">
+                <MolecularWeight
+                    name={`${name}.molecular_weight`}
+                    tooltipHeader='The molecular weight of the molecular assembly'
+                />
+            </div>
+            <div className="mb-3">
+                <Concentration
+                    name={`${name}.concentration`}
+                    tooltipHeader='The molecular weight of the molecular assembly'
+                />
+            </div>
         </div>
         <div>
             <Components 

@@ -91,17 +91,19 @@ function Polymer( { name } ) {
                 />
             </div>
         </div>
-        <div className="mb-3">
-            <MolecularWeight 
-                name={`${name}.molecular_weight`}
-                tooltipHeader='The molecular weight of the polymer'
-            />
-        </div>
-        <div>
-            <Concentration
-                name={`${name}.concentration`}
-                tooltipHeader='Concentration of the constituent including its relative concentration related to the collected sample or absolute concentration of the constituent'
-            />
+        <div className="flex">
+            <div className="mr-3">
+                <MolecularWeight 
+                    name={`${name}.molecular_weight`}
+                    tooltipHeader='The molecular weight of the polymer'
+                />
+            </div>
+            <div>
+                <Concentration
+                    name={`${name}.concentration`}
+                    tooltipHeader='Concentration of the constituent including its relative concentration related to the collected sample or absolute concentration of the constituent'
+                />
+            </div>
         </div>
         <div>
             <Modifications

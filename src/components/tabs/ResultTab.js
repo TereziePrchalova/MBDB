@@ -1,5 +1,4 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import UseDefault from "../buildingBlocks/UseDefault";
 import ArrayField from "../buildingBlocks/ArrayField";
 import Concentration from "../result/Concentration";
 import Stoichiometry from "../result/Stoichiometry";
@@ -19,10 +18,6 @@ import OptionField from "../buildingBlocks/OptionField";
 function ResultTab( { name } ) {
 
     const { values } = useFormikContext()
-
-    const componentName = `${name}.results[0].type`
-   
-    UseDefault(values, componentName, 'concentration')
 
     const resultTabOptions = [
         { value: 'concentration', label: 'Concentration' },

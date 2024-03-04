@@ -13,7 +13,7 @@ function Chemical( { name } ) {
               name={name}
               label='Name'
               fieldName='name'
-              tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
+              tooltip='Name of the chemical environment (e.g. Measurement Buffer). The name must be unique within a record as it will be referred to the in method specific section in when describing the composition of the individual samples or measurement steps'
             />
           </div>
           <div className="mr-3">
@@ -33,17 +33,19 @@ function Chemical( { name } ) {
             />
           </div>
         </div>
-        <div className="mb-3">
-            <MolecularWeight
-              name={`${name}.molecular_weight`}
-              tooltipHeader='The molecular weight of the chemical'
-            />
-        </div>
-        <div>
-            <Concentration
-                name={`${name}.concentration`}
-                tooltipHeader='Concentration of the constituent including its relative concentration related to the collected sample or absolute concentration of the constituent'
-            />
+        <div className="flex">
+          <div className="mr-3">
+              <MolecularWeight
+                name={`${name}.molecular_weight`}
+                tooltipHeader='The molecular weight of the chemical'
+              />
+          </div>
+          <div>
+              <Concentration
+                  name={`${name}.concentration`}
+                  tooltipHeader='Concentration of the constituent including its relative concentration related to the collected sample or absolute concentration of the constituent'
+              />
+          </div>
         </div>
         <div className="flex">
             <div className="mr-3">

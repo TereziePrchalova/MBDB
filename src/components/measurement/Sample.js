@@ -79,7 +79,7 @@ function Sample( { name, tooltip, colorSchema } ) {
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
                             headline={`Target ${index + 1}`}
-                            tooltipHeader=''
+                            tooltipHeader='List of names (ids), from the entities of interest defined in the general parameters, of directly measured entities'
                         >
                             <Target
                                 name={`${arrayName}.${index}`}
@@ -97,7 +97,7 @@ function Sample( { name, tooltip, colorSchema } ) {
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
                             headline={`Ligand ${index + 1}`}
-                            tooltipHeader=''
+                            tooltipHeader='List of names (ids) of entities (from the entities of interest defined in the general parameters) that were used to alter the behavior of the target(s)'
                         >
                             <Ligand
                                 name={`${arrayName}.${index}`}

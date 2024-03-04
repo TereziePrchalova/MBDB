@@ -21,8 +21,8 @@ function Ligand( { name } ) {
 
   return (
     <>
-        <div>
-          <div className="mb-3">
+        <div className="flex">
+          <div className="mr-3">
             <OptionField
                 name={name}
                 options={entityOptions}

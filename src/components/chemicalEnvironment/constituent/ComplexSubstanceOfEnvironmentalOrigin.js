@@ -39,16 +39,18 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
                 />
             </div>
         </div>
-        <div className="mb-3">
-            <Location
-                name={`${name}.location`}
-                tooltipHeader='The longitude, from west to east, in degrees (decimal notation)'
-            />
-        </div>
-        <div>
-            <Concentration
-                name={`${name}.concentration`}
-            />
+        <div className="flex">
+            <div className="mr-3">
+                <Location
+                    name={`${name}.location`}
+                    tooltipHeader='The longitude, from west to east, in degrees (decimal notation)'
+                />
+            </div>
+            <div>
+                <Concentration
+                    name={`${name}.concentration`}
+                />
+            </div>
         </div>
         <div>
             <ArrayField

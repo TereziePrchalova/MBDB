@@ -25,6 +25,7 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
                     name={name}
                     label='Name'
                     fieldName='name'
+                    width='w-[22rem]'
                     tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
                 />
             </div>
