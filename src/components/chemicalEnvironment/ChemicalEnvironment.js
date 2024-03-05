@@ -4,7 +4,6 @@ import CustomField from "../buildingBlocks/CustomField";
 import Ph from "../components/Ph";
 import ArrayField from "../buildingBlocks/ArrayField";
 
-
 function ChemicalEnvironment( { name } ) {
 
   return (

@@ -7,7 +7,7 @@ import { useFormikContext, getIn } from "formik";
 
 function ComplexSubstanceOfBiologicalOrigin( { name } ) {
 
-    const { values } = useFormikContext()
+    const { values } = useFormikContext();
 
     const componentName = `${name}.derived_from`
    

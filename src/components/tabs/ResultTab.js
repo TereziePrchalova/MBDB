@@ -17,7 +17,7 @@ import OptionField from "../buildingBlocks/OptionField";
 
 function ResultTab( { name } ) {
 
-    const { values } = useFormikContext()
+    const { values } = useFormikContext();
 
     const resultTabOptions = [
         { value: 'concentration', label: 'Concentration' },

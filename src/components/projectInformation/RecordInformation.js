@@ -5,15 +5,15 @@ import OptionField from '../buildingBlocks/OptionField';
 function RecordInformation( { name } ) {
 
     const accessRightsOptions = [
-        { value: 'Open access', label: 'Open access' },
-        { value: 'Embargoed access', label: 'Embargoed access' },
-        { value: 'Restricted access', label: 'Restricted access' },
+        { value: 'open access', label: 'Open access' },
+        { value: 'embargoed access', label: 'Embargoed access' },
+        { value: 'restricted access', label: 'Restricted access' },
     ];
 
     const metadataAccessRightsOptions = [
-        { value: 'Open access', label: 'Open access' },
-        { value: 'Embargoed access', label: 'Embargoed access' },
-        { value: 'Restricted access', label: 'Restricted access' },
+        { value: 'open access', label: 'Open access' },
+        { value: 'embargoed access', label: 'Embargoed access' },
+        { value: 'restricted access', label: 'Restricted access' },
     ];
 
   return (
