@@ -9,7 +9,7 @@ import { useFormikContext } from "formik";
 
 function Concentration( { name } ) {
 
-    const { values } = useFormikContext()
+    const { values } = useFormikContext();
 
     const unitOptions = [
         { value: 'M', label: 'M' },
