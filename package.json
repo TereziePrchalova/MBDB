@@ -47,20 +47,9 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@storybook/addon-console": "^2.0.0",
-    "@storybook/addon-essentials": "^7.6.9",
-    "@storybook/addon-interactions": "^7.6.9",
-    "@storybook/addon-onboarding": "^1.0.10",
-    "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/addon-styling-webpack": "^0.0.6",
-    "@storybook/blocks": "^7.6.9",
-    "@storybook/global": "^5.0.0",
-    "@storybook/react-webpack5": "^7.6.9",
-    "@storybook/test": "^7.6.9",
     "eslint-plugin-storybook": "^0.6.15",
     "postcss": "^8.4.33",
     "prop-types": "^15.8.1",
-    "storybook": "^7.6.9",
     "tailwindcss": "^3.4.1",
     "webpack": "^5.89.0"
   }
