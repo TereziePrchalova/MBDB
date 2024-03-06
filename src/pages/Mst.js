@@ -12,7 +12,7 @@ import ProjectInformationTab from "../components/tabs/ProjectInformationTab";
 import MeasurementTab from "../components/tabs/MeasurementTAb";
 
 function Mst() {
-  
+
   const Tabs = [
     { value: 'raw-data-files', label: 'Raw data files' },
     { value: 'project-information', label: 'Project information' },
@@ -49,17 +49,19 @@ function Mst() {
       </div>
       <Formik
         initialValues={{
-          "general_parameters": {
-            "schema_version": "0.9.18",
-            "technique": "Microscale thermophoresis/Temperature related intensity change (MST/TRIC)",
-            "record_information": {
-              "publisher": "MBDB",
-              "resource_type_general": "Dataset",
-              "resource_type": "MST",
-              "deposition_date": new Date(),
-              "date_available": new Date(),
-              "subject_category": "Biophysics",
-            },
+          "metadata": {
+            "general_parameters": {
+              "schema_version": "0.9.18",
+              "technique": "Microscale thermophoresis/Temperature related intensity change (MST/TRIC)",
+              "record_information": {
+                "publisher": "MBDB",
+                "resource_type_general": "Dataset",
+                "resource_type": "MST",
+                "deposition_date": new Date(),
+                "date_available": new Date(),
+                "subject_category": "Biophysics",
+              },
+            }
           }
         }}
         onSubmit={values => 

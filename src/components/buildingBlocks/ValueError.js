@@ -22,21 +22,18 @@ function ValueError( {colorSchema, name} ) {
                         <CustomField
                             name={name}
                             fieldName='lower_error'
-                            type='number'
+                            type='Lower'
                             label='Min'
                             tooltip='The lower error, i.e. the number that should be subtracted from the value to get the lower bound of the 95 % confidence interval. The same unit as the value being described is assumed. If relative errors are provided, please provide it in fractional form (e.g.  0.01 for 1 %)'
                             width='w-[8rem]'
                         />
-                    </div>
-                    <div className="mr-3 my-auto">
-                        &#8211;
                     </div>
                     <div className="mr-3">
                         <CustomField
                             name={name}
                             fieldName='upper_error'
                             type='number'
-                            label='Max'
+                            label='Upper'
                             tooltip='The upper error, i.e. the number that should be added to the value to get the upper bound of the 95 % confidence interval. The same unit as the value being described is assumed. If relative errors are provided, please provide it in fractional form (e.g.  0.01 for 1 %)'
                             width='w-[8rem]'
                         />

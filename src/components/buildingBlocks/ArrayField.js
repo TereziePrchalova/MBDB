@@ -1,8 +1,9 @@
 import React from 'react';
 import { FieldArray, getIn, useFormikContext } from 'formik';
 import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
 
-function ArrayField({ name, fieldName, label, renderChild, initialValue, required, maxItems }) {
+function ArrayField({ name, fieldName, label, renderChild, initialValue, required, maxItems, tooltip }) {
 
   const { values } = useFormikContext();
 
@@ -44,22 +45,24 @@ function ArrayField({ name, fieldName, label, renderChild, initialValue, require
               ))
             )}
             {(!maxItems || (!value || value.length < maxItems)) &&
-              <div className='mt-3'>
-                <Button
-                  variant="outlined"
-                  onClick={() => push(initialValue !== undefined ? { ...initialValue } : '')}
-                  sx= {{ 
-                      borderColor: '#034459',
-                      color: '#034459',
-                      backgroundColor: '#DCF1F3',
-                      "&:hover": {
-                          borderColor: "#034459",
-                      },
-                  }}
-                >
-                  + {`${label}`}
-                </Button>
-              </div>
+                <div className='mt-3'>
+                  <Tooltip title={tooltip} arrow>
+                    <Button
+                      variant="outlined"
+                      onClick={() => push(initialValue !== undefined ? { ...initialValue } : '')}
+                      sx= {{ 
+                          borderColor: '#034459',
+                          color: '#034459',
+                          backgroundColor: '#DCF1F3',
+                          "&:hover": {
+                              borderColor: "#034459",
+                          },
+                      }}
+                    >
+                      + {`${label}`}
+                    </Button>
+                  </Tooltip>
+                </div>
             }
           </>
         )}
