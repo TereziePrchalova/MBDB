@@ -95,7 +95,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                     name={name}
                     label='Expression organism'
                     fieldName='expression_organism'
-                    tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
+                    tooltip='The biological species that was used to express (produce) the polymer. Note that this is based on the NCBI taxonomy'
                 />
             </div>
         </div>
