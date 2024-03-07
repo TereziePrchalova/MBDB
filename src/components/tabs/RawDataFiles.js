@@ -39,6 +39,7 @@ function RawDataFiles( { name } ) {
             fieldName='name'
             label='Name'
             width='w-[25rem]'
+            tooltip='Name of the file'
           />
         </div>
         <div className="mb-3">
@@ -48,6 +49,7 @@ function RawDataFiles( { name } ) {
             options={contentTypeOptions}
             label='Content_type'
             width='w-[25rem]'
+            tooltip='Type of the file content in terms of how it can be read (text, binary, etc.)'
           />
         </div>
         <div className="mb-3">
@@ -57,6 +59,7 @@ function RawDataFiles( { name } ) {
             options={contextOptions}
             label='Context'
             width='w-[25rem]'
+            tooltip='The context the file should be understood within (e.g. raw measurement data)'
           />
         </div>
         <div className="mb-3">
@@ -66,6 +69,7 @@ function RawDataFiles( { name } ) {
             label='Originates from'
             fieldName='originates_from'
             width='w-[25rem]'
+            tooltip='What is the source of the file'
           />
         </div>
         <div className="mb-3">
@@ -75,6 +79,7 @@ function RawDataFiles( { name } ) {
             label='Size'
             type='number'
             width='w-[25rem]'
+            tooltip='Size of the file in bytes'
           />
         </div>
         <div className="mb-3">
@@ -83,6 +88,7 @@ function RawDataFiles( { name } ) {
             fieldName='description'
             label='description'
             width='w-[25rem]'
+            tooltip='Short description of what the file contains'
           />
         </div>
         <div className="mb-3">
@@ -91,6 +97,7 @@ function RawDataFiles( { name } ) {
             fieldName='recommended_software'
             label='Recommended software'
             width='w-[25rem]'
+            tooltip='The name of the software recommended for opening and working with the file'
           />
         </div>
         <div className="mb-3">
@@ -99,6 +106,7 @@ function RawDataFiles( { name } ) {
             fieldName='processing_steps'
             label='Processing steps'
             width='w-[25rem]'
+            tooltip='List of the processing steps performed on the file before it was deposited (e.g. exported to xlsx)'
           />
         </div>
       </FormWrapper>
