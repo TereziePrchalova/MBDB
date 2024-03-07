@@ -17,10 +17,10 @@ function Mst() {
     { value: 'raw-data-files', label: 'Raw data files' },
     { value: 'project-information', label: 'Project information' },
     { value: 'entities-of-interest', label: 'Entities of interest' },
-    { value: 'chemical-environment', label: 'Chemical environment' },
-    { value: 'result', label: 'Result' },
+    { value: 'chemical-environment', label: 'Chemical environments' },
+    { value: 'result', label: 'Results' },
     { value: 'instrument', label: 'Instrument' },
-    { value: 'measurement', label: 'Measurement' },
+    { value: 'measurement', label: 'Measurements' },
     { value: 'data-analysis', label: 'Data analysis' },
   ];
 
