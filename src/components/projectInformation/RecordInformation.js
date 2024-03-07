@@ -26,7 +26,7 @@ function RecordInformation( { name } ) {
                         fieldName='title'
                         label='Title'
                         width='w-[34rem]'
-                        tooltip='Short descriptive title of the record'
+                        tooltip='Short descriptive title of the record (e.g. HIV protease-saquinavir interaction)'
                     />
                 </div>
                 <div className='mr-3'>
