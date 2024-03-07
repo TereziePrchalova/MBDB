@@ -10,7 +10,7 @@ function DataAnalysisTab( { name } ) {
             <ArrayField
                 name={name}
                 label="Data analysis"
-                fieldName='chemical_environments'
+                fieldName='data_analysis'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper headline={`Data analysis ${index + 1}`}>
                         <div>

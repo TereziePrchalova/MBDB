@@ -22,7 +22,7 @@ function EntitiesOfInterestTab( { name } ) {
     const entitiesOfInterestTabOptions = [
         { value: 'Polymer', label: 'Polymer' },
         { value: 'Chemical', label: 'Chemical' },
-        { value: 'Molecular assembly', label: 'Molecular Assembly' },
+        { value: 'Molecular assembly', label: 'Molecular assembly' },
         { value: 'Complex substance of biological origin', label: 'Complex substance of biological origin' },
         { value: 'Complex substance of environmental origin', label: 'Complex substance of environmental origin' },
         { value: 'Complex substance of chemical origin', label: 'Complex substance of chemical origin' },
