@@ -61,6 +61,9 @@ function Mst() {
                 "date_available": new Date(),
                 "subject_category": "Biophysics",
               },
+            },
+            "method_specific_parameters": {
+              "schema_version": "0.9.9"
             }
           }
         }}
