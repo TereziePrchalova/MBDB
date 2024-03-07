@@ -78,6 +78,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                     name={name}
                     label='Source organism'
                     fieldName='source_organism'
+                    tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
                 />
             </div>
             <div className="mr-3">
@@ -97,7 +98,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                 />
             </div>
         </div>
-        <div>
+        <div className="mb-3">
             <MolecularWeight 
                 name={`${name}.molecular_weight`}
                 tooltipHeader='The molecular weight of the polymer'
