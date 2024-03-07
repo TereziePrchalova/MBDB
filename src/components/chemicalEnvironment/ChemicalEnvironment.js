@@ -24,10 +24,10 @@ function ChemicalEnvironment( { name } ) {
             />
         </div>
         <div className="mb-3">
-            <Solvent name={`${name}.solvent`} />
+            <Solvent name={name} />
         </div>
         <div className="mb-3">
-            <Constituent name={`${name}.contituent`} />
+            <Constituent name={name} />
         </div>
         <div>
             <ArrayField

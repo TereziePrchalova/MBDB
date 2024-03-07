@@ -51,7 +51,7 @@ function Mst() {
         initialValues={{
           "metadata": {
             "general_parameters": {
-              "schema_version": "0.9.18",
+              "schema_version": "0.9.19",
               "technique": "Microscale thermophoresis/Temperature related intensity change (MST/TRIC)",
               "record_information": {
                 "publisher": "MBDB",
@@ -75,28 +75,28 @@ function Mst() {
           <div className="flex justify-center">
             <Form className="m-4 w-[1100px]">
               {state.selected === 'raw-data-files' && (
-                <RawDataFiles name='general_parameters' />
+                <RawDataFiles name='metadata.general_parameters' />
               )}
               {state.selected === 'project-information' && (
-                <ProjectInformationTab name='general_parameters' />
+                <ProjectInformationTab name='metadata.general_parameters' />
               )}
               {state.selected === 'entities-of-interest' && (
-                <EntitiesOfInterestTab name='general_parameters' />
+                <EntitiesOfInterestTab name='metadata.general_parameters' />
               )}
               {state.selected === 'chemical-environment' && (
-                <ChemicalEnvironmentTab name='general_parameters' />
+                <ChemicalEnvironmentTab name='metadata.general_parameters' />
               )}
               {state.selected === 'result' && (
-                <ResultTab name='general_parameters'/>
+                <ResultTab name='metadata.general_parameters'/>
               )}
               {state.selected === 'instrument' && (
-                <InstrumentTab name='general_parameters' />
+                <InstrumentTab name='metadata.general_parameters' />
               )}
               {state.selected === 'measurement' && (
-                <MeasurementTab name='method_specific_parameters' />
+                <MeasurementTab name='metadata.method_specific_parameters' />
               )}
               {state.selected === 'data-analysis' && (
-                <DataAnalysisTab name='method_specific_parameters' />
+                <DataAnalysisTab name='metadata.method_specific_parameters' />
               )}
               <button className="fixed top-0 right-0 p-3 m-4 bg-primary rounded-lg" type="submit">Submit</button>
             </Form>

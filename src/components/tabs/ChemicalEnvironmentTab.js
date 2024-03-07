@@ -8,7 +8,7 @@ function ChemicalEnvironmentTab( { name } ) {
 
     const { values } = useFormikContext();
 
-    const fieldName = 'chemical_environment'
+    const fieldName = 'chemical_environments'
 
     UseDefault(values, `${name}.${fieldName}`, [{}] );
 

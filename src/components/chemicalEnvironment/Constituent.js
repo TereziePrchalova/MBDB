@@ -36,7 +36,7 @@ function Constituent( { name } ) {
                 <ArrayField
                     name={name}
                     label="Constituent"
-                    fieldName='constituent'
+                    fieldName='constituents'
                     initialValue={{type: 'polymer'}}
                     renderChild={({ arrayName, index }) => {
                         const actualValue = getIn(values, `${arrayName}.${index}`)

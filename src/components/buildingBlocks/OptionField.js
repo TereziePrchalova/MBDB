@@ -22,27 +22,14 @@ function OptionField({ label, name, fieldName, options, width, tooltip}) {
           <Select
             {...field}
             labelId={nameOptionField}
-            sx={{
-              "& .MuiInputLabel-root": { color: '#034459' },
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "#034459" },
-              },
-            }}
             id={nameOptionField}
             name={nameOptionField}
             value={field.value || ''}
             label={label}
             size="small"
             error={meta.touched && !!meta.error}
-            MenuProps={{
-              sx: {
-                "& .MuiMenuItem-root": {
-                  color: "#034459", // text color
-                  "&:hover": {
-                    backgroundColor: "#e3f2fd", // background color on hover
-                  },
-                },
-              },
+            sx={{
+              color: '#034459'
             }}
           >
             {options.map((option) => (

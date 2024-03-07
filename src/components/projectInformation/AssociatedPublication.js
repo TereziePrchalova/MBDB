@@ -12,14 +12,14 @@ function AssociatedPublication( { name } ) {
 
     const componentName = `${name}.type`
    
-    UseDefault(values, componentName, 'article')
+    UseDefault(values, componentName, 'Article')
 
     const actualValue = getIn(values, componentName)
 
     const associatedPublicationOptions = [
-        { value: 'article', label: 'Article' },
-        { value: 'book', label: 'Book' },
-        { value: 'thesis', label: 'Thesis' },
+        { value: 'Article', label: 'Article' },
+        { value: 'Book', label: 'Book' },
+        { value: 'Thesis', label: 'Thesis' },
     ];
 
   return (
@@ -40,17 +40,17 @@ function AssociatedPublication( { name } ) {
                     />
                 </div>
                 <div>
-                    {actualValue === 'article' && (
+                    {actualValue === 'Article' && (
                         <Article
                             name={name}
                         />
                     )}
-                    {actualValue === 'book' && (
+                    {actualValue === 'Book' && (
                         <Book
                             name={name}
                         />
                     )}
-                    {actualValue === 'thesis' && (
+                    {actualValue === 'Thesis' && (
                         <Thesis
                             name={name}
                         />

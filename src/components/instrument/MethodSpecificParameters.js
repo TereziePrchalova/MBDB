@@ -14,7 +14,7 @@ function MethodSpecificParameters( { name } ) {
 
     const signalTypeOptions = [
         { value: 'Initial intensity', label: 'Initial intensity' },
-        { value: 'TRIC / MST', label: 'TRIC / MST' },
+        { value: 'TRIC/MST', label: 'TRIC/MST' },
         { value: 'Spectral shift', label: 'Spectral shift' },
     ];
 

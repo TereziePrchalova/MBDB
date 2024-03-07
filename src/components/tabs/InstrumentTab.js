@@ -35,7 +35,7 @@ function InstrumentTab( { name } ) {
                 </div>
             </FormWrapper>
             <div className="mt-2">
-                <MethodSpecificParameters name='method_specific_parameters' />
+                <MethodSpecificParameters name='metadata.method_specific_parameters' />
             </div>
           </div>
       </>

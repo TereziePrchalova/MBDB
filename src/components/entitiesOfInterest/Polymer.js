@@ -91,7 +91,7 @@ function Polymer( { name } ) {
                 />
             </div>
         </div>
-        <div>
+        <div className="mb-3">
             <MolecularWeight 
                 name={`${name}.molecular_weight`}
                 colorSchema='light'
@@ -101,7 +101,8 @@ function Polymer( { name } ) {
         <div>
             <Modifications
                 name={`${name}.modifications`}
-                colorSchemaWrapper='light'
+                colorSchemaProtocol='light'
+                colorSchemaHeadline='light'
             />
         </div>
         <div className="flex">

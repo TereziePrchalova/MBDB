@@ -17,16 +17,16 @@ function EntitiesOfInterestTab( { name } ) {
 
     const componentName = `${name}.entities_of_interest[0].type`
    
-    UseDefault(values, componentName, 'polymer')
+    UseDefault(values, componentName, 'Polymer')
 
     const entitiesOfInterestTabOptions = [
-        { value: 'polymer', label: 'Polymer' },
-        { value: 'chemical', label: 'Chemical' },
-        { value: 'molecular_assembly', label: 'Molecular Assembly' },
-        { value: 'complex_substance_of_biological_origin', label: 'Complex substance of biological origin' },
-        { value: 'complex_substance_of_environmental_origin', label: 'Complex substance of environmental origin' },
-        { value: 'complex_substance_of_chemical_origin', label: 'Complex substance of chemical origin' },
-        { value: 'complex_substance_of_industrial_origin', label: 'Complex substance of industrial origin' },
+        { value: 'Polymer', label: 'Polymer' },
+        { value: 'Chemical', label: 'Chemical' },
+        { value: 'Molecular assembly', label: 'Molecular Assembly' },
+        { value: 'Complex substance of biological origin', label: 'Complex substance of biological origin' },
+        { value: 'Complex substance of environmental origin', label: 'Complex substance of environmental origin' },
+        { value: 'Complex substance of chemical origin', label: 'Complex substance of chemical origin' },
+        { value: 'Complex substance of industrial origin', label: 'Complex substance of industrial origin' },
     ];
 
     return (
@@ -56,49 +56,49 @@ function EntitiesOfInterestTab( { name } ) {
                             />
                         </div>
                         <div>
-                            {actualValue.type === 'polymer' && (
+                            {actualValue.type === 'Polymer' && (
                                 <div>
                                     <Polymer
                                         name={`${arrayName}.${index}`}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'chemical' && (
+                            {actualValue.type === 'Chemical' && (
                                 <div>
                                     <Chemical
                                         name={`${arrayName}.${index}`}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'molecular_assembly' && (
+                            {actualValue.type === 'Molecular assembly' && (
                                 <div>
                                     <MolecularAssembly
                                         name={`${arrayName}.${index}`}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'complex_substance_of_biological_origin' && (
+                            {actualValue.type === 'Complex substance of biological origin' && (
                                 <div>
                                     <ComplexSubstanceOfBiologicalOrigin
                                         name={`${arrayName}.${index}`}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'complex_substance_of_environmental_origin' && (
+                            {actualValue.type === 'Complex substance of environmental origin' && (
                                 <div>
                                     <ComplexSubstanceOfEnvironmentalOrigin
                                         name={`${arrayName}.${index}`}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'complex_substance_of_chemical_origin' && (
+                            {actualValue.type === 'Complex substance of chemical origin' && (
                                 <div>
                                     <ComplexSubstanceOfChemicalOrigin
                                         name={`${arrayName}.${index}`}
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'complex_substance_of_industrial_origin' && (
+                            {actualValue.type === 'Complex substance of industrial origin' && (
                                 <div>
                                     <ComplexSubstanceOfIndustrialOrigin
                                         name={`${arrayName}.${index}`}
