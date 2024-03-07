@@ -78,6 +78,7 @@ function RawDataFiles( { name } ) {
             fieldName='size'
             label='Size'
             type='number'
+            unit='B'
             width='w-[25rem]'
             tooltip='Size of the file in bytes'
           />
