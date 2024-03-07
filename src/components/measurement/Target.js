@@ -6,7 +6,7 @@ function Target( { name } ) {
 
     const { values } = useFormikContext()
       
-    const entitiesValue = getIn(values, `general_parameters.entities_of_interest`)
+    const entitiesValue = getIn(values, `metadata.general_parameters.entities_of_interest`)
 
     let entityOptions = [];
 

@@ -12,11 +12,11 @@ function Components( { name, colorSchema, molecularWeightColorSchema, colorSchem
 
     const componentName = `${name}.components[0].type`
    
-    UseDefault(values, componentName, 'polymer')
+    UseDefault(values, componentName, 'Polymer')
 
     const componentOptions = [
-        { value: 'polymer', label: 'Polymer' },
-        { value: 'chemical', label: 'Chemical' },
+        { value: 'Polymer', label: 'Polymer' },
+        { value: 'Chemical', label: 'Chemical' },
     ];
 
     return (
@@ -27,7 +27,7 @@ function Components( { name, colorSchema, molecularWeightColorSchema, colorSchem
                 label="Component"
                 fieldName='components'
                 required={true}
-                initialValue={{type: 'polymer'}}
+                initialValue={{type: 'Polymer'}}
                 renderChild={({ arrayName, index }) => {
                     const actualValue = getIn(values, `${arrayName}.${index}`)
                     if (!actualValue) {return null}
@@ -43,7 +43,7 @@ function Components( { name, colorSchema, molecularWeightColorSchema, colorSchem
                             />
                         </div>
                         <div>
-                            {actualValue.type === 'polymer' && (
+                            {actualValue.type === 'Polymer' && (
                                 <div>
                                     <ComponentsPolymer
                                         name={`${arrayName}.${index}`}
@@ -53,7 +53,7 @@ function Components( { name, colorSchema, molecularWeightColorSchema, colorSchem
                                     />
                                 </div>
                             )}
-                            {actualValue.type === 'chemical' && (
+                            {actualValue.type === 'Chemical' && (
                                 <div>
                                     <ComponentsChemical
                                         name={`${arrayName}.${index}`}

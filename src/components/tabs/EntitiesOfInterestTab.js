@@ -36,7 +36,7 @@ function EntitiesOfInterestTab( { name } ) {
                 name={name}
                 label="Entity of interest"
                 fieldName='entities_of_interest'
-                initialValue={{type: 'polymer'}}
+                initialValue={{type: 'Polymer'}}
                 required={true}
                 renderChild={({ arrayName, index }) =>  {
                     const actualValue = getIn(values, `${arrayName}.${index}`)

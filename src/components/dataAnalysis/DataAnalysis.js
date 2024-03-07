@@ -10,7 +10,7 @@ function DataAnalysis( { name } ) {
 
     const { values } = useFormikContext();
       
-    const resultsValue = getIn(values, `general_parameters.results`)
+    const resultsValue = getIn(values, `metadata.general_parameters.results`)
 
     let resultOptions = [];
 
@@ -23,7 +23,7 @@ function DataAnalysis( { name } ) {
         resultOptions = [{ label: 'Select Result, if applicable' }];
     }
 
-    const measurementsValue = getIn(values, `method_specific_parameters.measurements`)
+    const measurementsValue = getIn(values, `metadata.method_specific_parameters.measurements`)
 
     let measurementOptions = [];
 

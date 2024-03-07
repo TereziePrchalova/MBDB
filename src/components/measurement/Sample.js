@@ -24,7 +24,7 @@ function Sample( { name, tooltip, colorSchema } ) {
         { value: 'Other', label: 'Other' },
     ];
 
-    const chemicalEnvironmentsValue = getIn(values, `general_parameters.chemical_environments`)
+    const chemicalEnvironmentsValue = getIn(values, `metadata.general_parameters.chemical_environments`)
 
     let chemicalEnvironmentOptions = [];
 

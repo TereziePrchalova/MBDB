@@ -11,14 +11,14 @@ function ComplexSubstanceOfBiologicalOrigin( { name } ) {
 
     const componentName = `${name}.derived_from`
    
-    UseDefault(values, componentName, 'body_fluid')
+    UseDefault(values, componentName, 'Body fluid')
 
     const actualValue = getIn(values, componentName)
 
     const complexSubstanceOfBiologicalOriginOptions = [
-        { value: 'body_fluid', label: 'Body fluid' },
-        { value: 'cell_fraction', label: 'Cell fraction' },
-        { value: 'virion', label: 'Virion' },
+        { value: 'Body fluid', label: 'Body fluid' },
+        { value: 'Cell fraction', label: 'Cell fraction' },
+        { value: 'Virion', label: 'Virion' },
     ];
 
   return (
@@ -33,17 +33,17 @@ function ComplexSubstanceOfBiologicalOrigin( { name } ) {
             />
         </div>
 
-        {actualValue === 'body_fluid' && (
+        {actualValue === 'Body fluid' && (
             <>
                 <BodyFluid name={name} />
             </>
         )}
-        {actualValue === 'cell_fraction' && (
+        {actualValue === 'Cell fraction' && (
             <>
                 <CellFraction name={name} />
             </>
         )}
-        {actualValue === 'virion' && (
+        {actualValue === 'Virion' && (
             <>
                 <Virion name={name} />
             </>
