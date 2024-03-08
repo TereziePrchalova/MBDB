@@ -67,6 +67,7 @@ function HalfMaximalEffectiveConcentrationEC50( { name } ) {
                 label='Value error'
                 fieldName='value_error'
                 maxItems={1}
+                tooltipHeader='The expected error of the result in terms of a 95 % confidence interval'
                 renderChild={({ arrayName, index }) => (
                     <div>
                         <ValueError

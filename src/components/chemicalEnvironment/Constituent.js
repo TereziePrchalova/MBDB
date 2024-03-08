@@ -8,16 +8,11 @@ import ComplexSubstanceOfChemicalOrigin from "./constituent/ComplexSubstanceOfCh
 import ArrayField from "../buildingBlocks/ArrayField";
 import ComplexSubstanceOfIndustrialOrigin from "./constituent/ComplexSubstanceOfIndustrialOrigin";
 import { getIn, useFormikContext } from "formik";
-import UseDefault from "../buildingBlocks/UseDefault";
 import OptionField from "../buildingBlocks/OptionField";
 
 function Constituent( { name } ) {
 
     const { values } = useFormikContext();
-
-    const componentName = `${name}.chemical_environments[0].type`
-   
-    UseDefault(values, componentName, 'Polymer')
 
     const ChemicalEnvironmentTabOptions = [
         { value: 'Polymer', label: 'Polymer' },

@@ -121,21 +121,7 @@ function Polymer( { name } ) {
                 />
             </div>
         </div>
-        <div className="mb-3">
-            <MolecularWeight 
-                name={`${name}.molecular_weight`}
-                colorSchema='light'
-                tooltipHeader='The molecular weight of the polymer'
-            />
-        </div>
-        <div>
-            <Modifications
-                name={`${name}.modifications`}
-                colorSchemaProtocol='light'
-                colorSchemaHeadline='light'
-            />
-        </div>
-        <div className="flex">
+        <div className="flex -mt-3 mb-3">
             <div className="mr-3">
                 <ArrayField
                     name={name}
@@ -166,6 +152,20 @@ function Polymer( { name } ) {
                     )}
                 />
             </div>
+        </div>
+        <div className="mb-3">
+            <MolecularWeight 
+                name={`${name}.molecular_weight`}
+                colorSchema='light'
+                tooltipHeader='The molecular weight of the polymer'
+            />
+        </div>
+        <div>
+            <Modifications
+                name={`${name}.modifications`}
+                colorSchemaProtocol='light'
+                colorSchemaHeadline='light'
+            />
         </div>
     </>
   );
