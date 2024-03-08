@@ -11,10 +11,10 @@ function Solvent( { name } ) {
 
     const componentName = `${name}.solvent[0].type`
    
-    UseDefault(values, componentName, 'chemical')
+    UseDefault(values, componentName, 'Chemical')
 
     const entitiesOfInterestTabOptions = [
-        { value: 'chemical', label: 'Chemical' },
+        { value: 'Chemical', label: 'Chemical' },
     ];
 
     return (
@@ -25,7 +25,7 @@ function Solvent( { name } ) {
                     name={name}
                     label="Solvent"
                     fieldName='solvent'
-                    initialValue={{type: 'chemical'}}
+                    initialValue={{type: 'Chemical'}}
                     required={true}
                     renderChild={({ arrayName, index }) => {
                         const actualValue = getIn(values, `${arrayName}.${index}`)
@@ -47,7 +47,7 @@ function Solvent( { name } ) {
                                     />
                                 </div>
                                 <div>
-                                    {actualValue.type === 'chemical' && (
+                                    {actualValue.type === 'Chemical' && (
                                         <div>
                                             <Chemical
                                                 name={`${arrayName}.${index}`}
