@@ -19,12 +19,16 @@ function CustomField( {label, name, fieldName, type, index, tooltip, width, mult
             <TextField
               {...field}
               className={`rounded-lg p-2 text-16px ${width}`}
-              sx={{
-                "& .MuiInputLabel-root": {color: '#034459'},//styles the label
+              sx= {{ 
+                "& .MuiInputLabel-root": {color: '#034459'}, //styles the label
                 "& .MuiOutlinedInput-root": {
-                  "& > fieldset": { borderColor: "#034459" },
+                  "& > fieldset": {color: '#034459'},
                 },
-                minWidth: width,
+                borderColor: '#666666',
+                color: '#034459',
+                "&:hover": {
+                  borderColor: '#666666',
+                },
               }}
               id={nameTextField}
               label={label}

@@ -66,29 +66,73 @@ function Virion( { name } ) {
             />
           </div>
         </div>
-        <div className="flex">
-          <div className="mr-3">
-            <CustomField
+        <div className="flex -mt-3 mb-3">
+            <div className="mr-3">
+                <ArrayField
+                    name={name}
+                    label='Host organism'
+                    fieldName='host_organism'
+                    maxItems={1}
+                    tooltip='The host organism the virion was produced in. Note that information is based on the NCBI taxonomy'
+                    renderChild={({ arrayName, index }) => (
+                        <CustomField
+                            name={arrayName}
+                            index={index}
+                            label='Host organism'
+                            tooltip='The host organism the virion was produced in. Note that information is based on the NCBI taxonomy'
+                        />
+                    )}
+                />
+            </div>
+            <div className="mr-3">
+                <ArrayField
+                    name={name}
+                    label='Host cell type'
+                    fieldName='host_cell_type'
+                    maxItems={1}
+                    tooltip='The host cell type the virion was produced in'
+                    renderChild={({ arrayName, index }) => (
+                        <CustomField
+                            name={arrayName}
+                            index={index}
+                            label='Host cell type'
+                            tooltip='The host cell type the virion was produced in'
+                        />
+                    )}
+                />
+            </div>
+            <div className="mr-3">
+                <ArrayField
+                    name={name}
+                    label='Source organism'
+                    fieldName='source_organism'
+                    maxItems={1}
+                    tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
+                    renderChild={({ arrayName, index }) => (
+                        <CustomField
+                            name={arrayName}
+                            index={index}
+                            label='Source organism'
+                            tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
+                        />
+                    )}
+                />
+            </div>
+        </div>
+        <div>
+            <ArrayField
                 name={name}
-                label='Host organism'
-                fieldName='host_organism'
+                label='Additional specification'
+                fieldName='additional_specifications'
+                renderChild={({ arrayName, index }) => (
+                    <CustomField
+                        name={`${arrayName}.${index}`}
+                        label={`Additional specification ${index + 1}`}
+                        width='w-[15rem]'
+                        tooltip='Additional information about the complex substance can be specified here'
+                    />
+                )}
             />
-          </div>
-          <div className="mr-3">
-            <CustomField
-                name={name}
-                label='Host cell type'
-                fieldName='host_cell_type'
-                tooltip='The host cell type the virion was produced in'
-            />
-          </div>
-          <div>
-            <CustomField
-                name={name}
-                label='Source organism'
-                fieldName='source_organism'
-            />
-          </div>
         </div>
         <div>
             <ArrayField
@@ -122,23 +166,6 @@ function Virion( { name } ) {
                     </FormWrapper>
                 )}
             />
-        </div>
-        <div>
-            <div>
-                <ArrayField
-                    name={name}
-                    label='Additional specification'
-                    fieldName='additional_specifications'
-                    renderChild={({ arrayName, index }) => (
-                        <CustomField
-                            name={`${arrayName}.${index}`}
-                            label={`Additional specification ${index + 1}`}
-                            width='w-[15rem]'
-                            tooltip='Additional information about the complex substance can be specified here'
-                        />
-                    )}
-                />
-            </div>
         </div>
     </>
   );

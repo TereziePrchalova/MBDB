@@ -28,8 +28,15 @@ function OptionField({ label, name, fieldName, options, width, tooltip}) {
             label={label}
             size="small"
             error={meta.touched && !!meta.error}
-            sx={{
-              color: '#034459'
+            sx= {{ 
+              //"& .MuiOutlinedInput-notchedOutline": {
+              //  borderColor: "#034459",
+              //},
+              "& .MuiInputLabel-root": {color: '#034459'}, //styles the label
+              color: '#034459',
+              "&:hover": {
+                borderColor: "#034459",
+              },
             }}
           >
             {options.map((option) => (

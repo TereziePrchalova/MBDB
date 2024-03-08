@@ -66,14 +66,6 @@ function Polymer( { name } ) {
                 />
             </div>
             <div className="mr-3">
-                <CustomField
-                    name={name}
-                    label='Source organism'
-                    fieldName='source_organism'
-                    tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
-                />
-            </div>
-            <div className="mr-3">
                 <OptionField
                     name={name}
                     label='Expression source'
@@ -82,12 +74,40 @@ function Polymer( { name } ) {
                     tooltip='How the polymer was produced'
                 />
             </div>
+        </div>
+        <div className="flex mb-3 -mt-3">
+            <div className="mr-3">
+                <ArrayField
+                    name={name}
+                    label='Source organism'
+                    fieldName='source_organism'
+                    maxItems={1}
+                    tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
+                    renderChild={({ arrayName, index }) => (
+                        <CustomField
+                            name={`${arrayName}.${index}`}
+                            label={`Source organism ${index + 1}`}
+                            width='w-[15rem]'
+                            tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
+                        />
+                    )}
+                />
+            </div>
             <div>
-                <CustomField
+                <ArrayField
                     name={name}
                     label='Expression organism'
                     fieldName='expression_organism'
+                    maxItems={1}
                     tooltip='The biological species that was used to express (produce) the polymer. Note that this is based on the NCBI taxonomy'
+                    renderChild={({ arrayName, index }) => (
+                        <CustomField
+                            name={`${arrayName}.${index}`}
+                            label={`Expression organism ${index + 1}`}
+                            width='w-[15rem]'
+                            tooltip='The biological species that was used to express (produce) the polymer. Note that this is based on the NCBI taxonomy'
+                        />
+                    )}
                 />
             </div>
         </div>

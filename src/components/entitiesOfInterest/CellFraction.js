@@ -46,32 +46,6 @@ function CellFraction( { name } ) {
                 <div className="mr-3">
                     <CustomField
                         name={name}
-                        label='Organ'
-                        fieldName='organ'
-                        tooltip='The organ the cell fraction was derived from (e.g. heart)'
-                    />
-                </div>
-                <div>
-                    <CustomField
-                        name={name}
-                        label='Tissue'
-                        fieldName='tissue'
-                        tooltip='The tissue type the cell fraction was derived from'
-                    />
-                </div>
-            </div>
-            <div className="flex">
-                <div className="mr-3">
-                    <CustomField
-                        name={name}
-                        label='Cell type'
-                        fieldName='cell_type'
-                        tooltip='The cell type the cell fraction was derived from'
-                    />
-                </div>
-                <div className="mr-3">
-                    <CustomField
-                        name={name}
                         label='Health status'
                         fieldName='health_status'
                         tooltip='Health status of the donor organism where the cell fraction was derived from (e.g. healthy, sick, patient with Diabetes type 2)'
@@ -82,6 +56,59 @@ function CellFraction( { name } ) {
                         name={name}
                         label='Source organism'
                         fieldName='source_organism'
+                    />
+                </div>
+            </div>
+            <div className="flex -mt-3 mb-3">
+                <div className="mr-3">
+                    <ArrayField
+                        name={name}
+                        label='Organ'
+                        fieldName='organ'
+                        maxItems={1}
+                        tooltip='The organ the cell fraction was derived from (e.g. heart)'
+                        renderChild={({ arrayName, index }) => (
+                            <CustomField
+                                name={arrayName}
+                                index={index}
+                                label='Organ'
+                                tooltip='The organ the cell fraction was derived from (e.g. heart)'
+                            />
+                        )}
+                    />
+                </div>
+                <div className="mr-3">
+                    <ArrayField
+                        name={name}
+                        label='Tissue'
+                        fieldName='tissue'
+                        maxItems={1}
+                        tooltip='The tissue type the cell fraction was derived from'
+                        renderChild={({ arrayName, index }) => (
+                            <CustomField
+                                name={arrayName}
+                                index={index}
+                                label='Tissue'
+                                tooltip='The tissue type the cell fraction was derived from'
+                            />
+                        )}
+                    />
+                </div>
+                <div>
+                    <ArrayField
+                        name={name}
+                        label='Cell type'
+                        fieldName='cell_type'
+                        maxItems={1}
+                        tooltip='The cell type the cell fraction was derived from'
+                        renderChild={({ arrayName, index }) => (
+                            <CustomField
+                                name={arrayName}
+                                index={index}
+                                label='Cell type'
+                                tooltip='The cell type the cell fraction was derived from'
+                            />
+                        )}
                     />
                 </div>
             </div>

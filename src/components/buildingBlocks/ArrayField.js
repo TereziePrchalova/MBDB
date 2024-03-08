@@ -28,16 +28,19 @@ function ArrayField({ name, fieldName, label, renderChild, initialValue, require
                       className='text-dark'
                       variant="outlined"
                       onClick={() => remove(index)}
-                      sx={{
-                        borderColor: '#034459',
-                        color: '#034459',
+                      sx= {{ 
+                        borderColor: '#6D7575',
+                        backgroundColor: '#6D7575',
+                        color: '#fff',
                         "&:hover": {
-                          borderColor: "#034459",
+                          borderColor: "#939E9D",
+                          backgroundColor: '#939E9D',
+                          color: '#fff',
                         },
                       }}
                     >
                       <div>
-                        -
+                        &#8212;
                       </div>
                     </Button>
                   }
@@ -51,11 +54,13 @@ function ArrayField({ name, fieldName, label, renderChild, initialValue, require
                       variant="outlined"
                       onClick={() => push(initialValue !== undefined ? { ...initialValue } : '')}
                       sx= {{ 
-                          borderColor: '#034459',
-                          color: '#034459',
-                          backgroundColor: '#DCF1F3',
+                          borderColor: '#6D7575',
+                          backgroundColor: '#6D7575',
+                          color: '#fff',
                           "&:hover": {
-                              borderColor: "#034459",
+                            borderColor: "#939E9D",
+                            backgroundColor: '#939E9D',
+                            color: '#fff',
                           },
                       }}
                     >
