@@ -4,6 +4,8 @@ import FormWrapper from "../buildingBlocks/FormWrapper";
 import Protocol from "../buildingBlocks/Protocol";
 import Storage from "../buildingBlocks/Storage";
 import OptionField from "../buildingBlocks/OptionField";
+import { useFormikContext } from "formik";
+import UseDefault from "../buildingBlocks/UseDefault";
 
 function ComplexSubstanceOfIndustrialOrigin( { name } ) {
 
@@ -12,6 +14,12 @@ function ComplexSubstanceOfIndustrialOrigin( { name } ) {
         { value: 'Cell medium', label: 'Cell medium' },
         { value: 'Whey', label: 'Whey' },
       ];
+
+      const { values } = useFormikContext();
+
+      const fieldName = 'preparation_protocol'
+
+      UseDefault(values, `${name}.${fieldName}`, [{}] );
 
   return (
     <>
@@ -39,7 +47,8 @@ function ComplexSubstanceOfIndustrialOrigin( { name } ) {
             <ArrayField
                 name={name}
                 label='Preparation protocol'
-                fieldName='preparation_protocol'
+                fieldName={fieldName}
+                required={true}
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         colorSchema='light'
