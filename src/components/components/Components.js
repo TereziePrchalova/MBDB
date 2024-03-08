@@ -1,5 +1,4 @@
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import UseDefault from "../buildingBlocks/UseDefault";
 import ComponentsPolymer from "./ComponentsPolymer";
 import ComponentsChemical from "./ComponentsChemical";
 import { getIn, useFormikContext } from "formik";
@@ -9,10 +8,6 @@ import OptionField from "../buildingBlocks/OptionField";
 function Components( { name, colorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, colorSchemaHeadline, tooltip } ) {
 
     const { values } = useFormikContext()
-
-    const componentName = `${name}.components[0].type`
-   
-    UseDefault(values, componentName, 'Polymer')
 
     const componentOptions = [
         { value: 'Polymer', label: 'Polymer' },

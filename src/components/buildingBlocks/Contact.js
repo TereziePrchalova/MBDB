@@ -9,7 +9,7 @@ function Contact( { name } ) {
           <div className='mr-3'>
             <CustomField
               name={name}
-              label='Given Name'
+              label='Given name'
               fieldName='given_name'
               tooltip='The given name(s), including middlename(s), of the person'
             />
@@ -17,7 +17,7 @@ function Contact( { name } ) {
           <div>
             <CustomField
               name={name}
-              label='Family Name'
+              label='Family name'
               fieldName='family_name'
               tooltip='The family name(s) the person'
             />

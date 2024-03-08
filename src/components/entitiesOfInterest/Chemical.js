@@ -12,11 +12,11 @@ function Chemical( { name } ) {
               name={name}
               label='Name'
               fieldName='name'
-              width='w-[22rem]'
+              width='w-[25rem]'
               tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
             />
           </div>
-          <div className="mr-3">
+          <div>
             <CustomField
               name={name}
               label='Inchikey'
@@ -25,14 +25,7 @@ function Chemical( { name } ) {
             />
           </div>
         </div>
-        <div>
-            <MolecularWeight
-              name={`${name}.molecular_weight`}
-              colorSchema='light'
-              tooltipHeader='The molecular weight of the chemical'
-            />
-        </div>
-        <div className="flex">
+        <div className="flex mb-3 -mt-3">
             <div className="mr-3">
                 <ArrayField
                     name={name}
@@ -81,6 +74,13 @@ function Chemical( { name } ) {
                     )}
                 />
             </div>
+        </div>
+        <div>
+            <MolecularWeight
+              name={`${name}.molecular_weight`}
+              colorSchema='light'
+              tooltipHeader='The molecular weight of the chemical'
+            />
         </div>
     </>
   );

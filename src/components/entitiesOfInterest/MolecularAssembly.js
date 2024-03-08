@@ -29,7 +29,7 @@ function MolecularAssembly( { name } ) {
             <Components 
                 name={name} 
                 colorSchema='light'
-                colorSchemaProtocol='light'
+                colorSchemaWrapper='light'
                 tooltip='Description of the individual components (e.g. polypeptide, heme, lipids, metal ions etc.) the molecular assembly is composed of (e.g. Hemoglobin alpha) and how many copies of each component were present'
             />
         </div>

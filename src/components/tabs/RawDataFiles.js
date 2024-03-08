@@ -47,7 +47,7 @@ function RawDataFiles( { name } ) {
             name={name}
             fieldName='content_type'
             options={contentTypeOptions}
-            label='Content_type'
+            label='Content type'
             width='w-[25rem]'
             tooltip='Type of the file content in terms of how it can be read (text, binary, etc.)'
           />

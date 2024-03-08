@@ -16,7 +16,7 @@ function Depositors( { name } ) {
         </div>
         <div className="mb-2">
             <FormWrapper 
-                headline='Principal Contact'
+                headline='Principal contact'
                 tooltipHeader='The person responsible for the record and the one to contact for inquiries, would typically be the principle investigator group leader, or laboratory head'
             >
                 <Contact name={`${name}.principal_contact`} />
