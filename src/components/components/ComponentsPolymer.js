@@ -129,22 +129,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                 />
             </div>
         </div>
-        <div className="mb-3">
-            <MolecularWeight 
-                name={`${name}.molecular_weight`}
-                tooltipHeader='The molecular weight of the polymer'
-                colorSchema={molecularWeightColorSchema}
-            />
-        </div>
-        <div>
-            <Modifications
-                name={`${name}.modifications`}
-                colorSchemaWrapper={colorSchemaWrapper}
-                colorSchemaProtocol={colorSchemaProtocol}
-                colorSchemaHeadline={colorSchemaHeadline}
-            />
-        </div>
-        <div className="flex">
+        <div className="flex mb-3 -mt-3">
             <div className="mr-3">
                 <ArrayField
                     name={name}
@@ -175,6 +160,21 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                     )}
                 />
             </div>
+        </div>
+        <div className="mb-3">
+            <MolecularWeight 
+                name={`${name}.molecular_weight`}
+                tooltipHeader='The molecular weight of the polymer'
+                colorSchema={molecularWeightColorSchema}
+            />
+        </div>
+        <div>
+            <Modifications
+                name={`${name}.modifications`}
+                colorSchemaWrapper={colorSchemaWrapper}
+                colorSchemaProtocol={colorSchemaProtocol}
+                colorSchemaHeadline={colorSchemaHeadline}
+            />
         </div>
     </>
   );
