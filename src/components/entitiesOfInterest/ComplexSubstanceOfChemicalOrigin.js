@@ -5,12 +5,20 @@ import Protocol from "../buildingBlocks/Protocol";
 import Storage from "../buildingBlocks/Storage";
 import Details from "../components/Details";
 import OptionField from "../buildingBlocks/OptionField";
+import { useFormikContext } from "formik";
+import UseDefault from "../buildingBlocks/UseDefault";
 
 function ComplexSubstanceOfChemicalOrigin( { name } ) {
 
     const classOptions = [
         { value: 'Lipid assembly', label: 'Lipid assembly' },
       ];
+
+      const { values } = useFormikContext();
+
+      const fieldName = 'preparation_protocol'
+
+      UseDefault(values, `${name}.${fieldName}`, [{}] );
 
   return (
     <>
@@ -34,20 +42,28 @@ function ComplexSubstanceOfChemicalOrigin( { name } ) {
                 />
             </div>
         </div>
-        <div>
-            <Details
-                name={`${name}.details`}
-                colorSchema='light'
-                molecularWeightColorSchema='light'
-                colorSchemaWrapper='light'
-                colorSchemaHeadline='light'
+        <div className="mb-3">
+            <ArrayField
+                name={name}
+                label='Additional specification'
+                fieldName='additional_specifications'
+                tooltip='Additional information about the lipid assembly, if applicable'
+                renderChild={({ arrayName, index }) => (
+                    <CustomField
+                        name={`${arrayName}.${index}`}
+                        label={`Additional specification ${index + 1}`}
+                        width='w-[15rem]'
+                        tooltip='Additional information about the lipid assembly, if applicable'
+                    />
+                )}
             />
         </div>
-        <div>
+        <div className="mb-3">
             <ArrayField
                 name={name}
                 label='Preparation protocol'
                 fieldName='preparation_protocol'
+                required={true}
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         colorSchema='light'
@@ -61,7 +77,7 @@ function ComplexSubstanceOfChemicalOrigin( { name } ) {
                 )}
             />
         </div>
-        <div>
+        <div className="mb-3">
             <ArrayField
                 name={name}
                 label='Storage'
@@ -81,18 +97,12 @@ function ComplexSubstanceOfChemicalOrigin( { name } ) {
             />
         </div>
         <div>
-            <ArrayField
-                name={name}
-                label='Additional specification'
-                fieldName='additional_specifications'
-                renderChild={({ arrayName, index }) => (
-                    <CustomField
-                        name={`${arrayName}.${index}`}
-                        label={`Additional specification ${index + 1}`}
-                        width='w-[15rem]'
-                        tooltip='Additional information about the lipid assembly, if applicable'
-                    />
-                )}
+            <Details
+                name={`${name}.details`}
+                colorSchema='light'
+                molecularWeightColorSchema='light'
+                colorSchemaProtocol='light'
+                colorSchemaHeadline='light'
             />
         </div>
     </>

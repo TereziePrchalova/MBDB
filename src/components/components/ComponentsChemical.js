@@ -26,14 +26,6 @@ function ComponentsChemical( { name, molecularWeightColorSchema } ) {
           <div className="mr-3">
             <CustomField
               name={name}
-              label='Isotopic labeling'
-              fieldName='isotopic_labeling'
-              tooltip='If the isotopic composition of the chemical was altered from the naturally occurring abundances, it can be specified here (e.g. 15N, 13C)'
-            />
-          </div>
-          <div>
-            <CustomField
-              name={name}
               label='Copy number'
               fieldName='copy_number'
               type='number'
@@ -41,14 +33,7 @@ function ComponentsChemical( { name, molecularWeightColorSchema } ) {
             />
           </div>
         </div>
-        <div>
-            <MolecularWeight
-              name={`${name}.molecular_weight`}
-              colorSchema={molecularWeightColorSchema}
-              tooltipHeader='The molecular weight of the chemical'
-            />
-        </div>
-        <div className="flex">
+        <div className="flex mb-3 -mt-3">
             <div className="mr-3">
                 <ArrayField
                     name={name}
@@ -63,7 +48,7 @@ function ComponentsChemical( { name, molecularWeightColorSchema } ) {
                     )}
                 />
             </div>
-            <div>
+            <div className="mr-3">
                 <ArrayField
                     name={name}
                     label='Additional specification'
@@ -78,6 +63,30 @@ function ComponentsChemical( { name, molecularWeightColorSchema } ) {
                     )}
                 />
             </div>
+          <div>
+              <ArrayField
+                  name={name}
+                  label='Isotopic labeling'
+                  fieldName='isotopic_labeling'
+                  maxItems={1}
+                  tooltip='If the isotopic composition of the chemical was altered from the naturally occurring abundances, it can be specified here (e.g. 15N, 13C)'
+                  renderChild={({ arrayName, index }) => (
+                      <CustomField
+                          name={`${arrayName}.${index}`}
+                          label={`Isotopic labeling ${index + 1}`}
+                          width='w-[15rem]'
+                          tooltip='If the isotopic composition of the chemical was altered from the naturally occurring abundances, it can be specified here (e.g. 15N, 13C)'
+                      />
+                  )}
+              />
+            </div>
+        </div>
+        <div>
+            <MolecularWeight
+              name={`${name}.molecular_weight`}
+              colorSchema={molecularWeightColorSchema}
+              tooltipHeader='The molecular weight of the chemical'
+            />
         </div>
     </>
   );

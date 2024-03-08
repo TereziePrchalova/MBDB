@@ -46,6 +46,21 @@ function ComplexSubstanceOfIndustrialOrigin( { name } ) {
         <div>
             <ArrayField
                 name={name}
+                label='Additional specification'
+                fieldName='additional_specifications'
+                renderChild={({ arrayName, index }) => (
+                    <CustomField
+                        name={`${arrayName}.${index}`}
+                        label={`Additional specification ${index + 1}`}
+                        width='w-[15rem]'
+                        tooltip='Additional information about the complex substance can be specified here'
+                    />
+                )}
+            />
+        </div>
+        <div>
+            <ArrayField
+                name={name}
                 label='Preparation protocol'
                 fieldName={fieldName}
                 required={true}
@@ -78,21 +93,6 @@ function ComplexSubstanceOfIndustrialOrigin( { name } ) {
                             name={`${arrayName}.${index}`}
                         />
                     </FormWrapper>
-                )}
-            />
-        </div>
-        <div>
-            <ArrayField
-                name={name}
-                label='Additional specification'
-                fieldName='additional_specifications'
-                renderChild={({ arrayName, index }) => (
-                    <CustomField
-                        name={`${arrayName}.${index}`}
-                        label={`Additional specification ${index + 1}`}
-                        width='w-[15rem]'
-                        tooltip='Additional information about the complex substance can be specified here'
-                    />
                 )}
             />
         </div>

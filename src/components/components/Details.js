@@ -37,6 +37,21 @@ function Details({ name, colorSchema, sizeColorSchema, molecularWeightColorSchem
           </div>
         </div>
         <div className="mb-3">
+            <ArrayField
+                name={name}
+                label='Additional specification'
+                fieldName='additional_specifications'
+                renderChild={({ arrayName, index }) => (
+                    <CustomField
+                        name={`${arrayName}.${index}`}
+                        label={`Additional specification ${index + 1}`}
+                        width='w-[15rem]'
+                        tooltip='Additional information about the lipid assembly, if applicable'
+                    />
+                )}
+            />
+        </div>
+        <div className="mb-3">
           <Size
             name={`${name}.size`}
             colorSchema={sizeColorSchema}
@@ -52,21 +67,6 @@ function Details({ name, colorSchema, sizeColorSchema, molecularWeightColorSchem
             colorSchemaHeadline={colorSchemaHeadline}
             tooltip='The components of the lipid assembly'
           />
-        </div>
-        <div>
-            <ArrayField
-                name={name}
-                label='Additional specification'
-                fieldName='additional_specifications'
-                renderChild={({ arrayName, index }) => (
-                    <CustomField
-                        name={`${arrayName}.${index}`}
-                        label={`Additional specification ${index + 1}`}
-                        width='w-[15rem]'
-                        tooltip='Additional information about the lipid assembly, if applicable'
-                    />
-                )}
-            />
         </div>
       </FormWrapper>
     </>

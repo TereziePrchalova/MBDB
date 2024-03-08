@@ -31,33 +31,32 @@ function Solvent( { name } ) {
                         const actualValue = getIn(values, `${arrayName}.${index}`)
                         if (!actualValue) {return null}
                         return (
-                        <div>
-                            <FormWrapper 
-                                headline={`Solvent ${index + 1}`}
-                                colorSchema='light'
-                                tooltipHeader='Information about the solvent component(s) of the chemical environment (e.g. water, D2O, DMSO, EtOH) can be specified here'
-                            >
-                                <div className="mb-3">
-                                    <OptionField
-                                        name={`${arrayName}.${index}`}
-                                        options={entitiesOfInterestTabOptions}
-                                        label='type'
-                                        fieldName='type'
-                                        width='w-full'
-                                    />
-                                </div>
-                                <div>
-                                    {actualValue.type === 'Chemical' && (
-                                        <div>
-                                            <Chemical
-                                                name={`${arrayName}.${index}`}
-                                            />
-                                        </div>
-                                    )}
-                                </div>
-                            </FormWrapper>
-                        </div>
-
+                            <div>
+                                <FormWrapper 
+                                    headline={`Solvent ${index + 1}`}
+                                    colorSchema='light'
+                                    tooltipHeader='Information about the solvent component(s) of the chemical environment (e.g. water, D2O, DMSO, EtOH) can be specified here'
+                                >
+                                    <div className="mb-3">
+                                        <OptionField
+                                            name={`${arrayName}.${index}`}
+                                            options={entitiesOfInterestTabOptions}
+                                            label='type'
+                                            fieldName='type'
+                                            width='w-full'
+                                        />
+                                    </div>
+                                    <div>
+                                        {actualValue.type === 'Chemical' && (
+                                            <div>
+                                                <Chemical
+                                                    name={`${arrayName}.${index}`}
+                                                />
+                                            </div>
+                                        )}
+                                    </div>
+                                </FormWrapper>
+                            </div>
                     )}}
                 />
             </div>

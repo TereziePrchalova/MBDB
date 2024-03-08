@@ -32,7 +32,7 @@ function Components( { name, colorSchema, molecularWeightColorSchema, colorSchem
                     const actualValue = getIn(values, `${arrayName}.${index}`)
                     if (!actualValue) {return null}
                     return (
-                        <div className="-mr-3">
+                        <div>
                             <FormWrapper headline={`Component ${index + 1}`} tooltipHeader={tooltip} colorSchema={colorSchema}>
                                 <div className="mb-3">
                                     <OptionField
