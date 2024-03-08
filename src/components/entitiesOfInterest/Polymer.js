@@ -62,8 +62,7 @@ function Polymer( { name } ) {
                 tooltip='Primary sequence of the polymer, using single letter codes (e.g. SAGRELLE, AGTTA). In case of non-natural amino acids or nucleotides, please place the monomer in brackets'
                 renderChild={({ arrayName, index }) => (
                     <CustomField
-                        name={arrayName}
-                        index={index}
+                        name={`${arrayName}.${index}`}
                         label='Sequence'
                         multiline={true}
                         width='w-[50rem]'
@@ -82,8 +81,7 @@ function Polymer( { name } ) {
                     tooltip='Descriptive name indicating differences of primary sequence of the polymer as compared to the most common form, or wildtype, including mutations, purification tags, etc. (A53T, C-terminal GFP, N-terminal 6xHis-tag)'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label='Variant'
                             tooltip='Descriptive name indicating differences of primary sequence of the polymer as compared to the most common form, or wildtype, including mutations, purification tags, etc. (A53T, C-terminal GFP, N-terminal 6xHis-tag)'
                         />
@@ -99,8 +97,7 @@ function Polymer( { name } ) {
                     tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label='Source organism'
                             tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
                         />
@@ -116,8 +113,7 @@ function Polymer( { name } ) {
                     tooltip='The biological species that was used to express (produce) the polymer. Note that this is based on the NCBI taxonomy'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label='Expression organism'
                             tooltip='The biological species that was used to express (produce) the polymer. Note that this is based on the NCBI taxonomy'
                         />

@@ -40,6 +40,7 @@ function ComplexSubstanceOfChemicalOrigin( { name } ) {
                 colorSchema='light'
                 molecularWeightColorSchema='light'
                 colorSchemaWrapper='light'
+                colorSchemaHeadline='light'
             />
         </div>
         <div>

@@ -4,7 +4,7 @@ import MolecularWeight from "../components/MolecularWeight";
 import Modifications from "../components/Modifications";
 import OptionField from "../buildingBlocks/OptionField";
 
-function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol } ) {
+function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, colorSchemaHeadline } ) {
 
     const polymerTypeOptions = [
         { value: 'Cyclic pseudo peptide', label: 'Cyclic pseudo peptide' },
@@ -145,6 +145,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                 name={`${name}.modifications`}
                 colorSchemaWrapper={colorSchemaWrapper}
                 colorSchemaProtocol={colorSchemaProtocol}
+                colorSchemaHeadline={colorSchemaHeadline}
             />
         </div>
         <div className="flex">

@@ -5,7 +5,7 @@ import Size from "./Size";
 import Components from "./Components";
 import OptionField from "../buildingBlocks/OptionField";
 
-function Details({ name, colorSchema, sizeColorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol }) {
+function Details({ name, colorSchema, sizeColorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, colorSchemaHeadline }) {
 
     const detailsTypeOptions = [
         { value: 'Micelle', label: 'Micelle' },
@@ -49,6 +49,7 @@ function Details({ name, colorSchema, sizeColorSchema, molecularWeightColorSchem
             colorSchemaWrapper={colorSchemaWrapper}
             colorSchema={sizeColorSchema}
             colorSchemaProtocol={colorSchemaProtocol}
+            colorSchemaHeadline={colorSchemaHeadline}
             tooltip='The components of the lipid assembly'
           />
         </div>

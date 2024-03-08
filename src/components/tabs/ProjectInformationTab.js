@@ -20,13 +20,15 @@ function ProjectInformationTab( { name } ) {
                 name={name}
                 label='Funding reference'
                 fieldName='funding_reference'
-                renderChild={({ name, index }) => (
-                    <FormWrapper headline={`Funding reference ${index + 1}`} >
+                tooltip='List of information about the grants that supported generation of the raw data annotated by this record. Note that this information is based on OpenAire Projects'
+                renderChild={({ arrayName, index }) => (
+                    <FormWrapper
+                        headline={`Funding reference ${index + 1}`}
+                        tooltipHeader='List of information about the grants that supported generation of the raw data annotated by this record. Note that this information is based on OpenAire Projects'    
+                    >
                         <CustomField
-                            name={name}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label='funding reference'
-                            fieldName='funding_reference'
                             tooltip='List of information about the grants that supported generation of the raw data annotated by this record. Note that this information is based on OpenAire Projects'
                         />
                     </FormWrapper>
@@ -36,7 +38,6 @@ function ProjectInformationTab( { name } ) {
         <div>
             <AssociatedPublication name={`${name}.associated_publication`} />
         </div>
-      
     </>
   );
 }

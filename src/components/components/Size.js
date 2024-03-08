@@ -1,6 +1,7 @@
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionField from "../buildingBlocks/OptionField";
+import ArrayField from "../buildingBlocks/ArrayField";
 
 function Size( { name, colorSchema } ) {
 
@@ -53,29 +54,53 @@ function Size( { name, colorSchema } ) {
               />
           </div>
         </div>
-        <div className="flex">
+        <div className="flex -mt-3">
           <div className="mr-3">
-              <CustomField
-                name={name}
-                fieldName='median'
-                label='Median'
-                tooltip='The median of the size'
+              <ArrayField
+                  name={name}
+                  label='Median'
+                  fieldName='median'
+                  maxItems={1}
+                  tooltip='The median of the size'
+                  renderChild={({ arrayName, index }) => (
+                      <CustomField
+                        name={`${arrayName}.${index}`}
+                          label='Median'
+                          tooltip='The median of the size'
+                      />
+                  )}
               />
           </div>
           <div className="mr-3">
-              <CustomField
-                name={name}
-                fieldName='upper'
-                label='Upper'
-                tooltip='The upper bound of the size'
+              <ArrayField
+                  name={name}
+                  label='Upper'
+                  fieldName='upper'
+                  maxItems={1}
+                  tooltip='The upper bound of the size'
+                  renderChild={({ arrayName, index }) => (
+                      <CustomField
+                        name={`${arrayName}.${index}`}
+                          label='Upper'
+                          tooltip='The upper bound of the size'
+                      />
+                  )}
               />
           </div>
           <div>
-              <CustomField
-                name={name}
-                fieldName='lower'
-                label='Lower'
-                tooltip='The lower bound of the size'
+              <ArrayField
+                  name={name}
+                  label='Lower'
+                  fieldName='lower'
+                  maxItems={1}
+                  tooltip='The lower bound of the size'
+                  renderChild={({ arrayName, index }) => (
+                      <CustomField
+                        name={`${arrayName}.${index}`}
+                          label='Lower'
+                          tooltip='The lower bound of the size'
+                      />
+                  )}
               />
           </div>
         </div>

@@ -6,7 +6,7 @@ import { getIn, useFormikContext } from "formik";
 import ArrayField from "../buildingBlocks/ArrayField";
 import OptionField from "../buildingBlocks/OptionField";
 
-function Components( { name, colorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, tooltip } ) {
+function Components( { name, colorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, colorSchemaHeadline, tooltip } ) {
 
     const { values } = useFormikContext()
 
@@ -50,6 +50,7 @@ function Components( { name, colorSchema, molecularWeightColorSchema, colorSchem
                                         molecularWeightColorSchema={molecularWeightColorSchema}
                                         colorSchemaWrapper={colorSchemaWrapper}
                                         colorSchemaProtocol={colorSchemaProtocol}
+                                        colorSchemaHeadline={colorSchemaHeadline}
                                     />
                                 </div>
                             )}

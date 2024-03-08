@@ -27,8 +27,12 @@ function Depositors( { name } ) {
                 name={name}
                 label="Contributor"
                 fieldName='contributors'
+                tooltip='List of other people who contributed to generating the deposited data, metadata, results , or the deposition itself'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper headline={`Contributor ${index + 1}`}>
+                    <FormWrapper
+                        headline={`Contributor ${index + 1}`}
+                        tooltipHeader='List of other people who contributed to generating the deposited data, metadata, results , or the deposition itself'
+                    >
                         <Contact
                             name={`${arrayName}.${index}`}
                         />
