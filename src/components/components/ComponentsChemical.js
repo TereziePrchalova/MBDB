@@ -56,8 +56,7 @@ function ComponentsChemical( { name, molecularWeightColorSchema } ) {
                     fieldName='additional_identifiers'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label={`Additional identifier ${index + 1}`}
                             tooltip='Unique and persistent identifier from an external source; options of sources are CAS number, Pubchem Compound ID, and Pubchem Substance ID'
                         />
@@ -71,8 +70,7 @@ function ComponentsChemical( { name, molecularWeightColorSchema } ) {
                     fieldName='additional_specifications'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label={`Additional specification ${index + 1}`}
                             width='w-[15rem]'
                             tooltip='Additional information about the chemical can be specified here (e.g. RNase free water, recrystallization, desalting)'

@@ -70,8 +70,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                 tooltip='Primary sequence of the polymer, using single letter codes (e.g. SAGRELLE, AGTTA). In case of non-natural amino acids or nucleotides, please place the monomer in brackets'
                 renderChild={({ arrayName, index }) => (
                     <CustomField
-                        name={arrayName}
-                        index={index}
+                        name={`${arrayName}.${index}`}
                         label='Sequence'
                         multiline={true}
                         width='w-[50rem]'
@@ -90,8 +89,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                     tooltip='Descriptive name indicating differences of primary sequence of the polymer as compared to the most common form, or wildtype, including mutations, purification tags, etc. (A53T, C-terminal GFP, N-terminal 6xHis-tag)'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label='Variant'
                             tooltip='Descriptive name indicating differences of primary sequence of the polymer as compared to the most common form, or wildtype, including mutations, purification tags, etc. (A53T, C-terminal GFP, N-terminal 6xHis-tag)'
                         />
@@ -107,8 +105,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                     tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label='Source organism'
                             tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
                         />
@@ -124,8 +121,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                     tooltip='The biological species that was used to express (produce) the polymer. Note that this is based on the NCBI taxonomy'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label='Expression organism'
                             tooltip='The biological species that was used to express (produce) the polymer. Note that this is based on the NCBI taxonomy'
                         />
@@ -156,8 +152,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                     fieldName='external_databases'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label={`External database ${index + 1}`}
                             width='w-[15rem]'
                             tooltip='List of identifiers to records in external databases containing information about the polymer can be specified here (e.g UNIPROT:Q8KRF6)'
@@ -172,8 +167,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                     fieldName='additional_specifications'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label={`Additional specification ${index + 1}`}
                             width='w-[15rem]'
                             tooltip='Additional information about the chemical can be specified here (e.g. RNase free water, recrystallization, desalting)'

@@ -69,8 +69,7 @@ function CellFraction( { name } ) {
                         tooltip='The organ the cell fraction was derived from (e.g. heart)'
                         renderChild={({ arrayName, index }) => (
                             <CustomField
-                                name={arrayName}
-                                index={index}
+                                name={`${arrayName}.${index}`}
                                 label='Organ'
                                 tooltip='The organ the cell fraction was derived from (e.g. heart)'
                             />
@@ -86,8 +85,7 @@ function CellFraction( { name } ) {
                         tooltip='The tissue type the cell fraction was derived from'
                         renderChild={({ arrayName, index }) => (
                             <CustomField
-                                name={arrayName}
-                                index={index}
+                                name={`${arrayName}.${index}`}
                                 label='Tissue'
                                 tooltip='The tissue type the cell fraction was derived from'
                             />
@@ -103,8 +101,7 @@ function CellFraction( { name } ) {
                         tooltip='The cell type the cell fraction was derived from'
                         renderChild={({ arrayName, index }) => (
                             <CustomField
-                                name={arrayName}
-                                index={index}
+                                name={`${arrayName}.${index}`}
                                 label='Cell type'
                                 tooltip='The cell type the cell fraction was derived from'
                             />
@@ -154,8 +151,7 @@ function CellFraction( { name } ) {
                     fieldName='additional_specifications'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label={`Additional specification ${index + 1}`}
                             width='w-[15rem]'
                             tooltip='Additional information about the complex substance can be specified here'

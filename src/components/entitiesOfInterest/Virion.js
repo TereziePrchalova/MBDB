@@ -76,8 +76,7 @@ function Virion( { name } ) {
                     tooltip='The host organism the virion was produced in. Note that information is based on the NCBI taxonomy'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label='Host organism'
                             tooltip='The host organism the virion was produced in. Note that information is based on the NCBI taxonomy'
                         />
@@ -93,8 +92,7 @@ function Virion( { name } ) {
                     tooltip='The host cell type the virion was produced in'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label='Host cell type'
                             tooltip='The host cell type the virion was produced in'
                         />
@@ -110,8 +108,7 @@ function Virion( { name } ) {
                     tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
-                            name={arrayName}
-                            index={index}
+                            name={`${arrayName}.${index}`}
                             label='Source organism'
                             tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
                         />

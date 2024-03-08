@@ -12,7 +12,7 @@ function MolecularWeight( {colorSchema, name, tooltipHeader} ) {
 
   return (
     <>
-      <FormWrapper colorSchema={colorSchema} headline='Molecular Weight' tooltipHeader={tooltipHeader}>
+      <FormWrapper colorSchema={colorSchema} headline='Molecular weight' tooltipHeader={tooltipHeader}>
           <ValueUnit
             options={unitOptions}
             name={name}

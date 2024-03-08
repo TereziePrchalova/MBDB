@@ -90,8 +90,7 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
                 fieldName='additional_specifications'
                 renderChild={({ arrayName, index }) => (
                     <CustomField
-                        name={arrayName}
-                        index={index}
+                        name={`${arrayName}.${index}`}
                         label={`Additional specification ${index + 1}`}
                         width='w-[15rem]'
                         tooltip='Additional information about the complex substance can be specified here'
