@@ -30,7 +30,7 @@ function Polymer( { name } ) {
                     name={name}
                     label='Name'
                     fieldName='name'
-                    width='w-[22rem]'
+                    width='w-[29rem]'
                     tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
                 />
             </div>
@@ -65,7 +65,7 @@ function Polymer( { name } ) {
                         name={`${arrayName}.${index}`}
                         label='Sequence'
                         multiline={true}
-                        width='w-[50rem]'
+                        width='w-[51.5rem]'
                         tooltip='Primary sequence of the polymer, using single letter codes (e.g. SAGRELLE, AGTTA). In case of non-natural amino acids or nucleotides, please place the monomer in brackets'
                     />
                 )}
@@ -127,6 +127,7 @@ function Polymer( { name } ) {
                     name={name}
                     label='External Database'
                     fieldName='external_databases'
+                    tooltip='List of identifiers to records in external databases containing information about the polymer can be specified here (e.g UNIPROT:Q8KRF6)'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
                             name={`${arrayName}.${index}`}
@@ -142,6 +143,7 @@ function Polymer( { name } ) {
                     name={name}
                     label='Additional specification'
                     fieldName='additional_specifications'
+                    tooltip='Additional information about the chemical can be specified here (e.g. RNase free water, recrystallization, desalting)'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
                             name={`${arrayName}.${index}`}
