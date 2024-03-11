@@ -135,6 +135,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                     name={name}
                     label='External Database'
                     fieldName='external_databases'
+                    tooltip='List of identifiers to records in external databases containing information about the polymer can be specified here (e.g UNIPROT:Q8KRF6)'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
                             name={`${arrayName}.${index}`}
@@ -150,6 +151,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                     name={name}
                     label='Additional specification'
                     fieldName='additional_specifications'
+                    tooltip='Additional information about the chemical can be specified here (e.g. RNase free water, recrystallization, desalting)'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
                             name={`${arrayName}.${index}`}

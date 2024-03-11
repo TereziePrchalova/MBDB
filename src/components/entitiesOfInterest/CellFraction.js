@@ -56,6 +56,7 @@ function CellFraction( { name } ) {
                         name={name}
                         label='Source organism'
                         fieldName='source_organism'
+                        tooltip='Identification of the organism to the lowest taxonomic rank possible e.g. strain. Note that this is based on the NCBI taxonomy'
                     />
                 </div>
             </div>
@@ -110,45 +111,32 @@ function CellFraction( { name } ) {
                 </div>
             </div>
         </div>
-        <div>
-            <ArrayField
-                name={name}
-                label='Preparation protocol'
-                fieldName='preparation_protocol'
-                renderChild={({ arrayName, index }) => (
-                    <FormWrapper 
-                        colorSchema='light'
-                        headline={`Preparation protocol ${index + 1}`}
-                        tooltipHeader='List of the steps performed during the preparation of the complex substance'
-                    >
-                        <Protocol
-                            name={`${arrayName}.${index}`}
-                        />
-                    </FormWrapper>
-                )}
-            />
-        </div>
-        <div>
-            <ArrayField
-                name={name}
-                label='Storage'
-                fieldName='storage'
-                maxItems={1}
-                renderChild={({ arrayName, index }) => (
-                    <FormWrapper colorSchema='light' headline={`Storage ${index + 1}`}>
-                        <Storage
-                            name={`${arrayName}.${index}`}
-                        />
-                    </FormWrapper>
-                )}
-            />
-        </div>
-        <div>
+        <div className="flex -mt-3">
+            <div className="mr-3">
+                <ArrayField
+                    name={name}
+                    label='Preparation protocol'
+                    fieldName='preparation_protocol'
+                    tooltip='List of the steps performed during the preparation of the complex substance'
+                    renderChild={({ arrayName, index }) => (
+                        <FormWrapper 
+                            colorSchema='light'
+                            headline={`Preparation protocol ${index + 1}`}
+                            tooltipHeader='List of the steps performed during the preparation of the complex substance'
+                        >
+                            <Protocol
+                                name={`${arrayName}.${index}`}
+                            />
+                        </FormWrapper>
+                    )}
+                />
+            </div>
             <div>
                 <ArrayField
                     name={name}
                     label='Additional specification'
                     fieldName='additional_specifications'
+                    tooltip='Additional information about the complex substance can be specified here'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
                             name={`${arrayName}.${index}`}
@@ -159,6 +147,26 @@ function CellFraction( { name } ) {
                     )}
                 />
             </div>
+        </div>
+        <div>
+            <ArrayField
+                name={name}
+                label='Storage'
+                fieldName='storage'
+                maxItems={1}
+                tooltip='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
+                renderChild={({ arrayName, index }) => (
+                    <FormWrapper
+                        colorSchema='light'
+                        headline={`Storage ${index + 1}`}
+                        tooltipHeader='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
+                    >
+                        <Storage
+                            name={`${arrayName}.${index}`}
+                        />
+                    </FormWrapper>
+                )}
+            />
         </div>
     </>
   );

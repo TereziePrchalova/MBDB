@@ -30,6 +30,7 @@ function ComplexSubstanceOfBiologicalOrigin( { name } ) {
                 label='Derived from'
                 fieldName='derived_from'
                 width='w-full'
+                tooltip='The biological substance the complex substance is derived from'
             />
         </div>
 

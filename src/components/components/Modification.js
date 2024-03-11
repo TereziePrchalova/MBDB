@@ -30,6 +30,7 @@ function Modification( { name, colorSchema, colorSchemaProtocol } ) {
                 name={name}
                 label='Protocol'
                 fieldName='protocol'
+                tooltip='List of steps that led to the modification taking place'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Protocol ${index + 1}`}

@@ -12,6 +12,7 @@ function ComponentsChemical( { name, molecularWeightColorSchema } ) {
               name={name}
               label='Name'
               fieldName='name'
+              width='w-[30rem]'
               tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
             />
           </div>
@@ -39,6 +40,7 @@ function ComponentsChemical( { name, molecularWeightColorSchema } ) {
                     name={name}
                     label='Additional identifier'
                     fieldName='additional_identifiers'
+                    tooltip='Unique and persistent identifier from an external source; options of sources are CAS number, Pubchem Compound ID, and Pubchem Substance ID'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
                             name={`${arrayName}.${index}`}
@@ -53,6 +55,7 @@ function ComponentsChemical( { name, molecularWeightColorSchema } ) {
                     name={name}
                     label='Additional specification'
                     fieldName='additional_specifications'
+                    tooltip='Additional information about the chemical can be specified here (e.g. RNase free water, recrystallization, desalting)'
                     renderChild={({ arrayName, index }) => (
                         <CustomField
                             name={`${arrayName}.${index}`}

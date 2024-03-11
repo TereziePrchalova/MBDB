@@ -64,8 +64,13 @@ function MolecularAssembly( { name } ) {
                 name={name}
                 label='Chemical Modification'
                 fieldName='chemical_modifications'
+                tooltip='List describing deliberate modifications made to the molecular assembly through chemical, biochemical, or physical means'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper colorSchema='light' headline={`Chemical modification ${index + 1}`}>
+                    <FormWrapper
+                        colorSchema='light'
+                        tooltipHeader='List describing deliberate modifications made to the molecular assembly through chemical, biochemical, or physical means'
+                        headline={`Chemical modification ${index + 1}`}
+                    >
                         <Modification
                             name={`${arrayName}.${index}`}
                         />

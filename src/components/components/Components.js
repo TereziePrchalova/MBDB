@@ -28,6 +28,7 @@ function Components( { name, colorSchema, molecularWeightColorSchema, colorSchem
                 fieldName='components'
                 required={true}
                 initialValue={{type: 'Polymer'}}
+                tooltip={tooltip}
                 renderChild={({ arrayName, index }) => {
                     const actualValue = getIn(values, `${arrayName}.${index}`)
                     if (!actualValue) {return null}
@@ -41,6 +42,8 @@ function Components( { name, colorSchema, molecularWeightColorSchema, colorSchem
                                         label='type'
                                         fieldName='type'
                                         width='w-full'
+                                        tooltip='The type of component, options are
+                                        (biological) Polymer and Chemical'
                                     />
                                 </div>
                                 <div>

@@ -21,6 +21,7 @@ function Storage( { name, colorSchema } ) {
                 label='Duration'
                 fieldName='duration'
                 maxItems={1}
+                tooltip='Length of time the sample was stored before being measured'
                 renderChild={({ arrayName, index }) => (
                     <Duration
                         name={`${arrayName}.${index}`}
@@ -35,6 +36,7 @@ function Storage( { name, colorSchema } ) {
                 name={name}
                 label='Storage preparation'
                 fieldName='storage_preparation'
+                tooltip='The specific steps that were taken to prepare the samples for storage (e.g. flash freezing in liquid nitrogen), if applicable'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper 
                         headline={`Storage preparation ${index + 1}`} 
