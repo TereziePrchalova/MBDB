@@ -29,7 +29,7 @@ function ComplexSubstanceOfIndustrialOrigin( { name } ) {
                     name={name}
                     label='Name'
                     fieldName='name'
-                    width='w-[22rem]'
+                    width='w-[31.5rem]'
                     tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
                 />
             </div>
@@ -43,39 +43,43 @@ function ComplexSubstanceOfIndustrialOrigin( { name } ) {
                 />
             </div>
         </div>
-        <div>
-            <ArrayField
-                name={name}
-                label='Additional specification'
-                fieldName='additional_specifications'
-                renderChild={({ arrayName, index }) => (
-                    <CustomField
-                        name={`${arrayName}.${index}`}
-                        label={`Additional specification ${index + 1}`}
-                        width='w-[15rem]'
-                        tooltip='Additional information about the complex substance can be specified here'
-                    />
-                )}
-            />
-        </div>
-        <div>
-            <ArrayField
-                name={name}
-                label='Preparation protocol'
-                fieldName={fieldName}
-                required={true}
-                renderChild={({ arrayName, index }) => (
-                    <FormWrapper
-                        colorSchema='light'
-                        headline={`Preparation protocol ${index + 1}`}
-                        tooltipHeader='List of the steps performed during the preparation of the complex substance'
-                    >
-                        <Protocol
+        <div className="flex">
+            <div>
+                <ArrayField
+                    name={name}
+                    label='Preparation protocol'
+                    fieldName={fieldName}
+                    required={true}
+                    tooltip='List of the steps performed during the preparation of the complex substance'
+                    renderChild={({ arrayName, index }) => (
+                        <FormWrapper
+                            colorSchema='light'
+                            headline={`Preparation protocol ${index + 1}`}
+                            tooltipHeader='List of the steps performed during the preparation of the complex substance'
+                        >
+                            <Protocol
+                                name={`${arrayName}.${index}`}
+                            />
+                        </FormWrapper>
+                    )}
+                />
+            </div>
+            <div>
+                <ArrayField
+                    name={name}
+                    label='Additional specification'
+                    fieldName='additional_specifications'
+                    tooltip='Additional information about the complex substance can be specified here'
+                    renderChild={({ arrayName, index }) => (
+                        <CustomField
                             name={`${arrayName}.${index}`}
+                            label={`Additional specification ${index + 1}`}
+                            width='w-[15rem]'
+                            tooltip='Additional information about the complex substance can be specified here'
                         />
-                    </FormWrapper>
-                )}
-            />
+                    )}
+                />
+            </div>
         </div>
         <div>
             <ArrayField
@@ -83,6 +87,7 @@ function ComplexSubstanceOfIndustrialOrigin( { name } ) {
                 label='Storage'
                 fieldName='storage'
                 maxItems={1}
+                tooltip='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         colorSchema='light'

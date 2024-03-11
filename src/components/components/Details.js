@@ -41,6 +41,7 @@ function Details({ name, colorSchema, sizeColorSchema, molecularWeightColorSchem
                 name={name}
                 label='Additional specification'
                 fieldName='additional_specifications'
+                tooltip='Additional information about the lipid assembly, if applicable'
                 renderChild={({ arrayName, index }) => (
                     <CustomField
                         name={`${arrayName}.${index}`}

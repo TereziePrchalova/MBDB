@@ -46,23 +46,42 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
                 tooltipHeader='The longitude, from west to east, in degrees (decimal notation)'
             />
         </div>
-        <div>
-            <ArrayField
-                name={name}
-                label='Preparation protocol'
-                fieldName='preparation_protocol'
-                renderChild={({ arrayName, index }) => (
-                    <FormWrapper
-                        colorSchema='light'
-                        headline={`Preparation protocol ${index + 1}`}
-                        tooltipHeader='List of the steps performed during the preparation of the complex substance'
-                    >
-                        <Protocol
+        <div className="flex">
+            <div className="mr-3">
+                <ArrayField
+                    name={name}
+                    label='Preparation protocol'
+                    fieldName='preparation_protocol'
+                    tooltip='List of the steps performed during the preparation of the complex substance'
+                    renderChild={({ arrayName, index }) => (
+                        <FormWrapper
+                            colorSchema='light'
+                            headline={`Preparation protocol ${index + 1}`}
+                            tooltipHeader='List of the steps performed during the preparation of the complex substance'
+                        >
+                            <Protocol
+                                name={`${arrayName}.${index}`}
+                            />
+                        </FormWrapper>
+                    )}
+                />
+            </div>
+            <div>
+                <ArrayField
+                    name={name}
+                    label='Additional specification'
+                    fieldName='additional_specifications'
+                    tooltip='Additional information about the complex substance can be specified here'
+                    renderChild={({ arrayName, index }) => (
+                        <CustomField
                             name={`${arrayName}.${index}`}
+                            label={`Additional specification ${index + 1}`}
+                            width='w-[15rem]'
+                            tooltip='Additional information about the complex substance can be specified here'
                         />
-                    </FormWrapper>
-                )}
-            />
+                    )}
+                />
+            </div>
         </div>
         <div>
             <ArrayField
@@ -70,6 +89,7 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
                 label='Storage'
                 fieldName='storage'
                 maxItems={1}
+                tooltip='The specific steps that were taken to prepare the samples for storage (e.g. flash freezing in liquid nitrogen), if applicable'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         colorSchema='light'
@@ -80,21 +100,6 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
                             name={`${arrayName}.${index}`}
                         />
                     </FormWrapper>
-                )}
-            />
-        </div>
-        <div>
-            <ArrayField
-                name={name}
-                label='Additional specification'
-                fieldName='additional_specifications'
-                renderChild={({ arrayName, index }) => (
-                    <CustomField
-                        name={`${arrayName}.${index}`}
-                        label={`Additional specification ${index + 1}`}
-                        width='w-[15rem]'
-                        tooltip='Additional information about the complex substance can be specified here'
-                    />
                 )}
             />
         </div>
