@@ -13,7 +13,7 @@ function ProjectInformationTab( { name } ) {
             <RecordInformation name={`${name}.record_information`} />
         </div>
         <div className="mb-3">
-            <AssociatedPublication name={`${name}.associated_publication`} />
+            <AssociatedPublication name={name} />
         </div>
         <div className="mb-3">
             <Depositors name={`${name}.depositors`} />

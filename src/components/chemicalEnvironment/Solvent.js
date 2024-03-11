@@ -27,6 +27,7 @@ function Solvent( { name } ) {
                     fieldName='solvent'
                     initialValue={{type: 'Chemical'}}
                     required={true}
+                    tooltip='Information about the solvent component(s) of the chemical environment (e.g. water, D2O, DMSO, EtOH) can be specified here'
                     renderChild={({ arrayName, index }) => {
                         const actualValue = getIn(values, `${arrayName}.${index}`)
                         if (!actualValue) {return null}
