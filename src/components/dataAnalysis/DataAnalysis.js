@@ -5,10 +5,14 @@ import ArrayField from "../buildingBlocks/ArrayField";
 import DataProcessingStep from "./DataProcessingStep";
 import OptionField from "../buildingBlocks/OptionField";
 import { getIn, useFormikContext } from "formik";
+import UseDefault from "../buildingBlocks/UseDefault";
 
 function DataAnalysis( { name } ) {
 
     const { values } = useFormikContext();
+
+    const fieldNameResults = 'results'
+    UseDefault(values, `${name}.${fieldNameResults}`, [{}] );
       
     const resultsValue = getIn(values, `metadata.general_parameters.results`)
 
@@ -39,15 +43,23 @@ function DataAnalysis( { name } ) {
   return (
     <>
         <div className='flex mb-3'>
-          <div className="mr-3">
-            <OptionField
-                name={name}
-                options={resultOptions}
-                label='Result'
-                fieldName='result'
-                tooltip='Link to the result(s) that was obtained by the data analysis. The link is to the results defined in the general parameters'
-            />
-          </div>
+            <div className="-mt-3">
+                <ArrayField
+                    name={name}
+                    label='Result'
+                    fieldName={fieldNameResults}
+                    required={true}
+                    tooltip='Link to the result(s) that was obtained by the data analysis. The link is to the results defined in the general parameters'
+                    renderChild={({ arrayName, index }) => (
+                        <OptionField
+                            name={`${arrayName}.${index}`}
+                            options={resultOptions}
+                            label={`Result ${index + 1}`}
+                            tooltip='Link to the result(s) that was obtained by the data analysis. The link is to the results defined in the general parameters'
+                        />
+                    )}
+                />
+            </div>
           <div>
             <OptionField
                 name={name}
