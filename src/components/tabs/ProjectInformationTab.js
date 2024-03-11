@@ -9,13 +9,16 @@ function ProjectInformationTab( { name } ) {
 
   return (
     <>
-        <div className="mb-2">
+        <div className="mb-3">
             <RecordInformation name={`${name}.record_information`} />
         </div>
-        <div className="mb-2">
+        <div className="mb-3">
+            <AssociatedPublication name={`${name}.associated_publication`} />
+        </div>
+        <div className="mb-3">
             <Depositors name={`${name}.depositors`} />
         </div>
-        <div className="mb-2">
+        <div>
             <ArrayField
                 name={name}
                 label='Funding reference'
@@ -34,9 +37,6 @@ function ProjectInformationTab( { name } ) {
                     </FormWrapper>
                 )}
             />
-        </div>
-        <div>
-            <AssociatedPublication name={`${name}.associated_publication`} />
         </div>
     </>
   );

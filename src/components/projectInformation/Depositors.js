@@ -6,7 +6,7 @@ function Depositors( { name } ) {
 
   return (
     <>
-        <div className="mb-2">
+        <div className="mb-3">
             <FormWrapper
                 headline='Depositor'
                 tooltipHeader='The person who made the deposition to MBDB'
@@ -14,7 +14,7 @@ function Depositors( { name } ) {
                 <Contact name={`${name}.depositor`} />
             </FormWrapper>
         </div>
-        <div className="mb-2">
+        <div className="mb-3">
             <FormWrapper 
                 headline='Principal contact'
                 tooltipHeader='The person responsible for the record and the one to contact for inquiries, would typically be the principle investigator group leader, or laboratory head'

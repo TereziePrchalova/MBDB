@@ -10,7 +10,7 @@ function InstrumentTab( { name } ) {
     return (
       <>
           <div>
-            <div className="mb-2">
+            <div className="mb-3">
                 <Instrument name={`${name}.instrument`} />
             </div>
             <FormWrapper>
@@ -34,7 +34,7 @@ function InstrumentTab( { name } ) {
                     </div>
                 </div>
             </FormWrapper>
-            <div className="mt-2">
+            <div className="mt-3">
                 <MethodSpecificParameters name='metadata.method_specific_parameters' />
             </div>
           </div>

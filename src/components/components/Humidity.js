@@ -26,7 +26,7 @@ function Humidity( { name } ) {
   return (
     <>
         <FormWrapper headline='Humidity'>
-            <div className='flex mb-2'>
+            <div className='flex mb-3'>
                 <div>
                     <ValueUnit options={unitOptions} name={name} width='w-[7rem]' />
                 </div>

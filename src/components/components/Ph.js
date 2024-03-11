@@ -1,11 +1,13 @@
 import CustomField from "../buildingBlocks/CustomField";
-import FormWrapper from "../buildingBlocks/FormWrapper";
 
-function Ph( { name, colorSchema, tooltipHeader } ) {
+function Ph( { name } ) {
 
     return(
         <>
-            <FormWrapper colorSchema={colorSchema} headline='pH' tooltipHeader={tooltipHeader}>
+            <div className="bg-white p-3 rounded-lg text-dark flex">
+                <div className="m-auto mr-3">
+                    pH
+                </div>
                 <div>
                     <CustomField
                         name={name}
@@ -16,7 +18,7 @@ function Ph( { name, colorSchema, tooltipHeader } ) {
                         width='w-[8.5rem]'
                     />
                 </div>
-            </FormWrapper>
+            </div>
         </>
     )
 

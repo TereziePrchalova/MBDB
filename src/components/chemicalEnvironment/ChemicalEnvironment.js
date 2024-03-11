@@ -17,27 +17,28 @@ function ChemicalEnvironment( { name } ) {
                 width='w-full'
             />
         </div>
-        <div className="mb-3">
-            <Ph
-                name={`${name}.pH`}
-                colorSchema='light'
-            />
-        </div>
-        <div className="mb-3">
-            <ArrayField
-                name={name}
-                label='Additional specification'
-                fieldName='additional_specifications'
-                tooltip='Additional information about the chemical environment can be specified here (e.g. prepared just prior to conducting the measurement, additional treatments like UV irradiation, specific storage container of chemical environment if that influenced the measurement etc.)'
-                renderChild={({ arrayName, index }) => (
-                    <CustomField
-                        name={`${arrayName}.${index}`}
-                        label={`Additional specification ${index + 1}`}
-                        width='w-[15rem]'
-                        tooltip='Additional information about the chemical environment can be specified here (e.g. prepared just prior to conducting the measurement, additional treatments like UV irradiation, specific storage container of chemical environment if that influenced the measurement etc.)'
-                    />
-                )}
-            />
+        <div className="flex mb-3">
+            <div className="mr-3">
+                <Ph
+                    name={`${name}.pH`}
+                />
+            </div>
+            <div className="-mt-3">
+                <ArrayField
+                    name={name}
+                    label='Additional specification'
+                    fieldName='additional_specifications'
+                    tooltip='Additional information about the chemical environment can be specified here (e.g. prepared just prior to conducting the measurement, additional treatments like UV irradiation, specific storage container of chemical environment if that influenced the measurement etc.)'
+                    renderChild={({ arrayName, index }) => (
+                        <CustomField
+                            name={`${arrayName}.${index}`}
+                            label={`Additional specification ${index + 1}`}
+                            width='w-[15rem]'
+                            tooltip='Additional information about the chemical environment can be specified here (e.g. prepared just prior to conducting the measurement, additional treatments like UV irradiation, specific storage container of chemical environment if that influenced the measurement etc.)'
+                        />
+                    )}
+                />
+            </div>
         </div>
         <div className="mb-3">
             <Solvent name={name} />
