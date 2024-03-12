@@ -65,6 +65,7 @@ function BodyFluid( { name } ) {
                 name={name}
                 label='Preparation protocol'
                 fieldName='preparation_protocol'
+                tooltip='List of the steps performed during the preparation of the complex substance'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper 
                         headline={`Preparation protocol ${index + 1}`}
@@ -83,8 +84,12 @@ function BodyFluid( { name } ) {
                 label='Storage'
                 fieldName='storage'
                 maxItems={1}
+                tooltip='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper headline={`Storage ${index + 1}`}>
+                    <FormWrapper
+                        headline={`Storage ${index + 1}`}
+                        tooltipHeader='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
+                    >
                         <Storage
                             name={`${arrayName}.${index}`}
                             colorSchema='light'
@@ -98,6 +103,7 @@ function BodyFluid( { name } ) {
                 name={name}
                 label='Additional specification'
                 fieldName='additional_specifications'
+                tooltip='Additional information about the complex substance can be specified here'
                 renderChild={({ arrayName, index }) => (
                     <CustomField
                         name={`${arrayName}.${index}`}

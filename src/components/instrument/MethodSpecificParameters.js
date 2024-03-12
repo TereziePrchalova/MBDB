@@ -88,6 +88,7 @@ function MethodSpecificParameters( { name } ) {
                     label='Temperature'
                     fieldName='temperature'
                     maxItems={1}
+                    tooltip='The temperature of the sample chamber while the measurement was performed'
                     renderChild={({ arrayName, index }) => (
                         <div>
                             <Temperature 

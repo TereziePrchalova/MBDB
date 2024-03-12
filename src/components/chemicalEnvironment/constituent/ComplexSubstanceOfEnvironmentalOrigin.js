@@ -26,6 +26,7 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
                     name={name}
                     label='Name'
                     fieldName='name'
+                    width='w-[45rem]'
                     tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
                 />
             </div>
@@ -57,6 +58,7 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
                 name={name}
                 label='Preparation protocol'
                 fieldName='preparation_protocol'
+                tooltip='List of the steps performed during the preparation of the complex substance'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Preparation protocol ${index + 1}`}
@@ -75,6 +77,7 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
                 label='Storage'
                 fieldName='storage'
                 maxItems={1}
+                tooltip='The specific steps that were taken to prepare the samples for storage (e.g. flash freezing in liquid nitrogen), if applicable'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Storage ${index + 1}`}
@@ -93,6 +96,7 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
                 name={name}
                 label='Additional specification'
                 fieldName='additional_specifications'
+                tooltip='Additional information about the complex substance can be specified here'
                 renderChild={({ arrayName, index }) => (
                     <CustomField
                         name={`${arrayName}.${index}`}

@@ -20,8 +20,12 @@ function ChemicalEnvironmentTab( { name } ) {
                 label="Chemical environment"
                 required={true}
                 fieldName={fieldName}
+                tooltip='Composition of the chemical environment (colloquially known as the buffer)'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper headline={`Chemical environment ${index + 1}`}>
+                    <FormWrapper
+                        headline={`Chemical environment ${index + 1}`}
+                        tooltipHeader='Composition of the chemical environment (colloquially known as the buffer)'
+                    >
                         <div>
                             <ChemicalEnvironment
                                 name={`${arrayName}.${index}`}

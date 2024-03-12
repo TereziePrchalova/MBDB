@@ -48,6 +48,7 @@ function HalfMaximalEffectiveConcentrationEC50( { name } ) {
                 label='Entity involved'
                 fieldName={fieldNameEntityInvolved}
                 required={true}
+                tooltip='List of chemical or molecular assemblies the result describes and how many copies of each are involved'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         colorSchema='light'

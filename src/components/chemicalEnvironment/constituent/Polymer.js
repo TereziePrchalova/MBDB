@@ -31,10 +31,11 @@ function Polymer( { name } ) {
                 name={name}
                 label='Name'
                 fieldName='name'
+                width='w-[29rem]'
                 tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
             />
           </div>
-          <div>
+          <div className="mr-3">
             <OptionField
                 name={name}
                 label='Polymer type'
@@ -43,29 +44,7 @@ function Polymer( { name } ) {
                 tooltip='The type of polymer (e.g. polypeptide(L))'
             />
           </div>
-        </div>
-        <div className="mb-3">
           <div>
-            <CustomField 
-                name={name}
-                label='Sequence'
-                fieldName='sequence'
-                tooltip='Primary sequence of the polymer, using single letter codes (e.g. SAGRELLE, AGTTA). In case of non-natural amino acids or nucleotides, please place the monomer in brackets'
-                multiline={true}
-                width='w-full'
-            />
-          </div>
-        </div>
-        <div className="flex mb-3">
-            <div className="mr-3">
-                <CustomField
-                    name={name}
-                    label='Variant'
-                    fieldName='variant'
-                    tooltip='Descriptive name indicating differences of primary sequence of the polymer as compared to the most common form, or wildtype, including mutations, purification tags, etc. (A53T, C-terminal GFP, N-terminal 6xHis-tag)'    
-                />
-            </div>
-            <div className="mr-3">
                 <OptionField
                     name={name}
                     label='Expression source'
@@ -75,7 +54,41 @@ function Polymer( { name } ) {
                 />
             </div>
         </div>
+        <div className="mb-3">
+            <ArrayField
+                name={name}
+                label='Sequence'
+                fieldName='sequence'
+                maxItems={1}
+                tooltip='Primary sequence of the polymer, using single letter codes (e.g. SAGRELLE, AGTTA). In case of non-natural amino acids or nucleotides, please place the monomer in brackets'
+                renderChild={({ arrayName, index }) => (
+                    <CustomField
+                        name={`${arrayName}.${index}`}
+                        label='Sequence'
+                        multiline={true}
+                        width='w-[51.5rem]'
+                        tooltip='Primary sequence of the polymer, using single letter codes (e.g. SAGRELLE, AGTTA). In case of non-natural amino acids or nucleotides, please place the monomer in brackets'
+                    />
+                )}
+            />
+        </div>
         <div className="flex mb-3 -mt-3">
+            <div className="mr-3">
+                <ArrayField
+                    name={name}
+                    label='Variant'
+                    fieldName='variant'
+                    maxItems={1}
+                    tooltip='Descriptive name indicating differences of primary sequence of the polymer as compared to the most common form, or wildtype, including mutations, purification tags, etc. (A53T, C-terminal GFP, N-terminal 6xHis-tag)'
+                    renderChild={({ arrayName, index }) => (
+                        <CustomField
+                            name={`${arrayName}.${index}`}
+                            label='Variant'
+                            tooltip='Descriptive name indicating differences of primary sequence of the polymer as compared to the most common form, or wildtype, including mutations, purification tags, etc. (A53T, C-terminal GFP, N-terminal 6xHis-tag)'
+                        />
+                    )}
+                />
+            </div>
             <div className="mr-3">
                 <ArrayField
                     name={name}
@@ -86,7 +99,7 @@ function Polymer( { name } ) {
                     renderChild={({ arrayName, index }) => (
                         <CustomField
                             name={`${arrayName}.${index}`}
-                            label={`Source organism ${index + 1}`}
+                            label='Source organism'
                             width='w-[15rem]'
                             tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
                         />
@@ -103,9 +116,43 @@ function Polymer( { name } ) {
                     renderChild={({ arrayName, index }) => (
                         <CustomField
                             name={`${arrayName}.${index}`}
-                            label={`Expression organism ${index + 1}`}
+                            label='Expression organism'
                             width='w-[15rem]'
                             tooltip='The biological species that was used to express (produce) the polymer. Note that this is based on the NCBI taxonomy'
+                        />
+                    )}
+                />
+            </div>
+        </div>
+        <div className="flex -mt-3 mb-3">
+            <div className="mr-3">
+                <ArrayField
+                    name={name}
+                    label='External Database'
+                    fieldName='external_databases'
+                    tooltip='List of identifiers to records in external databases containing information about the polymer can be specified here (e.g UNIPROT:Q8KRF6)'
+                    renderChild={({ arrayName, index }) => (
+                        <CustomField
+                            name={`${arrayName}.${index}`}
+                            label={`External database ${index + 1}`}
+                            width='w-[15rem]'
+                            tooltip='List of identifiers to records in external databases containing information about the polymer can be specified here (e.g UNIPROT:Q8KRF6)'
+                        />
+                    )}
+                />
+            </div>
+            <div>
+                <ArrayField
+                    name={name}
+                    label='Additional specification'
+                    fieldName='additional_specifications'
+                    tooltip='Additional information about the chemical can be specified here (e.g. RNase free water, recrystallization, desalting)'
+                    renderChild={({ arrayName, index }) => (
+                        <CustomField
+                            name={`${arrayName}.${index}`}
+                            label={`Additional specification ${index + 1}`}
+                            width='w-[15rem]'
+                            tooltip='Additional information about the chemical can be specified here (e.g. RNase free water, recrystallization, desalting)'
                         />
                     )}
                 />
@@ -130,38 +177,6 @@ function Polymer( { name } ) {
                 name={`${name}.modifications`}
                 colorSchemaWrapper='light'
             />
-        </div>
-        <div className="flex">
-            <div className="mr-3">
-                <ArrayField
-                    name={name}
-                    label='External Database'
-                    fieldName='external_databases'
-                    renderChild={({ arrayName, index }) => (
-                        <CustomField
-                            name={`${arrayName}.${index}`}
-                            label={`External database ${index + 1}`}
-                            width='w-[15rem]'
-                            tooltip='List of identifiers to records in external databases containing information about the polymer can be specified here (e.g UNIPROT:Q8KRF6)'
-                        />
-                    )}
-                />
-            </div>
-            <div>
-                <ArrayField
-                    name={name}
-                    label='Additional specification'
-                    fieldName='additional_specifications'
-                    renderChild={({ arrayName, index }) => (
-                        <CustomField
-                            name={`${arrayName}.${index}`}
-                            label={`Additional specification ${index + 1}`}
-                            width='w-[15rem]'
-                            tooltip='Additional information about the chemical can be specified here (e.g. RNase free water, recrystallization, desalting)'
-                        />
-                    )}
-                />
-            </div>
         </div>
     </>
   );
