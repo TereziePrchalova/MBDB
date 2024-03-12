@@ -73,9 +73,28 @@ function Sample( { name, tooltip, colorSchema } ) {
             <div>
                 <ArrayField
                     name={name}
+                    label='Preparation protocol'
+                    fieldName='preparation_protocol'
+                    tooltip='List of the steps performed during the preparation of the complex substance'
+                    renderChild={({ arrayName, index }) => (
+                        <FormWrapper
+                            headline={`Preparation protocol ${index + 1}`}
+                            tooltipHeader='List of the steps performed during the preparation of the complex substance'
+                        >
+                            <Protocol
+                                name={`${arrayName}.${index}`}
+                            />
+                        </FormWrapper>
+                    )}
+                />
+            </div>
+            <div>
+                <ArrayField
+                    name={name}
                     label='Target'
                     fieldName={fieldNameTarget}
                     required={true}
+                    tooltip='List of names (ids), from the entities of interest defined in the general parameters, of directly measured entities'
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
                             headline={`Target ${index + 1}`}
@@ -94,29 +113,13 @@ function Sample( { name, tooltip, colorSchema } ) {
                     label='Ligand'
                     fieldName={fieldNameLigand}
                     required={true}
+                    tooltip='List of names (ids) of entities (from the entities of interest defined in the general parameters) that were used to alter the behavior of the target(s)'
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
                             headline={`Ligand ${index + 1}`}
                             tooltipHeader='List of names (ids) of entities (from the entities of interest defined in the general parameters) that were used to alter the behavior of the target(s)'
                         >
                             <Ligand
-                                name={`${arrayName}.${index}`}
-                            />
-                        </FormWrapper>
-                    )}
-                />
-            </div>
-            <div>
-                <ArrayField
-                    name={name}
-                    label='Preparation protocol'
-                    fieldName='preparation_protocol'
-                    renderChild={({ arrayName, index }) => (
-                        <FormWrapper
-                            headline={`Preparation protocol ${index + 1}`}
-                            tooltipHeader='List of the steps performed during the preparation of the complex substance'
-                        >
-                            <Protocol
                                 name={`${arrayName}.${index}`}
                             />
                         </FormWrapper>

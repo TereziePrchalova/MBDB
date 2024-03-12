@@ -20,8 +20,12 @@ function MeasurementTab( { name } ) {
                 label="Measurement"
                 required={true}
                 fieldName={fieldName}
+                tooltip='List of the information about each measurement. This includes target(s), ligand(s), chemical environment, and the position of the sample within the instrument'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper headline={`Measurement ${index + 1}`}>
+                    <FormWrapper
+                        headline={`Measurement ${index + 1}`}
+                        tooltipHeader='List of the information about each measurement. This includes target(s), ligand(s), chemical environment, and the position of the sample within the instrument'
+                    >
                         <div>
                             <Measurement
                                 name={`${arrayName}.${index}`}

@@ -76,6 +76,7 @@ function DataAnalysis( { name } ) {
                 label='F cold and hot'
                 fieldName='f_cold_and_hot'
                 maxItems={1}
+                tooltip='If the data was analyzed with time windows corresponding to fluorescence before and after an IR laser was heating the sample the edges of the time windows can be specified here'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         colorSchema='light'
@@ -95,6 +96,7 @@ function DataAnalysis( { name } ) {
                 label='Data fitting'
                 fieldName='data_fitting'
                 maxItems={1}
+                tooltip='If the data was analyzed with time windows corresponding to fluorescence before and after an IR laser was heating the sample the edges of the time windows can be specified here'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         colorSchema='light'
@@ -113,6 +115,7 @@ function DataAnalysis( { name } ) {
                 name={name}
                 label='Data processing step'
                 fieldName='data_processing_step'
+                tooltip='Describe the steps in the data analysis prior to fitting (removing outliers in the raw data, applying smoothing filters, etc.)'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         colorSchema='light'

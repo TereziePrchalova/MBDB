@@ -42,6 +42,7 @@ function ResultTab( { name } ) {
                 label="Result"
                 fieldName='results'
                 initialValue={{type: 'Concentration'}}
+                tooltip='List of the results (parameter) that were derived by analyzing the raw data and which steps were taken to obtain them'
                 renderChild={({ arrayName, index }) => {
                     const actualValue = getIn(values, `${arrayName}.${index}`)
                     if (!actualValue) {return null}

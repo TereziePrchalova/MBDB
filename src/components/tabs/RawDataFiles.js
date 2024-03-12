@@ -10,12 +10,6 @@ function RawDataFiles( { name } ) {
     { value: 'MBDB', label: 'MBDB' },
   ];
 
-  const contentTypeOptions = [
-    { value: 'Text', label: 'Text' },
-    { value: 'Binary', label: 'Binary' },
-    { value: 'Text and binary', label: 'Text and binary' },
-  ];
-
   const contextOptions = [
     { value: 'Raw measurement data', label: 'Raw measurement data' },
     { value: 'Derived measurement data', label: 'Derived measurement data' },
@@ -45,16 +39,6 @@ function RawDataFiles( { name } ) {
         <div className="mb-3">
           <OptionField
             name={name}
-            fieldName='content_type'
-            options={contentTypeOptions}
-            label='Content type'
-            width='w-[25rem]'
-            tooltip='Type of the file content in terms of how it can be read (text, binary, etc.)'
-          />
-        </div>
-        <div className="mb-3">
-          <OptionField
-            name={name}
             fieldName='context'
             options={contextOptions}
             label='Context'
@@ -70,17 +54,6 @@ function RawDataFiles( { name } ) {
             fieldName='originates_from'
             width='w-[25rem]'
             tooltip='What is the source of the file'
-          />
-        </div>
-        <div className="mb-3">
-          <CustomField
-            name={name}
-            fieldName='size'
-            label='Size'
-            type='number'
-            unit='B'
-            width='w-[25rem]'
-            tooltip='Size of the file in bytes'
           />
         </div>
         <div className="mb-3">
