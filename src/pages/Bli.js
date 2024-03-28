@@ -10,6 +10,7 @@ import ResultTab from "../components/generalTabs/ResultTab";
 import DataAnalysisTab from "../components/mst/mstTabs/DataAnalysisTab";
 import ProjectInformationTab from "../components/generalTabs/ProjectInformationTab";
 import PlatesTab from "../components/bli/bliTabs/PlatesTab";
+import SensorsTab from "../components/bli/bliTabs/SensorsTab";
 
 function Bli() {
 
@@ -100,6 +101,9 @@ function Bli() {
               )}
               {state.selected === 'plates' && (
                 <PlatesTab name='metadata.method_specific_parameters' />
+              )}
+              {state.selected === 'sensors' && (
+                <SensorsTab name='metadata.method_specific_parameters' />
               )}
               {state.selected === 'data-analysis' && (
                 <DataAnalysisTab name='metadata.method_specific_parameters' />

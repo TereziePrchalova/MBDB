@@ -1,7 +1,7 @@
 import CustomField from "../../buildingBlocks/CustomField";
 import OptionField from "../../buildingBlocks/OptionField";
 import ArrayField from "../../buildingBlocks/ArrayField";
-import Supplier from "./Supplier";
+import Supplier from "../sharedComponents/Supplier";
 import SurfaceModification from "./SurfaceModification";
 
 function Plates( { name } ) {
