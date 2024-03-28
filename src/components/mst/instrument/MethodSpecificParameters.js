@@ -1,8 +1,8 @@
-import FormWrapper from '../buildingBlocks/FormWrapper';
-import OptionField from '../buildingBlocks/OptionField';
-import CustomField from '../buildingBlocks/CustomField';
-import Temperature from '../components/Temperature';
-import ArrayField from '../buildingBlocks/ArrayField';
+import FormWrapper from '../../buildingBlocks/FormWrapper';
+import OptionField from '../../buildingBlocks/OptionField';
+import CustomField from '../../buildingBlocks/CustomField';
+import Temperature from '../../components/Temperature';
+import ArrayField from '../../buildingBlocks/ArrayField';
 
 function MethodSpecificParameters( { name } ) {
 

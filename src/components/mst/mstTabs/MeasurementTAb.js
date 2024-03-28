@@ -1,7 +1,7 @@
-import FormWrapper from "../buildingBlocks/FormWrapper";
-import ArrayField from "../buildingBlocks/ArrayField";
+import FormWrapper from "../../buildingBlocks/FormWrapper";
+import ArrayField from "../../buildingBlocks/ArrayField";
 import Measurement from "../measurement/Measurement";
-import UseDefault from "../buildingBlocks/UseDefault";
+import UseDefault from "../../buildingBlocks/UseDefault";
 import { useFormikContext } from "formik";
 
 function MeasurementTab( { name } ) {

@@ -1,11 +1,11 @@
-import FormWrapper from "../buildingBlocks/FormWrapper";
+import FormWrapper from "../../buildingBlocks/FormWrapper";
 import DataFitting from "./DataFitting";
 import FColdAndHot from "./FColdAndHot";
-import ArrayField from "../buildingBlocks/ArrayField";
+import ArrayField from "../../buildingBlocks/ArrayField";
 import DataProcessingStep from "./DataProcessingStep";
-import OptionField from "../buildingBlocks/OptionField";
+import OptionField from "../../buildingBlocks/OptionField";
 import { getIn, useFormikContext } from "formik";
-import UseDefault from "../buildingBlocks/UseDefault";
+import UseDefault from "../../buildingBlocks/UseDefault";
 
 function DataAnalysis( { name } ) {
 

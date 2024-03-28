@@ -1,11 +1,11 @@
-import ArrayField from '../buildingBlocks/ArrayField';
-import FormWrapper from '../buildingBlocks/FormWrapper';
+import ArrayField from '../../buildingBlocks/ArrayField';
+import FormWrapper from '../../buildingBlocks/FormWrapper';
 import Ligand from './Ligand';
 import Target from './Target';
-import Protocol from '../buildingBlocks/Protocol';
-import UseDefault from '../buildingBlocks/UseDefault';
+import Protocol from '../../buildingBlocks/Protocol';
+import UseDefault from '../../buildingBlocks/UseDefault';
 import { getIn, useFormikContext } from 'formik';
-import OptionField from '../buildingBlocks/OptionField';
+import OptionField from '../../buildingBlocks/OptionField';
 
 function Sample( { name, tooltip, colorSchema } ) {
 

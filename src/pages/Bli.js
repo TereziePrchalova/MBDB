@@ -9,9 +9,9 @@ import ChemicalEnvironmentTab from '../components/generalTabs/ChemicalEnvironmen
 import ResultTab from "../components/generalTabs/ResultTab";
 import DataAnalysisTab from "../components/mst/mstTabs/DataAnalysisTab";
 import ProjectInformationTab from "../components/generalTabs/ProjectInformationTab";
-import MeasurementTab from "../components/mst/mstTabs/MeasurementTAb";
+import PlatesTab from "../components/bli/bliTabs/PlatesTab";
 
-function Mst() {
+function Bli() {
 
   const Tabs = [
     { value: 'raw-data-files', label: 'Raw data files' },
@@ -20,7 +20,10 @@ function Mst() {
     { value: 'chemical-environment', label: 'Chemical environments' },
     { value: 'result', label: 'Results' },
     { value: 'instrument', label: 'Instrument' },
-    { value: 'measurement', label: 'Measurements' },
+    { value: 'plates', label: 'Plates' },
+    { value: 'sensors', label: 'Sensors' },
+    { value: 'measurement-protocol', label: 'Measurement protocol' },
+    { value: 'measurements', label: 'Measurements' },
     { value: 'data-analysis', label: 'Data analysis' },
   ];
 
@@ -39,7 +42,7 @@ function Mst() {
           {Tabs.map(tab => (
             <div 
               key={tab.value} 
-              className={`text-dark p-4 mb-3 rounded-lg cursor-pointer transition-all hover:bg-primary-light ${state.selected === tab.value && 'bg-primary'}`}
+              className={`text-dark p-4 mb-3 rounded-lg cursor-pointer transition-all hover:bg-primary-light ${state.selected === tab.value ? 'active bg-primary' : ''}`}
               onClick={() => setState({ selected: tab.value })}
             >
               {tab.label}
@@ -56,7 +59,7 @@ function Mst() {
               "record_information": {
                 "publisher": "MBDB",
                 "resource_type_general": "Dataset",
-                "resource_type": "MST",
+                "resource_type": "BLI",
                 "deposition_date": new Date().toISOString().slice(0, 10),
                 "date_available": new Date().toISOString().slice(0, 10),
                 "subject_category": "Biophysics",
@@ -95,8 +98,8 @@ function Mst() {
               {state.selected === 'instrument' && (
                 <InstrumentTab name='metadata.general_parameters' />
               )}
-              {state.selected === 'measurement' && (
-                <MeasurementTab name='metadata.method_specific_parameters' />
+              {state.selected === 'plates' && (
+                <PlatesTab name='metadata.method_specific_parameters' />
               )}
               {state.selected === 'data-analysis' && (
                 <DataAnalysisTab name='metadata.method_specific_parameters' />
@@ -110,4 +113,4 @@ function Mst() {
   );
 }
 
-export default Mst;
+export default Bli;

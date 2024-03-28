@@ -1,5 +1,5 @@
-import OptionField from "../buildingBlocks/OptionField";
-import Concentration from "../components/Concentration";
+import OptionField from "../../buildingBlocks/OptionField";
+import Concentration from "../../components/Concentration";
 import { useFormikContext, getIn } from 'formik';
 
 function Target( { name } ) {

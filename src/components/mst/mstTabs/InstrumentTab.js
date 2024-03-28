@@ -1,6 +1,6 @@
 import { Tooltip } from "@mui/material";
-import CustomField from "../buildingBlocks/CustomField";
-import FormWrapper from "../buildingBlocks/FormWrapper";
+import CustomField from "../../buildingBlocks/CustomField";
+import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Instrument from "../instrument/Instrument";
 import MethodSpecificParameters from "../instrument/MethodSpecificParameters";
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
