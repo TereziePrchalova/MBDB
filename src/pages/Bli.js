@@ -7,10 +7,10 @@ import EntitiesOfInterestTab from "../components/generalTabs/EntitiesOfInterestT
 import InstrumentTab from "../components/mst/mstTabs/InstrumentTab";
 import ChemicalEnvironmentTab from '../components/generalTabs/ChemicalEnvironmentTab'
 import ResultTab from "../components/generalTabs/ResultTab";
-import DataAnalysisTab from "../components/mst/mstTabs/DataAnalysisTab";
 import ProjectInformationTab from "../components/generalTabs/ProjectInformationTab";
 import PlatesTab from "../components/bli/bliTabs/PlatesTab";
 import SensorsTab from "../components/bli/bliTabs/SensorsTab";
+import MeasurementProtocolTab from "../components/bli/bliTabs/MeasurementProtocolTab";
 
 function Bli() {
 
@@ -105,8 +105,8 @@ function Bli() {
               {state.selected === 'sensors' && (
                 <SensorsTab name='metadata.method_specific_parameters' />
               )}
-              {state.selected === 'data-analysis' && (
-                <DataAnalysisTab name='metadata.method_specific_parameters' />
+              {state.selected === 'measurement-protocol' && (
+                <MeasurementProtocolTab name='metadata.method_specific_parameters' />
               )}
               <button className="fixed top-0 right-0 p-3 m-4 bg-primary rounded-lg" type="submit">Submit</button>
             </Form>

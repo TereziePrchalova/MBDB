@@ -2,6 +2,8 @@ import CustomField from "../../buildingBlocks/CustomField";
 import ArrayField from "../../buildingBlocks/ArrayField";
 import OptionField from "../../buildingBlocks/OptionField";
 import Supplier from "../sharedComponents/Supplier";
+import HydrationTime from "./HydrationTime";
+import LigandInformation from "./LigandInformation";
 
 function Sensors( { name } ) {
 
@@ -71,6 +73,36 @@ function Sensors( { name } ) {
                     )}
                 />
             </div>
+        </div>
+        <div className="mb-3">
+            <ArrayField
+                name={name}
+                label='Hydration time'
+                fieldName='hydration_time'
+                maxItems={1}
+                tooltip='How long the sensor was hydrated before being employed'
+                renderChild={({ arrayName, index }) => (
+                    <HydrationTime
+                        name={`${arrayName}.${index}`}
+                        colorSchema='light'
+                    />
+                )}
+            />
+        </div>
+        <div className="mb-3">
+            <ArrayField
+                name={name}
+                label='Ligand information'
+                fieldName='ligand_information'
+                maxItems={1}
+                tooltip='Information about the ligand and how it was immobilized'
+                renderChild={({ arrayName, index }) => (
+                    <LigandInformation
+                        name={`${arrayName}.${index}`}
+                        colorSchema='light'
+                    />
+                )}
+            />
         </div>
         <div>
             <Supplier

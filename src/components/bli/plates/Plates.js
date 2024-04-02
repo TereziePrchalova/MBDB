@@ -68,6 +68,7 @@ function Plates( { name } ) {
                 name={name}
                 label='Surface modification'
                 fieldName='surface_modification'
+                maxItems={1}
                 tooltip='The type of sealing used to seal the top of the plate'
                 renderChild={({ arrayName, index }) => (
                     <SurfaceModification

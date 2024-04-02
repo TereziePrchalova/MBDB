@@ -1,7 +1,7 @@
 import FormWrapper from '../buildingBlocks/FormWrapper';
 import ValueUnit from '../buildingBlocks/ValueUnit';
 
-function MolecularWeight( {colorSchema, name, tooltipHeader} ) {
+function MolecularWeight( { colorSchema, name, tooltipHeader } ) {
 
     const unitOptions = [
         { value: 'g / mol', label: 'g / mol' },
