@@ -45,14 +45,11 @@ function CustomField( {label, name, fieldName, type, index, tooltip, width, mult
               error={meta.touched && !!meta.error}
             />
         </div>
-        {tooltip ?
+        {tooltip &&
           <div className='ml-1 -mt-1'>
             <Tooltip title={tooltip} arrow>
               <HelpOutlineIcon fontSize="smaller"/>
             </Tooltip>
-          </div>
-          :
-          <div className='w-5'>
           </div>
         }
       </div>
