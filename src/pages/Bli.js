@@ -11,6 +11,7 @@ import ProjectInformationTab from "../components/generalTabs/ProjectInformationT
 import PlatesTab from "../components/bli/bliTabs/PlatesTab";
 import SensorsTab from "../components/bli/bliTabs/SensorsTab";
 import MeasurementProtocolTab from "../components/bli/bliTabs/MeasurementProtocolTab";
+import MeasurementsTab from "../components/bli/bliTabs/MeasurementsTab";
 
 function Bli() {
 
@@ -107,6 +108,9 @@ function Bli() {
               )}
               {state.selected === 'measurement-protocol' && (
                 <MeasurementProtocolTab name='metadata.method_specific_parameters' />
+              )}
+              {state.selected === 'measurements' && (
+                <MeasurementsTab name='metadata.method_specific_parameters' />
               )}
               <button className="fixed top-0 right-0 p-3 m-4 bg-primary rounded-lg" type="submit">Submit</button>
             </Form>

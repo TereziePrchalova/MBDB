@@ -1,6 +1,8 @@
 import CustomField from "../../buildingBlocks/CustomField";
 import OptionField from "../../buildingBlocks/OptionField";
+import ShakingSpeed from "./ShakingSpeed";
 import StartTime from "./StartTime";
+import TimeLength from "./TimeLength";
 
 function MeasurementProtocol( { name } ) {
 
@@ -36,9 +38,21 @@ function MeasurementProtocol( { name } ) {
                 />
             </div>
         </div>
-        <div>
+        <div className="mb-3">
             <StartTime
                 name={`${name}.start_time`}
+                colorSchema='light'
+            />
+        </div>
+        <div className="mb-3">
+            <TimeLength
+                name={`${name}.time_length`}
+                colorSchema='light'
+            />
+        </div>
+        <div>
+            <ShakingSpeed
+                name={`${name}.shaking_speed`}
                 colorSchema='light'
             />
         </div>
