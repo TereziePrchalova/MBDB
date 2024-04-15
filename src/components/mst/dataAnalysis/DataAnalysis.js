@@ -5,14 +5,10 @@ import ArrayField from "../../buildingBlocks/ArrayField";
 import DataProcessingStep from "../../sharedComponents/DataProcessingStep";
 import OptionField from "../../buildingBlocks/OptionField";
 import { getIn, useFormikContext } from "formik";
-import UseDefault from "../../buildingBlocks/UseDefault";
 
 function DataAnalysis( { name } ) {
 
     const { values } = useFormikContext();
-
-    const fieldNameResults = 'results'
-    UseDefault(values, `${name}.${fieldNameResults}`, [{}] );
       
     const resultsValue = getIn(values, `metadata.general_parameters.results`)
 
@@ -43,12 +39,27 @@ function DataAnalysis( { name } ) {
   return (
     <>
         <div className='flex mb-3'>
+            <div className="mr-3 -mt-3">
+                <ArrayField
+                    name={name}
+                    label='Measurement'
+                    fieldName='measurements'
+                    tooltip='List of the measurements that was analyzed together for a specific parameter'
+                    renderChild={({ arrayName, index }) => (
+                        <OptionField
+                            name={`${arrayName}.${index}`}
+                            label={`Measurement ${index + 1}`}
+                            options={measurementOptions}
+                            tooltip='List of the measurements that was analyzed together for a specific parameter'
+                        />
+                    )}
+                />
+            </div>
             <div className="-mt-3">
                 <ArrayField
                     name={name}
                     label='Result'
-                    fieldName={fieldNameResults}
-                    required={true}
+                    fieldName='results'
                     tooltip='Link to the result(s) that was obtained by the data analysis. The link is to the results defined in the general parameters'
                     renderChild={({ arrayName, index }) => (
                         <OptionField
@@ -60,15 +71,6 @@ function DataAnalysis( { name } ) {
                     )}
                 />
             </div>
-          <div>
-            <OptionField
-                name={name}
-                options={measurementOptions}
-                label='Measurement'
-                fieldName='measurement'
-                tooltip='List of the measurements that was analyzed together for a specific parameter'
-            />
-          </div>
         </div>
         <div className="mb-3">
             <ArrayField

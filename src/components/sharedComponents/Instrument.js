@@ -12,7 +12,7 @@ function Instrument( {name} ) {
                         colorSchema='light'
                         name={name}
                         label='Instrument'
-                        fieldName='instrument'
+                        fieldName='id'
                         tooltip='The name of the instrument as provided by the manufacturer'
                     />
                 </div>
