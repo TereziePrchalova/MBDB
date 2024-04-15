@@ -2,7 +2,7 @@ import { Formik, Form } from "formik";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
-import RawDataFiles from "../components/generalTabs/RawDataFiles";
+import RawDataFilesTab from "../components/generalTabs/RawDataFilesTab";
 import EntitiesOfInterestTab from "../components/generalTabs/EntitiesOfInterestTab";
 import InstrumentTab from "../components/mst/mstTabs/InstrumentTab";
 import ChemicalEnvironmentTab from '../components/generalTabs/ChemicalEnvironmentTab'
@@ -78,7 +78,7 @@ function Mst() {
           <div className="flex justify-center">
             <Form className="m-4 w-[1100px]">
               {state.selected === 'raw-data-files' && (
-                <RawDataFiles name='metadata.general_parameters' />
+                <RawDataFilesTab name='metadata.general_parameters' />
               )}
               {state.selected === 'project-information' && (
                 <ProjectInformationTab name='metadata.general_parameters' />
