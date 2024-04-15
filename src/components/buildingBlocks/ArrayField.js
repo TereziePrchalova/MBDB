@@ -40,7 +40,7 @@ function ArrayField({ name, fieldName, label, renderChild, initialValue, require
                       }}
                     >
                       <div>
-                        &#8212;
+                        &#x2715;
                       </div>
                     </Button>
                   }
