@@ -11,11 +11,11 @@ function RawDataFilesTab( { name } ) {
                 name={name}
                 label="Raw data file"
                 fieldName='raw_data_file'
-                tooltip='Composition of the chemical environment (colloquially known as the buffer)'
+                tooltip='List of file(s) containing the raw measurements'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Raw data file ${index + 1}`}
-                        tooltipHeader='Composition of the chemical environment (colloquially known as the buffer)'
+                        tooltipHeader='List of file(s) containing the raw measurements'
                     >
                         <div>
                             <RawDataFile
