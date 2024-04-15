@@ -34,7 +34,7 @@ function SurfaceModification( { name, colorSchema } ) {
                     required={true}
                     label='Protocol'
                     fieldName={fieldName}
-                    tooltip='The catalog number or identifier of the item'
+                    tooltip='List of protocol steps used to modify the surface of the wells'
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
                             headline={`Protocol ${index + 1}`}

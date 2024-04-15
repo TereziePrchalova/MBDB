@@ -62,13 +62,13 @@ function Sensors( { name } ) {
                     label='Previously used'
                     fieldName='previously_used'
                     maxItems={1}
-                    tooltip='The id of the sensor as given by the supplier'
+                    tooltip='Whether or not the sensor was used for previous measurements'
                     renderChild={({ arrayName, index }) => (
                         <OptionField
                             name={`${arrayName}.${index}`}
                             label='Previously used'
                             options={previouslyUsedOptions}
-                            tooltip='The id of the sensor as given by the supplier'
+                            tooltip='Whether or not the sensor was used for previous measurements'
                         />
                     )}
                 />
@@ -108,6 +108,7 @@ function Sensors( { name } ) {
             <Supplier
                 name={`${name}.supplier`}
                 colorSchema='light'
+                tooltipHeader='Information about the supplier of the senor'
             />
         </div>
     </>

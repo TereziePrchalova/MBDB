@@ -20,11 +20,11 @@ function MeasurementProtocolTab( { name } ) {
                 label="Measurement protocol"
                 required={true}
                 fieldName={fieldName}
-                tooltip='List of the plate types used for the measurements'
+                tooltip='List of the steps in the measurement protocol'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Measurement protocol ${index + 1}`}
-                        tooltipHeader='List of the plate types used for the measurements'
+                        tooltipHeader='List of the steps in the measurement protocol'
                     >
                         <div>
                             <MeasurementProtocol

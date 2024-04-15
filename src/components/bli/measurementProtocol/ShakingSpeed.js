@@ -14,12 +14,12 @@ function ShakingSpeed( { colorSchema, name } ) {
       <FormWrapper
         colorSchema={colorSchema}
         headline='Shaking speed'
-        tooltipHeader='The numerical value of the start point of the measurement step relative to the beginning of the measurement in the units defined in the general parameters'>
+        tooltipHeader='The numerical value of the shaking speed of the plate during the measurement step in the units defined in the general parameters'>
           <ValueUnit
             options={unitOptions}
             name={name}
-            tooltipValue='The numerical value of the time point or duration'
-            tooltipUnit='The unit of the time duration'
+            tooltipValue='The numerical value of the shaking speed of the plate during the measurement step in the units defined in the general parameters'
+            tooltipUnit='The reported error of the value of the shaking speed (e.g. standard deviation, % error)'
           />
           <ArrayField
                 name={name}

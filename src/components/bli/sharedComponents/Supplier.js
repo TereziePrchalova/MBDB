@@ -2,14 +2,14 @@ import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 
-function Supplier( { name, colorSchema } ) {
+function Supplier( { name, colorSchema, tooltipHeader } ) {
 
   return (
     <>
         <FormWrapper
             headline='Supplier'
             colorSchema={colorSchema}
-            tooltipHeader='Information about the supplier of the plate'
+            tooltipHeader={tooltipHeader}
         >
             <div className='flex'>
                 <div className='mr-3'>
@@ -42,12 +42,12 @@ function Supplier( { name, colorSchema } ) {
                         name={name}
                         label='Futher information'
                         fieldName='futher_information'
-                        tooltip='The catalog number or identifier of the item'
+                        tooltip='Further information e.g. batch number'
                         renderChild={({ arrayName, index }) => (
                                 <CustomField
                                     name={`${arrayName}.${index}`}
                                     label={`Futher information ${index + 1}`}
-                                    tooltip='The catalog number or identifier of the item'
+                                    tooltip='Further information e.g. batch number'
                                 />
                         )}
                     />

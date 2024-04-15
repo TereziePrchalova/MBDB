@@ -2,18 +2,15 @@ import ArrayField from "../../buildingBlocks/ArrayField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Protocol from "../../buildingBlocks/Protocol";
 import { useFormikContext } from "formik";
-import UseDefault from "../../buildingBlocks/UseDefault";
 import OptionField from "../../buildingBlocks/OptionField";
 import CustomField from "../../buildingBlocks/CustomField";
 import { getIn } from "formik";
+import Temperature from "../../components/Temperature";
+import Analytes from "./Analytes";
 
 function Sample( { name, colorSchema } ) {
 
     const { values } = useFormikContext();
-
-    const fieldName = 'sample'
-
-    UseDefault(values, `${name}.${fieldName}`, [{}] );
 
     const platesValue = getIn(values, `metadata.method_specific_parameters.plates`)
 
@@ -47,7 +44,7 @@ function Sample( { name, colorSchema } ) {
         <FormWrapper
             headline='Sample'
             colorSchema={colorSchema}
-            tooltipHeader='The type of sealing used to seal the top of the plate'
+            tooltipHeader='Sample the sensor was in contact with during the measurement'
         >
             <div className="flex">
                 <div className="mr-3">
@@ -76,17 +73,49 @@ function Sample( { name, colorSchema } ) {
                     />
                 </div>
             </div>
-            <div className="mr-3">
+            <div>
                 <ArrayField
                     name={name}
-                    required={true}
-                    label='Protocol'
-                    fieldName={fieldName}
-                    tooltip='The catalog number or identifier of the item'
+                    maxItems={1}
+                    label='Temperature'
+                    fieldName='Temperature'
+                    tooltip='Temperature of the sample while being measured'
+                    renderChild={({ arrayName, index }) => (
+                        <Temperature
+                            name={`${arrayName}.${index}`}
+                            tooltipHeader='Temperature of the sample while being measured'
+                        />
+                    )}
+                />
+            </div>
+            <div>
+                <ArrayField
+                    name={name}
+                    label='Analytes'
+                    fieldName='alalytes'
+                    tooltip='List of names (ids) of entities (from the entities of interest defined in the general parameters) that was used to alter the behavior of the target(s) or entities present at varying concentrations for a series of measurements and their concentrations'
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
-                            headline={`Protocol ${index + 1}`}
-                            tooltipHeader='List of protocol steps used to modify the surface of the wells'
+                            headline={`Analytes ${index + 1}`}
+                            tooltipHeader='List of names (ids) of entities (from the entities of interest defined in the general parameters) that was used to alter the behavior of the target(s) or entities present at varying concentrations for a series of measurements and their concentrations'
+                        >
+                            <Analytes
+                                name={`${arrayName}.${index}`}
+                            />
+                        </FormWrapper>
+                    )}
+                />
+            </div>
+            <div>
+                <ArrayField
+                    name={name}
+                    label='Preparational protocol'
+                    fieldName='preparational_protocol'
+                    tooltip='List of steps taken to prepare the sample'
+                    renderChild={({ arrayName, index }) => (
+                        <FormWrapper
+                            headline={`Preparational protocol ${index + 1}`}
+                            tooltipHeader='List of steps taken to prepare the sample'
                         >
                             <Protocol
                                 name={`${arrayName}.${index}`}

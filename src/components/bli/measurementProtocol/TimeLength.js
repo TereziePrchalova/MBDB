@@ -20,7 +20,7 @@ function TimeLength( { colorSchema, name } ) {
       <FormWrapper
         colorSchema={colorSchema}
         headline='Time length'
-        tooltipHeader='The numerical value of the start point of the measurement step relative to the beginning of the measurement in the units defined in the general parameters'>
+        tooltipHeader='The numerical value of the total time of the measurement step took in the units defined in the general parameters'>
           <ValueUnit
             options={unitOptions}
             name={name}

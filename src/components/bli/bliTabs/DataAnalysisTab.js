@@ -1,33 +1,24 @@
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import ArrayField from "../../buildingBlocks/ArrayField";
-import UseDefault from "../../buildingBlocks/UseDefault";
-import { useFormikContext } from 'formik';
-import Measurements from "../measurements/Measurements";
+import DataAnalysis from "../dataAnalysis/DataAnalysis";
 
-function MeasurementsTab( { name } ) {
-
-    const { values } = useFormikContext();
-
-    const fieldName = 'measurements'
-
-    UseDefault(values, `${name}.${fieldName}`, [{}] );
+function DataAnalysisTab( { name } ) {
 
     return (
       <>
         <div className="-mt-3">
             <ArrayField
                 name={name}
-                label="Measurement"
-                required={true}
-                fieldName={fieldName}
+                label="Data analysis"
+                fieldName='data_analysis'
                 tooltip='List of measurement where each step from each sensor is considered a single measurement'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
-                        headline={`Measurement ${index + 1}`}
+                        headline={`Data analysis ${index + 1}`}
                         tooltipHeader='List of measurement where each step from each sensor is considered a single measurement'
                     >
                         <div>
-                            <Measurements
+                            <DataAnalysis
                                 name={`${arrayName}.${index}`}
                             />
                         </div>
@@ -39,4 +30,4 @@ function MeasurementsTab( { name } ) {
     );
   }
   
-  export default MeasurementsTab;
+  export default DataAnalysisTab;

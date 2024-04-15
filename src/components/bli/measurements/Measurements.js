@@ -1,13 +1,37 @@
+import { getIn, useFormikContext } from "formik";
 import CustomField from "../../buildingBlocks/CustomField";
 import OptionField from "../../buildingBlocks/OptionField";
 import Sample from "./Sample";
 
 function Measurements( { name } ) {
 
-    const wellsOptions = [
-        { value: '96', label: '96' },
-        { value: '384', label: '384' },
-    ];
+    const { values } = useFormikContext();
+
+    const sensorValue = getIn(values, `metadata.method_specific_parameters.sensors`)
+
+    let sensorOptions = [];
+
+    if (sensorValue && sensorValue.length > 0) {
+        sensorOptions = sensorValue.map(sensor => ({
+            value: sensor.name,
+            label: sensor.name
+        }))
+    } else {
+        sensorOptions = [{ label: 'Select Sensor, if applicable' }]
+    }
+
+    const measurementProtocolStepValue = getIn(values, `metadata.method_specific_parameters.measurement_protocol`)
+
+    let measurementProtocolStepOptions = [];
+
+    if (measurementProtocolStepValue && measurementProtocolStepValue.length >0 ) {
+        measurementProtocolStepOptions = measurementProtocolStepValue.map(measurementProtocolStep => ({
+            value: measurementProtocolStep.name,
+            label: measurementProtocolStep.name
+        }))
+    } else {
+        measurementProtocolStepOptions = [{ label: 'Select Measurement protocol step, if applicable' }]
+    }
 
   return (
     <>
@@ -26,7 +50,7 @@ function Measurements( { name } ) {
                     name={name}
                     label='Sensor'
                     fieldName='sensor'
-                    options={wellsOptions}
+                    options={sensorOptions}
                 />
             </div>
             <div className="mr-3">
@@ -34,7 +58,7 @@ function Measurements( { name } ) {
                     name={name}
                     label='Measurement protocol step'
                     fieldName='measurement_protocol_step'
-                    options={wellsOptions}
+                    options={measurementProtocolStepOptions}
                 />
             </div>
         </div>

@@ -1,8 +1,8 @@
 import FormWrapper from "../../buildingBlocks/FormWrapper";
-import DataFitting from "./DataFitting";
+import DataFitting from "../../sharedComponents/DataFitting";
 import FColdAndHot from "./FColdAndHot";
 import ArrayField from "../../buildingBlocks/ArrayField";
-import DataProcessingStep from "./DataProcessingStep";
+import DataProcessingStep from "../../sharedComponents/DataProcessingStep";
 import OptionField from "../../buildingBlocks/OptionField";
 import { getIn, useFormikContext } from "formik";
 import UseDefault from "../../buildingBlocks/UseDefault";
@@ -27,14 +27,14 @@ function DataAnalysis( { name } ) {
         resultOptions = [{ label: 'Select Result, if applicable' }];
     }
 
-    const measurementsValue = getIn(values, `metadata.method_specific_parameters.measurements`)
+    const measurementValue = getIn(values, `metadata.method_specific_parameters.measurements`)
 
     let measurementOptions = [];
 
-    if (measurementsValue && measurementsValue.length > 0) {
-        measurementOptions = measurementsValue.map(result => ({
-            value: result.name,
-            label: result.name,
+    if (measurementValue && measurementValue.length > 0) {
+        measurementOptions = measurementValue.map(measurement => ({
+            value: measurement.name,
+            label: measurement.name,
         }));
     } else {
         measurementOptions = [{ label: 'Select Measurement, if applicable' }];

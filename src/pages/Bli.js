@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import RawDataFiles from "../components/generalTabs/RawDataFiles";
 import EntitiesOfInterestTab from "../components/generalTabs/EntitiesOfInterestTab";
-import InstrumentTab from "../components/mst/mstTabs/InstrumentTab";
+import InstrumentTab from "../components/bli/bliTabs/InstrumentTab";
 import ChemicalEnvironmentTab from '../components/generalTabs/ChemicalEnvironmentTab'
 import ResultTab from "../components/generalTabs/ResultTab";
 import ProjectInformationTab from "../components/generalTabs/ProjectInformationTab";
@@ -12,6 +12,7 @@ import PlatesTab from "../components/bli/bliTabs/PlatesTab";
 import SensorsTab from "../components/bli/bliTabs/SensorsTab";
 import MeasurementProtocolTab from "../components/bli/bliTabs/MeasurementProtocolTab";
 import MeasurementsTab from "../components/bli/bliTabs/MeasurementsTab";
+import DataAnalysisTab from "../components/bli/bliTabs/DataAnalysisTab";
 
 function Bli() {
 
@@ -56,8 +57,8 @@ function Bli() {
         initialValues={{
           "metadata": {
             "general_parameters": {
-              "schema_version": "0.9.19",
-              "technique": "Microscale thermophoresis/Temperature related intensity change (MST/TRIC)",
+              "schema_version": "0.9.20",
+              "technique": "BLI measurement of hemoglobin serum elements",
               "record_information": {
                 "publisher": "MBDB",
                 "resource_type_general": "Dataset",
@@ -111,6 +112,9 @@ function Bli() {
               )}
               {state.selected === 'measurements' && (
                 <MeasurementsTab name='metadata.method_specific_parameters' />
+              )}
+              {state.selected === 'data-analysis' && (
+                <DataAnalysisTab name='metadata.method_specific_parameters' />
               )}
               <button className="fixed top-0 right-0 p-3 m-4 bg-primary rounded-lg" type="submit">Submit</button>
             </Form>
