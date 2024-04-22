@@ -1,8 +1,8 @@
 import CustomField from "../../buildingBlocks/CustomField";
 import OptionField from "../../buildingBlocks/OptionField";
-import ShakingSpeed from "./ShakingSpeed";
 import StartTime from "../../sharedComponents/StartTime";
 import TimeLength from "../../sharedComponents/TimeLength";
+import Flow from "./Flow";
 
 function MeasurementProtocol( { name } ) {
 
@@ -14,6 +14,7 @@ function MeasurementProtocol( { name } ) {
         { value: 'Load', label: 'Load' },
         { value: 'Wash', label: 'Wash' },
         { value: 'Activation', label: 'Activation' },
+        { value: 'Enhancement', label: 'Enhancement' },
     ];
 
   return (
@@ -51,8 +52,8 @@ function MeasurementProtocol( { name } ) {
             />
         </div>
         <div>
-            <ShakingSpeed
-                name={`${name}.shaking_speed`}
+            <Flow
+                name={`${name}.flow`}
                 colorSchema='light'
             />
         </div>

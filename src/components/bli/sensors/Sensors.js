@@ -3,7 +3,7 @@ import ArrayField from "../../buildingBlocks/ArrayField";
 import OptionField from "../../buildingBlocks/OptionField";
 import Supplier from "../sharedComponents/Supplier";
 import HydrationTime from "./HydrationTime";
-import LigandInformation from "./LigandInformation";
+import LigandInformation from "../../sharedComponents/LigandInformation";
 
 function Sensors( { name } ) {
 

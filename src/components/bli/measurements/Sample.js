@@ -6,7 +6,7 @@ import OptionField from "../../buildingBlocks/OptionField";
 import CustomField from "../../buildingBlocks/CustomField";
 import { getIn } from "formik";
 import Temperature from "../../sharedComponents/Temperature";
-import Analytes from "./Analytes";
+import Analytes from "../../sharedComponents/Analytes"
 
 function Sample( { name, colorSchema } ) {
 
@@ -78,7 +78,7 @@ function Sample( { name, colorSchema } ) {
                     name={name}
                     maxItems={1}
                     label='Temperature'
-                    fieldName='Temperature'
+                    fieldName='temperature'
                     tooltip='Temperature of the sample while being measured'
                     renderChild={({ arrayName, index }) => (
                         <Temperature
@@ -92,7 +92,7 @@ function Sample( { name, colorSchema } ) {
                 <ArrayField
                     name={name}
                     label='Analytes'
-                    fieldName='alalytes'
+                    fieldName='analytes'
                     tooltip='List of names (ids) of entities (from the entities of interest defined in the general parameters) that was used to alter the behavior of the target(s) or entities present at varying concentrations for a series of measurements and their concentrations'
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper

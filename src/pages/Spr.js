@@ -8,11 +8,11 @@ import InstrumentTab from "../components/bli/bliTabs/InstrumentTab";
 import ChemicalEnvironmentTab from '../components/generalTabs/ChemicalEnvironmentTab'
 import ResultTab from "../components/generalTabs/ResultTab";
 import ProjectInformationTab from "../components/generalTabs/ProjectInformationTab";
-import PlatesTab from "../components/bli/bliTabs/PlatesTab";
-import SensorsTab from "../components/bli/bliTabs/SensorsTab";
-import MeasurementProtocolTab from "../components/bli/bliTabs/MeasurementProtocolTab";
-import MeasurementsTab from "../components/bli/bliTabs/MeasurementsTab";
+import MeasurementProtocolTab from "../components/spr/sprTabs/MeasurementProtocolTab";
+import MeasurementsTab from "../components/spr/sprTabs/MeasurementsTab";
 import DataAnalysisTab from "../components/bli/bliTabs/DataAnalysisTab";
+import SensorTab from "../components/spr/sprTabs/SensorTab";
+import MeasurementPositionsTab from "../components/spr/sprTabs/MeasurementPositionsTab";
 
 function Spr() {
 
@@ -101,11 +101,11 @@ function Spr() {
               {state.selected === 'instrument' && (
                 <InstrumentTab name='metadata.general_parameters' />
               )}
-              {state.selected === 'plates' && (
-                <PlatesTab name='metadata.method_specific_parameters' />
+              {state.selected === 'sensor' && (
+                <SensorTab name='metadata.method_specific_parameters' />
               )}
-              {state.selected === 'sensors' && (
-                <SensorsTab name='metadata.method_specific_parameters' />
+              {state.selected === 'measurement-positions' && (
+                <MeasurementPositionsTab name='metadata.method_specific_parameters' />
               )}
               {state.selected === 'measurement-protocol' && (
                 <MeasurementProtocolTab name='metadata.method_specific_parameters' />

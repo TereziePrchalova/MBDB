@@ -1,5 +1,5 @@
-import FormWrapper from "../../buildingBlocks/FormWrapper";
-import ValueUnit from "../../buildingBlocks/ValueUnit";
+import FormWrapper from "../buildingBlocks/FormWrapper";
+import ValueUnit from "../buildingBlocks/ValueUnit";
 
 function TimeLength( { colorSchema, name } ) {
 

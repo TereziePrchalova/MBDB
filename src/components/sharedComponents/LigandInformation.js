@@ -1,9 +1,9 @@
-import FormWrapper from "../../buildingBlocks/FormWrapper";
+import FormWrapper from "../buildingBlocks/FormWrapper";
 import { getIn, useFormikContext } from "formik";
-import CustomField from "../../buildingBlocks/CustomField";
-import OptionField from "../../buildingBlocks/OptionField";
-import ArrayField from "../../buildingBlocks/ArrayField";
-import Protocol from "../../buildingBlocks/Protocol";
+import CustomField from "../buildingBlocks/CustomField";
+import OptionField from "../buildingBlocks/OptionField";
+import ArrayField from "../buildingBlocks/ArrayField";
+import Protocol from "../buildingBlocks/Protocol";
 
 function LigandInformation( { name, colorSchema } ) {
 
@@ -52,7 +52,7 @@ function LigandInformation( { name, colorSchema } ) {
                         name={name}
                         label='Ligand immobilization protocol'
                         fieldName='ligand_immobilization_protocol'
-                        tooltip='The catalog number or identifier of the item'
+                        tooltip='List of steps for immobilizing the ligand on the surface of the sensor'
                         renderChild={({ arrayName, index }) => (
                             <FormWrapper
                                 headline={`Ligand immobilization protocol ${index + 1}`}
