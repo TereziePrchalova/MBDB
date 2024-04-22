@@ -2,6 +2,7 @@ import React from 'react';
 import { FieldArray, getIn, useFormikContext } from 'formik';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
+import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 
 function ArrayField({ name, fieldName, label, renderChild, initialValue, required, maxItems, tooltip }) {
 
@@ -40,7 +41,7 @@ function ArrayField({ name, fieldName, label, renderChild, initialValue, require
                       }}
                     >
                       <div>
-                        &#x2715;
+                        <CancelOutlinedIcon/>
                       </div>
                     </Button>
                   }
