@@ -9,7 +9,7 @@ function Size( { name, colorSchema } ) {
         { value: 'Radius', label: 'Radius' },
         { value: 'Diameter', label: 'Diameter' },
         { value: 'Path length', label: 'Path length' },
-      ];
+    ];
 
     const unitOptions = [
         { value: 'nm', label: 'nm' },
@@ -17,7 +17,7 @@ function Size( { name, colorSchema } ) {
         { value: 'mm', label: 'mm' },
         { value: 'cm', label: 'cm' },
         { value: 'm', label: 'm' },
-      ];
+    ];
 
   return (
     <>

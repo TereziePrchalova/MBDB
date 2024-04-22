@@ -12,7 +12,7 @@ function Details({ name, colorSchema, sizeColorSchema, molecularWeightColorSchem
         { value: 'Liposome', label: 'Liposome' },
         { value: 'Nanodisc', label: 'Nanodisc' },
         { value: 'Sheet', label: 'Sheet' },
-      ];
+    ];
 
   return (
     <>
