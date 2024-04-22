@@ -47,7 +47,7 @@ function Virion( { name } ) {
                 tooltip='The genetic material carried by the virions (None, virus genome, synthetic)'
             />
           </div>
-          <div className="mr-3">
+          <div>
             <OptionField
                 name={name}
                 options={capsidTypeOptions}
@@ -56,7 +56,9 @@ function Virion( { name } ) {
                 tooltip='The type of virion capsid (e.g. genetically engineered, None'
             />
           </div>
-          <div>
+        </div>
+        <div className="flex">
+          <div className="mr-3">
             <OptionField
                 name={name}
                 options={envelopeOptions}
@@ -65,8 +67,16 @@ function Virion( { name } ) {
                 tooltip='The type of virion envelope (e.g. genetically engineered, None'
             />
           </div>
+          <div>
+            <CustomField
+                name={name}
+                fieldName='source_organism'
+                label='Source organism'
+                tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
+            />
+          </div>
         </div>
-        <div className="flex -mt-3 mb-3">
+        <div className="flex mb-3">
             <div className="mr-3">
                 <ArrayField
                     name={name}
@@ -99,43 +109,6 @@ function Virion( { name } ) {
                     )}
                 />
             </div>
-            <div className="mr-3">
-                <ArrayField
-                    name={name}
-                    label='Source organism'
-                    fieldName='source_organism'
-                    maxItems={1}
-                    tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
-                    renderChild={({ arrayName, index }) => (
-                        <CustomField
-                            name={`${arrayName}.${index}`}
-                            label='Source organism'
-                            tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
-                        />
-                    )}
-                />
-            </div>
-        </div>
-        <div className="flex -mt-3">
-            <div className="mr-3">
-                <ArrayField
-                    name={name}
-                    label='Preparation protocol'
-                    fieldName='preparation_protocol'
-                    tooltip='List of the steps performed during the preparation of the complex substance'
-                    renderChild={({ arrayName, index }) => (
-                        <FormWrapper
-                            colorSchema='light'
-                            headline={`Preparation protocol ${index + 1}`}
-                            tooltipHeader='List of the steps performed during the preparation of the complex substance'
-                        >
-                            <Protocol
-                                name={`${arrayName}.${index}`}
-                            />
-                        </FormWrapper>
-                    )}
-                />
-            </div>
             <div>
                 <ArrayField
                     name={name}
@@ -156,6 +129,25 @@ function Virion( { name } ) {
         <div>
             <ArrayField
                 name={name}
+                label='Preparation protocol'
+                fieldName='preparation_protocol'
+                tooltip='List of the steps performed during the preparation of the complex substance'
+                renderChild={({ arrayName, index }) => (
+                    <FormWrapper
+                        colorSchema='light'
+                        headline={`Preparation protocol ${index + 1}`}
+                        tooltipHeader='List of the steps performed during the preparation of the complex substance'
+                    >
+                        <Protocol
+                            name={`${arrayName}.${index}`}
+                        />
+                    </FormWrapper>
+                )}
+            />
+        </div>
+        <div>
+            <ArrayField
+                name={name}
                 label='Storage'
                 fieldName='storage'
                 maxItems={1}
@@ -163,7 +155,7 @@ function Virion( { name } ) {
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         colorSchema='light'
-                        headline={`Storage ${index + 1}`}
+                        headline='Storage'
                         tooltipHeader='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
                     >
                         <Storage

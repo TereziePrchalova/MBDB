@@ -18,6 +18,7 @@ function Identity( { name, colorSchema } ) {
             name={name}
             label='Identity'
             fieldName='identity'
+            maxItems={1}
             tooltip='Modifications (e.g. non-natural amino acids) of the polymer made during synthesis (e.g. translation) of the polymer'
             renderChild={({ arrayName, index }) => (
                 <FormWrapper

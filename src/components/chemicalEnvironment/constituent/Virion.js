@@ -48,7 +48,7 @@ function Virion( { name } ) {
                 tooltip='The genetic material carried by the virions (None, virus genome, synthetic)'
             />
           </div>
-          <div className="mr-3">
+          <div>
             <OptionField
                 name={name}
                 options={capsidTypeOptions}
@@ -57,7 +57,9 @@ function Virion( { name } ) {
                 tooltip='The type of virion capsid (e.g. genetically engineered, None'
             />
           </div>
-          <div>
+        </div>
+        <div className="flex">
+          <div className="mr-3">
             <OptionField
                 name={name}
                 options={envelopeOptions}
@@ -66,22 +68,64 @@ function Virion( { name } ) {
                 tooltip='The type of virion envelope (e.g. genetically engineered, None'
             />
           </div>
-        </div>
-        <div className="flex mb-3">
-          <div className="mr-3">
-            <CustomField name={name} label='Host organism' fieldName='host_organism' />
-          </div>
-          <div className="mr-3">
+          <div>
             <CustomField
                 name={name}
-                label='Host cell type'
-                fieldName='host_cell_type'
-                tooltip='The host cell type the virion was produced in'
+                fieldName='source_organism'
+                label='Source organism'
+                tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
             />
           </div>
-          <div>
-            <CustomField name={name} label='Source organism' fieldName='source_organism' />
-          </div>
+        </div>
+        <div className="flex mb-3">
+            <div className="mr-3">
+                <ArrayField
+                    name={name}
+                    label='Host organism'
+                    fieldName='host_organism'
+                    maxItems={1}
+                    tooltip='The host organism the virion was produced in. Note that information is based on the NCBI taxonomy'
+                    renderChild={({ arrayName, index }) => (
+                        <CustomField
+                            name={`${arrayName}.${index}`}
+                            label='Host organism'
+                            tooltip='The host organism the virion was produced in. Note that information is based on the NCBI taxonomy'
+                        />
+                    )}
+                />
+            </div>
+            <div className="mr-3">
+                <ArrayField
+                    name={name}
+                    label='Host cell type'
+                    fieldName='host_cell_type'
+                    maxItems={1}
+                    tooltip='The host cell type the virion was produced in'
+                    renderChild={({ arrayName, index }) => (
+                        <CustomField
+                            name={`${arrayName}.${index}`}
+                            label='Host cell type'
+                            tooltip='The host cell type the virion was produced in'
+                        />
+                    )}
+                />
+            </div>
+            <div>
+                <ArrayField
+                    name={name}
+                    label='Additional specification'
+                    fieldName='additional_specifications'
+                    tooltip='Additional information about the complex substance can be specified here'
+                    renderChild={({ arrayName, index }) => (
+                        <CustomField
+                            name={`${arrayName}.${index}`}
+                            label={`Additional specification ${index + 1}`}
+                            width='w-[15rem]'
+                            tooltip='Additional information about the complex substance can be specified here'
+                        />
+                    )}
+                />
+            </div>
         </div>
         <div>
             <Concentration
@@ -93,9 +137,9 @@ function Virion( { name } ) {
                 name={name}
                 label='Preparation protocol'
                 fieldName='preparation_protocol'
+                tooltip='List of the steps performed during the preparation of the complex substance'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
-                        colorSchema='light'
                         headline={`Preparation protocol ${index + 1}`}
                         tooltipHeader='List of the steps performed during the preparation of the complex substance'
                     >
@@ -112,31 +156,19 @@ function Virion( { name } ) {
                 label='Storage'
                 fieldName='storage'
                 maxItems={1}
+                tooltip='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
                 renderChild={({ arrayName, index }) => (
-                    <FormWrapper colorSchema='light' headline={`Storage ${index + 1}`}>
+                    <FormWrapper
+                        headline='Storage'
+                        tooltipHeader='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
+                    >
                         <Storage
                             name={`${arrayName}.${index}`}
+                            colorSchema='light'
                         />
                     </FormWrapper>
                 )}
             />
-        </div>
-        <div>
-            <div>
-                <ArrayField
-                    name={name}
-                    label='Additional specification'
-                    fieldName='additional_specifications'
-                    renderChild={({ arrayName, index }) => (
-                        <CustomField
-                            name={`${arrayName}.${index}`}
-                            label={`Additional specification ${index + 1}`}
-                            width='w-[15rem]'
-                            tooltip='Additional information about the complex substance can be specified here'
-                        />
-                    )}
-                />
-            </div>
         </div>
     </>
   );
