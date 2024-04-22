@@ -1,8 +1,8 @@
-import ArrayField from "../buildingBlocks/ArrayField";
-import CustomField from "../buildingBlocks/CustomField";
-import MolecularWeight from "../components/MolecularWeight";
-import Modifications from "../components/Modifications";
-import OptionField from "../buildingBlocks/OptionField";
+import ArrayField from "../../buildingBlocks/ArrayField";
+import CustomField from "../../buildingBlocks/CustomField";
+import MolecularWeight from "../MolecularWeight";
+import Modifications from "../../components/Modifications";
+import OptionField from "../../buildingBlocks/OptionField";
 
 function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, colorSchemaHeadline } ) {
 

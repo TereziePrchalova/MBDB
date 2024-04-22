@@ -4,7 +4,7 @@ import OptionField from "../../buildingBlocks/OptionField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Protocol from "../../buildingBlocks/Protocol";
 import Storage from "../../buildingBlocks/Storage";
-import Concentration from "../../components/Concentration";
+import Concentration from "../../sharedComponents/Concentration";
 
 function BodyFluid( { name } ) {
 

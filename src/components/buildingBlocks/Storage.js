@@ -1,4 +1,4 @@
-import Temperature from "../components/Temperature";
+import Temperature from '../sharedComponents/Temperature';
 import Duration from './Duration'
 import ArrayField from "./ArrayField";
 import FormWrapper from "./FormWrapper";

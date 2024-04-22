@@ -3,7 +3,7 @@ import CustomField from "../../buildingBlocks/CustomField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Protocol from "../../buildingBlocks/Protocol";
 import Storage from "../../buildingBlocks/Storage";
-import Concentration from "../../components/Concentration";
+import Concentration from "../../sharedComponents/Concentration";
 import OptionField from "../../buildingBlocks/OptionField";
 
 function Virion( { name } ) {

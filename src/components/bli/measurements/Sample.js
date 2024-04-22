@@ -5,7 +5,7 @@ import { useFormikContext } from "formik";
 import OptionField from "../../buildingBlocks/OptionField";
 import CustomField from "../../buildingBlocks/CustomField";
 import { getIn } from "formik";
-import Temperature from "../../components/Temperature";
+import Temperature from "../../sharedComponents/Temperature";
 import Analytes from "./Analytes";
 
 function Sample( { name, colorSchema } ) {

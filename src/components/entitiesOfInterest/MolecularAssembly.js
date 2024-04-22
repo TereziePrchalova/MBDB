@@ -1,9 +1,9 @@
 import CustomField from "../buildingBlocks/CustomField";
 import ArrayField from "../buildingBlocks/ArrayField";
-import MolecularWeight from "../components/MolecularWeight";
+import MolecularWeight from "../sharedComponents/MolecularWeight";
 import Modification from "../components/Modification";
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import Components from "../components/Components";
+import Components from "../sharedComponents/components/Components";
 
 function MolecularAssembly( { name } ) {
 

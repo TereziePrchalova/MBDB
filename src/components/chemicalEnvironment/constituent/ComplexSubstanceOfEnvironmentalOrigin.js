@@ -1,10 +1,10 @@
 import CustomField from "../../buildingBlocks/CustomField";
-import Location from "../../components/Location";
+import Location from "../../sharedComponents/Location";
 import ArrayField from "../../buildingBlocks/ArrayField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Protocol from "../../buildingBlocks/Protocol";
 import Storage from "../../buildingBlocks/Storage";
-import Concentration from "../../components/Concentration";
+import Concentration from "../../sharedComponents/Concentration";
 import OptionField from "../../buildingBlocks/OptionField";
 
 function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {

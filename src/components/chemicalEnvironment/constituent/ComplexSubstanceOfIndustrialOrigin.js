@@ -3,7 +3,7 @@ import ArrayField from "../../buildingBlocks/ArrayField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Protocol from "../../buildingBlocks/Protocol";
 import Storage from "../../buildingBlocks/Storage";
-import Concentration from "../../components/Concentration";
+import Concentration from "../../sharedComponents/Concentration";
 import OptionField from "../../buildingBlocks/OptionField";
 import { useFormikContext } from "formik";
 import UseDefault from "../../buildingBlocks/UseDefault";

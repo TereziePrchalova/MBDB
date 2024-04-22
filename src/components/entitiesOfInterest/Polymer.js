@@ -1,8 +1,9 @@
 import ArrayField from "../buildingBlocks/ArrayField";
 import CustomField from "../buildingBlocks/CustomField";
-import MolecularWeight from "../components/MolecularWeight";
+import MolecularWeight from "../sharedComponents/MolecularWeight";
 import Modifications from "../components/Modifications";
 import OptionField from "../buildingBlocks/OptionField";
+import QualityControls from "../sharedComponents/qualityControls/QualityControls";
 
 function Polymer( { name } ) {
 
@@ -162,11 +163,17 @@ function Polymer( { name } ) {
                 tooltipHeader='The molecular weight of the polymer'
             />
         </div>
-        <div>
+        <div className="mb-3">
             <Modifications
                 name={`${name}.modifications`}
                 colorSchemaProtocol='light'
                 colorSchemaHeadline='light'
+            />
+        </div>
+        <div>
+            <QualityControls
+                name={`${name}.quality_controls`}
+                colorSchema='light'
             />
         </div>
     </>

@@ -52,7 +52,9 @@ function ArrayField({ name, fieldName, label, renderChild, initialValue, require
                   <Tooltip title={tooltip} arrow>
                     <Button
                       variant="outlined"
-                      onClick={() => push(initialValue !== undefined ? { ...initialValue } : '')}
+                      onClick={() => {
+                          push(initialValue !== undefined ? { ...initialValue } : '')
+                      }}
                       sx= {{ 
                           borderColor: '#6D7575',
                           backgroundColor: '#6D7575',

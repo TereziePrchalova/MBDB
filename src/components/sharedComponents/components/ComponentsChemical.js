@@ -1,6 +1,6 @@
-import ArrayField from "../buildingBlocks/ArrayField";
-import CustomField from "../buildingBlocks/CustomField";
-import MolecularWeight from "../components/MolecularWeight";
+import ArrayField from "../../buildingBlocks/ArrayField";
+import CustomField from "../../buildingBlocks/CustomField";
+import MolecularWeight from "../MolecularWeight";
 
 function ComponentsChemical( { name, molecularWeightColorSchema } ) {
 

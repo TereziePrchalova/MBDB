@@ -8,7 +8,7 @@ import ArrayField from "../buildingBlocks/ArrayField";
 
 function AssociatedPublication( { name } ) {
     
-    const { values } = useFormikContext()
+    const { values } = useFormikContext();
 
     const associatedPublicationOptions = [
         { value: 'Article', label: 'Article' },

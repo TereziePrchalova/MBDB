@@ -1,5 +1,5 @@
 import OptionField from "../../buildingBlocks/OptionField";
-import Concentration from "../../components/Concentration";
+import Concentration from "../../sharedComponents/Concentration";
 import { useFormikContext, getIn } from 'formik';
 
 function Ligand( { name } ) {

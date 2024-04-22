@@ -1,5 +1,5 @@
 import CustomField from "../buildingBlocks/CustomField";
-import Location from "../components/Location";
+import Location from "../sharedComponents/Location";
 import ArrayField from "../buildingBlocks/ArrayField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Protocol from "../buildingBlocks/Protocol";

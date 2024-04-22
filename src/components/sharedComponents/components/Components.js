@@ -1,10 +1,10 @@
-import FormWrapper from "../buildingBlocks/FormWrapper";
-import UseDefault from "../buildingBlocks/UseDefault";
+import FormWrapper from "../../buildingBlocks/FormWrapper";
+import UseDefault from "../../buildingBlocks/UseDefault";
 import ComponentsPolymer from "./ComponentsPolymer";
 import ComponentsChemical from "./ComponentsChemical";
 import { getIn, useFormikContext } from "formik";
-import ArrayField from "../buildingBlocks/ArrayField";
-import OptionField from "../buildingBlocks/OptionField";
+import ArrayField from "../../buildingBlocks/ArrayField";
+import OptionField from "../../buildingBlocks/OptionField";
 
 function Components( { name, colorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, colorSchemaHeadline, tooltip } ) {
 

@@ -1,8 +1,8 @@
 import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
-import MolecularWeight from "../../components/MolecularWeight";
+import MolecularWeight from "../../sharedComponents/MolecularWeight";
 import Modifications from "../../components/Modifications";
-import Concentration from "../../components/Concentration";
+import Concentration from "../../sharedComponents/Concentration";
 import OptionField from "../../buildingBlocks/OptionField";
 
 function Polymer( { name } ) {
