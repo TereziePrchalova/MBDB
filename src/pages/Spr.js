@@ -10,7 +10,7 @@ import ResultTab from "../components/generalTabs/ResultTab";
 import ProjectInformationTab from "../components/generalTabs/ProjectInformationTab";
 import MeasurementProtocolTab from "../components/spr/sprTabs/MeasurementProtocolTab";
 import MeasurementsTab from "../components/spr/sprTabs/MeasurementsTab";
-import DataAnalysisTab from "../components/bli/bliTabs/DataAnalysisTab";
+import DataAnalysisTab from "../components/spr/sprTabs/DataAnalysisTab";
 import SensorTab from "../components/spr/sprTabs/SensorTab";
 import MeasurementPositionsTab from "../components/spr/sprTabs/MeasurementPositionsTab";
 

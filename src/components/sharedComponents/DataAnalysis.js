@@ -1,9 +1,9 @@
-import ArrayField from "../../buildingBlocks/ArrayField";
-import OptionField from "../../buildingBlocks/OptionField";
+import ArrayField from "../buildingBlocks/ArrayField";
+import OptionField from "../buildingBlocks/OptionField";
 import { getIn, useFormikContext } from "formik";
-import DataFitting from "../../sharedComponents/DataFitting";
-import FormWrapper from "../../buildingBlocks/FormWrapper";
-import DataProcessingStep from "../../sharedComponents/DataProcessingStep";
+import DataFitting from "./DataFitting";
+import FormWrapper from "../buildingBlocks/FormWrapper";
+import DataProcessingStep from "./DataProcessingStep";
 
 function DataAnalysis( { name } ) {
 
