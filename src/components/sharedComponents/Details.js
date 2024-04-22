@@ -1,7 +1,7 @@
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import ArrayField from "../buildingBlocks/ArrayField";
-import Size from "../components/Size";
+import Size from "./Size";
 import Components from "./components/Components";
 import OptionField from "../buildingBlocks/OptionField";
 
