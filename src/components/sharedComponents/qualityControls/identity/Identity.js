@@ -45,7 +45,7 @@ function Identity( { name, colorSchema } ) {
                             renderChild={({ arrayName, index }) => (
                                 <ByIntactMass
                                     name={`${arrayName}.${index}`}
-                                    colorSchema='light'
+                                    colorSchema={colorSchema === 'light' ? '' : 'light'}
                                 />
                             )}
                         />
@@ -60,7 +60,7 @@ function Identity( { name, colorSchema } ) {
                             renderChild={({ arrayName, index }) => (
                                 <BySequencing
                                     name={`${arrayName}.${index}`}
-                                    colorSchema='light'
+                                    colorSchema={colorSchema === 'light' ? '' : 'light'}
                                 />
                             )}
                         />
@@ -75,7 +75,7 @@ function Identity( { name, colorSchema } ) {
                             renderChild={({ arrayName, index }) => (
                                 <ByFingerprinting
                                     name={`${arrayName}.${index}`}
-                                    colorSchema='light'
+                                    colorSchema={colorSchema === 'light' ? '' : 'light'}
                                 />
                             )}
                         />

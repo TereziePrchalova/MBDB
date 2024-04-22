@@ -28,6 +28,7 @@ function ByIntactMass( { name, colorSchema } ) {
             <div>
                 <DevitationFromExpectedMass
                     name={`${name}.devitation_from_expected_mass`}
+                    colorSchema={colorSchema === 'light' ? '' : 'light'}
                 />
             </div>
         </FormWrapper>

@@ -4,7 +4,7 @@ import ArrayField from '../../../buildingBlocks/ArrayField';
 import { getIn, useFormikContext } from 'formik';
 import HomogeneityYes from './HomogeneityYes';
 
-function Purity( { name } ) {
+function Purity( { name, colorSchema } ) {
 
     const { values } = useFormikContext();
 
@@ -27,6 +27,7 @@ function Purity( { name } ) {
                 return(
                 <FormWrapper
                     headline='Homogeneity'
+                    colorSchema={colorSchema}
                 >
                     <div className="flex">
                         <div className="mr-3">

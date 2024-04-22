@@ -3,6 +3,7 @@ import CustomField from "../../buildingBlocks/CustomField";
 import MolecularWeight from "../MolecularWeight";
 import Modifications from "../../components/Modifications";
 import OptionField from "../../buildingBlocks/OptionField";
+import QualityControls from "../qualityControls/QualityControls";
 
 function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, colorSchemaHeadline } ) {
 
@@ -170,12 +171,17 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
                 colorSchema={molecularWeightColorSchema}
             />
         </div>
-        <div>
+        <div className="mb-3">
             <Modifications
                 name={`${name}.modifications`}
                 colorSchemaWrapper={colorSchemaWrapper}
                 colorSchemaProtocol={colorSchemaProtocol}
                 colorSchemaHeadline={colorSchemaHeadline}
+            />
+        </div>
+        <div>
+            <QualityControls
+                name={`${name}.quality_controls`}
             />
         </div>
     </>

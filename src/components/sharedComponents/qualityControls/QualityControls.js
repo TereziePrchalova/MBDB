@@ -12,13 +12,13 @@ function QualityControls( { name, colorSchema } ) {
             colorSchema={colorSchema}
         >
             <div className='mb-3 -mt-3'>
-                <Purity name={name}/>
+                <Purity name={name} colorSchema={colorSchema === 'light' ? '' : 'light'} />
             </div>
             <div className='mb-3'>
-                <Identity name={name} />
+                <Identity name={name} colorSchema={colorSchema === 'light' ? '' : 'light'} />
             </div>
             <div>
-                <Homogeneity name={name} />
+                <Homogeneity name={name} colorSchema={colorSchema === 'light' ? '' : 'light'} />
             </div>
         </FormWrapper>
     </>
