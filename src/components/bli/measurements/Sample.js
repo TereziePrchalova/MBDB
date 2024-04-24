@@ -7,6 +7,7 @@ import CustomField from "../../buildingBlocks/CustomField";
 import { getIn } from "formik";
 import Temperature from "../../sharedComponents/Temperature";
 import Analytes from "../../sharedComponents/Analytes"
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function Sample( { name, colorSchema } ) {
 
@@ -74,15 +75,14 @@ function Sample( { name, colorSchema } ) {
                 </div>
             </div>
             <div>
-                <ArrayField
+                <OptionalField
                     name={name}
-                    maxItems={1}
                     label='Temperature'
                     fieldName='temperature'
                     tooltip='Temperature of the sample while being measured'
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <Temperature
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             tooltipHeader='Temperature of the sample while being measured'
                         />
                     )}

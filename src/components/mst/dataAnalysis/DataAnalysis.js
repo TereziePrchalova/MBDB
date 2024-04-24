@@ -5,6 +5,7 @@ import ArrayField from "../../buildingBlocks/ArrayField";
 import DataProcessingStep from "../../sharedComponents/DataProcessingStep";
 import OptionField from "../../buildingBlocks/OptionField";
 import { getIn, useFormikContext } from "formik";
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function DataAnalysis( { name } ) {
 
@@ -73,40 +74,38 @@ function DataAnalysis( { name } ) {
             </div>
         </div>
         <div className="mb-3">
-            <ArrayField
+            <OptionalField
                 name={name}
                 label='F cold and hot'
                 fieldName='f_cold_and_hot'
-                maxItems={1}
                 tooltip='If the data was analyzed with time windows corresponding to fluorescence before and after an IR laser was heating the sample the edges of the time windows can be specified here'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <FormWrapper
                         colorSchema='light'
-                        headline={`F cold and hot`}
+                        headline='F cold and hot'
                         tooltipHeader='If the data was analyzed with time windows corresponding to fluorescence before and after an IR laser was heating the sample the edges of the time windows can be specified here'
                     >
                         <FColdAndHot
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                         />
                     </FormWrapper>
                 )}
             />
         </div>
         <div className="mb-3">
-            <ArrayField
+            <OptionalField
                 name={name}
                 label='Data fitting'
                 fieldName='data_fitting'
-                maxItems={1}
                 tooltip='If the data was analyzed with time windows corresponding to fluorescence before and after an IR laser was heating the sample the edges of the time windows can be specified here'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <FormWrapper
                         colorSchema='light'
-                        headline={`Data fitting`}
+                        headline='Data fitting'
                         tooltipHeader='If the data was analyzed with time windows corresponding to fluorescence before and after an IR laser was heating the sample the edges of the time windows can be specified here'
                     >
                         <DataFitting
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                         />
                     </FormWrapper>
                 )}

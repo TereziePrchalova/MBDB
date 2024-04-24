@@ -5,6 +5,7 @@ import Protocol from "../../buildingBlocks/Protocol";
 import Storage from "../../buildingBlocks/Storage";
 import Concentration from "../../sharedComponents/Concentration";
 import OptionField from "../../buildingBlocks/OptionField";
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function Virion( { name } ) {
 
@@ -79,15 +80,14 @@ function Virion( { name } ) {
         </div>
         <div className="flex mb-3">
             <div className="mr-3">
-                <ArrayField
+                <OptionalField
                     name={name}
                     label='Host organism'
                     fieldName='host_organism'
-                    maxItems={1}
                     tooltip='The host organism the virion was produced in. Note that information is based on the NCBI taxonomy'
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName}) => (
                         <CustomField
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             label='Host organism'
                             tooltip='The host organism the virion was produced in. Note that information is based on the NCBI taxonomy'
                         />
@@ -95,15 +95,14 @@ function Virion( { name } ) {
                 />
             </div>
             <div className="mr-3">
-                <ArrayField
+                <OptionalField
                     name={name}
                     label='Host cell type'
                     fieldName='host_cell_type'
-                    maxItems={1}
                     tooltip='The host cell type the virion was produced in'
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <CustomField
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             label='Host cell type'
                             tooltip='The host cell type the virion was produced in'
                         />
@@ -151,19 +150,18 @@ function Virion( { name } ) {
             />
         </div>
         <div>
-            <ArrayField
+            <OptionalField
                 name={name}
                 label='Storage'
                 fieldName='storage'
-                maxItems={1}
                 tooltip='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <FormWrapper
                         headline='Storage'
                         tooltipHeader='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
                     >
                         <Storage
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             colorSchema='light'
                         />
                     </FormWrapper>

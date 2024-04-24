@@ -4,6 +4,7 @@ import { getIn, useFormikContext } from "formik";
 import DataFitting from "./DataFitting";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import DataProcessingStep from "./DataProcessingStep";
+import OptionalField from "../buildingBlocks/OptionalField";
 
 function DataAnalysis( { name } ) {
 
@@ -56,15 +57,14 @@ function DataAnalysis( { name } ) {
                 />
             </div>
             <div className="-mt-3">
-                <ArrayField
+                <OptionalField
                     name={name}
                     label='Result'
                     fieldName='result'
-                    maxItems={1}
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <div className="-mr-6">
                             <OptionField
-                                name={`${arrayName}.${index}`}
+                                name={optionalFieldName}
                                 label='Result'
                                 options={resultOptions}
                             />
@@ -73,21 +73,20 @@ function DataAnalysis( { name } ) {
                 />
             </div>
         </div>
-        <div className="">
-            <ArrayField
+        <div>
+            <OptionalField
                 name={name}
                 label='Data fitting'
                 fieldName='data_fitting'
-                maxItems={1}
                 tooltip='The details of how data fitting of the data to obtain the result was performed'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <FormWrapper
                         colorSchema='light'
                         headline='Data fitting'
                         tooltipHeader='The details of how data fitting of the data to obtain the result was performed'
                     >
                         <DataFitting
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                         />
                     </FormWrapper>
                 )}

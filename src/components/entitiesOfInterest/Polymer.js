@@ -4,6 +4,7 @@ import MolecularWeight from "../sharedComponents/MolecularWeight";
 import Modifications from "../components/Modifications";
 import OptionField from "../buildingBlocks/OptionField";
 import QualityControls from "../sharedComponents/qualityControls/QualityControls";
+import OptionalField from "../buildingBlocks/OptionalField";
 
 function Polymer( { name } ) {
 
@@ -55,15 +56,14 @@ function Polymer( { name } ) {
             </div>
         </div>
         <div className="mb-3">
-            <ArrayField
+            <OptionalField
                 name={name}
                 label='Sequence'
                 fieldName='sequence'
-                maxItems={1}
                 tooltip='Primary sequence of the polymer, using single letter codes (e.g. SAGRELLE, AGTTA). In case of non-natural amino acids or nucleotides, please place the monomer in brackets'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <CustomField
-                        name={`${arrayName}.${index}`}
+                        name={optionalFieldName}
                         label='Sequence'
                         multiline={true}
                         width='w-[51.5rem]'
@@ -74,15 +74,14 @@ function Polymer( { name } ) {
         </div>
         <div className="flex mb-3 -mt-3">
             <div className="mr-3">
-                <ArrayField
+                <OptionalField
                     name={name}
                     label='Variant'
                     fieldName='variant'
-                    maxItems={1}
                     tooltip='Descriptive name indicating differences of primary sequence of the polymer as compared to the most common form, or wildtype, including mutations, purification tags, etc. (A53T, C-terminal GFP, N-terminal 6xHis-tag)'
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <CustomField
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             label='Variant'
                             tooltip='Descriptive name indicating differences of primary sequence of the polymer as compared to the most common form, or wildtype, including mutations, purification tags, etc. (A53T, C-terminal GFP, N-terminal 6xHis-tag)'
                         />
@@ -90,15 +89,14 @@ function Polymer( { name } ) {
                 />
             </div>
             <div className="mr-3">
-                <ArrayField
+                <OptionalField
                     name={name}
                     label='Source organism'
                     fieldName='source_organism'
-                    maxItems={1}
                     tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <CustomField
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             label='Source organism'
                             tooltip='The biological species where the polymer naturally occurs. Note that this is based on the NCBI taxonomy'
                         />
@@ -106,15 +104,14 @@ function Polymer( { name } ) {
                 />
             </div>
             <div>
-                <ArrayField
+                <OptionalField
                     name={name}
                     label='Expression organism'
                     fieldName='expression_organism'
-                    maxItems={1}
                     tooltip='The biological species that was used to express (produce) the polymer. Note that this is based on the NCBI taxonomy'
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <CustomField
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             label='Expression organism'
                             tooltip='The biological species that was used to express (produce) the polymer. Note that this is based on the NCBI taxonomy'
                         />

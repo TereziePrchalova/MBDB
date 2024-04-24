@@ -5,18 +5,16 @@ import ArrayField from "../buildingBlocks/ArrayField";
 import EntityInvolved from "../buildingBlocks/EntityInvolved";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import UseDefault from "../buildingBlocks/UseDefault";
-import { useFormikContext } from "formik";
+import OptionalField from "../buildingBlocks/OptionalField";
 
 function HillCoefficient( { name } ) {
-
-    const { values } = useFormikContext()
 
     const unitOptions = [
         { value: 'unitless', label: 'unitless' },
     ];
 
     const fieldNameEntityInvolved = 'entities_involved'
-    UseDefault(values, `${name}.${fieldNameEntityInvolved}`, [{}] );
+    UseDefault(`${name}.${fieldNameEntityInvolved}`, [{}] );
 
   return (
     <>
@@ -59,16 +57,15 @@ function HillCoefficient( { name } ) {
             />
         </div>
         <div>
-            <ArrayField
+            <OptionalField
                 name={name}
                 label='Value error'
                 fieldName='value_error'
-                maxItems={1}
                 tooltip='The expected error of the result in terms of a 95 % confidence interval'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <div>
                         <ValueError
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             colorSchema='light'
                         />
                     </div>

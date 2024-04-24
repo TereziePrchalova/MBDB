@@ -1,6 +1,7 @@
 import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function Supplier( { name, colorSchema, tooltipHeader } ) {
 
@@ -21,15 +22,14 @@ function Supplier( { name, colorSchema, tooltipHeader } ) {
                     />
                 </div>
                 <div className="-mt-3 mr-3">
-                    <ArrayField
+                    <OptionalField
                         name={name}
                         label='Catalog number'
                         fieldName='catalog_number'
-                        maxItems={1}
                         tooltip='The catalog number or identifier of the item'
-                        renderChild={({ arrayName, index }) => (
+                        renderChild={({ optionalFieldName }) => (
                                 <CustomField
-                                    name={`${arrayName}.${index}`}
+                                    name={optionalFieldName}
                                     label='Catalog number'
                                     type='number'
                                     tooltip='The catalog number or identifier of the item'
@@ -44,11 +44,11 @@ function Supplier( { name, colorSchema, tooltipHeader } ) {
                         fieldName='futher_information'
                         tooltip='Further information e.g. batch number'
                         renderChild={({ arrayName, index }) => (
-                                <CustomField
-                                    name={`${arrayName}.${index}`}
-                                    label={`Futher information ${index + 1}`}
-                                    tooltip='Further information e.g. batch number'
-                                />
+                            <CustomField
+                                name={`${arrayName}.${index}`}
+                                label={`Futher information ${index + 1}`}
+                                tooltip='Further information e.g. batch number'
+                            />
                         )}
                     />
                 </div>

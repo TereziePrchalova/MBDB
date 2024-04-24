@@ -1,9 +1,9 @@
 import FormWrapper from '../../../buildingBlocks/FormWrapper';
 import OptionField from '../../../buildingBlocks/OptionField';
 import ByIntactMass from './ByIntactMass';
-import ArrayField from '../../../buildingBlocks/ArrayField';
 import BySequencing from './BySequencing';
 import ByFingerprinting from './ByFingerprinting';
+import OptionalField from '../../../buildingBlocks/OptionalField';
 
 function Identity( { name, colorSchema } ) {
 
@@ -14,13 +14,12 @@ function Identity( { name, colorSchema } ) {
 
   return (
     <>
-        <ArrayField
+        <OptionalField
             name={name}
             label='Identity'
             fieldName='identity'
-            maxItems={1}
             tooltip='Modifications (e.g. non-natural amino acids) of the polymer made during synthesis (e.g. translation) of the polymer'
-            renderChild={({ arrayName, index }) => (
+            renderChild={({ optionalFieldName }) => (
                 <FormWrapper
                     headline='Identity'
                     colorSchema={colorSchema}
@@ -28,7 +27,7 @@ function Identity( { name, colorSchema } ) {
                 >
                     <div>
                         <OptionField
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             fieldName='checked'
                             label='Checked'
                             options={checkedOptions}
@@ -36,45 +35,42 @@ function Identity( { name, colorSchema } ) {
                         />
                     </div>
                     <div>
-                        <ArrayField
-                            name={`${arrayName}.${index}`}
-                            maxItems={1}
+                        <OptionalField
+                            name={optionalFieldName}
                             label='By intact mass'
                             fieldName='by_intact_mass'
                             tooltip='How identity was determined by intact mass, if applicable'
-                            renderChild={({ arrayName, index }) => (
+                            renderChild={({ optionalFieldName }) => (
                                 <ByIntactMass
-                                    name={`${arrayName}.${index}`}
+                                    name={optionalFieldName}
                                     colorSchema={colorSchema === 'light' ? '' : 'light'}
                                 />
                             )}
                         />
                     </div>
                     <div>
-                        <ArrayField
-                            name={`${arrayName}.${index}`}
-                            maxItems={1}
+                        <OptionalField
+                            name={optionalFieldName}
                             label='By sequencing'
                             fieldName='by_sequencing'
                             tooltip='How identity was determined by intact mass, if applicable'
-                            renderChild={({ arrayName, index }) => (
+                            renderChild={({ optionalFieldName }) => (
                                 <BySequencing
-                                    name={`${arrayName}.${index}`}
+                                    name={optionalFieldName}
                                     colorSchema={colorSchema === 'light' ? '' : 'light'}
                                 />
                             )}
                         />
                     </div>
                     <div>
-                        <ArrayField
-                            name={`${arrayName}.${index}`}
-                            maxItems={1}
+                        <OptionalField
+                            name={optionalFieldName}
                             label='By fingerprinting'
                             fieldName='by_fingerprinting'
                             tooltip='How identity was determined by fingerprinting, if applicable'
-                            renderChild={({ arrayName, index }) => (
+                            renderChild={({ optionalFieldName }) => (
                                 <ByFingerprinting
-                                    name={`${arrayName}.${index}`}
+                                    name={optionalFieldName}
                                     colorSchema={colorSchema === 'light' ? '' : 'light'}
                                 />
                             )}

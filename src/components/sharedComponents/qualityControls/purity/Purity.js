@@ -1,8 +1,8 @@
 import FormWrapper from '../../../buildingBlocks/FormWrapper';
 import OptionField from '../../../buildingBlocks/OptionField';
-import ArrayField from '../../../buildingBlocks/ArrayField';
 import { getIn, useFormikContext } from 'formik';
 import PurityYes from './PurityYes';
+import OptionalField from '../../../buildingBlocks/OptionalField';
 
 function Purity( { name, colorSchema } ) {
 
@@ -15,14 +15,13 @@ function Purity( { name, colorSchema } ) {
 
   return (
     <>
-        <ArrayField
+        <OptionalField
             name={name}
             label="Purity"
             fieldName='purity'
             initialValue={{ type: 'Yes'}}
-            maxItems={1}
-            renderChild={({ arrayName, index }) => {
-                const actualValue = getIn(values, `${arrayName}.${index}`)
+            renderChild={({ optionalFieldName }) => {
+                const actualValue = getIn(values, optionalFieldName)
                 if (!actualValue) {return null}        
                 return(
                 <FormWrapper
@@ -32,7 +31,7 @@ function Purity( { name, colorSchema } ) {
                     <div className="flex">
                         <div className="mr-3">
                             <OptionField
-                                name={`${arrayName}.${index}`}
+                                name={optionalFieldName}
                                 options={typeOptions}
                                 label='type'
                                 fieldName='type'
@@ -42,7 +41,7 @@ function Purity( { name, colorSchema } ) {
                         <div>
                             {actualValue.type === 'Yes' && (
                                 <PurityYes
-                                    name={`${arrayName}.${index}`}
+                                    name={optionalFieldName}
                                 />
                             )}
                             {actualValue.type === 'No' && (

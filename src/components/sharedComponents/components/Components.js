@@ -12,7 +12,7 @@ function Components( { name, colorSchema, molecularWeightColorSchema, colorSchem
 
     const componentName = `${name}.components[0].type`
    
-    UseDefault(values, componentName, 'Polymer')
+    UseDefault(componentName, 'Polymer')
 
     const componentOptions = [
         { value: 'Polymer', label: 'Polymer' },

@@ -7,12 +7,12 @@ import OptionField from "../buildingBlocks/OptionField";
 
 function Details({ name, colorSchema, sizeColorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, colorSchemaHeadline }) {
 
-    const detailsTypeOptions = [
-        { value: 'Micelle', label: 'Micelle' },
-        { value: 'Liposome', label: 'Liposome' },
-        { value: 'Nanodisc', label: 'Nanodisc' },
-        { value: 'Sheet', label: 'Sheet' },
-    ];
+  const detailsTypeOptions = [
+    { value: 'Micelle', label: 'Micelle' },
+    { value: 'Liposome', label: 'Liposome' },
+    { value: 'Nanodisc', label: 'Nanodisc' },
+    { value: 'Sheet', label: 'Sheet' },
+  ];
 
   return (
     <>

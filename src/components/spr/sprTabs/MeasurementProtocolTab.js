@@ -1,16 +1,13 @@
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import ArrayField from "../../buildingBlocks/ArrayField";
 import UseDefault from "../../buildingBlocks/UseDefault";
-import { useFormikContext } from 'formik';
 import MeasurementProtocol from "../measurementProtocol/MeasurementProtocol";
 
 function MeasurementProtocolTab( { name } ) {
 
-    const { values } = useFormikContext();
-
     const fieldName = 'measurement_protocol'
 
-    UseDefault(values, `${name}.${fieldName}`, [{}] );
+    UseDefault(`${name}.${fieldName}`, [{}] );
 
     return (
       <>

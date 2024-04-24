@@ -1,8 +1,8 @@
 import CustomField from "../../buildingBlocks/CustomField";
 import OptionField from "../../buildingBlocks/OptionField";
-import ArrayField from "../../buildingBlocks/ArrayField";
 import Supplier from "../sharedComponents/Supplier";
 import SurfaceModification from "./SurfaceModification";
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function Plates( { name } ) {
 
@@ -41,15 +41,14 @@ function Plates( { name } ) {
                 />
             </div>
             <div className="-mt-3">
-                <ArrayField
+                <OptionalField
                     name={name}
                     label='Sealing'
                     fieldName='sealing'
-                    maxItems={1}
                     tooltip='The type of sealing used to seal the top of the plate'
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <CustomField
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             label='Sealing'
                             tooltip='The type of sealing used to seal the top of the plate'
                         />
@@ -65,15 +64,14 @@ function Plates( { name } ) {
             />
         </div>
         <div>
-            <ArrayField
+            <OptionalField
                 name={name}
                 label='Surface modification'
                 fieldName='surface_modification'
-                maxItems={1}
                 tooltip='The type of sealing used to seal the top of the plate'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <SurfaceModification
-                        name={`${arrayName}.${index}`}
+                        name={optionalFieldName}
                         colorSchema='light'
                     />
                 )}

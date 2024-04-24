@@ -1,9 +1,9 @@
 import CustomField from "../../buildingBlocks/CustomField";
-import ArrayField from "../../buildingBlocks/ArrayField";
 import OptionField from "../../buildingBlocks/OptionField";
 import Supplier from "../sharedComponents/Supplier";
 import HydrationTime from "./HydrationTime";
 import LigandInformation from "../../sharedComponents/LigandInformation";
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function Sensors( { name } ) {
 
@@ -25,15 +25,14 @@ function Sensors( { name } ) {
         </div>
         <div className="flex -mt-3 mb-3">
             <div className="mr-3">
-                <ArrayField
+                <OptionalField
                     name={name}
                     label='Surface properties'
                     fieldName='surface_properties'
-                    maxItems={1}
                     tooltip='The type of surface properties the sensor has, e.g. Protein A'
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <CustomField
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             label='Surface properties'
                             tooltip='The type of surface properties the sensor has, e.g. Protein A'
                         />
@@ -41,15 +40,14 @@ function Sensors( { name } ) {
                 />
             </div>
             <div className="mr-3">
-                <ArrayField
+                <OptionalField
                     name={name}
                     label='Sensor id'
                     fieldName='sensor_id'
-                    maxItems={1}
                     tooltip='The id of the sensor as given by the supplier'
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <CustomField
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             label='Sensor id'
                             tooltip='The id of the sensor as given by the supplier'
                         />
@@ -57,15 +55,14 @@ function Sensors( { name } ) {
                 />
             </div>
             <div>
-                <ArrayField
+                <OptionalField
                     name={name}
                     label='Previously used'
                     fieldName='previously_used'
-                    maxItems={1}
                     tooltip='Whether or not the sensor was used for previous measurements'
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <OptionField
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             label='Previously used'
                             options={previouslyUsedOptions}
                             tooltip='Whether or not the sensor was used for previous measurements'
@@ -75,30 +72,28 @@ function Sensors( { name } ) {
             </div>
         </div>
         <div className="mb-3">
-            <ArrayField
+            <OptionalField
                 name={name}
                 label='Hydration time'
                 fieldName='hydration_time'
-                maxItems={1}
                 tooltip='How long the sensor was hydrated before being employed'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <HydrationTime
-                        name={`${arrayName}.${index}`}
+                        name={optionalFieldName}
                         colorSchema='light'
                     />
                 )}
             />
         </div>
         <div className="mb-3">
-            <ArrayField
+            <OptionalField
                 name={name}
                 label='Ligand information'
                 fieldName='ligand_information'
-                maxItems={1}
                 tooltip='Information about the ligand and how it was immobilized'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <LigandInformation
-                        name={`${arrayName}.${index}`}
+                        name={optionalFieldName}
                         colorSchema='light'
                     />
                 )}

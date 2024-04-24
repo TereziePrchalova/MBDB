@@ -2,7 +2,7 @@ import FormWrapper from '../../buildingBlocks/FormWrapper';
 import OptionField from '../../buildingBlocks/OptionField';
 import CustomField from '../../buildingBlocks/CustomField';
 import Temperature from '../../sharedComponents/Temperature';
-import ArrayField from '../../buildingBlocks/ArrayField';
+import OptionalField from '../../buildingBlocks/OptionalField';
 
 function MethodSpecificParameters( { name } ) {
 
@@ -83,16 +83,15 @@ function MethodSpecificParameters( { name } ) {
                 </div>
             </div>
             <div>
-                <ArrayField
+                <OptionalField
                     name={name}
                     label='Temperature'
                     fieldName='temperature'
-                    maxItems={1}
                     tooltip='The temperature of the sample chamber while the measurement was performed'
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <div>
                             <Temperature 
-                                name={`${arrayName}.${index}`}
+                                name={optionalFieldName}
                                 colorSchema='light'
                                 tooltipHeader='The temperature of the sample chamber while the measurement was performed'
                             />

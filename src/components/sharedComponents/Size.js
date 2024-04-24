@@ -1,23 +1,23 @@
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionField from "../buildingBlocks/OptionField";
-import ArrayField from "../buildingBlocks/ArrayField";
+import OptionalField from "../buildingBlocks/OptionalField";
 
 function Size( { name, colorSchema } ) {
 
-    const typeOptions = [
-        { value: 'Radius', label: 'Radius' },
-        { value: 'Diameter', label: 'Diameter' },
-        { value: 'Path length', label: 'Path length' },
-    ];
+  const typeOptions = [
+    { value: 'Radius', label: 'Radius' },
+    { value: 'Diameter', label: 'Diameter' },
+    { value: 'Path length', label: 'Path length' },
+  ];
 
-    const unitOptions = [
-        { value: 'nm', label: 'nm' },
-        { value: 'μm', label: 'μm' },
-        { value: 'mm', label: 'mm' },
-        { value: 'cm', label: 'cm' },
-        { value: 'm', label: 'm' },
-    ];
+  const unitOptions = [
+    { value: 'nm', label: 'nm' },
+    { value: 'μm', label: 'μm' },
+    { value: 'mm', label: 'mm' },
+    { value: 'cm', label: 'cm' },
+    { value: 'm', label: 'm' },
+  ];
 
   return (
     <>
@@ -56,15 +56,14 @@ function Size( { name, colorSchema } ) {
         </div>
         <div className="flex -mt-3">
           <div className="mr-3">
-              <ArrayField
+              <OptionalField
                   name={name}
                   label='Median'
                   fieldName='median'
-                  maxItems={1}
                   tooltip='The median of the size'
-                  renderChild={({ arrayName, index }) => (
+                  renderChild={({ optionalFieldName }) => (
                       <CustomField
-                        name={`${arrayName}.${index}`}
+                          name={optionalFieldName}
                           label='Median'
                           tooltip='The median of the size'
                       />
@@ -72,15 +71,14 @@ function Size( { name, colorSchema } ) {
               />
           </div>
           <div className="mr-3">
-              <ArrayField
+              <OptionalField
                   name={name}
                   label='Upper'
                   fieldName='upper'
-                  maxItems={1}
                   tooltip='The upper bound of the size'
-                  renderChild={({ arrayName, index }) => (
+                  renderChild={({ optionalFieldName }) => (
                       <CustomField
-                        name={`${arrayName}.${index}`}
+                        name={optionalFieldName}
                           label='Upper'
                           tooltip='The upper bound of the size'
                       />
@@ -88,15 +86,14 @@ function Size( { name, colorSchema } ) {
               />
           </div>
           <div>
-              <ArrayField
+              <OptionalField
                   name={name}
                   label='Lower'
                   fieldName='lower'
-                  maxItems={1}
                   tooltip='The lower bound of the size'
-                  renderChild={({ arrayName, index }) => (
+                  renderChild={({ optionalFieldName }) => (
                       <CustomField
-                        name={`${arrayName}.${index}`}
+                        name={optionalFieldName}
                           label='Lower'
                           tooltip='The lower bound of the size'
                       />

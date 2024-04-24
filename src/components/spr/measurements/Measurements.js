@@ -5,12 +5,13 @@ import Sample from "./Sample";
 import ArrayField from "../../buildingBlocks/ArrayField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import UseDefault from "../../buildingBlocks/UseDefault";
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function Measurements( { name } ) {
 
     const { values } = useFormikContext();
 
-    UseDefault(values, `${name}.sample`, [{}])
+    UseDefault(`${name}.sample`, [{}])
 
     const measurementPotionValue = getIn(values, `metadata.method_specific_parameters.measurement_positions`)
 
@@ -46,14 +47,13 @@ function Measurements( { name } ) {
                 />
             </div>
             <div className="-mt-3">
-                <ArrayField
+                <OptionalField
                     name={name}
                     fieldName='reference_measurement_position'
                     label='Reference measurement positon'
-                    maxItems={1}
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <OptionField
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             label='Reference measurement position'
                             options={measurementPotionOptions}
                         />

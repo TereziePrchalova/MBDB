@@ -3,6 +3,7 @@ import Duration from './Duration'
 import ArrayField from "./ArrayField";
 import FormWrapper from "./FormWrapper";
 import StoragePreparation from "./StoragePreparation";
+import OptionalField from './OptionalField';
 
 function Storage( { name, colorSchema } ) {
 
@@ -16,15 +17,14 @@ function Storage( { name, colorSchema } ) {
             />
         </div>
         <div>
-            <ArrayField
+            <OptionalField
                 name={name}
                 label='Duration'
                 fieldName='duration'
-                maxItems={1}
                 tooltip='Length of time the sample was stored before being measured'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <Duration
-                        name={`${arrayName}.${index}`}
+                        name={optionalFieldName}
                         colorSchema={colorSchema}
                         tooltipHeader='Length of time the sample was stored before being measured'
                     />

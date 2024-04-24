@@ -11,7 +11,7 @@ function Solvent( { name } ) {
 
     const componentName = `${name}.solvent[0].type`
    
-    UseDefault(values, componentName, 'Chemical')
+    UseDefault(componentName, 'Chemical')
 
     const entitiesOfInterestTabOptions = [
         { value: 'Chemical', label: 'Chemical' },

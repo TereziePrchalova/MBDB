@@ -2,15 +2,12 @@ import FormWrapper from "../../buildingBlocks/FormWrapper";
 import ArrayField from "../../buildingBlocks/ArrayField";
 import Measurement from "../measurement/Measurement";
 import UseDefault from "../../buildingBlocks/UseDefault";
-import { useFormikContext } from "formik";
 
 function MeasurementTab( { name } ) {
 
-    const { values } = useFormikContext();
-
     const fieldName = 'measurements'
 
-    UseDefault(values, `${name}.${fieldName}`, [{}] );
+    UseDefault(`${name}.${fieldName}`, [{}] );
 
     return (
       <>

@@ -6,6 +6,7 @@ import Protocol from "../../buildingBlocks/Protocol";
 import Storage from "../../buildingBlocks/Storage";
 import Concentration from "../../sharedComponents/Concentration";
 import OptionField from "../../buildingBlocks/OptionField";
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
 
@@ -72,19 +73,18 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
             />
         </div>
         <div>
-            <ArrayField
+            <OptionalField
                 name={name}
                 label='Storage'
                 fieldName='storage'
-                maxItems={1}
                 tooltip='The specific steps that were taken to prepare the samples for storage (e.g. flash freezing in liquid nitrogen), if applicable'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <FormWrapper
-                        headline={`Storage ${index + 1}`}
+                        headline='Storage'
                         tooltipHeader='The specific steps that were taken to prepare the samples for storage (e.g. flash freezing in liquid nitrogen), if applicable'
                     >
                         <Storage
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             colorSchema='light'
                         />
                     </FormWrapper>

@@ -47,14 +47,11 @@ function OptionField({ label, name, fieldName, options, width, tooltip}) {
           </Select>
         </FormControl>
       </Box>
-      {tooltip ?
+      {tooltip &&
         <div className='ml-1 -mt-1'>
           <Tooltip title={tooltip} arrow>
             <HelpOutlineIcon fontSize="smaller"/>
           </Tooltip>
-        </div>
-        :
-        <div className='w-5'>
         </div>
       }
     </div>

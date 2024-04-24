@@ -6,8 +6,8 @@ import Storage from "../../buildingBlocks/Storage";
 import Details from "../../sharedComponents/Details";
 import Concentration from "../../sharedComponents/Concentration";
 import OptionField from "../../buildingBlocks/OptionField";
-import { useFormikContext } from "formik";
 import UseDefault from "../../buildingBlocks/UseDefault";
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function ComplexSubstanceOfChemicalOrigin( { name } ) {
 
@@ -15,11 +15,9 @@ function ComplexSubstanceOfChemicalOrigin( { name } ) {
         { value: 'lipid_assembly', label: 'Lipid assembly' },
       ];
 
-      const { values } = useFormikContext();
-
       const fieldName = 'preparation_protocol'
 
-      UseDefault(values, `${name}.${fieldName}`, [{}] );
+      UseDefault(`${name}.${fieldName}`, [{}] );
 
   return (
     <>
@@ -86,19 +84,18 @@ function ComplexSubstanceOfChemicalOrigin( { name } ) {
             </div>
         </div>
         <div className="mb-3">
-            <ArrayField
+            <OptionalField
                 name={name}
                 label='Storage'
                 fieldName='storage'
-                maxItems={1}
                 tooltip='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <FormWrapper
-                        headline={`Storage ${index + 1}`}
+                        headline='Storage'
                         tooltipHeader='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
                     >
                         <Storage
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             colorSchema='light'
                         />
                     </FormWrapper>

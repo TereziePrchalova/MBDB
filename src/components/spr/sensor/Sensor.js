@@ -1,8 +1,8 @@
 import Supplier from "../../bli/sharedComponents/Supplier";
-import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import OptionField from "../../buildingBlocks/OptionField";
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function Sensor( { name } ) {
 
@@ -24,15 +24,14 @@ function Sensor( { name } ) {
         >
             <div className="flex -mt-3 mb-3">
                 <div className="mr-3">
-                    <ArrayField
+                    <OptionalField
                         name={name}
                         fieldName='id'
                         label='Id'
-                        maxItems={1}
                         tooltip='The id of the sensor as given by the supplier'
-                        renderChild={({ arrayName, index }) => (
+                        renderChild={({ optionalFieldName }) => (
                             <CustomField
-                                name={`${arrayName}.${index}`}
+                                name={optionalFieldName}
                                 label='Id'
                                 tooltip='The id of the sensor as given by the supplier'
                             />
@@ -40,15 +39,14 @@ function Sensor( { name } ) {
                     />
                 </div>
                 <div className="mr-3">
-                    <ArrayField
+                    <OptionalField
                         name={name}
                         fieldName='surface_properties'
                         label='Surface properties'
-                        maxItems={1}
                         tooltip='The type surface properties the sensor has e.g. Protein A'
-                        renderChild={({ arrayName, index }) => (
+                        renderChild={({ optionalFieldName }) => (
                             <CustomField
-                                name={`${arrayName}.${index}`}
+                                name={optionalFieldName}
                                 label='Id'
                                 tooltip='The type surface properties the sensor has e.g. Protein A'
                             />
@@ -56,15 +54,14 @@ function Sensor( { name } ) {
                     />
                 </div>
                 <div className="mr-3">
-                    <ArrayField
+                    <OptionalField
                         name={name}
                         fieldName='sensor_initialization'
                         label='Sensor initialization'
-                        maxItems={1}
                         tooltip='How the initialization of the sensor was performed'
-                        renderChild={({ arrayName, index }) => (
+                        renderChild={({ optionalFieldName }) => (
                             <OptionField
-                                name={`${arrayName}.${index}`}
+                                name={optionalFieldName}
                                 label='Sensor initialization'
                                 tooltip='How the initialization of the sensor was performed'
                                 options={sensorInitializationOptions}
@@ -73,15 +70,14 @@ function Sensor( { name } ) {
                     />
                 </div>
                 <div>
-                    <ArrayField
+                    <OptionalField
                         name={name}
                         fieldName='previously_used'
                         label='Previously used'
-                        maxItems={1}
                         tooltip='Whether or not the sensor was used in previous measurements'
-                        renderChild={({ arrayName, index }) => (
+                        renderChild={({ optionalFieldName }) => (
                             <OptionField
-                                name={`${arrayName}.${index}`}
+                                name={optionalFieldName}
                                 label='Previously used'
                                 tooltip='Whether or not the sensor was used in previous measurements'
                                 options={previouslyUsedOptions}

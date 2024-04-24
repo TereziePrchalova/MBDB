@@ -2,15 +2,12 @@ import FormWrapper from "../buildingBlocks/FormWrapper";
 import ArrayField from "../buildingBlocks/ArrayField";
 import ChemicalEnvironment from "../chemicalEnvironment/ChemicalEnvironment";
 import UseDefault from "../buildingBlocks/UseDefault";
-import { useFormikContext } from 'formik';
 
 function ChemicalEnvironmentTab( { name } ) {
 
-    const { values } = useFormikContext();
-
     const fieldName = 'chemical_environments'
 
-    UseDefault(values, `${name}.${fieldName}`, [{}] );
+    UseDefault(`${name}.${fieldName}`, [{}] );
 
     return (
       <>

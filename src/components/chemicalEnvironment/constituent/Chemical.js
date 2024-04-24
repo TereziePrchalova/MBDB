@@ -1,5 +1,6 @@
 import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
+import OptionalField from "../../buildingBlocks/OptionalField";
 import Concentration from "../../sharedComponents/Concentration";
 import MolecularWeight from "../../sharedComponents/MolecularWeight";
 
@@ -60,16 +61,15 @@ function Chemical( { name } ) {
                 />
             </div>
             <div>
-                <ArrayField
+                <OptionalField
                     name={name}
                     label='Isotopic labeling'
                     fieldName='isotopic_labeling'
-                    maxItems={1}
                     tooltip='If the isotopic composition of the chemical was altered from the naturally occurring abundances, it can be specified here (e.g. 15N, 13C)'
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <CustomField
-                            name={`${arrayName}.${index}`}
-                            label={`Isotopic labeling ${index + 1}`}
+                            name={optionalFieldName}
+                            label='Isotopic labeling'
                             width='w-[15rem]'
                             tooltip='If the isotopic composition of the chemical was altered from the naturally occurring abundances, it can be specified here (e.g. 15N, 13C)'
                         />

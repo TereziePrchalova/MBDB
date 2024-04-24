@@ -1,6 +1,6 @@
 import CustomField from "../../buildingBlocks/CustomField";
-import ArrayField from "../../buildingBlocks/ArrayField";
 import LigandInformation from "../../sharedComponents/LigandInformation";
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function MeasurementPositions( { name } ) {
 
@@ -25,15 +25,14 @@ function MeasurementPositions( { name } ) {
                 />
             </div>
             <div className="-mt-3 mr-5">
-                <ArrayField
+                <OptionalField
                     name={name}
                     fieldName='position'
                     label='Position'
-                    maxItems={1}
                     tooltip='Position of the measurement spot within the flow cell'
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <CustomField
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             label='Position'
                             tooltip='Position of the measurement spot within the flow cell'
                         />
@@ -42,15 +41,14 @@ function MeasurementPositions( { name } ) {
             </div>
         </div>
         <div>
-            <ArrayField
+            <OptionalField
                 name={name}
                 label='Ligand information'
                 fieldName='ligand_information'
-                maxItems={1}
                 tooltip='Information about the ligand and how it was immobilized'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <LigandInformation
-                        name={`${arrayName}.${index}`}
+                        name={optionalFieldName}
                         colorSchema='light'
                     />
                 )}

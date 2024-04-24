@@ -38,10 +38,10 @@ function Sample( { name, tooltip, colorSchema } ) {
     }
 
     const fieldNameTarget = 'targets'
-    UseDefault(values, `${name}.${fieldNameTarget}`, [{}] );
+    UseDefault(`${name}.${fieldNameTarget}`, [{}] );
 
     const fieldNameLigand = 'ligands'
-    UseDefault(values, `${name}.${fieldNameLigand}`, [{}] );
+    UseDefault(`${name}.${fieldNameLigand}`, [{}] );
 
   return (
     <>

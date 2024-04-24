@@ -1,16 +1,13 @@
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import ArrayField from "../../buildingBlocks/ArrayField";
 import UseDefault from "../../buildingBlocks/UseDefault";
-import { useFormikContext } from 'formik';
 import MeasurementPositions from "../measurementPositions/MeasurementPositions";
 
 function MeasurementPositionsTab( { name } ) {
 
-    const { values } = useFormikContext();
-
     const fieldName = 'measurement_positions'
 
-    UseDefault(values, `${name}.${fieldName}`, [{}] );
+    UseDefault(`${name}.${fieldName}`, [{}] );
 
     return (
       <>

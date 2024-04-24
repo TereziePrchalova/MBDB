@@ -17,7 +17,7 @@ function EntitiesOfInterestTab( { name } ) {
 
     const componentName = `${name}.entities_of_interest[0].type`
    
-    UseDefault(values, componentName, 'Polymer')
+    UseDefault(componentName, 'Polymer')
 
     const entitiesOfInterestTabOptions = [
         { value: 'Polymer', label: 'Polymer' },

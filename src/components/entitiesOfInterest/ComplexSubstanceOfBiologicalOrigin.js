@@ -11,7 +11,7 @@ function ComplexSubstanceOfBiologicalOrigin( { name } ) {
 
     const componentName = `${name}.derived_from`
    
-    UseDefault(values, componentName, 'Body fluid')
+    UseDefault(componentName, 'Body fluid')
 
     const actualValue = getIn(values, componentName)
 

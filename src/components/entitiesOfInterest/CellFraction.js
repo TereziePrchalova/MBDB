@@ -4,6 +4,7 @@ import FormWrapper from "../buildingBlocks/FormWrapper";
 import Protocol from "../buildingBlocks/Protocol";
 import Storage from "../buildingBlocks/Storage";
 import OptionField from "../buildingBlocks/OptionField";
+import OptionalField from "../buildingBlocks/OptionalField";
 
 function CellFraction( { name } ) {
 
@@ -62,15 +63,14 @@ function CellFraction( { name } ) {
             </div>
             <div className="flex -mt-3 mb-3">
                 <div className="mr-3">
-                    <ArrayField
+                    <OptionalField
                         name={name}
                         label='Organ'
                         fieldName='organ'
-                        maxItems={1}
                         tooltip='The organ the cell fraction was derived from (e.g. heart)'
-                        renderChild={({ arrayName, index }) => (
+                        renderChild={({ optionalFieldName }) => (
                             <CustomField
-                                name={`${arrayName}.${index}`}
+                                name={optionalFieldName}
                                 label='Organ'
                                 tooltip='The organ the cell fraction was derived from (e.g. heart)'
                             />
@@ -78,15 +78,14 @@ function CellFraction( { name } ) {
                     />
                 </div>
                 <div className="mr-3">
-                    <ArrayField
+                    <OptionalField
                         name={name}
                         label='Tissue'
                         fieldName='tissue'
-                        maxItems={1}
                         tooltip='The tissue type the cell fraction was derived from'
-                        renderChild={({ arrayName, index }) => (
+                        renderChild={({ optionalFieldName }) => (
                             <CustomField
-                                name={`${arrayName}.${index}`}
+                                name={optionalFieldName}
                                 label='Tissue'
                                 tooltip='The tissue type the cell fraction was derived from'
                             />
@@ -94,15 +93,14 @@ function CellFraction( { name } ) {
                     />
                 </div>
                 <div>
-                    <ArrayField
+                    <OptionalField
                         name={name}
                         label='Cell type'
                         fieldName='cell_type'
-                        maxItems={1}
                         tooltip='The cell type the cell fraction was derived from'
-                        renderChild={({ arrayName, index }) => (
+                        renderChild={({ optionalFieldName }) => (
                             <CustomField
-                                name={`${arrayName}.${index}`}
+                                name={optionalFieldName}
                                 label='Cell type'
                                 tooltip='The cell type the cell fraction was derived from'
                             />
@@ -149,20 +147,19 @@ function CellFraction( { name } ) {
             </div>
         </div>
         <div>
-            <ArrayField
+            <OptionalField
                 name={name}
                 label='Storage'
                 fieldName='storage'
-                maxItems={1}
                 tooltip='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <FormWrapper
                         colorSchema='light'
-                        headline={`Storage ${index + 1}`}
+                        headline='Storage'
                         tooltipHeader='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
                     >
                         <Storage
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                         />
                     </FormWrapper>
                 )}

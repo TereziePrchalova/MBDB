@@ -4,8 +4,8 @@ import FormWrapper from "../buildingBlocks/FormWrapper";
 import Protocol from "../buildingBlocks/Protocol";
 import Storage from "../buildingBlocks/Storage";
 import OptionField from "../buildingBlocks/OptionField";
-import { useFormikContext } from "formik";
 import UseDefault from "../buildingBlocks/UseDefault";
+import OptionalField from "../buildingBlocks/OptionalField";
 
 function ComplexSubstanceOfIndustrialOrigin( { name } ) {
 
@@ -15,11 +15,9 @@ function ComplexSubstanceOfIndustrialOrigin( { name } ) {
         { value: 'Whey', label: 'Whey' },
       ];
 
-      const { values } = useFormikContext();
-
       const fieldName = 'preparation_protocol'
 
-      UseDefault(values, `${name}.${fieldName}`, [{}] );
+      UseDefault(`${name}.${fieldName}`, [{}] );
 
   return (
     <>
@@ -82,20 +80,19 @@ function ComplexSubstanceOfIndustrialOrigin( { name } ) {
             </div>
         </div>
         <div>
-            <ArrayField
+            <OptionalField
                 name={name}
                 label='Storage'
                 fieldName='storage'
-                maxItems={1}
                 tooltip='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <FormWrapper
                         colorSchema='light'
-                        headline={`Storage ${index + 1}`}
+                        headline='Storage'
                         tooltipHeader='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
                     >
                         <Storage
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                         />
                     </FormWrapper>
                 )}

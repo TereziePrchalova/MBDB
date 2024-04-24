@@ -2,16 +2,13 @@ import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Protocol from "../../buildingBlocks/Protocol";
-import { useFormikContext } from "formik";
 import UseDefault from "../../buildingBlocks/UseDefault";
 
 function SurfaceModification( { name, colorSchema } ) {
 
-    const { values } = useFormikContext();
-
     const fieldName = 'protocol'
 
-    UseDefault(values, `${name}.${fieldName}`, [{}] );
+    UseDefault(`${name}.${fieldName}`, [{}] );
 
   return (
     <>

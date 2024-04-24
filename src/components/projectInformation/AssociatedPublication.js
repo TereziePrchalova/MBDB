@@ -4,7 +4,7 @@ import Article from "./Article";
 import Book from "./Book";
 import Thesis from "./Thesis";
 import { getIn, useFormikContext } from "formik";
-import ArrayField from "../buildingBlocks/ArrayField";
+import OptionalField from "../buildingBlocks/OptionalField";
 
 function AssociatedPublication( { name } ) {
     
@@ -19,16 +19,15 @@ function AssociatedPublication( { name } ) {
   return (
     <>
         <div>
-            <ArrayField
+            <OptionalField
                 name={name}
                 label="Associated publication"
                 fieldName='associated_publication'
                 initialValue={{ type: 'Article'}}
-                maxItems={1}
                 tooltip='If the data in this record is described in published literature (article, journal, thesis), information about the literature can be specified here'
-                renderChild={({ arrayName, index }) => {
-                    const actualValue = getIn(values, `${arrayName}.${index}`)
-                    if (!actualValue) {return null}        
+                renderChild={({ optionalFieldName }) => {
+                    const actualValue = getIn(values, optionalFieldName)
+                    if (!actualValue) {return null}
                     return(
                     <FormWrapper
                         headline='Associated publication'
@@ -37,7 +36,7 @@ function AssociatedPublication( { name } ) {
                         <div className="flex">
                             <div className="mr-3">
                                 <OptionField
-                                    name={`${arrayName}.${index}`}
+                                    name={optionalFieldName}
                                     options={associatedPublicationOptions}
                                     label='type'
                                     fieldName='type'
@@ -48,17 +47,17 @@ function AssociatedPublication( { name } ) {
                             <div>
                                 {actualValue.type === 'Article' && (
                                     <Article
-                                        name={`${arrayName}.${index}`}
+                                        name={optionalFieldName}
                                     />
                                 )}
                                 {actualValue.type === 'Book' && (
                                     <Book
-                                        name={`${arrayName}.${index}`}
+                                        name={optionalFieldName}
                                     />
                                 )}
                                 {actualValue.type === 'Thesis' && (
                                     <Thesis
-                                        name={`${arrayName}.${index}`}
+                                        name={optionalFieldName}
                                     />
                                 )}
                             </div>

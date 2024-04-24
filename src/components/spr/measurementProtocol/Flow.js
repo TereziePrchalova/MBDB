@@ -1,7 +1,7 @@
 import CustomField from "../../buildingBlocks/CustomField";
 import OptionField from "../../buildingBlocks/OptionField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
-import ArrayField from "../../buildingBlocks/ArrayField";
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function Flow( { colorSchema, name } ) {
 
@@ -41,15 +41,14 @@ function Flow( { colorSchema, name } ) {
                     />
                 </div>
                 <div className="-mt-3">
-                    <ArrayField
+                    <OptionalField
                         name={name}
                         label='Direction'
                         fieldName='direction'
-                        maxItems={1}
                         tooltip='Direction of the flow'
-                        renderChild={({ arrayName, index }) => (
+                        renderChild={({ optionalFieldName }) => (
                             <OptionField
-                                name={`${arrayName}.${index}`}
+                                name={optionalFieldName}
                                 label='Direction'
                                 tooltip='Direction of the flow'
                                 options={directionOptions}

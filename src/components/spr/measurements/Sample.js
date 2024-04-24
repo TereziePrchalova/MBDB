@@ -8,12 +8,13 @@ import { getIn } from "formik";
 import Temperature from "../../sharedComponents/Temperature";
 import Analytes from "../../sharedComponents/Analytes";
 import UseDefault from "../../buildingBlocks/UseDefault";
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function Sample( { name } ) {
 
     const { values } = useFormikContext();
 
-    UseDefault(values, `${name}.analytes`, [{}])
+    UseDefault(`${name}.analytes`, [{}])
 
     const measurementStepValue = getIn(values, `metadata.method_specific_parameters.measurement_protocol`)
 
@@ -62,15 +63,14 @@ function Sample( { name } ) {
                 />
             </div>
             <div className="-mt-3">
-                <ArrayField
+                <OptionalField
                     name={name}
-                    maxItems={1}
                     label='Position'
                     fieldName='position'
                     tooltip='Position of the sample within the sample holder'
-                    renderChild={({ arrayName, index }) => (
+                    renderChild={({ optionalFieldName }) => (
                         <CustomField
-                            name={`${arrayName}.${index}`}
+                            name={optionalFieldName}
                             label='Position'
                             tooltip='Position of the sample within the sample holder'
                         />
@@ -79,15 +79,14 @@ function Sample( { name } ) {
             </div>
         </div>
         <div>
-            <ArrayField
+            <OptionalField
                 name={name}
-                maxItems={1}
                 label='Temperature'
                 fieldName='Temperature'
                 tooltip='Temperature of the sample while being measured'
-                renderChild={({ arrayName, index }) => (
+                renderChild={({ optionalFieldName }) => (
                     <Temperature
-                        name={`${arrayName}.${index}`}
+                        name={optionalFieldName}
                         tooltipHeader='Temperature of the sample while being measured'
                     />
                 )}
