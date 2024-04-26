@@ -9,21 +9,19 @@ import { Tooltip } from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 function OptionField({ label, name, fieldName, options, width, tooltip}) {
-  const nameOptionField = `${name}.${fieldName}`;
+
+  const nameOptionField = fieldName !== undefined ? `${name}.${fieldName}` : `${name}`
   const [field, meta] = useField(nameOptionField);
 
   return (
     <div className='flex'>
       <Box className={`${width} rounded-lg relative`} sx={{ minWidth: 195 }}>
         <FormControl fullWidth>
-          <InputLabel id={nameOptionField} htmlFor={nameOptionField}>
+          <InputLabel>
             {label}
           </InputLabel>
           <Select
             {...field}
-            labelId={nameOptionField}
-            id={nameOptionField}
-            name={nameOptionField}
             value={field.value || ''}
             label={label}
             size="small"

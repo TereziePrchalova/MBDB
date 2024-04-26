@@ -2,15 +2,11 @@ import TextField from '@mui/material/TextField';
 import { useField } from 'formik';
 import Tooltip from '@mui/material/Tooltip';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import InputAdornment from '@mui/material/InputAdornment';
 
-function CustomField( {label, name, fieldName, type, index, tooltip, width, multiline, unit}) {
-
-  const nameTextField = index !== undefined
-  ? (fieldName !== undefined ? `${name}.${fieldName}[${index}]` : `${name}[${index}]`)
-  : (fieldName !== undefined ? `${name}.${fieldName}` : `${name}`);
+function CustomField( { label, name, fieldName, type, tooltip, width, multiline }) {
   
-    const [field, meta] = useField(nameTextField);
+  const nameCustomField = fieldName !== undefined ? `${name}.${fieldName}` : `${name}`
+  const [field, meta] = useField(nameCustomField);
 
   return (
     <>
@@ -30,15 +26,10 @@ function CustomField( {label, name, fieldName, type, index, tooltip, width, mult
                   borderColor: '#666666',
                 },
               }}
-              id={nameTextField}
               label={label}
-              name={nameTextField}
               type={type}
               value={field.value || ''}
               disabled={false}
-              InputProps={{
-                endAdornment: <InputAdornment position="end">{unit}</InputAdornment>
-              }}
               variant="outlined"
               {...(multiline && { multiline: true })}
               size="small"

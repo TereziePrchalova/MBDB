@@ -3,6 +3,8 @@ import OptionField from "../buildingBlocks/OptionField";
 import ArrayField from "../buildingBlocks/ArrayField";
 import DataProcessingStep from "../sharedComponents/DataProcessingStep";
 import FormWrapper from "../buildingBlocks/FormWrapper";
+import OptionalField from "../buildingBlocks/OptionalField";
+
 
 function RawDataFile( { name } ) {
 
@@ -39,15 +41,14 @@ function RawDataFile( { name } ) {
           />
         </div>
         <div className="mb-3">
-          <ArrayField
+          <OptionalField
               name={name}
               label='Context'
               fieldName='context'
-              maxItems={1}
               tooltip='The context the file should be understood within (e.g. raw measurement data)'
-              renderChild={({ arrayName, index }) => (
+              renderChild={({ optionalFieldName }) => (
                 <OptionField
-                  name={`${arrayName}.${index}`}
+                  name={optionalFieldName}
                   options={contextOptions}
                   label='Context'
                   width='w-[25rem]'
@@ -57,15 +58,14 @@ function RawDataFile( { name } ) {
           />
         </div>
         <div className="mb-3">
-          <ArrayField
+          <OptionalField
               name={name}
               label='Description'
               fieldName='description'
-              maxItems={1}
               tooltip='Short description of what the file contains'
-              renderChild={({ arrayName, index }) => (
+              renderChild={({ optionalFieldName }) => (
                 <CustomField
-                  name={`${arrayName}.${index}`}
+                  name={optionalFieldName}
                   label='description'
                   width='w-[25rem]'
                   tooltip='Short description of what the file contains'
@@ -74,15 +74,14 @@ function RawDataFile( { name } ) {
           />
         </div>
         <div>
-          <ArrayField
+          <OptionalField
               name={name}
               label='Recommended software'
               fieldName='recommended_software'
-              maxItems={1}
               tooltip='The name of the software recommended for opening and working with the file'
-              renderChild={({ arrayName, index }) => (
+              renderChild={({ optionalFieldName }) => (
                 <CustomField
-                  name={`${arrayName}.${index}`}
+                  name={optionalFieldName}
                   label='Recommended software'
                   width='w-[25rem]'
                   tooltip='The name of the software recommended for opening and working with the file'
