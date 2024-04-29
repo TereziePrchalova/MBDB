@@ -18,7 +18,7 @@ function Identity( { name, colorSchema } ) {
             name={name}
             label='Identity'
             fieldName='identity'
-            tooltip='Modifications (e.g. non-natural amino acids) of the polymer made during synthesis (e.g. translation) of the polymer'
+            tooltip='Information about if, and how identity was assessed'
             renderChild={({ optionalFieldName }) => (
                 <FormWrapper
                     headline='Identity'

@@ -4,6 +4,7 @@ import ArrayField from "../buildingBlocks/ArrayField";
 import DataProcessingStep from "../sharedComponents/DataProcessingStep";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionalField from "../buildingBlocks/OptionalField";
+import FileField from "../buildingBlocks/FileField";
 
 
 function RawDataFile( { name } ) {
@@ -23,7 +24,7 @@ function RawDataFile( { name } ) {
   return (
     <>
         <div className="mb-3">
-          <CustomField
+          <FileField
             name={name}
             type='file'
             fieldName='file'

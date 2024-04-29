@@ -19,6 +19,7 @@ function Purity( { name, colorSchema } ) {
             name={name}
             label="Homogeneity"
             fieldName='homogeneity'
+            tooltip='Information about if, and how homogeneity was assessed'
             initialValue={{ type: 'Yes'}}
             renderChild={({ optionalFieldName }) => {
                 const actualValue = getIn(values, optionalFieldName)
@@ -27,6 +28,7 @@ function Purity( { name, colorSchema } ) {
                 <FormWrapper
                     headline='Homogeneity'
                     colorSchema={colorSchema}
+                    tooltipHeader='Information about if, and how homogeneity was assessed'
                 >
                     <div className="flex">
                         <div className="mr-3">

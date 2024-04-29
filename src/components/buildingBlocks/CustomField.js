@@ -5,7 +5,7 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 function CustomField( { label, name, fieldName, type, tooltip, width, multiline }) {
   
-  const nameCustomField = fieldName !== undefined ? `${name}.${fieldName}` : `${name}`
+  const nameCustomField = fieldName !== undefined ? `${name}.${fieldName}` : `${name}`;
   const [field, meta] = useField(nameCustomField);
 
   return (
