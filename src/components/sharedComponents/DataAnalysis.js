@@ -46,7 +46,7 @@ function DataAnalysis( { name } ) {
                     fieldName='measurements'
                     tooltip='List of measurement links that was analyzed together'
                     renderChild={({ arrayName, index }) => (
-                        <div className="-mr-6">
+                        <div>
                             <OptionField
                                 name={`${arrayName}.${index}`}
                                 label={`Measurement ${index + 1}`}
@@ -62,7 +62,7 @@ function DataAnalysis( { name } ) {
                     label='Result'
                     fieldName='result'
                     renderChild={({ optionalFieldName }) => (
-                        <div className="-mr-6">
+                        <div>
                             <OptionField
                                 name={optionalFieldName}
                                 label='Result'
@@ -73,7 +73,7 @@ function DataAnalysis( { name } ) {
                 />
             </div>
         </div>
-        <div>
+        <div className="mb-3">
             <OptionalField
                 name={name}
                 label='Data fitting'

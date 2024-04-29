@@ -46,7 +46,7 @@ function Sample( { name } ) {
   return (
     <>
         <div className="flex">
-            <div>
+            <div className="mr-3">
                 <OptionField
                     name={name}
                     label='Measurement step'
@@ -54,7 +54,7 @@ function Sample( { name } ) {
                     options={measurementStepOptions}
                 />
             </div>
-            <div>
+            <div className="mr-3">
                 <OptionField
                     name={name}
                     label='Chemical environment'

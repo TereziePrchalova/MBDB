@@ -38,7 +38,7 @@ function Measurements( { name } ) {
             />
         </div>
         <div className="flex mb-3">
-            <div>
+            <div className="mr-3">
                 <OptionField
                     name={name}
                     label='Measurement position'
