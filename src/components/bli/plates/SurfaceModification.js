@@ -1,7 +1,7 @@
 import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
-import Protocol from "../../buildingBlocks/Protocol";
+import Protocol from "../../sharedComponents/Protocol";
 import UseDefault from "../../buildingBlocks/UseDefault";
 
 function SurfaceModification( { name, colorSchema } ) {

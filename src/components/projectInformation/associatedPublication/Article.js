@@ -1,6 +1,6 @@
-import CustomField from "../buildingBlocks/CustomField";
+import CustomField from "../../buildingBlocks/CustomField";
 
-function Book( { name } ) {
+function Article( { name } ) {
 
   return (
     <>
@@ -26,9 +26,9 @@ function Book( { name } ) {
             <div>
                 <CustomField
                     name={name}
-                    fieldName='publisher'
-                    label='Publisher'
-                    tooltip='The full name of the publisher of the book'
+                    fieldName='journal'
+                    label='Journal'
+                    tooltip='The full name of the journal of article appears in'
                     width='w-[17.5rem]'
                 />
             </div>
@@ -37,4 +37,4 @@ function Book( { name } ) {
   );
 }
 
-export default Book;
+export default Article;

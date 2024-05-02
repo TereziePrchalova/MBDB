@@ -1,6 +1,6 @@
 import ArrayField from "../../buildingBlocks/ArrayField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
-import Protocol from "../../buildingBlocks/Protocol";
+import Protocol from "../../sharedComponents/Protocol";
 import { useFormikContext } from "formik";
 import OptionField from "../../buildingBlocks/OptionField";
 import CustomField from "../../buildingBlocks/CustomField";

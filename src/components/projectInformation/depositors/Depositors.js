@@ -1,6 +1,6 @@
-import ArrayField from "../buildingBlocks/ArrayField";
-import FormWrapper from "../buildingBlocks/FormWrapper";
-import Contact from "../buildingBlocks/Contact";
+import ArrayField from "../../buildingBlocks/ArrayField";
+import FormWrapper from "../../buildingBlocks/FormWrapper";
+import Contact from "./Contact";
 
 function Depositors( { name } ) {
 

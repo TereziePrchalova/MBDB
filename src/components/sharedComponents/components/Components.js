@@ -1,12 +1,12 @@
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import UseDefault from "../../buildingBlocks/UseDefault";
-import ComponentsPolymer from "./ComponentsPolymer";
-import ComponentsChemical from "./ComponentsChemical";
+import Polymer from "./Polymer";
 import { getIn, useFormikContext } from "formik";
 import ArrayField from "../../buildingBlocks/ArrayField";
 import OptionField from "../../buildingBlocks/OptionField";
+import Chemical from "./Chemical";
 
-function Components( { name, colorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, colorSchemaHeadline, tooltip } ) {
+function Components( { name, colorSchema, tooltip } ) {
 
     const { values } = useFormikContext()
 
@@ -49,20 +49,16 @@ function Components( { name, colorSchema, molecularWeightColorSchema, colorSchem
                                 <div>
                                     {actualValue.type === 'Polymer' && (
                                         <div>
-                                            <ComponentsPolymer
+                                            <Polymer
                                                 name={`${arrayName}.${index}`}
-                                                molecularWeightColorSchema={molecularWeightColorSchema}
-                                                colorSchemaWrapper={colorSchemaWrapper}
-                                                colorSchemaProtocol={colorSchemaProtocol}
-                                                colorSchemaHeadline={colorSchemaHeadline}
+                                                colorSchema={colorSchema === 'light' ? '' : 'light'}
                                             />
                                         </div>
                                     )}
                                     {actualValue.type === 'Chemical' && (
                                         <div>
-                                            <ComponentsChemical
+                                            <Chemical
                                                 name={`${arrayName}.${index}`}
-                                                molecularWeightColorSchema={molecularWeightColorSchema}
                                             />
                                         </div>
                                     )}

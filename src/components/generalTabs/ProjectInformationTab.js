@@ -1,9 +1,9 @@
 import RecordInformation from "../projectInformation/RecordInformation";
-import Depositors from "../projectInformation/Depositors";
+import Depositors from "../projectInformation/depositors/Depositors";
 import ArrayField from "../buildingBlocks/ArrayField";
 import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
-import AssociatedPublication from "../projectInformation/AssociatedPublication";
+import AssociatedPublication from "../projectInformation/associatedPublication/AssociatedPublication";
 
 function ProjectInformationTab( { name } ) {
 

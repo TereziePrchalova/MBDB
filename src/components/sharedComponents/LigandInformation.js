@@ -3,7 +3,7 @@ import { getIn, useFormikContext } from "formik";
 import CustomField from "../buildingBlocks/CustomField";
 import OptionField from "../buildingBlocks/OptionField";
 import ArrayField from "../buildingBlocks/ArrayField";
-import Protocol from "../buildingBlocks/Protocol";
+import Protocol from "./Protocol";
 
 function LigandInformation( { name, colorSchema } ) {
 

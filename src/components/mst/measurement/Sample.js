@@ -2,7 +2,7 @@ import ArrayField from '../../buildingBlocks/ArrayField';
 import FormWrapper from '../../buildingBlocks/FormWrapper';
 import Ligand from './Ligand';
 import Target from './Target';
-import Protocol from '../../buildingBlocks/Protocol';
+import Protocol from '../../sharedComponents/Protocol';
 import UseDefault from '../../buildingBlocks/UseDefault';
 import { getIn, useFormikContext } from 'formik';
 import OptionField from '../../buildingBlocks/OptionField';

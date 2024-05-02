@@ -1,10 +1,10 @@
-import FormWrapper from "../buildingBlocks/FormWrapper";
-import OptionField from "../buildingBlocks/OptionField";
+import FormWrapper from "../../buildingBlocks/FormWrapper";
+import OptionField from "../../buildingBlocks/OptionField";
 import Article from "./Article";
 import Book from "./Book";
 import Thesis from "./Thesis";
 import { getIn, useFormikContext } from "formik";
-import OptionalField from "../buildingBlocks/OptionalField";
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function AssociatedPublication( { name } ) {
     

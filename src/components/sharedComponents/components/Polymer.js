@@ -1,12 +1,12 @@
 import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
 import MolecularWeight from "../MolecularWeight";
-import Modifications from "../../components/Modifications";
+import Modifications from "../modifications/Modifications";
 import OptionField from "../../buildingBlocks/OptionField";
 import QualityControls from "../qualityControls/QualityControls";
 import OptionalField from "../../buildingBlocks/OptionalField";
 
-function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, colorSchemaHeadline } ) {
+function Polymer( { name, colorSchema } ) {
 
     const polymerTypeOptions = [
         { value: 'Cyclic pseudo peptide', label: 'Cyclic pseudo peptide' },
@@ -165,15 +165,12 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
             <MolecularWeight 
                 name={`${name}.molecular_weight`}
                 tooltip='The molecular weight of the polymer'
-                colorSchema={molecularWeightColorSchema}
+                colorSchema={colorSchema}
             />
         </div>
         <div className="mb-3">
             <Modifications
-                name={`${name}.modifications`}
-                colorSchemaWrapper={colorSchemaWrapper}
-                colorSchemaProtocol={colorSchemaProtocol}
-                colorSchemaHeadline={colorSchemaHeadline}
+                name={`${name}.modifications`}  
             />
         </div>
         <div>
@@ -185,4 +182,4 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
   );
 }
 
-export default ComponentsPolymer;
+export default Polymer;

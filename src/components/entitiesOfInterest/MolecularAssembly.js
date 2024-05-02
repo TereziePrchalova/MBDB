@@ -1,7 +1,7 @@
 import CustomField from "../buildingBlocks/CustomField";
 import ArrayField from "../buildingBlocks/ArrayField";
 import MolecularWeight from "../sharedComponents/MolecularWeight";
-import Modification from "../components/Modification";
+import Modification from "../sharedComponents/modifications/Modification";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import Components from "../sharedComponents/components/Components";
 
@@ -79,10 +79,9 @@ function MolecularAssembly( { name } ) {
             />
         </div>
         <div>
-            <Components 
+            <Components
                 name={name} 
                 colorSchema='light'
-                colorSchemaWrapper='light'
                 tooltip='Description of the individual components (e.g. polypeptide, heme, lipids, metal ions etc.) the molecular assembly is composed of (e.g. Hemoglobin alpha) and how many copies of each component were present'
             />
         </div>

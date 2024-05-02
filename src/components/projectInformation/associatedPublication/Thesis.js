@@ -1,6 +1,14 @@
-import CustomField from "../buildingBlocks/CustomField";
+import CustomField from "../../buildingBlocks/CustomField";
+import OptionField from "../../buildingBlocks/OptionField";
 
-function Article( { name } ) {
+function Thesis( { name } ) {
+
+    const degreeTypeOptions = [
+        { value: 'phd', label: 'PhD' },
+        { value: 'habilitation', label: 'Habilitation' },
+        { value: 'master', label: 'Master' },
+        { value: 'bachelor', label: 'Bachelor' },
+    ];
 
   return (
     <>
@@ -20,16 +28,16 @@ function Article( { name } ) {
                     fieldName='title'
                     label='Title'
                     tooltip='The title of the publication'
-                    width='w-[17.5rem]'
+                    width='w-[22.82rem]'
                 />
             </div>
             <div>
-                <CustomField
+                <OptionField
                     name={name}
-                    fieldName='journal'
-                    label='Journal'
-                    tooltip='The full name of the journal of article appears in'
-                    width='w-[17.5rem]'
+                    options={degreeTypeOptions}
+                    label='Degree type'
+                    fieldName='degree_type'
+                    tooltip='The type of degree (equivalent) the thesis was submitted to attain'
                 />
             </div>
         </div>
@@ -37,4 +45,4 @@ function Article( { name } ) {
   );
 }
 
-export default Article;
+export default Thesis;

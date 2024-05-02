@@ -1,5 +1,5 @@
-import ArrayField from "./ArrayField";
-import CustomField from "./CustomField";
+import ArrayField from "../../buildingBlocks/ArrayField";
+import CustomField from "../../buildingBlocks/CustomField";
 
 function Contact( { name } ) {
 
@@ -19,7 +19,7 @@ function Contact( { name } ) {
               name={name}
               label='Family name'
               fieldName='family_name'
-              tooltip='The family name(s) the person'
+              tooltip='The family name(s) of the person'
             />
           </div>
         </div>

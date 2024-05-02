@@ -1,7 +1,7 @@
 import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
 
-function ComponentsChemical( { name } ) {
+function Chemical( { name } ) {
 
   return (
     <>
@@ -14,7 +14,7 @@ function ComponentsChemical( { name } ) {
                 tooltip='The basic information about the chemical. This information is pulled from Pubchem, however if the information is not available it can be manually filled'
               />
             </div>
-            <div className="-mt-3">
+            <div className="-mt-3 mr-5">
                 <ArrayField
                     name={name}
                     label='Additional specification'
@@ -35,4 +35,4 @@ function ComponentsChemical( { name } ) {
   );
 }
 
-export default ComponentsChemical;
+export default Chemical;
