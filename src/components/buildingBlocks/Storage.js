@@ -12,7 +12,7 @@ function Storage( { name, colorSchema } ) {
         <div>
             <Temperature
                 name={`${name}.temperature`}
-                tooltipHeader='The temperature the sample was stored at'
+                tooltip='The temperature the sample was stored at'
                 colorSchema={colorSchema}
             />
         </div>
@@ -26,7 +26,7 @@ function Storage( { name, colorSchema } ) {
                     <Duration
                         name={optionalFieldName}
                         colorSchema={colorSchema}
-                        tooltipHeader='Length of time the sample was stored before being measured'
+                        tooltip='Length of time the sample was stored before being measured'
                     />
                 )}
             />
@@ -41,7 +41,7 @@ function Storage( { name, colorSchema } ) {
                     <FormWrapper 
                         headline={`Storage preparation ${index + 1}`} 
                         colorSchema={colorSchema}
-                        tooltipHeader='The specific steps that were taken to prepare the samples for storage (e.g. flash freezing in liquid nitrogen), if applicable'
+                        tooltip='The specific steps that were taken to prepare the samples for storage (e.g. flash freezing in liquid nitrogen), if applicable'
                     >
                         <StoragePreparation
                             name={`${arrayName}.${index}`}

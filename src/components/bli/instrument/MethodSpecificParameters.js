@@ -13,7 +13,7 @@ function MethodSpecificParameters( { name } ) {
     <>
         <FormWrapper
             headline='Method specific parameters'
-            tooltipHeader='The parameters of the experiment that is specific to BLI'
+            tooltip='The parameters of the experiment that is specific to BLI'
         >
             <OptionField
                 name={name}

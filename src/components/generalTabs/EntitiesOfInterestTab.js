@@ -45,7 +45,7 @@ function EntitiesOfInterestTab( { name } ) {
                     return (
                     <FormWrapper 
                         headline={`Entity of interest ${index + 1}`} 
-                        tooltipHeader='List of the entities that are being directly measured, as well as the entities that are being used as a variable to influence the behavior of the directly measured entities (e.g. lysozyme, NAG3,NaCl). IMPORTANT! If the pH was varied by individually prepared chemical environments these should be specified individually in chemical environments'
+                        tooltip='List of the entities that are being directly measured, as well as the entities that are being used as a variable to influence the behavior of the directly measured entities (e.g. lysozyme, NAG3,NaCl). IMPORTANT! If the pH was varied by individually prepared chemical environments these should be specified individually in chemical environments'
                     >
                         <div className="mb-3">
                             <OptionField

@@ -65,7 +65,7 @@ function Concentration( { name } ) {
                     <FormWrapper
                         colorSchema='light'
                         headline={`Entity involved ${index + 1}`}
-                        tooltipHeader='List of chemical or molecular assemblies the result describes and how many copies of each are involved'
+                        tooltip='List of chemical or molecular assemblies the result describes and how many copies of each are involved'
                     >
                         <EntityInvolved
                             name={`${arrayName}.${index}`}

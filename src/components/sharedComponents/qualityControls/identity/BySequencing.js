@@ -16,7 +16,7 @@ function BySequencing( { name, colorSchema } ) {
         <FormWrapper
             headline='By sequencing'
             colorSchema={colorSchema}
-            tooltipHeader='How identity was determined by intact mass, if applicable'
+            tooltip='How identity was determined by intact mass, if applicable'
         >
             <div className='flex'>
                 <div className='mr-3'>

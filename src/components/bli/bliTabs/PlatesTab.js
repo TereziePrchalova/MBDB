@@ -21,7 +21,7 @@ function PlatesTab( { name } ) {
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Plates ${index + 1}`}
-                        tooltipHeader='List of the plate types used for the measurements'
+                        tooltip='List of the plate types used for the measurements'
                     >
                         <div>
                             <Plates

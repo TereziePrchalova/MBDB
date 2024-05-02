@@ -4,6 +4,7 @@ import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Instrument from "../../sharedComponents/Instrument";
 import MethodSpecificParameters from "../instrument/MethodSpecificParameters";
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import { Typography } from '@mui/material';
 
 function InstrumentTab( { name } ) {
 
@@ -20,7 +21,7 @@ function InstrumentTab( { name } ) {
                             Collection start time
                         </div>
                         <div className='-mt-1 -ml-2 mr-3'>
-                            <Tooltip title='The date when collection of the raw data began' arrow>
+                            <Tooltip title={<Typography fontSize={13}>The date when collection of the raw data began</Typography>} arrow>
                                 <HelpOutlineIcon fontSize="smaller"/>
                             </Tooltip>
                         </div>

@@ -164,7 +164,7 @@ function ComponentsPolymer( { name, molecularWeightColorSchema, colorSchemaWrapp
         <div className="mb-3">
             <MolecularWeight 
                 name={`${name}.molecular_weight`}
-                tooltipHeader='The molecular weight of the polymer'
+                tooltip='The molecular weight of the polymer'
                 colorSchema={molecularWeightColorSchema}
             />
         </div>

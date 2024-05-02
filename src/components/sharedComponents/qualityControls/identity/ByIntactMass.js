@@ -14,7 +14,7 @@ function ByIntactMass( { name, colorSchema } ) {
         <FormWrapper
             headline='By intact mass'
             colorSchema={colorSchema}
-            tooltipHeader='How identity was determined by intact mass, if applicable'
+            tooltip='How identity was determined by intact mass, if applicable'
         >
             <div className='mb-3'>
                 <OptionField

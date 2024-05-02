@@ -83,39 +83,41 @@ function Spr() {
         {() => (
           <div className="flex justify-center">
             <Form className="m-4 w-[1100px]">
-              {state.selected === 'raw-data-files' && (
+              <div className={`${state.selected === 'raw-data-files' ? '' : 'hidden'}`}>
                 <RawDataFilesTab name='metadata.general_parameters' />
-              )}
-              {state.selected === 'project-information' && (
-                <ProjectInformationTab name='metadata.general_parameters' />
-              )}
-              {state.selected === 'entities-of-interest' && (
-                <EntitiesOfInterestTab name='metadata.general_parameters' />
-              )}
-              {state.selected === 'chemical-environment' && (
-                <ChemicalEnvironmentTab name='metadata.general_parameters' />
-              )}
-              {state.selected === 'result' && (
-                <ResultTab name='metadata.general_parameters'/>
-              )}
-              {state.selected === 'instrument' && (
-                <InstrumentTab name='metadata.general_parameters' />
-              )}
-              {state.selected === 'sensor' && (
-                <SensorTab name='metadata.method_specific_parameters' />
-              )}
-              {state.selected === 'measurement-positions' && (
-                <MeasurementPositionsTab name='metadata.method_specific_parameters' />
-              )}
-              {state.selected === 'measurement-protocol' && (
-                <MeasurementProtocolTab name='metadata.method_specific_parameters' />
-              )}
-              {state.selected === 'measurements' && (
-                <MeasurementsTab name='metadata.method_specific_parameters' />
-              )}
-              {state.selected === 'data-analysis' && (
-                <DataAnalysisTab name='metadata.method_specific_parameters' />
-              )}
+              </div>
+              <div className={state.selected === 'raw-data-files' ? 'hidden' : ''}>
+                {state.selected === 'project-information' && (
+                  <ProjectInformationTab name='metadata.general_parameters' />
+                )}
+                {state.selected === 'entities-of-interest' && (
+                  <EntitiesOfInterestTab name='metadata.general_parameters' />
+                )}
+                {state.selected === 'chemical-environment' && (
+                  <ChemicalEnvironmentTab name='metadata.general_parameters' />
+                )}
+                {state.selected === 'result' && (
+                  <ResultTab name='metadata.general_parameters'/>
+                )}
+                {state.selected === 'instrument' && (
+                  <InstrumentTab name='metadata.general_parameters' />
+                )}
+                {state.selected === 'sensor' && (
+                  <SensorTab name='metadata.method_specific_parameters' />
+                )}
+                {state.selected === 'measurement-positions' && (
+                  <MeasurementPositionsTab name='metadata.method_specific_parameters' />
+                )}
+                {state.selected === 'measurement-protocol' && (
+                  <MeasurementProtocolTab name='metadata.method_specific_parameters' />
+                )}
+                {state.selected === 'measurements' && (
+                  <MeasurementsTab name='metadata.method_specific_parameters' />
+                )}
+                {state.selected === 'data-analysis' && (
+                  <DataAnalysisTab name='metadata.method_specific_parameters' />
+                )}
+              </div>
               <button className="fixed top-0 right-0 p-3 m-4 bg-primary rounded-lg" type="submit">Submit</button>
             </Form>
           </div>

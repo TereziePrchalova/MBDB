@@ -45,7 +45,7 @@ function Sample( { name, colorSchema } ) {
         <FormWrapper
             headline='Sample'
             colorSchema={colorSchema}
-            tooltipHeader='Sample the sensor was in contact with during the measurement'
+            tooltip='Sample the sensor was in contact with during the measurement'
         >
             <div className="flex">
                 <div className="mr-3">
@@ -83,7 +83,7 @@ function Sample( { name, colorSchema } ) {
                     renderChild={({ optionalFieldName }) => (
                         <Temperature
                             name={optionalFieldName}
-                            tooltipHeader='Temperature of the sample while being measured'
+                            tooltip='Temperature of the sample while being measured'
                         />
                     )}
                 />
@@ -97,7 +97,7 @@ function Sample( { name, colorSchema } ) {
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
                             headline={`Analytes ${index + 1}`}
-                            tooltipHeader='List of names (ids) of entities (from the entities of interest defined in the general parameters) that was used to alter the behavior of the target(s) or entities present at varying concentrations for a series of measurements and their concentrations'
+                            tooltip='List of names (ids) of entities (from the entities of interest defined in the general parameters) that was used to alter the behavior of the target(s) or entities present at varying concentrations for a series of measurements and their concentrations'
                         >
                             <Analytes
                                 name={`${arrayName}.${index}`}
@@ -115,7 +115,7 @@ function Sample( { name, colorSchema } ) {
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
                             headline={`Preparational protocol ${index + 1}`}
-                            tooltipHeader='List of steps taken to prepare the sample'
+                            tooltip='List of steps taken to prepare the sample'
                         >
                             <Protocol
                                 name={`${arrayName}.${index}`}

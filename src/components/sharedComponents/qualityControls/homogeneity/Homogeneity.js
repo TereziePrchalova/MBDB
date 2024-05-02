@@ -28,7 +28,7 @@ function Purity( { name, colorSchema } ) {
                 <FormWrapper
                     headline='Homogeneity'
                     colorSchema={colorSchema}
-                    tooltipHeader='Information about if, and how homogeneity was assessed'
+                    tooltip='Information about if, and how homogeneity was assessed'
                 >
                     <div className="flex">
                         <div className="mr-3">

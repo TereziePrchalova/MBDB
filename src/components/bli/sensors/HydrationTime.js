@@ -20,7 +20,7 @@ function HydrationTime( { name, colorSchema } ) {
         <FormWrapper
             colorSchema={colorSchema}
             headline='Hydration time'
-            tooltipHeader='How long the sensor was hydrated before being employed'
+            tooltip='How long the sensor was hydrated before being employed'
         >
             <ValueUnit
                 options={unitOptions}

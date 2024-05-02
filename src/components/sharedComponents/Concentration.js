@@ -2,7 +2,7 @@ import CustomField from "../buildingBlocks/CustomField";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionField from "../buildingBlocks/OptionField";
 
-function Concentration({ name, tooltipHeader, colorSchema }) {
+function Concentration({ name, tooltip, colorSchema }) {
 
     const unitOptions = [
         { value: 'M', label: 'M' },
@@ -31,7 +31,7 @@ function Concentration({ name, tooltipHeader, colorSchema }) {
       <FormWrapper 
         colorSchema={colorSchema}
         headline='Concentration'
-        tooltipHeader={tooltipHeader}
+        tooltip={tooltip}
         >
         <div className="flex">
           <div className="mr-3">

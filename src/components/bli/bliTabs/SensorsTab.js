@@ -21,7 +21,7 @@ function SensorsTab( { name } ) {
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Sensors ${index + 1}`}
-                        tooltipHeader='List of the senors used for the measurements, reference sensors included'
+                        tooltip='List of the senors used for the measurements, reference sensors included'
                     >
                         <div>
                             <Sensors

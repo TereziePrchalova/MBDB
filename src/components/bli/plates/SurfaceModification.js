@@ -15,7 +15,7 @@ function SurfaceModification( { name, colorSchema } ) {
         <FormWrapper
             headline='Surface modification'
             colorSchema={colorSchema}
-            tooltipHeader='The type of sealing used to seal the top of the plate'
+            tooltip='The type of sealing used to seal the top of the plate'
         >
             <div>
                 <CustomField
@@ -35,7 +35,7 @@ function SurfaceModification( { name, colorSchema } ) {
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
                             headline={`Protocol ${index + 1}`}
-                            tooltipHeader='List of protocol steps used to modify the surface of the wells'
+                            tooltip='List of protocol steps used to modify the surface of the wells'
                         >
                             <Protocol
                                 name={`${arrayName}.${index}`}

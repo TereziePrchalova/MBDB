@@ -41,7 +41,7 @@ function Constituent( { name } ) {
                         <FormWrapper
                             colorSchema='light'
                             headline={`Constituent ${index + 1}`}
-                            tooltipHeader='List of the constituents, excluding solvent components, that made up the chemical environment (i.e. buffer system, salts, surfactants, crowding agents, serum, etc.)'
+                            tooltip='List of the constituents, excluding solvent components, that made up the chemical environment (i.e. buffer system, salts, surfactants, crowding agents, serum, etc.)'
                         >
                             <div className="mb-3">
                                 <OptionField

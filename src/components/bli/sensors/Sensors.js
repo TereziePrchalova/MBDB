@@ -103,7 +103,7 @@ function Sensors( { name } ) {
             <Supplier
                 name={`${name}.supplier`}
                 colorSchema='light'
-                tooltipHeader='Information about the supplier of the senor'
+                tooltip='Information about the supplier of the senor'
             />
         </div>
     </>

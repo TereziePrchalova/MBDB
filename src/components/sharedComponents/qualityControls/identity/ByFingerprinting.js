@@ -13,7 +13,7 @@ function ByFingerprinting( { name, colorSchema } ) {
         <FormWrapper
             headline='By fingerprinting'
             colorSchema={colorSchema}
-            tooltipHeader='How identity was determined by intact mass, if applicable'
+            tooltip='How identity was determined by intact mass, if applicable'
         >
             <div>
                 <OptionField

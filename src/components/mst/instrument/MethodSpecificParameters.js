@@ -33,7 +33,7 @@ function MethodSpecificParameters( { name } ) {
     <>
         <FormWrapper
             headline='Method specific parameters'
-            tooltipHeader='The parameters of the experiment that is specific to MST/TRIC/Spectral Shift'
+            tooltip='The parameters of the experiment that is specific to MST/TRIC/Spectral Shift'
         >
             <div className='flex mb-3'>
                 <div>
@@ -93,7 +93,7 @@ function MethodSpecificParameters( { name } ) {
                             <Temperature 
                                 name={optionalFieldName}
                                 colorSchema='light'
-                                tooltipHeader='The temperature of the sample chamber while the measurement was performed'
+                                tooltip='The temperature of the sample chamber while the measurement was performed'
                             />
                         </div>
                     )}

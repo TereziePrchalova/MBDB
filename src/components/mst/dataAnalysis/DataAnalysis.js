@@ -83,7 +83,7 @@ function DataAnalysis( { name } ) {
                     <FormWrapper
                         colorSchema='light'
                         headline='F cold and hot'
-                        tooltipHeader='If the data was analyzed with time windows corresponding to fluorescence before and after an IR laser was heating the sample the edges of the time windows can be specified here'
+                        tooltip='If the data was analyzed with time windows corresponding to fluorescence before and after an IR laser was heating the sample the edges of the time windows can be specified here'
                     >
                         <FColdAndHot
                             name={optionalFieldName}
@@ -102,7 +102,7 @@ function DataAnalysis( { name } ) {
                     <FormWrapper
                         colorSchema='light'
                         headline='Data fitting'
-                        tooltipHeader='If the data was analyzed with time windows corresponding to fluorescence before and after an IR laser was heating the sample the edges of the time windows can be specified here'
+                        tooltip='If the data was analyzed with time windows corresponding to fluorescence before and after an IR laser was heating the sample the edges of the time windows can be specified here'
                     >
                         <DataFitting
                             name={optionalFieldName}
@@ -121,7 +121,7 @@ function DataAnalysis( { name } ) {
                     <FormWrapper
                         colorSchema='light'
                         headline={`Data processing step ${index + 1}`}
-                        tooltipHeader='Describe the steps in the data analysis prior to fitting (removing outliers in the raw data, applying smoothing filters, etc.)'
+                        tooltip='Describe the steps in the data analysis prior to fitting (removing outliers in the raw data, applying smoothing filters, etc.)'
                     >
                         <DataProcessingStep
                             name={`${arrayName}.${index}`}

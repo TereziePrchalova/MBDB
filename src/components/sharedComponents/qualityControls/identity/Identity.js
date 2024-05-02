@@ -23,7 +23,7 @@ function Identity( { name, colorSchema } ) {
                 <FormWrapper
                     headline='Identity'
                     colorSchema={colorSchema}
-                    tooltipHeader='Information about if, and how identity was assessed'
+                    tooltip='Information about if, and how identity was assessed'
                 >
                     <div>
                         <OptionField

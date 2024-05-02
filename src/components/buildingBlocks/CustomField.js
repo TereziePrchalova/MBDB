@@ -2,6 +2,7 @@ import TextField from '@mui/material/TextField';
 import { useField } from 'formik';
 import Tooltip from '@mui/material/Tooltip';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import { Typography } from '@mui/material';
 
 function CustomField( { label, name, fieldName, type, tooltip, width, multiline }) {
   
@@ -38,7 +39,7 @@ function CustomField( { label, name, fieldName, type, tooltip, width, multiline 
         </div>
         {tooltip &&
           <div className='ml-1 -mt-1'>
-            <Tooltip title={tooltip} arrow>
+            <Tooltip title={<Typography fontSize={13}>{tooltip}</Typography>} arrow>
               <HelpOutlineIcon fontSize="smaller"/>
             </Tooltip>
           </div>

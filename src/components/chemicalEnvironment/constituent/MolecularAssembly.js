@@ -57,13 +57,13 @@ function MolecularAssembly( { name } ) {
             <div className="mr-3">
                 <MolecularWeight
                     name={`${name}.molecular_weight`}
-                    tooltipHeader='The molecular weight of the molecular assembly'
+                    tooltip='The molecular weight of the molecular assembly'
                 />
             </div>
             <div className="mb-3">
                 <Concentration
                     name={`${name}.concentration`}
-                    tooltipHeader='The molecular weight of the molecular assembly'
+                    tooltip='The molecular weight of the molecular assembly'
                 />
             </div>
         </div>
@@ -76,7 +76,7 @@ function MolecularAssembly( { name } ) {
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Chemical modification ${index + 1}`}
-                        tooltipHeader='List describing deliberate modifications made to the molecular assembly through chemical, biochemical, or physical means'
+                        tooltip='List describing deliberate modifications made to the molecular assembly through chemical, biochemical, or physical means'
                     >
                         <Modification
                             name={`${arrayName}.${index}`}

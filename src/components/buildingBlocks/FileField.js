@@ -4,6 +4,7 @@ import { useField } from 'formik';
 import Tooltip from '@mui/material/Tooltip';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { useEffect } from 'react';
+import { Typography } from '@mui/material';
 
 function FileField({ name, fieldName, tooltip, width }) {
   const nameCustomField = fieldName !== undefined ? `${name}.${fieldName}` : `${name}`;
@@ -35,7 +36,7 @@ function FileField({ name, fieldName, tooltip, width }) {
         </div>
         {tooltip &&
           <div className='ml-1 -mt-1'>
-            <Tooltip title={tooltip} arrow>
+            <Tooltip title={<Typography fontSize={13}>{tooltip}</Typography>} arrow>
               <HelpOutlineIcon fontSize="smaller"/>
             </Tooltip>
           </div>

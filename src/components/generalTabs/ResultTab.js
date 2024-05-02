@@ -49,7 +49,7 @@ function ResultTab( { name } ) {
                     return (
                     <FormWrapper
                         headline={`Result ${index + 1}`}
-                        tooltipHeader='List of the results (parameter) that were derived by analyzing the raw data and which steps were taken to obtain them'
+                        tooltip='List of the results (parameter) that were derived by analyzing the raw data and which steps were taken to obtain them'
                     >
                         <div className="mb-3">
                             <OptionField

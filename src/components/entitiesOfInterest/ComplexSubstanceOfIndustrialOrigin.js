@@ -53,7 +53,7 @@ function ComplexSubstanceOfIndustrialOrigin( { name } ) {
                         <FormWrapper
                             colorSchema='light'
                             headline={`Preparation protocol ${index + 1}`}
-                            tooltipHeader='List of the steps performed during the preparation of the complex substance'
+                            tooltip='List of the steps performed during the preparation of the complex substance'
                         >
                             <Protocol
                                 name={`${arrayName}.${index}`}
@@ -89,7 +89,7 @@ function ComplexSubstanceOfIndustrialOrigin( { name } ) {
                     <FormWrapper
                         colorSchema='light'
                         headline='Storage'
-                        tooltipHeader='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
+                        tooltip='Information about how the complex substance was stored between being acquired and measured, including temperature and duration'
                     >
                         <Storage
                             name={optionalFieldName}

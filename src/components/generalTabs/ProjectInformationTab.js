@@ -27,7 +27,7 @@ function ProjectInformationTab( { name } ) {
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Funding reference ${index + 1}`}
-                        tooltipHeader='List of information about the grants that supported generation of the raw data annotated by this record. Note that this information is based on OpenAire Projects'    
+                        tooltip='List of information about the grants that supported generation of the raw data annotated by this record. Note that this information is based on OpenAire Projects'    
                     >
                         <CustomField
                             name={`${arrayName}.${index}`}

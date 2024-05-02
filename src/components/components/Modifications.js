@@ -9,7 +9,7 @@ function Modifications( { name, colorSchemaWrapper, colorSchemaProtocol, colorSc
         <FormWrapper
             headline='Modifications'
             colorSchema={colorSchemaHeadline}
-            tooltipHeader='If the polymer contains modifications such as non-natural aminoacids, post translational modification, or chemically modifications like labeling, it can be specified here'
+            tooltip='If the polymer contains modifications such as non-natural aminoacids, post translational modification, or chemically modifications like labeling, it can be specified here'
         >
             <div className="-mt-3">
                 <ArrayField
@@ -21,7 +21,7 @@ function Modifications( { name, colorSchemaWrapper, colorSchemaProtocol, colorSc
                         <FormWrapper
                             colorSchema={colorSchemaWrapper}
                             headline={`Synthesis ${index + 1}`}
-                            tooltipHeader='Modifications (e.g. non-natural amino acids) of the polymer made during synthesis (e.g. translation) of the polymer'
+                            tooltip='Modifications (e.g. non-natural amino acids) of the polymer made during synthesis (e.g. translation) of the polymer'
                         >
                             <Modification
                                 name={`${arrayName}.${index}`}
@@ -41,7 +41,7 @@ function Modifications( { name, colorSchemaWrapper, colorSchemaProtocol, colorSc
                         <FormWrapper
                             colorSchema={colorSchemaWrapper}
                             headline={`Biological postprocessing ${index + 1}`}
-                            tooltipHeader='Modifications of the polymer made after synthesis (e.g. posttranslational modifications, DNA methylation) by the organism where synthesis occurred (e.g. glycosylation)'
+                            tooltip='Modifications of the polymer made after synthesis (e.g. posttranslational modifications, DNA methylation) by the organism where synthesis occurred (e.g. glycosylation)'
                         >
                             <Modification
                                 name={`${arrayName}.${index}`}
@@ -61,7 +61,7 @@ function Modifications( { name, colorSchemaWrapper, colorSchemaProtocol, colorSc
                         <FormWrapper
                             colorSchema={colorSchemaWrapper}
                             headline={`Chemical ${index + 1}`}
-                            tooltipHeader='Modifications of the polymer introduced by chemical, biochemical, or physical means in vitro (e.g. lysine methylation, cysteine iodoacetamide labeling, deglycosylation, covalent fluorescent labeling)'
+                            tooltip='Modifications of the polymer introduced by chemical, biochemical, or physical means in vitro (e.g. lysine methylation, cysteine iodoacetamide labeling, deglycosylation, covalent fluorescent labeling)'
                         >
                             <Modification
                                 name={`${arrayName}.${index}`}

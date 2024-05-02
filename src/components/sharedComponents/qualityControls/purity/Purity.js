@@ -28,7 +28,7 @@ function Purity( { name, colorSchema } ) {
                 <FormWrapper
                     headline='Purity'
                     colorSchema={colorSchema}
-                    tooltipHeader='Information about if and how the purity was obtained'
+                    tooltip='Information about if and how the purity was obtained'
                 >
                     <div className="flex">
                         <div className="mr-3">

@@ -7,6 +7,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Tooltip } from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import { Typography } from '@mui/material';
 
 function OptionField({ label, name, fieldName, options, width, tooltip}) {
 
@@ -47,7 +48,7 @@ function OptionField({ label, name, fieldName, options, width, tooltip}) {
       </Box>
       {tooltip &&
         <div className='ml-1 -mt-1'>
-          <Tooltip title={tooltip} arrow>
+          <Tooltip title={<Typography fontSize={13}>{tooltip}</Typography>} arrow>
             <HelpOutlineIcon fontSize="smaller"/>
           </Tooltip>
         </div>

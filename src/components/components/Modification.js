@@ -35,7 +35,7 @@ function Modification( { name, colorSchema, colorSchemaProtocol } ) {
                     <FormWrapper
                         headline={`Protocol ${index + 1}`}
                         colorSchema={colorSchema}
-                        tooltipHeader='List of steps that led to the modification taking place'
+                        tooltip='List of steps that led to the modification taking place'
                     >
                         <Protocol
                             name={`${arrayName}.${index}`}

@@ -48,7 +48,7 @@ function Sample( { name, tooltip, colorSchema } ) {
         <FormWrapper
             colorSchema={colorSchema}
             headline='Sample'
-            tooltipHeader={tooltip}
+            tooltip={tooltip}
         >
             <div className='flex mb-3'>
                 <div className='mr-3'>
@@ -79,7 +79,7 @@ function Sample( { name, tooltip, colorSchema } ) {
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
                             headline={`Preparation protocol ${index + 1}`}
-                            tooltipHeader='List of the steps performed during the preparation of the complex substance'
+                            tooltip='List of the steps performed during the preparation of the complex substance'
                         >
                             <Protocol
                                 name={`${arrayName}.${index}`}
@@ -98,7 +98,7 @@ function Sample( { name, tooltip, colorSchema } ) {
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
                             headline={`Target ${index + 1}`}
-                            tooltipHeader='List of names (ids), from the entities of interest defined in the general parameters, of directly measured entities'
+                            tooltip='List of names (ids), from the entities of interest defined in the general parameters, of directly measured entities'
                         >
                             <Target
                                 name={`${arrayName}.${index}`}
@@ -117,7 +117,7 @@ function Sample( { name, tooltip, colorSchema } ) {
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
                             headline={`Ligand ${index + 1}`}
-                            tooltipHeader='List of names (ids) of entities (from the entities of interest defined in the general parameters) that were used to alter the behavior of the target(s)'
+                            tooltip='List of names (ids) of entities (from the entities of interest defined in the general parameters) that were used to alter the behavior of the target(s)'
                         >
                             <Ligand
                                 name={`${arrayName}.${index}`}

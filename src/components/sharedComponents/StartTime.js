@@ -20,7 +20,7 @@ function StartTime( { colorSchema, name } ) {
       <FormWrapper
         colorSchema={colorSchema}
         headline='Start time'
-        tooltipHeader='The numerical value of the start point of the measurement step relative to the beginning of the measurement in the units defined in the general parameters'>
+        tooltip='The numerical value of the start point of the measurement step relative to the beginning of the measurement in the units defined in the general parameters'>
           <ValueUnit
             options={unitOptions}
             name={name}

@@ -10,7 +10,7 @@ function QualityControls( { name, colorSchema } ) {
         <FormWrapper
             headline='Quality controls'
             colorSchema={colorSchema}
-            tooltipHeader='Information about if and how quality control of the molecular assembly was performed'
+            tooltip='Information about if and how quality control of the molecular assembly was performed'
         >
             <div className='mb-3 -mt-3'>
                 <Purity name={name} colorSchema={colorSchema === 'light' ? '' : 'light'} />

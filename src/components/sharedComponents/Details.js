@@ -16,7 +16,7 @@ function Details({ name, colorSchema, sizeColorSchema, molecularWeightColorSchem
 
   return (
     <>
-      <FormWrapper colorSchema={colorSchema} headline='Details' tooltipHeader='The chemical origin where the complex substance was derived from'>
+      <FormWrapper colorSchema={colorSchema} headline='Details' tooltip='The chemical origin where the complex substance was derived from'>
         <div className="flex mb-3">
           <div className="mr-3">
               <OptionField

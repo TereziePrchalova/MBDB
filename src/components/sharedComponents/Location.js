@@ -1,11 +1,11 @@
 import FormWrapper from '../buildingBlocks/FormWrapper';
 import CustomField from '../buildingBlocks/CustomField';
 
-function Location( { name, tooltipHeader, colorSchema } ) {
+function Location( { name, tooltip, colorSchema } ) {
 
   return (
     <>
-        <FormWrapper headline='Location' colorSchema={colorSchema} tooltipHeader={tooltipHeader}>
+        <FormWrapper headline='Location' colorSchema={colorSchema} tooltip={tooltip}>
             <div className='flex'>
                 <div className='mr-3'>
                     <CustomField

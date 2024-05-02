@@ -83,7 +83,7 @@ function DataAnalysis( { name } ) {
                     <FormWrapper
                         colorSchema='light'
                         headline='Data fitting'
-                        tooltipHeader='The details of how data fitting of the data to obtain the result was performed'
+                        tooltip='The details of how data fitting of the data to obtain the result was performed'
                     >
                         <DataFitting
                             name={optionalFieldName}
@@ -102,7 +102,7 @@ function DataAnalysis( { name } ) {
                     <FormWrapper
                         colorSchema='light'
                         headline={`Data processing step ${index + 1}`}
-                        tooltipHeader='Describe the steps in the data analysis prior to fitting (removing outliers in the raw data, applying data filter, placing data at same start time etc. )'
+                        tooltip='Describe the steps in the data analysis prior to fitting (removing outliers in the raw data, applying data filter, placing data at same start time etc. )'
                     >
                         <DataProcessingStep
                             name={`${arrayName}.${index}`}

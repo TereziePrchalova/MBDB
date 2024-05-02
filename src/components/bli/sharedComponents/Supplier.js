@@ -3,14 +3,14 @@ import CustomField from "../../buildingBlocks/CustomField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import OptionalField from "../../buildingBlocks/OptionalField";
 
-function Supplier( { name, colorSchema, tooltipHeader } ) {
+function Supplier( { name, colorSchema, tooltip } ) {
 
   return (
     <>
         <FormWrapper
             headline='Supplier'
             colorSchema={colorSchema}
-            tooltipHeader={tooltipHeader}
+            tooltip={tooltip}
         >
             <div className='flex'>
                 <div className='mr-3'>

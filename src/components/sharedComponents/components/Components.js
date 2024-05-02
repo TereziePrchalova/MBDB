@@ -34,7 +34,7 @@ function Components( { name, colorSchema, molecularWeightColorSchema, colorSchem
                     if (!actualValue) {return null}
                     return (
                         <div>
-                            <FormWrapper headline={`Component ${index + 1}`} tooltipHeader={tooltip} colorSchema={colorSchema}>
+                            <FormWrapper headline={`Component ${index + 1}`} tooltip={tooltip} colorSchema={colorSchema}>
                                 <div className="mb-3">
                                     <OptionField
                                         name={`${arrayName}.${index}`}

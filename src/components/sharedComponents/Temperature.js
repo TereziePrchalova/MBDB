@@ -2,7 +2,7 @@ import React from 'react';
 import ValueUnit from '../buildingBlocks/ValueUnit';
 import FormWrapper from '../buildingBlocks/FormWrapper';
 
-function Temperature( { name, tooltipHeader, colorSchema } ) {
+function Temperature( { name, tooltip, colorSchema } ) {
 
   const unitOptions = [
     { value: 'K', label: 'K' },
@@ -12,7 +12,7 @@ function Temperature( { name, tooltipHeader, colorSchema } ) {
 
   return (
     <>
-      <FormWrapper headline='Temperature' colorSchema={colorSchema} tooltipHeader={tooltipHeader}>
+      <FormWrapper headline='Temperature' colorSchema={colorSchema} tooltip={tooltip}>
           <div>
             <ValueUnit
               options={unitOptions} 

@@ -3,6 +3,7 @@ import { getIn, useFormikContext } from 'formik';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
+import { Typography } from '@mui/material';
 
 function OptionalField({ name, fieldName, label, renderChild, initialValue, tooltip }) {
 
@@ -54,7 +55,7 @@ function OptionalField({ name, fieldName, label, renderChild, initialValue, tool
         )}
         {(value === undefined || !value === '') && (
             <div className='mt-3'>
-                <Tooltip title={tooltip} arrow>
+                <Tooltip title={<Typography fontSize={13}>{tooltip}</Typography>} arrow>
                     <Button
                     variant="outlined"
                     onClick={() => add()}

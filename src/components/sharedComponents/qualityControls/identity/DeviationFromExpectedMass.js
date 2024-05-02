@@ -15,7 +15,7 @@ function DevitationFromExpectedMass( { name, colorSchema } ) {
         <FormWrapper
             headline='Devitation from expected mass'
             colorSchema={colorSchema}
-            tooltipHeader='The amount, including unit, the obtained intact mass deviated from the expected intact mass'
+            tooltip='The amount, including unit, the obtained intact mass deviated from the expected intact mass'
         >
             <div>
                 <ValueUnit

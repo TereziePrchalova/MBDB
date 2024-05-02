@@ -157,7 +157,7 @@ function Polymer( { name } ) {
             <MolecularWeight 
                 name={`${name}.molecular_weight`}
                 colorSchema='light'
-                tooltipHeader='The molecular weight of the polymer'
+                tooltip='The molecular weight of the polymer'
             />
         </div>
         <div className="mb-3">

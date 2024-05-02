@@ -87,7 +87,7 @@ function Sample( { name } ) {
                 renderChild={({ optionalFieldName }) => (
                     <Temperature
                         name={optionalFieldName}
-                        tooltipHeader='Temperature of the sample while being measured'
+                        tooltip='Temperature of the sample while being measured'
                     />
                 )}
             />
@@ -119,7 +119,7 @@ function Sample( { name } ) {
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Preparational protocol ${index + 1}`}
-                        tooltipHeader='List of steps taken to prepare the sample'
+                        tooltip='List of steps taken to prepare the sample'
                     >
                         <Protocol
                             name={`${arrayName}.${index}`}

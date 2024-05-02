@@ -9,7 +9,7 @@ function Depositors( { name } ) {
         <div className="mb-3">
             <FormWrapper
                 headline='Depositor'
-                tooltipHeader='The person who made the deposition to MBDB'
+                tooltip='The person who made the deposition to MBDB'
             >
                 <Contact name={`${name}.depositor`} />
             </FormWrapper>
@@ -17,7 +17,7 @@ function Depositors( { name } ) {
         <div className="mb-3">
             <FormWrapper 
                 headline='Principal contact'
-                tooltipHeader='The person responsible for the record and the one to contact for inquiries, would typically be the principle investigator group leader, or laboratory head'
+                tooltip='The person responsible for the record and the one to contact for inquiries, would typically be the principle investigator group leader, or laboratory head'
             >
                 <Contact name={`${name}.principal_contact`} />
             </FormWrapper>
@@ -31,7 +31,7 @@ function Depositors( { name } ) {
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Contributor ${index + 1}`}
-                        tooltipHeader='List of other people who contributed to generating the deposited data, metadata, results , or the deposition itself'
+                        tooltip='List of other people who contributed to generating the deposited data, metadata, results , or the deposition itself'
                     >
                         <Contact
                             name={`${arrayName}.${index}`}

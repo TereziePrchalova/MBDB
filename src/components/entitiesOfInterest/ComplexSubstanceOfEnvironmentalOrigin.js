@@ -44,7 +44,7 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
             <Location
                 name={`${name}.location`}
                 colorSchema='light'
-                tooltipHeader='The longitude, from west to east, in degrees (decimal notation)'
+                tooltip='The longitude, from west to east, in degrees (decimal notation)'
             />
         </div>
         <div className="flex">
@@ -58,7 +58,7 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
                         <FormWrapper
                             colorSchema='light'
                             headline={`Preparation protocol ${index + 1}`}
-                            tooltipHeader='List of the steps performed during the preparation of the complex substance'
+                            tooltip='List of the steps performed during the preparation of the complex substance'
                         >
                             <Protocol
                                 name={`${arrayName}.${index}`}
@@ -94,7 +94,7 @@ function ComplexSubstanceOfEnvironmentalOrigin( { name } ) {
                     <FormWrapper
                         colorSchema='light'
                         headline='Storage'
-                        tooltipHeader='The specific steps that were taken to prepare the samples for storage (e.g. flash freezing in liquid nitrogen), if applicable'
+                        tooltip='The specific steps that were taken to prepare the samples for storage (e.g. flash freezing in liquid nitrogen), if applicable'
                     >
                         <Storage
                             name={optionalFieldName}

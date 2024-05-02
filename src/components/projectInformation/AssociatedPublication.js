@@ -31,7 +31,7 @@ function AssociatedPublication( { name } ) {
                     return(
                     <FormWrapper
                         headline='Associated publication'
-                        tooltipHeader='If the data in this record is described in published literature (article, journal, thesis), information about the literature can be specified here'
+                        tooltip='If the data in this record is described in published literature (article, journal, thesis), information about the literature can be specified here'
                     >
                         <div className="flex">
                             <div className="mr-3">

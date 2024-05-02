@@ -21,7 +21,7 @@ function MeasurementsTab( { name } ) {
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Measurement ${index + 1}`}
-                        tooltipHeader='List of measurements where the complete output from a single sensor going through the measurement protocol is considered a separate measurement'
+                        tooltip='List of measurements where the complete output from a single sensor going through the measurement protocol is considered a separate measurement'
                     >
                         <div>
                             <Measurements

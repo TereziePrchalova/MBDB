@@ -15,7 +15,7 @@ function DataAnalysisTab( { name } ) {
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Data analysis ${index + 1}`}
-                        tooltipHeader='List of measurement where each step from each sensor is considered a single measurement'
+                        tooltip='List of measurement where each step from each sensor is considered a single measurement'
                     >
                         <div>
                             <DataAnalysis

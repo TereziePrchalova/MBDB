@@ -20,7 +20,7 @@ function Sensor( { name } ) {
       <>
         <FormWrapper
             headline='Sensor'
-            tooltipHeader='Sensor used for the measurements'
+            tooltip='Sensor used for the measurements'
         >
             <div className="flex -mt-3 mb-3">
                 <div className="mr-3">
@@ -89,7 +89,7 @@ function Sensor( { name } ) {
             <div>
                 <Supplier
                     name={`${name}.supplier`}
-                    tooltipHeader='Information about the supplier of the sensor'
+                    tooltip='Information about the supplier of the sensor'
                     colorSchema='light'
                 />
             </div>

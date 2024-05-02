@@ -15,7 +15,7 @@ function RawDataFilesTab( { name } ) {
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Raw data file ${index + 1}`}
-                        tooltipHeader='List of file(s) containing the raw measurements'
+                        tooltip='List of file(s) containing the raw measurements'
                     >
                         <div>
                             <RawDataFile

@@ -36,7 +36,7 @@ function Solvent( { name } ) {
                                 <FormWrapper 
                                     headline={`Solvent ${index + 1}`}
                                     colorSchema='light'
-                                    tooltipHeader='Information about the solvent component(s) of the chemical environment (e.g. water, D2O, DMSO, EtOH) can be specified here'
+                                    tooltip='Information about the solvent component(s) of the chemical environment (e.g. water, D2O, DMSO, EtOH) can be specified here'
                                 >
                                     <div className="mb-3">
                                         <OptionField

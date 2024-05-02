@@ -3,6 +3,7 @@ import { FieldArray, getIn, useFormikContext } from 'formik';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
+import { Typography } from '@mui/material';
 
 function ArrayField({ name, fieldName, label, renderChild, initialValue, required, maxItems, tooltip }) {
 
@@ -50,7 +51,7 @@ function ArrayField({ name, fieldName, label, renderChild, initialValue, require
             )}
             {(!maxItems || (!value || value.length < maxItems)) &&
                 <div className='mt-3'>
-                  <Tooltip title={tooltip} arrow>
+                  <Tooltip title={<Typography fontSize={13}>{tooltip}</Typography>} arrow>
                     <Button
                       variant="outlined"
                       onClick={() => {

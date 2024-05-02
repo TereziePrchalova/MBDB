@@ -56,7 +56,7 @@ function MolecularAssembly( { name } ) {
             <MolecularWeight
                 name={`${name}.molecular_weight`}
                 colorSchema='light'
-                tooltipHeader='The molecular weight of the molecular assembly'
+                tooltip='The molecular weight of the molecular assembly'
             />
         </div>
         <div>
@@ -68,7 +68,7 @@ function MolecularAssembly( { name } ) {
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         colorSchema='light'
-                        tooltipHeader='List describing deliberate modifications made to the molecular assembly through chemical, biochemical, or physical means'
+                        tooltip='List describing deliberate modifications made to the molecular assembly through chemical, biochemical, or physical means'
                         headline={`Chemical modification ${index + 1}`}
                     >
                         <Modification

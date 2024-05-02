@@ -34,7 +34,7 @@ function Ligand( { name } ) {
             <Concentration
                 name={`${name}.concentration`}
                 colorSchema='light'
-                tooltipHeader='Concentration of the entity'
+                tooltip='Concentration of the entity'
             />
           </div>
         </div>

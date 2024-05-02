@@ -27,7 +27,7 @@ function LigandInformation( { name, colorSchema } ) {
         <FormWrapper
             colorSchema={colorSchema}
             headline='Ligand information'
-            tooltipHeader='Information about the ligand and how it was immobilized'>
+            tooltip='Information about the ligand and how it was immobilized'>
                 <div className="flex">
                     <div className="mr-3">
                         <OptionField
@@ -56,7 +56,7 @@ function LigandInformation( { name, colorSchema } ) {
                         renderChild={({ arrayName, index }) => (
                             <FormWrapper
                                 headline={`Ligand immobilization protocol ${index + 1}`}
-                                tooltipHeader='List of steps for immobilizing the ligand on the surface of the sensor'
+                                tooltip='List of steps for immobilizing the ligand on the surface of the sensor'
                             >
                                 <Protocol
                                     name={`${arrayName}.${index}`}

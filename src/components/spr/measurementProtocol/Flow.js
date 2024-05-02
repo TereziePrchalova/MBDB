@@ -20,7 +20,7 @@ function Flow( { colorSchema, name } ) {
       <FormWrapper
         colorSchema={colorSchema}
         headline='Flow'
-        tooltipHeader='Information about the flow during the measurement step'>
+        tooltip='Information about the flow during the measurement step'>
             <div className="flex">
                 <div className="mr-3">
                     <CustomField

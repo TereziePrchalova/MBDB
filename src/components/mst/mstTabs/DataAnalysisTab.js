@@ -15,7 +15,7 @@ function DataAnalysisTab( { name } ) {
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Data analysis ${index + 1}`}
-                        tooltipHeader='The details of how data analysis was performed to obtain the result'
+                        tooltip='The details of how data analysis was performed to obtain the result'
                     >
                         <div>
                             <DataAnalysis

@@ -21,7 +21,7 @@ function MeasurementProtocolTab( { name } ) {
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Measurement protocol ${index + 1}`}
-                        tooltipHeader='List of the steps in the measurement protocol'
+                        tooltip='List of the steps in the measurement protocol'
                     >
                         <div>
                             <MeasurementProtocol
