@@ -14,13 +14,13 @@ function MeasurementProtocolTab( { name } ) {
         <div className="-mt-3">
             <ArrayField
                 name={name}
-                label="Measurement protocol"
+                label="Measurement protocol step"
                 required={true}
                 fieldName={fieldName}
                 tooltip='List of the steps in the measurement protocol'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
-                        headline={`Measurement protocol ${index + 1}`}
+                        headline={`Measurement protocol step ${index + 1}`}
                         tooltip='List of the steps in the measurement protocol'
                     >
                         <div>

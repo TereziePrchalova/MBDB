@@ -37,7 +37,7 @@ function Plates( { name } ) {
                     name={name}
                     fieldName='type'
                     label='Type'
-                    tooltip='The type of the plate'
+                    tooltip='The type of the plate (e.g. half-area black polystyrene)'
                 />
             </div>
             <div className="-mt-3">
@@ -68,7 +68,7 @@ function Plates( { name } ) {
                 name={name}
                 label='Surface modification'
                 fieldName='surface_modification'
-                tooltip='The type of sealing used to seal the top of the plate'
+                tooltip='If the plate had a modified surface, the modification can specified here (e.g. Non-binding surface)'
                 renderChild={({ optionalFieldName }) => (
                     <SurfaceModification
                         name={optionalFieldName}

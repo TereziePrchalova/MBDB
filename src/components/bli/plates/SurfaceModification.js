@@ -15,7 +15,7 @@ function SurfaceModification( { name, colorSchema } ) {
         <FormWrapper
             headline='Surface modification'
             colorSchema={colorSchema}
-            tooltip='The type of sealing used to seal the top of the plate'
+            tooltip='If the plate had a modified surface, the modification can specified here (e.g. Non-binding surface)'
         >
             <div>
                 <CustomField

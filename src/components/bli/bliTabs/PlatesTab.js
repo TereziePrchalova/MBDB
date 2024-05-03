@@ -14,13 +14,13 @@ function PlatesTab( { name } ) {
         <div className="-mt-3">
             <ArrayField
                 name={name}
-                label="Plates"
+                label="Plate"
                 required={true}
                 fieldName={fieldName}
                 tooltip='List of the plate types used for the measurements'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
-                        headline={`Plates ${index + 1}`}
+                        headline={`Plate ${index + 1}`}
                         tooltip='List of the plate types used for the measurements'
                     >
                         <div>

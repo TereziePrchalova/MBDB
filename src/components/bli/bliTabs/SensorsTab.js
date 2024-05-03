@@ -14,13 +14,13 @@ function SensorsTab( { name } ) {
         <div className="-mt-3">
             <ArrayField
                 name={name}
-                label="Sensors"
+                label="Sensor"
                 required={true}
                 fieldName={fieldName}
                 tooltip='List of the senors used for the measurements, reference sensors included'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
-                        headline={`Sensors ${index + 1}`}
+                        headline={`Sensor ${index + 1}`}
                         tooltip='List of the senors used for the measurements, reference sensors included'
                     >
                         <div>
