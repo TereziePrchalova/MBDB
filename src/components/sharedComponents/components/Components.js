@@ -8,11 +8,11 @@ import Chemical from "./Chemical";
 
 function Components( { name, colorSchema, tooltip } ) {
 
-    const { values } = useFormikContext()
+    const { values } = useFormikContext();
 
-    const componentName = `${name}.components[0].type`
+    const componentName = `${name}.components[0].type`;
    
-    UseDefault(componentName, 'Polymer')
+    UseDefault(componentName, 'Polymer');
 
     const componentOptions = [
         { value: 'Polymer', label: 'Polymer' },

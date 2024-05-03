@@ -17,7 +17,7 @@ function HalfMaximalEffectiveConcentrationEC50( { name } ) {
         { value: '% saturated', label: '% saturated' },
     ];
 
-    const fieldNameEntityInvolved = 'entities_involved'
+    const fieldNameEntityInvolved = 'entities_involved';
     UseDefault(`${name}.${fieldNameEntityInvolved}`, [{}] );
 
   return (

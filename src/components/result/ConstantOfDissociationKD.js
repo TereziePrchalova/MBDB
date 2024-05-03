@@ -20,7 +20,7 @@ function ConstantOfDissociationKD( { name } ) {
         { value: 'nM^2', label: 'nM^2' },
     ];
 
-    const fieldNameEntityInvolved = 'entities_involved'
+    const fieldNameEntityInvolved = 'entities_involved';
     UseDefault(`${name}.${fieldNameEntityInvolved}`, [{}] );
 
   return (

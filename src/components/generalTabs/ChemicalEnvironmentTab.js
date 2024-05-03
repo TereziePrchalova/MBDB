@@ -5,7 +5,7 @@ import UseDefault from "../buildingBlocks/UseDefault";
 
 function ChemicalEnvironmentTab( { name } ) {
 
-    const fieldName = 'chemical_environments'
+    const fieldName = 'chemical_environments';
 
     UseDefault(`${name}.${fieldName}`, [{}] );
 

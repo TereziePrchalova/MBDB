@@ -170,12 +170,14 @@ function Polymer( { name, colorSchema } ) {
         </div>
         <div className="mb-3">
             <Modifications
-                name={`${name}.modifications`}  
+                name={`${name}.modifications`}
+                colorSchema={colorSchema}
             />
         </div>
         <div>
             <QualityControls
                 name={`${name}.quality_controls`}
+                colorSchema={colorSchema}
             />
         </div>
     </>

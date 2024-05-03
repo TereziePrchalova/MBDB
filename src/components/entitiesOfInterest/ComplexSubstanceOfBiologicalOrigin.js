@@ -9,11 +9,11 @@ function ComplexSubstanceOfBiologicalOrigin( { name } ) {
 
     const { values } = useFormikContext();
 
-    const componentName = `${name}.derived_from`
+    const componentName = `${name}.derived_from`;
    
-    UseDefault(componentName, 'Body fluid')
+    UseDefault(componentName, 'Body fluid');
 
-    const actualValue = getIn(values, componentName)
+    const actualValue = getIn(values, componentName);
 
     const complexSubstanceOfBiologicalOriginOptions = [
         { value: 'Body fluid', label: 'Body fluid' },

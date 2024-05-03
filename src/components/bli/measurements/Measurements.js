@@ -2,36 +2,17 @@ import { getIn, useFormikContext } from "formik";
 import CustomField from "../../buildingBlocks/CustomField";
 import OptionField from "../../buildingBlocks/OptionField";
 import Sample from "./Sample";
+import CreateOptions from "../../buildingBlocks/CreateOptions";
 
 function Measurements( { name } ) {
 
     const { values } = useFormikContext();
 
-    const sensorValue = getIn(values, `metadata.method_specific_parameters.sensors`)
+    const sensorValue = getIn(values, `metadata.method_specific_parameters.sensors`);
+    const sensorOptions = CreateOptions(sensorValue, 'Select Sensor, if applicable');
 
-    let sensorOptions = [];
-
-    if (sensorValue && sensorValue.length > 0) {
-        sensorOptions = sensorValue.map(sensor => ({
-            value: sensor.name,
-            label: sensor.name
-        }))
-    } else {
-        sensorOptions = [{ label: 'Select Sensor, if applicable' }]
-    }
-
-    const measurementProtocolStepValue = getIn(values, `metadata.method_specific_parameters.measurement_protocol`)
-
-    let measurementProtocolStepOptions = [];
-
-    if (measurementProtocolStepValue && measurementProtocolStepValue.length >0 ) {
-        measurementProtocolStepOptions = measurementProtocolStepValue.map(measurementProtocolStep => ({
-            value: measurementProtocolStep.name,
-            label: measurementProtocolStep.name
-        }))
-    } else {
-        measurementProtocolStepOptions = [{ label: 'Select Measurement protocol step, if applicable' }]
-    }
+    const measurementProtocolStepValue = getIn(values, `metadata.method_specific_parameters.measurement_protocol`);
+    const measurementProtocolStepOptions = CreateOptions(measurementProtocolStepValue, 'Select Measurement protocol step, if applicable');
 
   return (
     <>

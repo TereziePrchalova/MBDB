@@ -12,11 +12,11 @@ function ComplexSubstanceOfChemicalOrigin( { name } ) {
 
     const classOptions = [
         { value: 'Lipid assembly', label: 'Lipid assembly' },
-      ];
+    ];
 
-      const fieldName = 'preparation_protocol'
+    const fieldName = 'preparation_protocol';
 
-      UseDefault(`${name}.${fieldName}`, [{}] );
+    UseDefault(`${name}.${fieldName}`, [{}] );
 
   return (
     <>

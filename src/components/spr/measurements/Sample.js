@@ -9,39 +9,19 @@ import Temperature from "../../sharedComponents/Temperature";
 import Analytes from "../../sharedComponents/Analytes";
 import UseDefault from "../../buildingBlocks/UseDefault";
 import OptionalField from "../../buildingBlocks/OptionalField";
+import CreateOptions from "../../buildingBlocks/CreateOptions";
 
 function Sample( { name } ) {
 
     const { values } = useFormikContext();
 
-    UseDefault(`${name}.analytes`, [{}])
+    UseDefault(`${name}.analytes`, [{}]);
 
-    const measurementStepValue = getIn(values, `metadata.method_specific_parameters.measurement_protocol`)
+    const measurementStepValue = getIn(values, `metadata.method_specific_parameters.measurement_protocol`);
+    const measurementStepOptions = CreateOptions(measurementStepValue, 'Select Measurement step, if applicable');
 
-      let measurementStepOptions = [];
-
-      if (measurementStepValue && measurementStepValue.length > 0) {
-            measurementStepOptions = measurementStepValue.map(measurementStep => ({
-                value: measurementStep.name,
-                label: measurementStep.name,
-            }));
-        } else {
-            measurementStepOptions = [{ label: 'Select Measurement step, if applicable' }];
-        }
-
-    const chemicalEnvironmentsValue = getIn(values, `metadata.general_parameters.chemical_environments`)
-
-    let chemicalEnvironmentsOptions = [];
-
-    if (chemicalEnvironmentsValue && chemicalEnvironmentsValue.length > 0) {
-            chemicalEnvironmentsOptions = chemicalEnvironmentsValue.map(chemicalEnvironment => ({
-                value: chemicalEnvironment.name,
-                label: chemicalEnvironment.name,
-            }));
-        } else {
-            chemicalEnvironmentsOptions = [{ label: 'Select Chemical environment, if applicable' }];
-        }
-
+    const chemicalEnvironmentsValue = getIn(values, `metadata.general_parameters.chemical_environments`);
+    const chemicalEnvironmentsOptions = CreateOptions(chemicalEnvironmentsValue, 'Select Chemical environment, if applicable');
 
   return (
     <>

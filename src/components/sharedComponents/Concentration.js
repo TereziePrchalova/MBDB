@@ -32,7 +32,7 @@ function Concentration({ name, tooltip, colorSchema }) {
         colorSchema={colorSchema}
         headline='Concentration'
         tooltip={tooltip}
-        >
+      >
         <div className="flex">
           <div className="mr-3">
               <CustomField 

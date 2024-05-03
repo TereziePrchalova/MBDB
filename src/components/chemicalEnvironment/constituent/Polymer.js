@@ -17,13 +17,13 @@ function Polymer( { name } ) {
         { value: 'polypeptide(D)', label: 'polypeptide(D)' },
         { value: 'polypeptide(L)', label: 'polypeptide(L)' },
         { value: 'polyribonucleotide', label: 'polyribonucleotide' },
-      ];
+    ];
 
-      const expressionSourceTypeOptions = [
+    const expressionSourceTypeOptions = [
         { value: 'Natively', label: 'Natively' },
         { value: 'Recombinantly', label: 'Recombinantly' },
         { value: 'Synthetically', label: 'Synthetically' },
-      ];
+    ];
 
   return (
     <>

@@ -14,7 +14,8 @@ function ShakingSpeed( { colorSchema, name } ) {
       <FormWrapper
         colorSchema={colorSchema}
         headline='Shaking speed'
-        tooltip='The numerical value of the shaking speed of the plate during the measurement step in the units defined in the general parameters'>
+        tooltip='The numerical value of the shaking speed of the plate during the measurement step in the units defined in the general parameters'
+      >
           <ValueUnit
             options={unitOptions}
             name={name}

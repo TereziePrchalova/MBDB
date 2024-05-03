@@ -14,11 +14,11 @@ function ComplexSubstanceOfIndustrialOrigin( { name } ) {
         { value: 'Beer', label: 'Beer' },
         { value: 'Cell medium', label: 'Cell medium' },
         { value: 'Whey', label: 'Whey' },
-      ];
+    ];
 
-      const fieldName = 'preparation_protocol'
+    const fieldName = 'preparation_protocol';
 
-      UseDefault(`${name}.${fieldName}`, [{}] );
+    UseDefault(`${name}.${fieldName}`, [{}] );
 
   return (
     <>

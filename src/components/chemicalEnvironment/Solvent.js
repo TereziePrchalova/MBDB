@@ -7,11 +7,11 @@ import { getIn, useFormikContext } from "formik";
 
 function Solvent( { name } ) {
 
-    const { values } = useFormikContext()
+    const { values } = useFormikContext();
 
-    const componentName = `${name}.solvent[0].type`
+    const componentName = `${name}.solvent[0].type`;
    
-    UseDefault(componentName, 'Chemical')
+    UseDefault(componentName, 'Chemical');
 
     const entitiesOfInterestTabOptions = [
         { value: 'Chemical', label: 'Chemical' },

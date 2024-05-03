@@ -6,7 +6,7 @@ import UseDefault from "../../buildingBlocks/UseDefault";
 
 function SurfaceModification( { name, colorSchema } ) {
 
-    const fieldName = 'protocol'
+    const fieldName = 'protocol';
 
     UseDefault(`${name}.${fieldName}`, [{}] );
 

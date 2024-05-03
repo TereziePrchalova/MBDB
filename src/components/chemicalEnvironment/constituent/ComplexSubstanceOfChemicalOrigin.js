@@ -13,11 +13,11 @@ function ComplexSubstanceOfChemicalOrigin( { name } ) {
 
     const classOptions = [
         { value: 'lipid_assembly', label: 'Lipid assembly' },
-      ];
+    ];
 
-      const fieldName = 'preparation_protocol'
+    const fieldName = 'preparation_protocol';
 
-      UseDefault(`${name}.${fieldName}`, [{}] );
+    UseDefault(`${name}.${fieldName}`, [{}] );
 
   return (
     <>
@@ -41,11 +41,6 @@ function ComplexSubstanceOfChemicalOrigin( { name } ) {
                 />
             </div>
         </div>
-        <div className="mb-3">
-            <Concentration
-                name={`${name}.concentration`}
-            />
-        </div>
         <div className="flex -mt-3 mb-3">
             <div>
                 <ArrayField
@@ -66,22 +61,27 @@ function ComplexSubstanceOfChemicalOrigin( { name } ) {
                     )}
                 />
             </div>
-            <div>
-                <ArrayField
-                    name={name}
-                    label='Additional specification'
-                    fieldName='additional_specifications'
-                    tooltip='Additional information about the lipid assembly, if applicable'
-                    renderChild={({ arrayName, index }) => (
-                        <CustomField
-                            name={`${arrayName}.${index}`}
-                            label={`Additional specification ${index + 1}`}
-                            width='w-[15rem]'
-                            tooltip='Additional information about the lipid assembly, if applicable'
-                        />
-                    )}
+            <div className="mt-3">
+                <Concentration
+                    name={`${name}.concentration`}
                 />
             </div>
+        </div>
+        <div>
+            <ArrayField
+                name={name}
+                label='Additional specification'
+                fieldName='additional_specifications'
+                tooltip='Additional information about the lipid assembly, if applicable'
+                renderChild={({ arrayName, index }) => (
+                    <CustomField
+                        name={`${arrayName}.${index}`}
+                        label={`Additional specification ${index + 1}`}
+                        width='w-[15rem]'
+                        tooltip='Additional information about the lipid assembly, if applicable'
+                    />
+                )}
+            />
         </div>
         <div className="mb-3">
             <OptionalField
@@ -103,7 +103,7 @@ function ComplexSubstanceOfChemicalOrigin( { name } ) {
             />
         </div>
         <div>
-            <Details name={`${name}.details`} sizeColorSchema='light' colorSchemaProtocol='light' />
+            <Details name={`${name}.details`} />
         </div>
     </>
   );

@@ -1,7 +1,7 @@
 import CustomField from '../../../buildingBlocks/CustomField';
 import OptionField from '../../../buildingBlocks/OptionField';
 
-function HomogeneityYes( { name, colorSchema } ) {
+function HomogeneityYes( { name } ) {
 
     const methodOptions = [
         { value: 'Size exclusion chromatography', label: 'Size exclusion chromatography' },

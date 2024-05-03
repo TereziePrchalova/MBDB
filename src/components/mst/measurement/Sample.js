@@ -6,6 +6,7 @@ import Protocol from '../../sharedComponents/Protocol';
 import UseDefault from '../../buildingBlocks/UseDefault';
 import { getIn, useFormikContext } from 'formik';
 import OptionField from '../../buildingBlocks/OptionField';
+import CreateOptions from '../../buildingBlocks/CreateOptions';
 
 function Sample( { name, tooltip, colorSchema } ) {
 
@@ -24,18 +25,8 @@ function Sample( { name, tooltip, colorSchema } ) {
         { value: 'Other', label: 'Other' },
     ];
 
-    const chemicalEnvironmentsValue = getIn(values, `metadata.general_parameters.chemical_environments`)
-
-    let chemicalEnvironmentOptions = [];
-
-    if (chemicalEnvironmentsValue && chemicalEnvironmentsValue.length > 0) {
-        chemicalEnvironmentOptions = chemicalEnvironmentsValue.map(chemicalEnvironment => ({
-            value: chemicalEnvironment.name,
-            label: chemicalEnvironment.name,
-        }));
-    } else {
-        chemicalEnvironmentOptions = [{ label: 'Select Chemical environment, if applicable' }];
-    }
+    const chemicalEnvironmentsValue = getIn(values, `metadata.general_parameters.chemical_environments`);
+    const chemicalEnvironmentOptions = CreateOptions(chemicalEnvironmentsValue, 'Select Chemical environment, if applicable');
 
     const fieldNameTarget = 'targets'
     UseDefault(`${name}.${fieldNameTarget}`, [{}] );

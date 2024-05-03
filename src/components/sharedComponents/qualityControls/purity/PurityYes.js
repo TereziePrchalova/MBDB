@@ -1,6 +1,6 @@
 import OptionField from '../../../buildingBlocks/OptionField';
 
-function PurityYes( { name, colorSchema } ) {
+function PurityYes( { name } ) {
 
     const methodOptions = [
         { value: 'SDS-PAGE', label: 'SDS-PAGE' },

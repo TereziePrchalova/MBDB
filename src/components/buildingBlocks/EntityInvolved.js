@@ -1,23 +1,14 @@
 import CustomField from './CustomField';
 import OptionField from './OptionField';
 import { useFormikContext, getIn } from 'formik';
+import CreateOptions from './CreateOptions';
 
 function EntityInvolved( { name } ) {
 
-      const { values } = useFormikContext();
-      
-      const entitiesValue = getIn(values, `metadata.general_parameters.entities_of_interest`)
+    const { values } = useFormikContext();
 
-      let entityOptions = [];
-
-      if (entitiesValue && entitiesValue.length > 0) {
-            entityOptions = entitiesValue.map(entity => ({
-                value: entity.name,
-                label: entity.name,
-            }));
-        } else {
-            entityOptions = [{ label: 'Select Entity, if applicable' }];
-        }
+    const entitiesValue = getIn(values, `metadata.general_parameters.entities_of_interest`);
+    const entityOptions = CreateOptions(entitiesValue, 'Select Entity, if applicable');
 
   return (
     <>

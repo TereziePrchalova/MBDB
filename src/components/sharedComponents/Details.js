@@ -5,7 +5,7 @@ import Size from "./Size";
 import Components from "./components/Components";
 import OptionField from "../buildingBlocks/OptionField";
 
-function Details({ name, colorSchema, sizeColorSchema, molecularWeightColorSchema, colorSchemaWrapper, colorSchemaProtocol, colorSchemaHeadline }) {
+function Details({ name, colorSchema }) {
 
   const detailsTypeOptions = [
     { value: 'Micelle', label: 'Micelle' },
@@ -55,18 +55,14 @@ function Details({ name, colorSchema, sizeColorSchema, molecularWeightColorSchem
         <div className="mb-3">
           <Size
             name={`${name}.size`}
-            colorSchema={sizeColorSchema}
+            colorSchema={colorSchema === 'light' ? '' : 'light'}
           />
         </div>
         <div>
           <Components
+            tooltip='Description of the individual components (e.g. polypeptide, heme, lipids, metal ions etc.) the molecular assembly is composed of (e.g. Hemoglobin alpha) and how many copies of each component were present'
             name={`${name}.components`}
-            molecularWeightColorSchema={molecularWeightColorSchema}
-            colorSchemaWrapper={colorSchemaWrapper}
-            colorSchema={sizeColorSchema}
-            colorSchemaProtocol={colorSchemaProtocol}
-            colorSchemaHeadline={colorSchemaHeadline}
-            tooltip='The components of the lipid assembly'
+            colorSchema={colorSchema === 'light' ? '' : 'light'}
           />
         </div>
       </FormWrapper>

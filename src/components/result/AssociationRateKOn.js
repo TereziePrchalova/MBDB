@@ -20,7 +20,7 @@ function AssociationRateKOn( { name } ) {
         { value: 'nM^-2 s^-1', label: 'nM^-2 s^-1' },
     ];
 
-    const fieldNameEntityInvolved = 'entities_involved'
+    const fieldNameEntityInvolved = 'entities_involved';
     UseDefault(`${name}.${fieldNameEntityInvolved}`, [{}] );
 
   return (

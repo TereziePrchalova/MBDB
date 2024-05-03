@@ -13,7 +13,7 @@ function HillCoefficient( { name } ) {
         { value: 'unitless', label: 'unitless' },
     ];
 
-    const fieldNameEntityInvolved = 'entities_involved'
+    const fieldNameEntityInvolved = 'entities_involved';
     UseDefault(`${name}.${fieldNameEntityInvolved}`, [{}] );
 
   return (

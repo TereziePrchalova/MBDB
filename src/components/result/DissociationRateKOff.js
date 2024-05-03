@@ -13,7 +13,7 @@ function DissociationRateKOff( { name } ) {
         { value: 's^-1', label: 's^-1' },
     ];
 
-    const fieldNameEntityInvolved = 'entities_involved'
+    const fieldNameEntityInvolved = 'entities_involved';
     UseDefault(`${name}.${fieldNameEntityInvolved}`, [{}] );
 
   return (

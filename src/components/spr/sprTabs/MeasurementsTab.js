@@ -5,7 +5,7 @@ import Measurements from "../measurements/Measurements";
 
 function MeasurementsTab( { name } ) {
 
-    const fieldName = 'measurements'
+    const fieldName = 'measurements';
 
     UseDefault(`${name}.${fieldName}`, [{}] );
 

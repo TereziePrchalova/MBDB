@@ -6,25 +6,16 @@ import ArrayField from "../../buildingBlocks/ArrayField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import UseDefault from "../../buildingBlocks/UseDefault";
 import OptionalField from "../../buildingBlocks/OptionalField";
+import CreateOptions from "../../buildingBlocks/CreateOptions";
 
 function Measurements( { name } ) {
 
     const { values } = useFormikContext();
 
-    UseDefault(`${name}.sample`, [{}])
+    UseDefault(`${name}.sample`, [{}]);
 
-    const measurementPotionValue = getIn(values, `metadata.method_specific_parameters.measurement_positions`)
-
-    let measurementPotionOptions = [];
-
-    if (measurementPotionValue && measurementPotionValue.length > 0) {
-        measurementPotionOptions = measurementPotionValue.map(measurementPotion => ({
-            value: measurementPotion.name,
-            label: measurementPotion.name
-        }))
-    } else {
-        measurementPotionOptions = [{ label: 'Select Measurement position, if applicable' }]
-    }
+    const measurementPotionValue = getIn(values, `metadata.method_specific_parameters.measurement_positions`);
+    const measurementPotionOptions = CreateOptions(measurementPotionValue, 'Select Measurement position, if applicable');
 
   return (
     <>

@@ -16,7 +16,7 @@ function MolecularWeightMW( { name } ) {
         { value: 'MDa', label: 'MDa' },
     ];
 
-    const fieldNameEntityInvolved = 'entities_involved'
+    const fieldNameEntityInvolved = 'entities_involved';
     UseDefault(`${name}.${fieldNameEntityInvolved}`, [{}] );
 
   return (

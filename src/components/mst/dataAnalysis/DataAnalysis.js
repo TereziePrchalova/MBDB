@@ -6,36 +6,17 @@ import DataProcessingStep from "../../sharedComponents/DataProcessingStep";
 import OptionField from "../../buildingBlocks/OptionField";
 import { getIn, useFormikContext } from "formik";
 import OptionalField from "../../buildingBlocks/OptionalField";
+import CreateOptions from "../../buildingBlocks/CreateOptions";
 
 function DataAnalysis( { name } ) {
 
     const { values } = useFormikContext();
       
-    const resultsValue = getIn(values, `metadata.general_parameters.results`)
+    const resultsValue = getIn(values, `metadata.general_parameters.results`);
+    const resultOptions = CreateOptions(resultsValue, 'Select Result, if applicable');
 
-    let resultOptions = [];
-
-    if (resultsValue && resultsValue.length > 0) {
-        resultOptions = resultsValue.map(result => ({
-            value: result.name,
-            label: result.name,
-        }));
-    } else {
-        resultOptions = [{ label: 'Select Result, if applicable' }];
-    }
-
-    const measurementValue = getIn(values, `metadata.method_specific_parameters.measurements`)
-
-    let measurementOptions = [];
-
-    if (measurementValue && measurementValue.length > 0) {
-        measurementOptions = measurementValue.map(measurement => ({
-            value: measurement.name,
-            label: measurement.name,
-        }));
-    } else {
-        measurementOptions = [{ label: 'Select Measurement, if applicable' }];
-    }
+    const measurementValue = getIn(values, `metadata.method_specific_parameters.measurements`);
+    const measurementOptions = CreateOptions(measurementValue, 'Select Measurement, if applicable');
 
   return (
     <>

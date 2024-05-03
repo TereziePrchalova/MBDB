@@ -6,7 +6,6 @@ import FormWrapper from "../buildingBlocks/FormWrapper";
 import OptionalField from "../buildingBlocks/OptionalField";
 import FileField from "../buildingBlocks/FileField";
 
-
 function RawDataFile( { name } ) {
 
   const originatesFromOptions = [

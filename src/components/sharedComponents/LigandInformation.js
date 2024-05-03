@@ -4,23 +4,14 @@ import CustomField from "../buildingBlocks/CustomField";
 import OptionField from "../buildingBlocks/OptionField";
 import ArrayField from "../buildingBlocks/ArrayField";
 import Protocol from "./Protocol";
+import CreateOptions from "../buildingBlocks/CreateOptions";
 
 function LigandInformation( { name, colorSchema } ) {
 
     const { values } = useFormikContext();
 
-    const ligandValue = getIn(values, `metadata.general_parameters.chemical_environments`)
-
-    let ligandOptions = [];
-
-    if (ligandValue && ligandValue.length > 0) {
-        ligandOptions = ligandValue.map(ligand => ({
-            value: ligand.name,
-            label: ligand.name,
-        }));
-    } else {
-        ligandOptions = [{ label: 'Select Ligand, if applicable' }];
-    }
+    const ligandValue = getIn(values, `metadata.general_parameters.chemical_environments`);
+    const ligandOptions = CreateOptions(ligandValue, 'Select Ligand, if applicable');
 
   return (
     <>

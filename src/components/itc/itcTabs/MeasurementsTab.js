@@ -1,11 +1,11 @@
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import ArrayField from "../../buildingBlocks/ArrayField";
 import UseDefault from "../../buildingBlocks/UseDefault";
-import MeasurementPositions from "../measurementPositions/MeasurementPositions";
+import Measurements from "../measurements/Measurements"
 
-function MeasurementPositionsTab( { name } ) {
+function MeasurementsTab( { name } ) {
 
-    const fieldName = 'measurement_positions';
+    const fieldName = 'measurements'
 
     UseDefault(`${name}.${fieldName}`, [{}] );
 
@@ -14,17 +14,17 @@ function MeasurementPositionsTab( { name } ) {
         <div className="-mt-3">
             <ArrayField
                 name={name}
-                label="Measurement position"
+                label="Measurement"
                 required={true}
                 fieldName={fieldName}
-                tooltip='Information about each of the positions where data was collected including reference positions'
+                tooltip='List of the information about each measurement. This includes target(s), ligand(s), chemical environment, and the position of the sample within the instrument'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
-                        headline={`Measurement position ${index + 1}`}
-                        tooltip='Information about each of the positions where data was collected including reference positions'
+                        headline={`Measurement ${index + 1}`}
+                        tooltip='List of the information about each measurement. This includes target(s), ligand(s), chemical environment, and the position of the sample within the instrument'
                     >
                         <div>
-                            <MeasurementPositions
+                            <Measurements
                                 name={`${arrayName}.${index}`}
                             />
                         </div>
@@ -36,4 +36,4 @@ function MeasurementPositionsTab( { name } ) {
     );
   }
   
-  export default MeasurementPositionsTab;
+  export default MeasurementsTab;

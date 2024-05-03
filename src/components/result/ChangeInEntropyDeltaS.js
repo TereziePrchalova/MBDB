@@ -14,7 +14,7 @@ function ChangeInEntropyDeltaS( { name } ) {
         { value: 'kJ/molK', label: 'kJ/molK' },
     ];
 
-    const fieldNameEntityInvolved = 'entities_involved'
+    const fieldNameEntityInvolved = 'entities_involved';
     UseDefault(`${name}.${fieldNameEntityInvolved}`, [{}] );
 
   return (

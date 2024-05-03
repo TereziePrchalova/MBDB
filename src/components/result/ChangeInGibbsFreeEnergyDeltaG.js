@@ -14,7 +14,7 @@ function ChangeInGibbsFreeEnergyDeltaG( { name } ) {
         { value: 'kJ/mol', label: 'kJ/mol' },
     ];
 
-    const fieldNameEntityInvolved = 'entities_involved'
+    const fieldNameEntityInvolved = 'entities_involved';
     UseDefault(`${name}.${fieldNameEntityInvolved}`, [{}] );
 
   return (

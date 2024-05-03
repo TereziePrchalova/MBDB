@@ -5,7 +5,7 @@ import MeasurementProtocol from "../measurementProtocol/MeasurementProtocol";
 
 function MeasurementProtocolTab( { name } ) {
 
-    const fieldName = 'measurement_protocol'
+    const fieldName = 'measurement_protocol';
 
     UseDefault(`${name}.${fieldName}`, [{}] );
 

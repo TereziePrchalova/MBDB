@@ -5,36 +5,17 @@ import DataFitting from "./DataFitting";
 import FormWrapper from "../buildingBlocks/FormWrapper";
 import DataProcessingStep from "./DataProcessingStep";
 import OptionalField from "../buildingBlocks/OptionalField";
+import CreateOptions from "../buildingBlocks/CreateOptions";
 
 function DataAnalysis( { name } ) {
 
     const { values } = useFormikContext();
 
-    const resultValue = getIn(values, `metadata.general_parameters.results`);
-
-    let resultOptions = [];
-
-    if (resultValue && resultValue.length > 0) {
-        resultOptions = resultValue.map(result => ({
-            value: result.name,
-            label: result.name
-        }))
-    } else {
-        resultOptions = [{ label: 'Select Result, if applicable' }]
-    }
-
-    const measurementValue = getIn(values, `metadata.method_specific_parameters.measurements`)
-
-    let measurementOptions = [];
-
-    if (measurementValue && measurementValue.length > 0) {
-        measurementOptions = measurementValue.map(measurement => ({
-            value: measurement.name,
-            label: measurement.name,
-        }));
-    } else {
-        measurementOptions = [{ label: 'Select Measurement, if applicable' }];
-    }
+    const resultValue = getIn(values, 'metadata.general_parameters.results');
+    const resultOptions = CreateOptions(resultValue, 'Select Result, if applicable');
+    
+    const measurementValue = getIn(values, 'metadata.method_specific_parameters.measurements');
+    const measurementOptions = CreateOptions(measurementValue, 'Select Measurement, if applicable');
 
   return (
     <>
