@@ -28,6 +28,7 @@ function EntityInvolved( { name } ) {
                     options={entityOptions}
                     fieldName='entity'
                     label='Entity'
+                    tooltip='Name (ids) of the entity (from the entities of interest defined in the general parameters'
                 />
             </div>
             <div >

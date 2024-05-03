@@ -44,6 +44,22 @@ function ConstantOfDissociationKD( { name } ) {
             </div>
         </div>
         <div>
+            <OptionalField
+                name={name}
+                label='Value error'
+                fieldName='value_error'
+                tooltip='The expected error of the result in terms of a 95 % confidence interval'
+                renderChild={({ optionalFieldName }) => (
+                    <div>
+                        <ValueError
+                            name={optionalFieldName}
+                            colorSchema='light'
+                        />
+                    </div>
+                )}
+            />
+        </div>
+        <div>
             <ArrayField
                 name={name}
                 label='Entity involved'
@@ -60,22 +76,6 @@ function ConstantOfDissociationKD( { name } ) {
                             name={`${arrayName}.${index}`}
                         />
                     </FormWrapper>
-                )}
-            />
-        </div>
-        <div>
-            <OptionalField
-                name={name}
-                label='Value error'
-                fieldName='value_error'
-                tooltip='The expected error of the result in terms of a 95 % confidence interval'
-                renderChild={({ optionalFieldName }) => (
-                    <div>
-                        <ValueError
-                            name={optionalFieldName}
-                            colorSchema='light'
-                        />
-                    </div>
                 )}
             />
         </div>
