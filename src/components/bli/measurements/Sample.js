@@ -54,6 +54,7 @@ function Sample( { name, colorSchema } ) {
                         label='Plate'
                         fieldName='plate'
                         options={platesOptions}
+                        tooltip='link to one of the plates'
                     />
                 </div>
                 <div className="mr-3">
@@ -62,7 +63,6 @@ function Sample( { name, colorSchema } ) {
                         fieldName='well_position'
                         label='Well position'
                         tooltip='The position the well (in the plate) where the sample was during the measurement'
-                    
                     />
                 </div>
                 <div>
@@ -71,6 +71,7 @@ function Sample( { name, colorSchema } ) {
                         label='Chemical environment'
                         fieldName='chemical_environment'
                         options={chemicalEnvironmentsOptions}
+                        tooltip='Name (id) of the chemical environment of the sample (from the chemical environments defined in the general parameters'
                     />
                 </div>
             </div>
@@ -91,12 +92,12 @@ function Sample( { name, colorSchema } ) {
             <div>
                 <ArrayField
                     name={name}
-                    label='Analytes'
+                    label='Analyte'
                     fieldName='analytes'
                     tooltip='List of names (ids) of entities (from the entities of interest defined in the general parameters) that was used to alter the behavior of the target(s) or entities present at varying concentrations for a series of measurements and their concentrations'
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
-                            headline={`Analytes ${index + 1}`}
+                            headline={`Analyte ${index + 1}`}
                             tooltip='List of names (ids) of entities (from the entities of interest defined in the general parameters) that was used to alter the behavior of the target(s) or entities present at varying concentrations for a series of measurements and their concentrations'
                         >
                             <Analytes

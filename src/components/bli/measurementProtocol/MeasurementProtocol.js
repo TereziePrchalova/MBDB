@@ -25,7 +25,7 @@ function MeasurementProtocol( { name } ) {
                     fieldName='name'
                     label='Name'
                     tooltip='Descriptive name (id) of the a step in the measurement protocol which must be unique within a record'
-                    width='w-full'
+                    width='w-[29rem]'
                 />
             </div>
             <div>
@@ -38,17 +38,19 @@ function MeasurementProtocol( { name } ) {
                 />
             </div>
         </div>
-        <div className="mb-3">
-            <StartTime
-                name={`${name}.start_time`}
-                colorSchema='light'
-            />
-        </div>
-        <div className="mb-3">
-            <TimeLength
-                name={`${name}.time_length`}
-                colorSchema='light'
-            />
+        <div className="flex mb-3">
+            <div className="mr-3">
+                <StartTime
+                    name={`${name}.start_time`}
+                    colorSchema='light'
+                />
+            </div>
+            <div>
+                <TimeLength
+                    name={`${name}.time_length`}
+                    colorSchema='light'
+                />
+            </div>
         </div>
         <div>
             <ShakingSpeed

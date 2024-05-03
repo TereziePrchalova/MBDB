@@ -35,6 +35,7 @@ function LigandInformation( { name, colorSchema } ) {
                             options={ligandOptions}
                             label='Ligand'
                             fieldName='ligand'
+                            tooltip='Name (id) of the ligand (entity that is immobilized, from the list of entities of interest defined in the general parameters'
                         />
                     </div>
                     <div>

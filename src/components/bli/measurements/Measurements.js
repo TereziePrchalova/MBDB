@@ -51,6 +51,7 @@ function Measurements( { name } ) {
                     label='Sensor'
                     fieldName='sensor'
                     options={sensorOptions}
+                    tooltip='Link to the sensor used for the measurement'
                 />
             </div>
             <div className="mr-3">
@@ -59,6 +60,7 @@ function Measurements( { name } ) {
                     label='Measurement protocol step'
                     fieldName='measurement_protocol_step'
                     options={measurementProtocolStepOptions}
+                    tooltip='Link to one of the measurement steps'
                 />
             </div>
         </div>

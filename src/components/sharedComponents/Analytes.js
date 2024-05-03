@@ -28,6 +28,7 @@ function Analytes( { name } ) {
                 options={entityOptions}
                 label='Entity'
                 fieldName='entity'
+                tooltip='Select Entity, if applicable'
             />
           </div>
           <div>

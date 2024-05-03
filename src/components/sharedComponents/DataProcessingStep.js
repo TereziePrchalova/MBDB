@@ -1,4 +1,5 @@
 import CustomField from '../buildingBlocks/CustomField';
+import OptionalField from '../buildingBlocks/OptionalField';
 
 function DataProcessingStep( { name } ) {
 
@@ -23,28 +24,55 @@ function DataProcessingStep( { name } ) {
             </div>
         </div>
         <div className='flex'>
-            <div className='mr-3'>
-                <CustomField
+            <div className='-mt-3 mr-3'>
+                <OptionalField
                     name={name}
-                    fieldName='software_name'
                     label='Software name'
+                    fieldName='software_name'
                     tooltip='The name of the software that was used for the step (e.g. Excel)'
-                    />
-            </div>
-            <div className='mr-3'>
-                <CustomField
-                    name={name}
-                    fieldName='software_version'
-                    label='Software version'
-                    tooltip='The version of the software that was used for the step'
+                    renderChild={({ optionalFieldName }) => (
+                        <div>
+                            <CustomField
+                                name={optionalFieldName}
+                                label='Software name'
+                                tooltip='The name of the software that was used for the step (e.g. Excel)'
+                            />
+                        </div>
+                    )}
                 />
             </div>
-            <div>
-                <CustomField
+            <div className='-mt-3 mr-3'>
+                <OptionalField
                     name={name}
-                    fieldName='link_to_source_code'
+                    label='Software version'
+                    fieldName='software_version'
+                    tooltip='The version of the software that was used for the step'
+                    renderChild={({ optionalFieldName }) => (
+                        <div>
+                            <CustomField
+                                name={optionalFieldName}
+                                label='Software version'
+                                tooltip='The version of the software that was used for the step'
+                            />
+                        </div>
+                    )}
+                />
+            </div>
+            <div className='-mt-3'>
+                <OptionalField
+                    name={name}
                     label='Link to source code'
+                    fieldName='link_to_source_code'
                     tooltip='If processing was performed with software where the source code is legally available a link can be specified here (e.g. self-written python script in a GitHub repository'
+                    renderChild={({ optionalFieldName }) => (
+                        <div>
+                            <CustomField
+                                name={optionalFieldName}
+                                label='Link to source code'
+                                tooltip='If processing was performed with software where the source code is legally available a link can be specified here (e.g. self-written python script in a GitHub repository'
+                            />
+                        </div>
+                    )}
                 />
             </div>
         </div>

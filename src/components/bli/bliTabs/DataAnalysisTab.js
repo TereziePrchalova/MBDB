@@ -11,11 +11,11 @@ function DataAnalysisTab( { name } ) {
                 name={name}
                 label="Data analysis"
                 fieldName='data_analysis'
-                tooltip='List of measurement where each step from each sensor is considered a single measurement'
+                tooltip='The details of how data analysis was performed to obtain the result'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
                         headline={`Data analysis ${index + 1}`}
-                        tooltip='List of measurement where each step from each sensor is considered a single measurement'
+                        tooltip='The details of how data analysis was performed to obtain the result'
                     >
                         <div>
                             <DataAnalysis
