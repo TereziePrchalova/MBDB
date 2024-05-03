@@ -1,5 +1,5 @@
 import Temperature from '../sharedComponents/Temperature';
-import Duration from './Duration'
+import Duration from '../sharedComponents/Duration'
 import ArrayField from "./ArrayField";
 import FormWrapper from "./FormWrapper";
 import StoragePreparation from "./StoragePreparation";

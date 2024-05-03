@@ -1,5 +1,5 @@
-import ValueUnit from './ValueUnit';
-import FormWrapper from './FormWrapper';
+import ValueUnit from '../buildingBlocks/ValueUnit';
+import FormWrapper from '../buildingBlocks/FormWrapper';
 
 function Duration( {name, tooltip, colorSchema } ) {
 

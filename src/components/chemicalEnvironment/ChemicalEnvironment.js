@@ -2,7 +2,7 @@ import Constituent from "./Constituent";
 import Solvent from "./Solvent";
 import CustomField from "../buildingBlocks/CustomField";
 import ArrayField from "../buildingBlocks/ArrayField";
-import Ph from "../sharedComponents/Ph";
+import Ph from "./Ph";
 
 function ChemicalEnvironment( { name } ) {
 
