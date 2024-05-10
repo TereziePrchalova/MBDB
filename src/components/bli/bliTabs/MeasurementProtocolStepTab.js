@@ -3,7 +3,7 @@ import ArrayField from "../../buildingBlocks/ArrayField";
 import UseDefault from "../../buildingBlocks/UseDefault";
 import MeasurementProtocol from "../measurementProtocol/MeasurementProtocol";
 
-function MeasurementProtocolTab( { name } ) {
+function MeasurementProtocolStepTab( { name } ) {
 
     const fieldName = 'measurement_protocol'
 
@@ -36,4 +36,4 @@ function MeasurementProtocolTab( { name } ) {
     );
   }
   
-  export default MeasurementProtocolTab;
+  export default MeasurementProtocolStepTab;

@@ -1,6 +1,6 @@
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import ArrayField from "../../buildingBlocks/ArrayField";
-import DataAnalysis from "../../sharedComponents/DataAnalysis";
+import DataAnalysis from "../dataAnalysis/DataAnalysis";
 
 function DataAnalysisTab( { name } ) {
 

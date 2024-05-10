@@ -4,13 +4,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import RawDataFilesTab from "../components/generalTabs/RawDataFilesTab";
 import EntitiesOfInterestTab from "../components/generalTabs/EntitiesOfInterestTab";
-import InstrumentTab from "../components/bli/bliTabs/InstrumentTab";
+import InstrumentTab from "../components/itc/itcTabs/InstrumentTab";
 import ChemicalEnvironmentTab from '../components/generalTabs/ChemicalEnvironmentTab'
 import ResultTab from "../components/generalTabs/ResultTab";
 import ProjectInformationTab from "../components/generalTabs/ProjectInformationTab";
-import MeasurementProtocolTab from "../components/bli/bliTabs/MeasurementProtocolTab";
 import MeasurementsTab from "../components/itc/itcTabs/MeasurementsTab";
-import DataAnalysisTab from "../components/bli/bliTabs/DataAnalysisTab";
+import DataAnalysisTab from "../components/itc/itcTabs/DataAnalysisTab";
 
 function Itc() {
 
@@ -22,7 +21,6 @@ function Itc() {
     { value: 'result', label: 'Results' },
     { value: 'instrument', label: 'Instrument' },
     { value: 'measurements', label: 'Measurements' },
-    { value: 'measurement-protocol', label: 'Measurement protocol' },
     { value: 'data-analysis', label: 'Data analysis' },
   ];
 
@@ -53,7 +51,7 @@ function Itc() {
         initialValues={{
           "metadata": {
             "general_parameters": {
-              "schema_version": "0.9.20",
+              "schema_version": "0.9.21",
               "technique": "ITC measurement of hemoglobin serum elements",
               "record_information": {
                 "publisher": "MBDB",
@@ -65,7 +63,7 @@ function Itc() {
               },
             },
             "method_specific_parameters": {
-              "schema_version": "0.9.9"
+              "schema_version": "0.0.3"
             }
           }
         }}
@@ -100,9 +98,6 @@ function Itc() {
                 )}
                 {state.selected === 'measurements' && (
                     <MeasurementsTab name='metadata.method_specific_parameters' />
-                )}
-                {state.selected === 'measurement-protocol' && (
-                  <MeasurementProtocolTab name='metadata.method_specific_parameters' />
                 )}
                 {state.selected === 'data-analysis' && (
                   <DataAnalysisTab name='metadata.method_specific_parameters' />

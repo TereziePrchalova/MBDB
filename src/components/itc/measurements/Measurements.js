@@ -1,5 +1,6 @@
 import CustomField from "../../buildingBlocks/CustomField";
-import Sample from "./Sample";
+import SampleInCell from "./SampleInCell";
+import SampleInSyringe from "./SampleInSyringe";
 
 function Measurements( { name } ) {
 
@@ -14,9 +15,15 @@ function Measurements( { name } ) {
                 width='w-full'
             />
         </div>
+        <div className="mb-3">
+            <SampleInCell
+                name={`${name}.sample_in_cell`}
+                colorSchema='light'
+            />
+        </div>
         <div>
-            <Sample
-                name={`${name}.sample`}
+            <SampleInSyringe
+                name={`${name}.sample_in_syringe`}
                 colorSchema='light'
             />
         </div>

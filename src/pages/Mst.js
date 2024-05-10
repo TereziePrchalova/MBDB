@@ -51,7 +51,7 @@ function Mst() {
         initialValues={{
           "metadata": {
             "general_parameters": {
-              "schema_version": "0.9.19",
+              "schema_version": "0.9.21",
               "technique": "Microscale thermophoresis/Temperature related intensity change (MST/TRIC)",
               "record_information": {
                 "publisher": "MBDB",
@@ -63,7 +63,7 @@ function Mst() {
               },
             },
             "method_specific_parameters": {
-              "schema_version": "0.9.9"
+              "schema_version": "0.9.10"
             }
           }
         }}

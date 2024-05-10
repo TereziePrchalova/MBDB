@@ -57,7 +57,7 @@ function Spr() {
         initialValues={{
           "metadata": {
             "general_parameters": {
-              "schema_version": "0.9.20",
+              "schema_version": "0.9.21",
               "technique": "SPR measurement of hemoglobin serum elements",
               "record_information": {
                 "publisher": "MBDB",
@@ -69,7 +69,7 @@ function Spr() {
               },
             },
             "method_specific_parameters": {
-              "schema_version": "0.9.9"
+              "schema_version": "0.9.5"
             }
           }
         }}

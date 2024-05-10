@@ -5,10 +5,13 @@ import OptionField from "../../buildingBlocks/OptionField";
 import { getIn } from "formik";
 import Analytes from "../../sharedComponents/Analytes"
 import CreateOptions from "../../buildingBlocks/CreateOptions";
+import UseDefault from "../../buildingBlocks/UseDefault";
+import Protocol from "../../sharedComponents/Protocol";
 
-function Sample( { name, colorSchema } ) {
+function SampleInCell( { name, colorSchema } ) {
 
     const { values } = useFormikContext();
+    UseDefault(`${name}.targets`, [{}]);
 
     const chemicalEnvironmentsValue = getIn(values, `metadata.general_parameters.chemical_environments`);
     const chemicalEnvironmentsOptions = CreateOptions(chemicalEnvironmentsValue, 'Select Chemical environment, if applicable');
@@ -16,9 +19,9 @@ function Sample( { name, colorSchema } ) {
   return (
     <>
         <FormWrapper
-            headline='Sample'
+            headline='Sample in cell'
             colorSchema={colorSchema}
-            tooltip='Sample the sensor was in contact with during the measurement'
+            tooltip='Composition of the solution in the cell including targets and chemical environment'
         >
             <div className="flex">
                 <div>
@@ -34,16 +37,15 @@ function Sample( { name, colorSchema } ) {
             <div>
                 <ArrayField
                     name={name}
-                    label='Target in cell'
-                    fieldName='target_in_cell'
-                    required={true}
-                    tooltip='List of names (ids) of entities (from the entities of interest defined in the general parameters) that was used to alter the behavior of the target(s) or entities present at varying concentrations for a series of measurements and their concentrations'
+                    label='Preparational protocol'
+                    fieldName='preparational_protocol'
+                    tooltip='List of steps taken to prepare the sample, ending at the point where it was placed in the measurement container. Information include operations like filtration and which filter material and pore-size was used should be added'
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
-                            headline={`Target in cell ${index + 1}`}
-                            tooltip='List of names (ids) of entities (from the entities of interest defined in the general parameters) that was used to alter the behavior of the target(s) or entities present at varying concentrations for a series of measurements and their concentrations'
+                            headline={`Preparational protocol ${index + 1}`}
+                            tooltip='List of steps taken to prepare the sample, ending at the point where it was placed in the measurement container. Information include operations like filtration and which filter material and pore-size was used should be added'
                         >
-                            <Analytes
+                            <Protocol
                                 name={`${arrayName}.${index}`}
                             />
                         </FormWrapper>
@@ -53,14 +55,14 @@ function Sample( { name, colorSchema } ) {
             <div>
                 <ArrayField
                     name={name}
-                    label='Target in syrigne'
-                    fieldName='target_in_syrigne'
+                    label='Target'
+                    fieldName='targets'
                     required={true}
-                    tooltip='List of names (ids) of entities (from the entities of interest defined in the general parameters) that was used to alter the behavior of the target(s) or entities present at varying concentrations for a series of measurements and their concentrations'
+                    tooltip='List of names (ids), from the entities of interest defined in the general parameters, of directly measured entities'
                     renderChild={({ arrayName, index }) => (
                         <FormWrapper
-                            headline={`Target in syrigne ${index + 1}`}
-                            tooltip='List of names (ids) of entities (from the entities of interest defined in the general parameters) that was used to alter the behavior of the target(s) or entities present at varying concentrations for a series of measurements and their concentrations'
+                            headline={`Target ${index + 1}`}
+                            tooltip='List of names (ids), from the entities of interest defined in the general parameters, of directly measured entities'
                         >
                             <Analytes
                                 name={`${arrayName}.${index}`}
@@ -74,4 +76,4 @@ function Sample( { name, colorSchema } ) {
   );
 }
 
-export default Sample;
+export default SampleInCell;

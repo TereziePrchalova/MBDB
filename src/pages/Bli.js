@@ -10,7 +10,7 @@ import ResultTab from "../components/generalTabs/ResultTab";
 import ProjectInformationTab from "../components/generalTabs/ProjectInformationTab";
 import PlatesTab from "../components/bli/bliTabs/PlatesTab";
 import SensorsTab from "../components/bli/bliTabs/SensorsTab";
-import MeasurementProtocolTab from "../components/bli/bliTabs/MeasurementProtocolTab";
+import MeasurementProtocolStepTab from "../components/bli/bliTabs/MeasurementProtocolStepTab";
 import MeasurementsTab from "../components/bli/bliTabs/MeasurementsTab";
 import DataAnalysisTab from "../components/bli/bliTabs/DataAnalysisTab";
 
@@ -57,7 +57,7 @@ function Bli() {
         initialValues={{
           "metadata": {
             "general_parameters": {
-              "schema_version": "0.9.20",
+              "schema_version": "0.9.21",
               "technique": "BLI measurement of hemoglobin serum elements",
               "record_information": {
                 "publisher": "MBDB",
@@ -69,7 +69,7 @@ function Bli() {
               },
             },
             "method_specific_parameters": {
-              "schema_version": "0.9.9"
+              "schema_version": "0.9.6"
             }
           }
         }}
@@ -109,7 +109,7 @@ function Bli() {
                   <SensorsTab name='metadata.method_specific_parameters' />
                 )}
                 {state.selected === 'measurement-protocol' && (
-                  <MeasurementProtocolTab name='metadata.method_specific_parameters' />
+                  <MeasurementProtocolStepTab name='metadata.method_specific_parameters' />
                 )}
                 {state.selected === 'measurements' && (
                   <MeasurementsTab name='metadata.method_specific_parameters' />

@@ -28,7 +28,7 @@ function OptionalField({ name, fieldName, label, renderChild, initialValue, tool
         {(value || value === '') && (
             <div className='flex mt-3'>
                 <div className='mr-3'>
-                    {renderChild({ optionalFieldName})}
+                    {renderChild({ optionalFieldName })}
                 </div>
                 <Button
                     type='button'
@@ -57,18 +57,18 @@ function OptionalField({ name, fieldName, label, renderChild, initialValue, tool
             <div className='mt-3'>
                 <Tooltip title={<Typography fontSize={13}>{tooltip}</Typography>} arrow>
                     <Button
-                    variant="outlined"
-                    onClick={() => add()}
-                    sx= {{ 
-                        borderColor: '#6D7575',
-                        backgroundColor: '#6D7575',
-                        color: '#fff',
-                        "&:hover": {
-                            borderColor: "#939E9D",
-                            backgroundColor: '#939E9D',
+                        variant="outlined"
+                        onClick={() => add()}
+                        sx= {{ 
+                            borderColor: '#6D7575',
+                            backgroundColor: '#6D7575',
                             color: '#fff',
-                        },
-                    }}
+                            "&:hover": {
+                                borderColor: "#939E9D",
+                                backgroundColor: '#939E9D',
+                                color: '#fff',
+                            },
+                        }}
                     >
                         + {`${label}`}
                     </Button>
