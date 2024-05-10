@@ -2,6 +2,7 @@ import CustomField from "../../buildingBlocks/CustomField";
 import OptionField from "../../buildingBlocks/OptionField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import OptionalField from "../../buildingBlocks/OptionalField";
+import Path from "./Path";
 
 function Flow( { colorSchema, name } ) {
 
@@ -22,6 +23,11 @@ function Flow( { colorSchema, name } ) {
         headline='Flow'
         tooltip='Information about the flow during the measurement step'>
             <div className="flex">
+                <div className="mr-3">
+                    <Path
+                        name={`${name}.path`}
+                    />
+                </div>
                 <div className="mr-3">
                     <CustomField
                         name={name}
