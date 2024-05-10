@@ -2,13 +2,13 @@ import { Formik, Form } from "formik";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
-import RawDataFilesTab from "../components/generalTabs/RawDataFilesTab";
-import EntitiesOfInterestTab from "../components/generalTabs/EntitiesOfInterestTab";
+import RawDataFilesTab from "../components/general/generalTabs/RawDataFilesTab";
+import EntitiesOfInterestTab from "../components/general/generalTabs/EntitiesOfInterestTab";
 import InstrumentTab from "../components/mst/mstTabs/InstrumentTab";
-import ChemicalEnvironmentTab from '../components/generalTabs/ChemicalEnvironmentTab'
-import ResultTab from "../components/generalTabs/ResultTab";
+import ChemicalEnvironmentTab from '../components/general/generalTabs/ChemicalEnvironmentTab'
+import ResultTab from "../components/general/generalTabs/ResultTab";
 import DataAnalysisTab from "../components/mst/mstTabs/DataAnalysisTab";
-import ProjectInformationTab from "../components/generalTabs/ProjectInformationTab";
+import ProjectInformationTab from "../components/general/generalTabs/ProjectInformationTab";
 import MeasurementTab from "../components/mst/mstTabs/MeasurementTAb";
 
 function Mst() {

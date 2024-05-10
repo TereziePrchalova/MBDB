@@ -2,12 +2,12 @@ import { Formik, Form } from "formik";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
-import RawDataFilesTab from "../components/generalTabs/RawDataFilesTab";
-import EntitiesOfInterestTab from "../components/generalTabs/EntitiesOfInterestTab";
+import RawDataFilesTab from "../components/general/generalTabs/RawDataFilesTab";
+import EntitiesOfInterestTab from "../components/general/generalTabs/EntitiesOfInterestTab";
 import InstrumentTab from "../components/bli/bliTabs/InstrumentTab";
-import ChemicalEnvironmentTab from '../components/generalTabs/ChemicalEnvironmentTab'
-import ResultTab from "../components/generalTabs/ResultTab";
-import ProjectInformationTab from "../components/generalTabs/ProjectInformationTab";
+import ChemicalEnvironmentTab from '../components/general/generalTabs/ChemicalEnvironmentTab'
+import ResultTab from "../components/general/generalTabs/ResultTab";
+import ProjectInformationTab from "../components/general/generalTabs/ProjectInformationTab";
 import PlatesTab from "../components/bli/bliTabs/PlatesTab";
 import SensorsTab from "../components/bli/bliTabs/SensorsTab";
 import MeasurementProtocolStepTab from "../components/bli/bliTabs/MeasurementProtocolStepTab";
