@@ -1,9 +1,9 @@
-import CustomField from "../buildingBlocks/CustomField";
-import FormWrapper from "../buildingBlocks/FormWrapper";
-import ArrayField from "../buildingBlocks/ArrayField";
+import CustomField from "../../buildingBlocks/CustomField";
+import FormWrapper from "../../buildingBlocks/FormWrapper";
+import ArrayField from "../../buildingBlocks/ArrayField";
 import Size from "./Size";
 import Components from "./components/Components";
-import OptionField from "../buildingBlocks/OptionField";
+import OptionField from "../../buildingBlocks/OptionField";
 
 function Details({ name, colorSchema }) {
 

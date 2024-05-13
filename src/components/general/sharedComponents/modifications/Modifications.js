@@ -1,6 +1,6 @@
-import ArrayField from "../../buildingBlocks/ArrayField";
+import ArrayField from "../../../buildingBlocks/ArrayField";
 import Modification from "./Modification";
-import FormWrapper from "../../buildingBlocks/FormWrapper";
+import FormWrapper from "../../../buildingBlocks/FormWrapper";
 
 function Modifications( { name, colorSchema } ) {
 

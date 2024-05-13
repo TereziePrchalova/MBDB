@@ -3,10 +3,10 @@ import FormWrapper from "../../buildingBlocks/FormWrapper";
 import { useFormikContext } from "formik";
 import OptionField from "../../buildingBlocks/OptionField";
 import { getIn } from "formik";
-import Analytes from "../../sharedComponents/Analytes"
 import CreateOptions from "../../buildingBlocks/CreateOptions";
 import UseDefault from "../../buildingBlocks/UseDefault";
 import Protocol from "../../sharedComponents/Protocol";
+import EntityAndConcentration from "../../sharedComponents/EntityAndConcentration";
 
 function SampleInSyringe( { name, colorSchema } ) {
 
@@ -64,7 +64,7 @@ function SampleInSyringe( { name, colorSchema } ) {
                             headline={`Target ${index + 1}`}
                             tooltip='List of names (ids), from the entities of interest defined in the general parameters, of directly measured entities'
                         >
-                            <Analytes
+                            <EntityAndConcentration
                                 name={`${arrayName}.${index}`}
                             />
                         </FormWrapper>

@@ -1,10 +1,10 @@
-import ArrayField from "../../buildingBlocks/ArrayField";
-import CustomField from "../../buildingBlocks/CustomField";
+import ArrayField from "../../../buildingBlocks/ArrayField";
+import CustomField from "../../../buildingBlocks/CustomField";
 import MolecularWeight from "../MolecularWeight";
 import Modifications from "../modifications/Modifications";
-import OptionField from "../../buildingBlocks/OptionField";
+import OptionField from "../../../buildingBlocks/OptionField";
 import QualityControls from "../qualityControls/QualityControls";
-import OptionalField from "../../buildingBlocks/OptionalField";
+import OptionalField from "../../../buildingBlocks/OptionalField";
 
 function Polymer( { name, colorSchema } ) {
 

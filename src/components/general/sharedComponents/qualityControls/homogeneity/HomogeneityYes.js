@@ -1,5 +1,5 @@
-import CustomField from '../../../buildingBlocks/CustomField';
-import OptionField from '../../../buildingBlocks/OptionField';
+import CustomField from '../../../../buildingBlocks/CustomField';
+import OptionField from '../../../../buildingBlocks/OptionField';
 
 function HomogeneityYes( { name } ) {
 

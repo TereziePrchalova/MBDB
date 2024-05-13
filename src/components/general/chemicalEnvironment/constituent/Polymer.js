@@ -1,10 +1,10 @@
 import ArrayField from "../../../buildingBlocks/ArrayField";
 import CustomField from "../../../buildingBlocks/CustomField";
-import MolecularWeight from "../../../sharedComponents/MolecularWeight";
-import Modifications from "../../../sharedComponents/modifications/Modifications";
+import MolecularWeight from "../../sharedComponents/MolecularWeight";
+import Modifications from "../../sharedComponents/modifications/Modifications";
 import Concentration from "../../../sharedComponents/Concentration";
 import OptionField from "../../../buildingBlocks/OptionField";
-import QualityControls from "../../../sharedComponents/qualityControls/QualityControls";
+import QualityControls from "../../sharedComponents/qualityControls/QualityControls";
 import OptionalField from "../../../buildingBlocks/OptionalField";
 
 function Polymer( { name } ) {

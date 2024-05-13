@@ -1,5 +1,5 @@
-import ArrayField from "../../buildingBlocks/ArrayField";
-import CustomField from "../../buildingBlocks/CustomField";
+import ArrayField from "../../../buildingBlocks/ArrayField";
+import CustomField from "../../../buildingBlocks/CustomField";
 
 function Chemical( { name } ) {
 

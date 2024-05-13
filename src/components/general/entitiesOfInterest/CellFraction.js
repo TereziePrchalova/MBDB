@@ -2,7 +2,7 @@ import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import Protocol from "../../sharedComponents/Protocol";
-import Storage from "../../buildingBlocks/Storage";
+import Storage from "../sharedComponents/Storage";
 import OptionField from "../../buildingBlocks/OptionField";
 import OptionalField from "../../buildingBlocks/OptionalField";
 

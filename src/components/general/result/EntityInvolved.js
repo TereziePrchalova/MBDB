@@ -1,7 +1,7 @@
-import CustomField from './CustomField';
-import OptionField from './OptionField';
+import CustomField from '../../buildingBlocks/CustomField';
+import OptionField from '../../buildingBlocks/OptionField';
 import { useFormikContext, getIn } from 'formik';
-import CreateOptions from './CreateOptions';
+import CreateOptions from '../../buildingBlocks/CreateOptions';
 
 function EntityInvolved( { name } ) {
 
@@ -22,7 +22,7 @@ function EntityInvolved( { name } ) {
                     tooltip='Name (ids) of the entity (from the entities of interest defined in the general parameters'
                 />
             </div>
-            <div >
+            <div>
                 <CustomField
                     name={name}
                     fieldName='copy_number'

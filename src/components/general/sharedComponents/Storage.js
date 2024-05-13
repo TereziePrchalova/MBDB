@@ -1,9 +1,9 @@
-import Temperature from '../sharedComponents/Temperature';
-import Duration from '../sharedComponents/Duration'
-import ArrayField from "./ArrayField";
-import FormWrapper from "./FormWrapper";
+import Temperature from '../../sharedComponents/Temperature';
+import Duration from '../../sharedComponents/Duration'
+import ArrayField from "../../buildingBlocks/ArrayField";
+import FormWrapper from "../../buildingBlocks/FormWrapper";
 import StoragePreparation from "./StoragePreparation";
-import OptionalField from './OptionalField';
+import OptionalField from '../../buildingBlocks/OptionalField';
 
 function Storage( { name, colorSchema } ) {
 

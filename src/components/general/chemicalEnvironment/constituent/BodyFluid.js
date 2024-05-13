@@ -3,7 +3,7 @@ import CustomField from "../../../buildingBlocks/CustomField";
 import OptionField from "../../../buildingBlocks/OptionField";
 import FormWrapper from "../../../buildingBlocks/FormWrapper";
 import Protocol from "../../../sharedComponents/Protocol";
-import Storage from "../../../buildingBlocks/Storage";
+import Storage from "../../sharedComponents/Storage";
 import Concentration from "../../../sharedComponents/Concentration";
 import OptionalField from "../../../buildingBlocks/OptionalField";
 

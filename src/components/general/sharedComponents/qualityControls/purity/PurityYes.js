@@ -1,4 +1,4 @@
-import OptionField from '../../../buildingBlocks/OptionField';
+import OptionField from '../../../../buildingBlocks/OptionField';
 
 function PurityYes( { name } ) {
 

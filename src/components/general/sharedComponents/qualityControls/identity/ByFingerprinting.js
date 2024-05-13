@@ -1,5 +1,5 @@
-import FormWrapper from '../../../buildingBlocks/FormWrapper';
-import OptionField from '../../../buildingBlocks/OptionField';
+import FormWrapper from '../../../../buildingBlocks/FormWrapper';
+import OptionField from '../../../../buildingBlocks/OptionField';
 
 function ByFingerprinting( { name, colorSchema } ) {
 

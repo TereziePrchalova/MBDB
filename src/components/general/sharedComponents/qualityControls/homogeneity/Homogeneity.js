@@ -1,8 +1,8 @@
-import FormWrapper from '../../../buildingBlocks/FormWrapper';
-import OptionField from '../../../buildingBlocks/OptionField';
+import FormWrapper from '../../../../buildingBlocks/FormWrapper';
+import OptionField from '../../../../buildingBlocks/OptionField';
 import { getIn, useFormikContext } from 'formik';
 import HomogeneityYes from './HomogeneityYes';
-import OptionalField from '../../../buildingBlocks/OptionalField';
+import OptionalField from '../../../../buildingBlocks/OptionalField';
 
 function Purity( { name, colorSchema } ) {
 

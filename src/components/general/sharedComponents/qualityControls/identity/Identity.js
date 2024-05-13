@@ -1,9 +1,9 @@
-import FormWrapper from '../../../buildingBlocks/FormWrapper';
-import OptionField from '../../../buildingBlocks/OptionField';
+import FormWrapper from '../../../../buildingBlocks/FormWrapper';
+import OptionField from '../../../../buildingBlocks/OptionField';
 import ByIntactMass from './ByIntactMass';
 import BySequencing from './BySequencing';
 import ByFingerprinting from './ByFingerprinting';
-import OptionalField from '../../../buildingBlocks/OptionalField';
+import OptionalField from '../../../../buildingBlocks/OptionalField';
 
 function Identity( { name, colorSchema } ) {
 

@@ -1,7 +1,7 @@
-import CustomField from "../buildingBlocks/CustomField";
-import FormWrapper from "../buildingBlocks/FormWrapper";
-import OptionField from "../buildingBlocks/OptionField";
-import OptionalField from "../buildingBlocks/OptionalField";
+import CustomField from "../../buildingBlocks/CustomField";
+import FormWrapper from "../../buildingBlocks/FormWrapper";
+import OptionField from "../../buildingBlocks/OptionField";
+import OptionalField from "../../buildingBlocks/OptionalField";
 
 function Size( { name, colorSchema } ) {
 

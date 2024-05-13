@@ -58,6 +58,7 @@ function ResultTab( { name } ) {
                                 label='Type'
                                 fieldName='type'
                                 width='w-full'
+                                tooltip='The type of physical parameter the result represents'
                             />
                         </div>
                         <div>

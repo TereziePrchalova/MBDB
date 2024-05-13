@@ -3,7 +3,7 @@ import Concentration from "./Concentration";
 import { useFormikContext, getIn } from 'formik';
 import CreateOptions from "../buildingBlocks/CreateOptions";
 
-function Analytes( { name } ) {
+function EntityAndConcentration( { name } ) {
 
   const { values } = useFormikContext()
       
@@ -19,7 +19,7 @@ function Analytes( { name } ) {
                 options={entityOptions}
                 label='Entity'
                 fieldName='entity'
-                tooltip='Select Entity, if applicable'
+                tooltip='Name (id) of the entity (from the entities of interest defined in the general parameters'
             />
           </div>
           <div>
@@ -34,4 +34,4 @@ function Analytes( { name } ) {
   );
 }
 
-export default Analytes;
+export default EntityAndConcentration;

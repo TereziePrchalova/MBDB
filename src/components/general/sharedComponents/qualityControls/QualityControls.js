@@ -1,4 +1,4 @@
-import FormWrapper from '../../buildingBlocks/FormWrapper';
+import FormWrapper from '../../../buildingBlocks/FormWrapper';
 import Homogeneity from './homogeneity/Homogeneity';
 import Identity from './identity/Identity';
 import Purity from './purity/Purity';

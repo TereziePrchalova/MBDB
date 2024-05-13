@@ -1,5 +1,5 @@
-import FormWrapper from '../buildingBlocks/FormWrapper';
-import CustomField from '../buildingBlocks/CustomField';
+import FormWrapper from '../../buildingBlocks/FormWrapper';
+import CustomField from '../../buildingBlocks/CustomField';
 
 function Location( { name, tooltip, colorSchema } ) {
 

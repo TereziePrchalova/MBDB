@@ -1,6 +1,6 @@
-import CustomField from '../../../buildingBlocks/CustomField';
-import FormWrapper from '../../../buildingBlocks/FormWrapper';
-import OptionField from '../../../buildingBlocks/OptionField';
+import CustomField from '../../../../buildingBlocks/CustomField';
+import FormWrapper from '../../../../buildingBlocks/FormWrapper';
+import OptionField from '../../../../buildingBlocks/OptionField';
 
 function BySequencing( { name, colorSchema } ) {
 

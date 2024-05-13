@@ -1,7 +1,7 @@
-import CustomField from "../../buildingBlocks/CustomField";
-import Protocol from "../Protocol";
-import ArrayField from "../../buildingBlocks/ArrayField";
-import FormWrapper from "../../buildingBlocks/FormWrapper";
+import CustomField from "../../../buildingBlocks/CustomField";
+import Protocol from "../../../sharedComponents/Protocol";
+import ArrayField from "../../../buildingBlocks/ArrayField";
+import FormWrapper from "../../../buildingBlocks/FormWrapper";
 
 function Modification( { name, colorSchema } ) {
 

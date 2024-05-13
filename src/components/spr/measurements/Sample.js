@@ -6,10 +6,10 @@ import OptionField from "../../buildingBlocks/OptionField";
 import CustomField from "../../buildingBlocks/CustomField";
 import { getIn } from "formik";
 import Temperature from "../../sharedComponents/Temperature";
-import Analytes from "../../sharedComponents/Analytes";
 import UseDefault from "../../buildingBlocks/UseDefault";
 import OptionalField from "../../buildingBlocks/OptionalField";
 import CreateOptions from "../../buildingBlocks/CreateOptions";
+import EntityAndConcentration from "../../sharedComponents/EntityAndConcentration";
 
 function Sample( { name } ) {
 
@@ -83,7 +83,7 @@ function Sample( { name } ) {
                     <FormWrapper
                         headline={`Analytes ${index + 1}`}
                     >
-                        <Analytes
+                        <EntityAndConcentration
                             name={`${arrayName}.${index}`}
                         />
                     </FormWrapper>

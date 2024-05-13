@@ -6,9 +6,9 @@ import OptionField from "../../buildingBlocks/OptionField";
 import CustomField from "../../buildingBlocks/CustomField";
 import { getIn } from "formik";
 import Temperature from "../../sharedComponents/Temperature";
-import Analytes from "../../sharedComponents/Analytes"
 import OptionalField from "../../buildingBlocks/OptionalField";
 import CreateOptions from "../../buildingBlocks/CreateOptions";
+import EntityAndConcentration from "../../sharedComponents/EntityAndConcentration";
 
 function Sample( { name, colorSchema } ) {
 
@@ -80,7 +80,7 @@ function Sample( { name, colorSchema } ) {
                             headline={`Analyte ${index + 1}`}
                             tooltip='List of names (ids) of entities (from the entities of interest defined in the general parameters) that was used to alter the behavior of the target(s) or entities present at varying concentrations for a series of measurements and their concentrations'
                         >
-                            <Analytes
+                            <EntityAndConcentration
                                 name={`${arrayName}.${index}`}
                             />
                         </FormWrapper>
