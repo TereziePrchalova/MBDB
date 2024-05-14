@@ -9,7 +9,7 @@ import ChemicalEnvironmentTab from '../components/general/generalTabs/ChemicalEn
 import ResultTab from "../components/general/generalTabs/ResultTab";
 import DataAnalysisTab from "../components/mst/mstTabs/DataAnalysisTab";
 import ProjectInformationTab from "../components/general/generalTabs/ProjectInformationTab";
-import MeasurementTab from "../components/mst/mstTabs/MeasurementTAb";
+import MeasurementTab from "../components/mst/mstTabs/MeasurementTab";
 
 function Mst() {
 
