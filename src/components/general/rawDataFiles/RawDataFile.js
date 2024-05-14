@@ -20,6 +20,12 @@ function RawDataFile( { name } ) {
     { value: 'Quality control report', label: 'Quality control report' },
   ];
 
+  const contentTypeOptions = [
+    { value: 'Text', label: 'Text' },
+    { value: 'Binary', label: 'Binary' },
+    { value: 'Text and binary', label: 'Text and binary' },
+  ];
+
   return (
     <>
         <div className="mb-3">
@@ -53,6 +59,23 @@ function RawDataFile( { name } ) {
                   label='Context'
                   width='w-[25rem]'
                   tooltip='The context the file should be understood within (e.g. raw measurement data)'
+                />
+              )}
+          />
+        </div>
+        <div className="mb-3">
+          <OptionalField
+              name={name}
+              label='Content type'
+              fieldName='content_type'
+              tooltip='Type of the file content in terms of how it can be read (text, binary, etc.)'
+              renderChild={({ optionalFieldName }) => (
+                <OptionField
+                  name={optionalFieldName}
+                  options={contentTypeOptions}
+                  label='Content type'
+                  width='w-[25rem]'
+                  tooltip='Type of the file content in terms of how it can be read (text, binary, etc.)'
                 />
               )}
           />
