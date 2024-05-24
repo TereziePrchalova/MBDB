@@ -12,7 +12,6 @@ function Ph( { name } ) {
                     <CustomField
                         name={name}
                         label='Value'
-                        fieldName='value'
                         type='number'
                         tooltip='The pH value of the chemical environment'
                         width='w-[8.5rem]'

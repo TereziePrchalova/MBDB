@@ -7,14 +7,12 @@ import Itc from "./pages/Itc";
 function App() {
   return (
     <Router>
-      <div className="flex justify-center mx-auto xl:max-w-[1440px]">
-        <Routes>
-          <Route path="*" element={<Mst />} />
-          <Route path="/bli" element={<Bli />} />
-          <Route path="/spr" element={<Spr />} />
-          <Route path="/itc" element={<Itc />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="*" element={<Mst />} />
+        <Route path="/bli" element={<Bli />} />
+        <Route path="/spr" element={<Spr />} />
+        <Route path="/itc" element={<Itc />} />
+      </Routes>
     </Router>
   );
 }

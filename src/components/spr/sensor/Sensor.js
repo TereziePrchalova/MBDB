@@ -1,4 +1,4 @@
-import Supplier from "../../bli/sharedComponents/Supplier";
+import Supplier from "./Supplier";
 import CustomField from "../../buildingBlocks/CustomField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import OptionField from "../../buildingBlocks/OptionField";

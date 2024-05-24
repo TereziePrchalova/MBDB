@@ -34,8 +34,11 @@ function Mst() {
 
   return (
     <>
-      <div>
-        <div className="relative top-0 left-0 mt-4">
+      <div className="flex text-dark text-24px justify-center mt-4">
+        You are depositing MST data
+      </div>
+      <div className="flex justify-center">
+        <div className="mt-4">
           {Tabs.map(tab => (
             <div 
               key={tab.value} 
@@ -46,37 +49,35 @@ function Mst() {
             </div>
           ))}
         </div>
-      </div>
-      <Formik
-        initialValues={{
-          "metadata": {
-            "general_parameters": {
-              "schema_version": "0.9.21",
-              "technique": "Microscale thermophoresis/Temperature related intensity change (MST/TRIC)",
-              "record_information": {
-                "publisher": "MBDB",
-                "resource_type_general": "Dataset",
-                "resource_type": "MST",
-                "deposition_date": new Date().toISOString().slice(0, 10),
-                "date_available": new Date().toISOString().slice(0, 10),
-                "subject_category": "Biophysics",
+        <Formik
+          initialValues={{
+            "metadata": {
+              "general_parameters": {
+                "schema_version": "0.9.21",
+                "technique": "Microscale thermophoresis/Temperature related intensity change (MST/TRIC)",
+                "record_information": {
+                  "publisher": "MBDB",
+                  "resource_type_general": "Dataset",
+                  "resource_type": "MST",
+                  "deposition_date": new Date().toISOString().slice(0, 10),
+                  "date_available": new Date().toISOString().slice(0, 10),
+                  "subject_category": "Biophysics",
+                },
               },
-            },
-            "method_specific_parameters": {
-              "schema_version": "0.9.10"
+              "method_specific_parameters": {
+                "schema_version": "0.9.10"
+              }
             }
+          }}
+          onSubmit={values => 
+            setTimeout(() => {
+              console.log(values)
+              alert(JSON.stringify(values, null, 2));
+            }, 500)
           }
-        }}
-        onSubmit={values => 
-          setTimeout(() => {
-            console.log(values)
-            alert(JSON.stringify(values, null, 2));
-          }, 500)
-        }
-        >
-        {() => (
-          <div className="flex justify-center">
-            <Form className="m-4 w-[1100px]">
+          >
+          {() => (
+            <Form className="w-[1100px]">
               <div className={`${state.selected === 'raw-data-files' ? '' : 'hidden'}`}>
                 <RawDataFilesTab name='metadata.general_parameters' />
               </div>
@@ -105,9 +106,9 @@ function Mst() {
               </div>
               <button className="fixed top-0 right-0 p-3 m-4 bg-primary rounded-lg" type="submit">Submit</button>
             </Form>
-          </div>
-        )}
-      </Formik>
+          )}
+        </Formik>
+      </div>
     </>
   );
 }
