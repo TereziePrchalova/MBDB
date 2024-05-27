@@ -46,7 +46,7 @@ function Spr() {
       <div className="flex justify-center">
         <div className="mt-4">
           {Tabs.map(tab => (
-            <div 
+            <div
               key={tab.value} 
               className={`text-dark p-4 mb-3 rounded-lg cursor-pointer transition-all hover:bg-primary-light ${state.selected === tab.value ? 'active bg-primary' : ''}`}
               onClick={() => setState({ selected: tab.value })}
