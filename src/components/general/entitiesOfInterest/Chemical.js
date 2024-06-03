@@ -1,7 +1,10 @@
 import ArrayField from "../../buildingBlocks/ArrayField";
 import CustomField from "../../buildingBlocks/CustomField";
+import CreateUuid from "../../buildingBlocks/CreateUuid";
 
 function Chemical( { name } ) {
+
+  CreateUuid(name);
 
   return (
     <>
@@ -11,6 +14,7 @@ function Chemical( { name } ) {
               name={name}
               label='Basic information'
               fieldName='basic_information'
+              required={true}
               tooltip='The basic information about the chemical. This information is pulled from Pubchem, however if the information is not available it can be manually filled'
             />
           </div>

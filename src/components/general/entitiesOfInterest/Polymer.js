@@ -5,8 +5,11 @@ import Modifications from "../sharedComponents/modifications/Modifications";
 import OptionField from "../../buildingBlocks/OptionField";
 import QualityControls from "../sharedComponents/qualityControls/QualityControls";
 import OptionalField from "../../buildingBlocks/OptionalField";
+import CreateUuid from "../../buildingBlocks/CreateUuid";
 
 function Polymer( { name } ) {
+
+    CreateUuid(name);
 
     const polymerTypeOptions = [
         { value: 'cyclic-pseudo-peptide', label: 'cyclic-pseudo-peptide' },
@@ -32,6 +35,7 @@ function Polymer( { name } ) {
                     name={name}
                     label='Name'
                     fieldName='name'
+                    required={true}
                     width='w-[29rem]'
                     tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
                 />
@@ -41,6 +45,7 @@ function Polymer( { name } ) {
                     name={name}
                     label='Polymer type'
                     fieldName='polymer_type'
+                    required={true}
                     options={polymerTypeOptions}
                     tooltip='The type of polymer (e.g. polypeptide(L))'
                 />
@@ -50,6 +55,7 @@ function Polymer( { name } ) {
                     name={name}
                     label='Expression source'
                     fieldName='expression_source_type'
+                    required={true}
                     options={expressionSourceTypeOptions}
                     tooltip='How the polymer was produced'
                 />

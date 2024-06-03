@@ -4,8 +4,11 @@ import BodyFluid from "./BodyFluid";
 import CellFraction from "./CellFraction";
 import Virion from "./Virion";
 import OptionField from "../../buildingBlocks/OptionField";
+import CreateUuid from "../../buildingBlocks/CreateUuid";
 
 function ComplexSubstanceOfBiologicalOrigin( { name } ) {
+
+    CreateUuid(name);
 
     const { values } = useFormikContext();
 
@@ -29,6 +32,7 @@ function ComplexSubstanceOfBiologicalOrigin( { name } ) {
                 options={complexSubstanceOfBiologicalOriginOptions}
                 label='Derived from'
                 fieldName='derived_from'
+                required={true}
                 width='w-full'
                 tooltip='The biological substance the complex substance is derived from'
             />

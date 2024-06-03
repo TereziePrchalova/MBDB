@@ -1,7 +1,15 @@
 import CustomField from "./CustomField";
 import OptionField from "./OptionField";
 
-function ValueUnit({ options, name, width, tooltipValue, tooltipUnit }) {
+function ValueUnit({
+  options,
+  name,
+  width,
+  tooltipValue,
+  tooltipUnit,
+  valueRequired,
+  unitRequired
+}) {
 
   return (
     <>
@@ -12,6 +20,7 @@ function ValueUnit({ options, name, width, tooltipValue, tooltipUnit }) {
                 fieldName='value'
                 type='number'
                 label='Value'
+                required={valueRequired}
                 tooltip={tooltipValue}
               />
             </div>
@@ -21,6 +30,7 @@ function ValueUnit({ options, name, width, tooltipValue, tooltipUnit }) {
                 fieldName='unit'
                 options={options}
                 label='Unit'
+                required={unitRequired}
                 width={width}
                 tooltip={tooltipUnit}
               />

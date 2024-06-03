@@ -5,8 +5,11 @@ import Protocol from "../../sharedComponents/Protocol";
 import Storage from "../sharedComponents/Storage";
 import OptionField from "../../buildingBlocks/OptionField";
 import OptionalField from "../../buildingBlocks/OptionalField";
+import CreateUuid from "../../buildingBlocks/CreateUuid";
 
 function BodyFluid( { name } ) {
+
+    CreateUuid(name);
 
     const fluidOptions = [
         { value: 'Blood', label: 'Blood' },
@@ -21,21 +24,24 @@ function BodyFluid( { name } ) {
 
   return (
     <>
-        <div className='flex mb-3'>
-          <div className='mr-3'>
+        <div className='mb-3'>
             <CustomField
                 name={name}
                 label='Name'
                 fieldName='name'
+                required={true}
+                width='w-full'
                 tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
             />
-          </div>
+        </div>
+        <div className='flex mb-3'>
           <div className="mr-3">
             <OptionField
                 name={name}
                 options={fluidOptions}
                 label='Fluid'
                 fieldName='fluid'
+                required={true}
                 tooltip='The body fluid the complex substance is derived from'
             />
           </div>
@@ -44,6 +50,7 @@ function BodyFluid( { name } ) {
                 name={name}
                 label='Health status'
                 fieldName='health_status'
+                required={true}
                 tooltip='Health status of the donor organism where the body fluid was derived from (e.g. healthy, sick, patient with Diabetes type 2)'
             />
           </div>
@@ -52,6 +59,7 @@ function BodyFluid( { name } ) {
                 name={name}
                 label='Source organism'
                 fieldName='source_organism'
+                required={true}
                 tooltip='Identification of the organism to the lowest taxonomic rank possible e.g. strain. Note that this is based on the NCBI taxonomy'
             />
           </div>

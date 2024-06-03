@@ -11,6 +11,7 @@ function MeasurementPositions( { name } ) {
                 name={name}
                 fieldName='name'
                 label='Name'
+                required={true}
                 tooltip='Name of the measurement spot'
                 width='w-full'
             />
@@ -21,6 +22,7 @@ function MeasurementPositions( { name } ) {
                     name={name}
                     fieldName='flow_cell'
                     label='Flow cell'
+                    required={true}
                     tooltip='The flow cell where the measurement spot is located'
                 />
             </div>

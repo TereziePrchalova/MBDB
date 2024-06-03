@@ -7,10 +7,11 @@ module.exports = {
     extend: {
 
       colors: {
-        "primary": "#E8F2F1",
+        "primary": "#EDF5F8",
         "primary-light": "#EDF5F5",
-        "secondary": "#A8CEAE",
-        "dark": "#034459",
+        "secondary": "#FCC802",
+        "dark": "#023850",
+        "accent": "#E04541",
       },
 
       fontFamily: {
@@ -18,6 +19,12 @@ module.exports = {
         JostMedium: ['JostMedium'],
         JostRegular: ['JostRegular'],
         JostLight: ['JostLight'],
+      },
+
+      borderRadius: {
+        'normal': '10px',
+        '40px': '40px',
+        '60px': '60px',
       },
 
       fontSize: {

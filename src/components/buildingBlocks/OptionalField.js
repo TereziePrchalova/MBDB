@@ -8,7 +8,7 @@ import { Typography } from '@mui/material';
 function OptionalField({ name, fieldName, label, renderChild, initialValue, tooltip }) {
 
   const { values, setFieldValue } = useFormikContext();
-  const optionalFieldName = `${name}.${fieldName}`;
+  const optionalFieldName = fieldName !== undefined ? `${name}.${fieldName}` : `${name}`;
   const value = getIn(values, optionalFieldName);
 
     function remove() {
@@ -36,13 +36,13 @@ function OptionalField({ name, fieldName, label, renderChild, initialValue, tool
                     variant="outlined"
                     onClick={() => remove()}
                     sx= {{ 
-                        borderColor: '#6D7575',
-                        backgroundColor: '#6D7575',
+                        borderColor: "#023850",
+                        backgroundColor: "#023850",
                         color: '#fff',
                         "&:hover": {
-                        borderColor: "#939E9D",
-                        backgroundColor: '#939E9D',
-                        color: '#fff',
+                            borderColor: "#023850",
+                            backgroundColor: '#023850',
+                            color: '#fff',
                         },
                     }}
                     >
@@ -60,12 +60,12 @@ function OptionalField({ name, fieldName, label, renderChild, initialValue, tool
                         variant="outlined"
                         onClick={() => add()}
                         sx= {{ 
-                            borderColor: '#6D7575',
-                            backgroundColor: '#6D7575',
+                            borderColor: "#023850",
+                            backgroundColor: "#023850",
                             color: '#fff',
                             "&:hover": {
-                                borderColor: "#939E9D",
-                                backgroundColor: '#939E9D',
+                                borderColor: "#023850",
+                                backgroundColor: '#023850',
                                 color: '#fff',
                             },
                         }}

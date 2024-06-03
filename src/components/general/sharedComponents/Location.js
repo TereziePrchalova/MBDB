@@ -12,6 +12,7 @@ function Location( { name, tooltip, colorSchema } ) {
                         name={name}
                         label='Latitude'
                         fieldName='latitude'
+                        required={true}
                         tooltip='The latitude, from south to north, in degrees (decimal notation)'
                     />
                 </div>
@@ -20,6 +21,7 @@ function Location( { name, tooltip, colorSchema } ) {
                         name={name}
                         label='Longitude'
                         fieldName='longitude'
+                        required={true}
                         tooltip='The longitude, from west to east, in degrees (decimal notation)'
                     />
                 </div>

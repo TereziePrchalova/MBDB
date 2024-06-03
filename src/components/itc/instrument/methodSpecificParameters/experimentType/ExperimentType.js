@@ -25,7 +25,6 @@ function ExperimentType( { name, colorSchema } ) {
         <FormWrapper
             headline='Experiment type'
             colorSchema={colorSchema}
-            tooltip=''
         >
             <div className="flex">
                 <div className="mr-3">
@@ -34,6 +33,7 @@ function ExperimentType( { name, colorSchema } ) {
                         options={associatedPublicationOptions}
                         label='type'
                         width='w-full'
+                        required={true}
                         tooltip='The type of the publication'
                     />
                 </div>

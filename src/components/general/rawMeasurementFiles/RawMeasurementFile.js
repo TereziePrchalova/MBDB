@@ -6,7 +6,7 @@ import FormWrapper from "../../buildingBlocks/FormWrapper";
 import OptionalField from "../../buildingBlocks/OptionalField";
 import FileField from "../../buildingBlocks/FileField";
 
-function RawDataFile( { name } ) {
+function RawMeasurementFile( { name } ) {
 
   const originatesFromOptions = [
     { value: 'Instrument software', label: 'Instrument software' },
@@ -33,6 +33,7 @@ function RawDataFile( { name } ) {
             name={name}
             type='file'
             fieldName='file'
+            required={true}
             width='w-[25rem]'
           />
         </div>
@@ -42,42 +43,31 @@ function RawDataFile( { name } ) {
             options={originatesFromOptions}
             label='Originates from'
             fieldName='originates_from'
+            required={true}
             width='w-[25rem]'
             tooltip='What is the source of the file'
           />
         </div>
         <div className="mb-3">
-          <OptionalField
-              name={name}
-              label='Context'
-              fieldName='context'
-              tooltip='The context the file should be understood within (e.g. raw measurement data)'
-              renderChild={({ optionalFieldName }) => (
-                <OptionField
-                  name={optionalFieldName}
-                  options={contextOptions}
-                  label='Context'
-                  width='w-[25rem]'
-                  tooltip='The context the file should be understood within (e.g. raw measurement data)'
-                />
-              )}
+          <OptionField
+            name={name}
+            fieldName='context'
+            label='Context'
+            options={contextOptions}
+            required={true}
+            tooltip='The context the file should be understood within (e.g. raw measurement data)'
+            width='w-[25rem]'
           />
         </div>
         <div className="mb-3">
-          <OptionalField
-              name={name}
-              label='Content type'
-              fieldName='content_type'
-              tooltip='Type of the file content in terms of how it can be read (text, binary, etc.)'
-              renderChild={({ optionalFieldName }) => (
-                <OptionField
-                  name={optionalFieldName}
-                  options={contentTypeOptions}
-                  label='Content type'
-                  width='w-[25rem]'
-                  tooltip='Type of the file content in terms of how it can be read (text, binary, etc.)'
-                />
-              )}
+          <OptionField
+            name={name}
+            fieldName='content_type'
+            label='Content type'
+            options={contentTypeOptions}
+            required={true}
+            tooltip='Type of the file content in terms of how it can be read (text, binary, etc.)'
+            width='w-[25rem]'
           />
         </div>
         <div className="mb-3">
@@ -133,4 +123,4 @@ function RawDataFile( { name } ) {
   );
 }
 
-export default RawDataFile;
+export default RawMeasurementFile;

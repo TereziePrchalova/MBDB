@@ -54,6 +54,7 @@ function EntitiesOfInterestTab( { name } ) {
                                 label='type'
                                 fieldName='type'
                                 width='w-full'
+                                required={true}
                                 tooltip='The type of the entity, where the options are (biological) Polymer, Chemical, Molecular assembly (also includes all proteins composed of more than one polypeptide chain) or Complex substance. Chemical polymers such as PEG 5000 should be described as being a Chemical. Complex substance refers to substances which are not exactly specified by their exact chemical composition by the time measurement were performed, but e.g. blood, serum, plant extract'
                             />
                         </div>

@@ -6,21 +6,23 @@ function Depositors( { name } ) {
 
   return (
     <>
-        <div className="mb-3">
-            <FormWrapper
-                headline='Depositor'
-                tooltip='The person who made the deposition to MBDB'
-            >
-                <Contact name={`${name}.depositor`} />
-            </FormWrapper>
-        </div>
-        <div className="mb-3">
-            <FormWrapper 
-                headline='Principal contact'
-                tooltip='The person responsible for the record and the one to contact for inquiries, would typically be the principle investigator group leader, or laboratory head'
-            >
-                <Contact name={`${name}.principal_contact`} />
-            </FormWrapper>
+        <div className="flex">
+            <div className="mr-3">
+                <FormWrapper
+                    headline='Depositor'
+                    tooltip='The person who made the deposition to MBDB'
+                >
+                    <Contact name={`${name}.depositor`} />
+                </FormWrapper>
+            </div>
+            <div>
+                <FormWrapper 
+                    headline='Principal contact'
+                    tooltip='The person responsible for the record and the one to contact for inquiries, would typically be the principle investigator group leader, or laboratory head'
+                >
+                    <Contact name={`${name}.principal_contact`} />
+                </FormWrapper>
+            </div>
         </div>
         <div>
             <ArrayField

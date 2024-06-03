@@ -1,24 +1,30 @@
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import ArrayField from "../../buildingBlocks/ArrayField";
-import RawDataFile from "../rawDataFiles/RawDataFile";
+import RawMeasurementFile from "../rawMeasurementFiles/RawMeasurementFile";
+import UseDefault from "../../buildingBlocks/UseDefault";
 
-function RawDataFilesTab( { name } ) {
+function RawMeasurementFilesTab( { name } ) {
+
+    const fieldName = 'raw_measurement_files';
+
+    UseDefault(`${name}.${fieldName}`, [{}] );
 
     return (
       <>
         <div className="-mt-3">
             <ArrayField
                 name={name}
-                label="Raw data file"
-                fieldName='raw_data_file'
+                label="Raw measurement file"
+                required={true}
+                fieldName={fieldName}
                 tooltip='List of file(s) containing the raw measurements'
                 renderChild={({ arrayName, index }) => (
                     <FormWrapper
-                        headline={`Raw data file ${index + 1}`}
+                        headline={`Raw measurement file ${index + 1}`}
                         tooltip='List of file(s) containing the raw measurements'
                     >
                         <div>
-                            <RawDataFile
+                            <RawMeasurementFile
                                 name={`${arrayName}.${index}`}
                             />
                         </div>
@@ -30,4 +36,4 @@ function RawDataFilesTab( { name } ) {
     );
   }
   
-  export default RawDataFilesTab;
+  export default RawMeasurementFilesTab;

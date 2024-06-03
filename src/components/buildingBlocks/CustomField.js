@@ -4,7 +4,16 @@ import Tooltip from '@mui/material/Tooltip';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { Typography } from '@mui/material';
 
-function CustomField( { label, name, fieldName, type, tooltip, width, multiline }) {
+function CustomField( {
+  label,
+  name,
+  fieldName,
+  type,
+  tooltip,
+  width,
+  multiline,
+  required
+}) {
   
   const nameCustomField = fieldName !== undefined ? `${name}.${fieldName}` : `${name}`;
   const [field, meta] = useField(nameCustomField);
@@ -37,6 +46,13 @@ function CustomField( { label, name, fieldName, type, tooltip, width, multiline 
               error={meta.touched && !!meta.error}
             />
         </div>
+        {required &&
+          <div className='text-accent ml-1'>
+            <Tooltip title={<Typography fontSize={13}>This field is required and cannot be left blank or unset</Typography>} arrow>
+              *
+            </Tooltip>
+          </div>
+        }
         {tooltip &&
           <div className='ml-1 -mt-1'>
             <Tooltip title={<Typography fontSize={13}>{tooltip}</Typography>} arrow>

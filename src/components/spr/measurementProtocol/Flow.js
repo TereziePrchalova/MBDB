@@ -3,6 +3,7 @@ import OptionField from "../../buildingBlocks/OptionField";
 import FormWrapper from "../../buildingBlocks/FormWrapper";
 import OptionalField from "../../buildingBlocks/OptionalField";
 import Path from "./Path";
+import ArrayField from "../../buildingBlocks/ArrayField";
 
 function Flow( { colorSchema, name } ) {
 
@@ -23,9 +24,22 @@ function Flow( { colorSchema, name } ) {
         headline='Flow'
         tooltip='Information about the flow during the measurement step'>
             <div className="flex">
-                <div className="mr-3">
-                    <Path
-                        name={`${name}.path`}
+                <div className="-mt-3 mr-3">
+                    <ArrayField
+                        name={name}
+                        label='Path'
+                        fieldName='path'
+                        tooltip='list of the flow-path, in terms of measurement positions. Measurement positions that are connected by a flow running serially through them should be mentioned within the inner list, while parallel flows should be mentioned in the outer list'
+                        renderChild={({ arrayName, index }) => (
+                            <FormWrapper
+                                headline={`Path ${index + 1}`}
+                                tooltip='list of the flow-path, in terms of measurement positions. Measurement positions that are connected by a flow running serially through them should be mentioned within the inner list, while parallel flows should be mentioned in the outer list'
+                            >
+                                <Path
+                                    name={`${arrayName}.${index}`}
+                                />
+                            </FormWrapper>
+                        )}
                     />
                 </div>
                 <div className="mr-3">
@@ -33,6 +47,7 @@ function Flow( { colorSchema, name } ) {
                         name={name}
                         fieldName='rate'
                         label='Rate'
+                        required={true}
                         tooltip='Numerical value of the flow-rate'
                         type='number'
                     />
@@ -42,6 +57,7 @@ function Flow( { colorSchema, name } ) {
                         name={name}
                         fieldName='unit'
                         label='Unit'
+                        required={true}
                         tooltip='The unit of the flow-rate'
                         options={unitOptions}
                     />

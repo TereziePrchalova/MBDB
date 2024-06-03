@@ -6,7 +6,7 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { useEffect } from 'react';
 import { Typography } from '@mui/material';
 
-function FileField({ name, fieldName, tooltip, width }) {
+function FileField({ name, fieldName, tooltip, width, required }) {
   const nameCustomField = fieldName !== undefined ? `${name}.${fieldName}` : `${name}`;
   const [field, meta, helpers] = useField(nameCustomField);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -34,6 +34,13 @@ function FileField({ name, fieldName, tooltip, width }) {
             error={meta.touched && !!meta.error}
           />
         </div>
+        {required &&
+          <div className='text-accent ml-1'>
+            <Tooltip title={<Typography fontSize={13}>This field is required and cannot be left blank or unset</Typography>} arrow>
+              *
+            </Tooltip>
+          </div>
+        }
         {tooltip &&
           <div className='ml-1 -mt-1'>
             <Tooltip title={<Typography fontSize={13}>{tooltip}</Typography>} arrow>

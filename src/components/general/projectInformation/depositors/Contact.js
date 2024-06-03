@@ -11,6 +11,7 @@ function Contact( { name } ) {
               name={name}
               label='Given name'
               fieldName='given_name'
+              required={true}
               tooltip='The given name(s), including middlename(s), of the person'
             />
           </div>
@@ -19,6 +20,7 @@ function Contact( { name } ) {
               name={name}
               label='Family name'
               fieldName='family_name'
+              required={true}
               tooltip='The family name(s) of the person'
             />
           </div>

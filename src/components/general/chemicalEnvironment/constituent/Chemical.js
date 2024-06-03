@@ -11,6 +11,7 @@ function Chemical( { name } ) {
               name={name}
               label='Basic information'
               fieldName='basic_information'
+              required={true}
               tooltip='The basic information about the chemical. This information is pulled from Pubchem, however if the information is not available it can be manually filled'
             />
           </div>

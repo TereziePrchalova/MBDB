@@ -33,6 +33,7 @@ function Sample( { name, colorSchema } ) {
                         name={name}
                         label='Plate'
                         fieldName='plate'
+                        required={true}
                         options={platesOptions}
                         tooltip='link to one of the plates'
                     />
@@ -42,6 +43,7 @@ function Sample( { name, colorSchema } ) {
                         name={name}
                         fieldName='well_position'
                         label='Well position'
+                        required={true}
                         tooltip='The position the well (in the plate) where the sample was during the measurement'
                     />
                 </div>
@@ -50,6 +52,7 @@ function Sample( { name, colorSchema } ) {
                         name={name}
                         label='Chemical environment'
                         fieldName='chemical_environment'
+                        required={true}
                         options={chemicalEnvironmentsOptions}
                         tooltip='Name (id) of the chemical environment of the sample (from the chemical environments defined in the general parameters'
                     />

@@ -31,6 +31,7 @@ function Sample( { name } ) {
                     name={name}
                     label='Measurement step'
                     fieldName='measurement_step'
+                    required={true}
                     options={measurementStepOptions}
                 />
             </div>
@@ -39,6 +40,7 @@ function Sample( { name } ) {
                     name={name}
                     label='Chemical environment'
                     fieldName='chemical_environment'
+                    required={true}
                     options={chemicalEnvironmentsOptions}
                 />
             </div>

@@ -4,12 +4,28 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import { Typography } from '@mui/material';
+import { v4 as uuidv4 } from 'uuid';
 
-function ArrayField({ name, fieldName, label, renderChild, initialValue, required, maxItems, tooltip }) {
-
+function ArrayField({
+  name,
+  fieldName,
+  label,
+  renderChild,
+  initialValue,
+  required,
+  maxItems,
+  tooltip,
+  uuid
+}) {
+  
   const { values } = useFormikContext();
 
-  const arrayName = `${name}.${fieldName}`;
+  const handlePush = (push) => {
+    const newItem = initialValue !== undefined ? { ...initialValue } : uuid ? { id: uuidv4() } : undefined;
+    push(newItem);
+  };
+
+  const arrayName = fieldName !== undefined ? `${name}.${fieldName}` : `${name}`;
   const value = getIn(values, arrayName);
 
   return (
@@ -20,50 +36,48 @@ function ArrayField({ name, fieldName, label, renderChild, initialValue, require
           <>
             {value && (
               value.map((item, index) => (
-                <div key={index} className='flex mt-3'>
-                  <div className='mr-3'>
-                    {renderChild({ arrayName, name, index })}
-                  </div>
-                  { (!required || index > 0 ) && 
-                    <Button
-                      type='button'
-                      className='text-dark'
-                      variant="outlined"
-                      onClick={() => remove(index)}
-                      sx= {{ 
-                        borderColor: '#6D7575',
-                        backgroundColor: '#6D7575',
-                        color: '#fff',
-                        "&:hover": {
-                          borderColor: "#939E9D",
-                          backgroundColor: '#939E9D',
+                  <div key={index} className='flex mt-3'>
+                    <div className='mr-3'>
+                      {renderChild({ arrayName, name, index })}
+                    </div>
+                    { (!required || index > 0 ) && 
+                      <Button
+                        type='button'
+                        className='text-dark'
+                        variant="outlined"
+                        onClick={() => remove(index)}
+                        sx= {{ 
+                          borderColor: "#023850",
+                          backgroundColor: "#023850",
                           color: '#fff',
-                        },
-                      }}
-                    >
-                      <div>
-                        <CancelOutlinedIcon/>
-                      </div>
-                    </Button>
-                  }
-                </div>
-              ))
+                          "&:hover": {
+                            borderColor: "#023850",
+                            backgroundColor: '#023850',
+                            color: '#fff',
+                          },
+                        }}
+                      >
+                        <div>
+                          <CancelOutlinedIcon/>
+                        </div>
+                      </Button>
+                    }
+                  </div>
+                ))
             )}
             {(!maxItems || (!value || value.length < maxItems)) &&
                 <div className='mt-3'>
                   <Tooltip title={<Typography fontSize={13}>{tooltip}</Typography>} arrow>
                     <Button
                       variant="outlined"
-                      onClick={() => {
-                          push(initialValue !== undefined ? { ...initialValue } : '')
-                      }}
+                      onClick={() => handlePush(push)}
                       sx= {{ 
-                          borderColor: '#6D7575',
-                          backgroundColor: '#6D7575',
+                          borderColor: "#023850",
+                          backgroundColor: "#023850",
                           color: '#fff',
                           "&:hover": {
-                            borderColor: "#939E9D",
-                            backgroundColor: '#939E9D',
+                            borderColor: "#023850",
+                            backgroundColor: '#023850',
                             color: '#fff',
                           },
                       }}

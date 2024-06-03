@@ -5,8 +5,11 @@ import Protocol from "../../sharedComponents/Protocol";
 import Storage from "../sharedComponents/Storage";
 import OptionField from "../../buildingBlocks/OptionField";
 import OptionalField from "../../buildingBlocks/OptionalField";
+import CreateUuid from "../../buildingBlocks/CreateUuid";
 
 function CellFraction( { name } ) {
+    
+    CreateUuid(name);
 
     const fractionOptions = [
         { value: 'Ribosome', label: 'Ribosome' },
@@ -25,88 +28,91 @@ function CellFraction( { name } ) {
 
   return (
     <>
-        <div className=''>
-            <div className="flex mb-3">
-                <div className='mr-3'>
-                    <CustomField
-                        name={name}
-                        label='Name'
-                        fieldName='name'
-                        tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
-                    />
-                </div>
-                <div className="mr-3">
-                    <OptionField
-                        name={name}
-                        options={fractionOptions}
-                        label='Fraction'
-                        fieldName='fraction'
-                        tooltip='The subcelluar component e.g. (Ribosome)'
-                    />
-                </div>
-                <div className="mr-3">
-                    <CustomField
-                        name={name}
-                        label='Health status'
-                        fieldName='health_status'
-                        tooltip='Health status of the donor organism where the cell fraction was derived from (e.g. healthy, sick, patient with Diabetes type 2)'
-                    />
-                </div>
-                <div>
-                    <CustomField
-                        name={name}
-                        label='Source organism'
-                        fieldName='source_organism'
-                        tooltip='Identification of the organism to the lowest taxonomic rank possible e.g. strain. Note that this is based on the NCBI taxonomy'
-                    />
-                </div>
+        <div className='mb-3'>
+            <CustomField
+                name={name}
+                label='Name'
+                fieldName='name'
+                required={true}
+                width='w-full'
+                tooltip='Short descriptive name (id) of the entity; must be unique within a record (e.g. Lysozyme, Serum from Patient 1). This name is referenced in the measurement description to identify the entities present in measured sample'
+            />
+        </div>
+        <div className="flex mb-3">
+            <div className="mr-3">
+                <OptionField
+                    name={name}
+                    options={fractionOptions}
+                    label='Fraction'
+                    fieldName='fraction'
+                    required={true}
+                    tooltip='The subcelluar component e.g. (Ribosome)'
+                />
             </div>
-            <div className="flex -mt-3 mb-3">
-                <div className="mr-3">
-                    <OptionalField
-                        name={name}
-                        label='Organ'
-                        fieldName='organ'
-                        tooltip='The organ the cell fraction was derived from (e.g. heart)'
-                        renderChild={({ optionalFieldName }) => (
-                            <CustomField
-                                name={optionalFieldName}
-                                label='Organ'
-                                tooltip='The organ the cell fraction was derived from (e.g. heart)'
-                            />
-                        )}
-                    />
-                </div>
-                <div className="mr-3">
-                    <OptionalField
-                        name={name}
-                        label='Tissue'
-                        fieldName='tissue'
-                        tooltip='The tissue type the cell fraction was derived from'
-                        renderChild={({ optionalFieldName }) => (
-                            <CustomField
-                                name={optionalFieldName}
-                                label='Tissue'
-                                tooltip='The tissue type the cell fraction was derived from'
-                            />
-                        )}
-                    />
-                </div>
-                <div>
-                    <OptionalField
-                        name={name}
-                        label='Cell type'
-                        fieldName='cell_type'
-                        tooltip='The cell type the cell fraction was derived from'
-                        renderChild={({ optionalFieldName }) => (
-                            <CustomField
-                                name={optionalFieldName}
-                                label='Cell type'
-                                tooltip='The cell type the cell fraction was derived from'
-                            />
-                        )}
-                    />
-                </div>
+            <div className="mr-3">
+                <CustomField
+                    name={name}
+                    label='Health status'
+                    fieldName='health_status'
+                    required={true}
+                    tooltip='Health status of the donor organism where the cell fraction was derived from (e.g. healthy, sick, patient with Diabetes type 2)'
+                />
+            </div>
+            <div>
+                <CustomField
+                    name={name}
+                    label='Source organism'
+                    fieldName='source_organism'
+                    required={true}
+                    tooltip='Identification of the organism to the lowest taxonomic rank possible e.g. strain. Note that this is based on the NCBI taxonomy'
+                />
+            </div>
+        </div>
+        <div className="flex -mt-3 mb-3">
+            <div className="mr-3">
+                <OptionalField
+                    name={name}
+                    label='Organ'
+                    fieldName='organ'
+                    tooltip='The organ the cell fraction was derived from (e.g. heart)'
+                    renderChild={({ optionalFieldName }) => (
+                        <CustomField
+                            name={optionalFieldName}
+                            label='Organ'
+                            tooltip='The organ the cell fraction was derived from (e.g. heart)'
+                        />
+                    )}
+                />
+            </div>
+            <div className="mr-3">
+                <OptionalField
+                    name={name}
+                    label='Tissue'
+                    fieldName='tissue'
+                    tooltip='The tissue type the cell fraction was derived from'
+                    renderChild={({ optionalFieldName }) => (
+                        <CustomField
+                            name={optionalFieldName}
+                            label='Tissue'
+                            tooltip='The tissue type the cell fraction was derived from'
+                        />
+                    )}
+                />
+            </div>
+            <div>
+                <OptionalField
+                    name={name}
+                    label='Cell type'
+                    fieldName='cell_type'
+                    tooltip='The cell type the cell fraction was derived from'
+                    renderChild={({ optionalFieldName }) => (
+                        <CustomField
+                            name={optionalFieldName}
+                            label='Cell type'
+                            tooltip='The cell type the cell fraction was derived from'
+                        />
+                    )}
+                />
             </div>
         </div>
         <div className="flex -mt-3">

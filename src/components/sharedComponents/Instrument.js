@@ -12,6 +12,7 @@ function Instrument( {name} ) {
                         colorSchema='light'
                         name={name}
                         label='Instrument'
+                        required={true}
                         fieldName='id'
                         tooltip='The name of the instrument as provided by the manufacturer'
                     />

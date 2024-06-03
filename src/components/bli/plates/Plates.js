@@ -3,8 +3,11 @@ import OptionField from "../../buildingBlocks/OptionField";
 import Supplier from "../sharedComponents/Supplier";
 import SurfaceModification from "./SurfaceModification";
 import OptionalField from "../../buildingBlocks/OptionalField";
+import CreateUuid from "../../buildingBlocks/CreateUuid";
 
 function Plates( { name } ) {
+
+    CreateUuid(name);
 
     const wellsOptions = [
         { value: '96', label: '96' },
@@ -18,6 +21,7 @@ function Plates( { name } ) {
                 name={name}
                 fieldName='name'
                 label='Name'
+                required={true}
                 tooltip='Name (id) of the plate which must be unique within a record'
                 width='w-full'
             />
@@ -28,6 +32,7 @@ function Plates( { name } ) {
                     name={name}
                     label='Wells'
                     fieldName='wells'
+                    required={true}
                     options={wellsOptions}
                     tooltip='Number of wells in the plate'
                 />
@@ -37,6 +42,7 @@ function Plates( { name } ) {
                     name={name}
                     fieldName='type'
                     label='Type'
+                    required={true}
                     tooltip='The type of the plate (e.g. half-area black polystyrene)'
                 />
             </div>
