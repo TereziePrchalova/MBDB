@@ -6,6 +6,47 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { useEffect } from 'react';
 import { Typography } from '@mui/material';
 
+async function submitFile(submissionUrl, file) {
+  if (!file) return ({ code: 400, errors: ["No file selected."] });
+
+  const fileName = file.name;
+
+  // Submit the file name
+  let resp = await fetch(submissionUrl, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ key: fileName })
+  });
+
+  if (!resp.ok) {
+      return ({ code: resp.status, errors: [`Failed to submit file "${fileName}": ${resp.statusText}`] });
+  }
+
+  // Upload the file content
+  const fileUploadUrl = `${submissionUrl.endsWith('/') ? submissionUrl.substring(0, submissionUrl.length - 1) : submissionUrl}/${fileName}`;
+  resp = await fetch(`${fileUploadUrl}/content`, {
+      method: 'PUT',
+      body: file
+  });
+
+  if (!resp.ok) {
+      return ({ code: resp.status, errors: [`Failed to upload content of file "${fileName}": ${resp.statusText}`] });
+  }
+
+  // Commit the result
+  resp = await fetch(`${fileUploadUrl}/commit`, {
+      method: 'POST'
+  });
+
+  if (!resp.ok) {
+      return ({ code: resp.status, errors: [`Failed to commit uploaded file "${fileName}": ${resp.statusText}`] });
+  }
+
+  return (void 0);
+}
+
 function FileField({ name, fieldName, tooltip, width, required }) {
   const nameCustomField = fieldName !== undefined ? `${name}.${fieldName}` : `${name}`;
   const [field, meta, helpers] = useField(nameCustomField);
@@ -14,6 +55,9 @@ function FileField({ name, fieldName, tooltip, width, required }) {
   const handleChange = (e) => {
     e.preventDefault();
     const file = e.target.files[0];
+    const fileURL = URL.createObjectURL(file);
+    console.log(file.name);
+    console.log(fileURL, 'Fillle url')
     helpers.setValue(file);
     setSelectedFile(file);
   };
