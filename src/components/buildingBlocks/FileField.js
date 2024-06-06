@@ -10,6 +10,9 @@ async function submitFile(submissionUrl, file) {
   if (!file) return ({ code: 400, errors: ["No file selected."] });
 
   const fileName = file.name;
+  const size = file.size;
+
+  console.log(size, 'Size in bytes')
 
   // Submit the file name
   let resp = await fetch(submissionUrl, {
@@ -55,11 +58,18 @@ function FileField({ name, fieldName, tooltip, width, required }) {
   const handleChange = (e) => {
     e.preventDefault();
     const file = e.target.files[0];
+    const url = '/files';
+    console.log(file, 'Fille');
+    submitFile(url, file);
+    const fieldName = file.name;
     const fileURL = URL.createObjectURL(file);
-    console.log(file.name);
-    console.log(fileURL, 'Fillle url')
-    helpers.setValue(file);
-    setSelectedFile(file);
+    if(file) {
+      const URL = `${fileURL}/${fieldName}`;
+      console.log(fieldName);
+      console.log(URL, 'Fillle url')
+      helpers.setValue(file);
+      setSelectedFile(file);
+    }
   };
 
   useEffect(() => {
@@ -81,7 +91,7 @@ function FileField({ name, fieldName, tooltip, width, required }) {
         {required &&
           <div className='text-accent ml-1'>
             <Tooltip title={<Typography fontSize={13}>This field is required and cannot be left blank or unset</Typography>} arrow>
-              *
+              <span>*</span>
             </Tooltip>
           </div>
         }

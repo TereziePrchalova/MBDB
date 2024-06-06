@@ -49,7 +49,7 @@ function CustomField( {
         {required &&
           <div className='text-accent ml-1'>
             <Tooltip title={<Typography fontSize={13}>This field is required and cannot be left blank or unset</Typography>} arrow>
-              *
+              <span>*</span>
             </Tooltip>
           </div>
         }
