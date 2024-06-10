@@ -1,8 +1,11 @@
 import CustomField from "../../buildingBlocks/CustomField";
 import SampleInCell from "./SampleInCell";
 import SampleInSyringe from "./SampleInSyringe";
+import CreateUuid from "../../buildingBlocks/CreateUuid";
 
 function Measurements( { name } ) {
+
+    CreateUuid(name);
 
   return (
     <>

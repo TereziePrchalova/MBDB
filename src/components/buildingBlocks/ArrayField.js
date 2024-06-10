@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import { Typography } from '@mui/material';
-import { v4 as uuidv4 } from 'uuid';
 
 function ArrayField({
   name,
@@ -15,15 +14,9 @@ function ArrayField({
   required,
   maxItems,
   tooltip,
-  uuid
 }) {
   
   const { values } = useFormikContext();
-
-  const handlePush = (push) => {
-    const newItem = initialValue !== undefined ? { ...initialValue } : uuid ? { id: uuidv4() } : undefined;
-    push(newItem);
-  };
 
   const arrayName = fieldName !== undefined ? `${name}.${fieldName}` : `${name}`;
   const value = getIn(values, arrayName);
@@ -70,7 +63,9 @@ function ArrayField({
                   <Tooltip title={<Typography fontSize={13}>{tooltip}</Typography>} arrow>
                     <Button
                       variant="outlined"
-                      onClick={() => handlePush(push)}
+                      onClick={() => {
+                        push(initialValue !== undefined ? { ...initialValue } : '')
+                      }}
                       sx= {{ 
                           borderColor: "#023850",
                           backgroundColor: "#023850",

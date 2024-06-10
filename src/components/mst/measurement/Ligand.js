@@ -2,7 +2,6 @@ import OptionField from "../../buildingBlocks/OptionField";
 import Concentration from "../../sharedComponents/Concentration";
 import { useFormikContext, getIn } from 'formik';
 import CreateOptions from "../../buildingBlocks/CreateOptions";
-import CreateUuid from "../../buildingBlocks/CreateUuid";
 
 function Ligand( { name } ) {
 

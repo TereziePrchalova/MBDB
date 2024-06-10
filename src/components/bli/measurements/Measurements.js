@@ -3,8 +3,11 @@ import CustomField from "../../buildingBlocks/CustomField";
 import OptionField from "../../buildingBlocks/OptionField";
 import Sample from "./Sample";
 import CreateOptions from "../../buildingBlocks/CreateOptions";
+import CreateUuid from "../../buildingBlocks/CreateUuid";
 
 function Measurements( { name } ) {
+
+    CreateUuid(name);
 
     const { values } = useFormikContext();
 
