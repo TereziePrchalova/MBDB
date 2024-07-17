@@ -1,24 +1,26 @@
-import FormWrapper from '../buildingBlocks/FormWrapper';
-import CustomField from '../buildingBlocks/CustomField';
+import FormWrapper from "../buildingBlocks/FormWrapper";
+import CustomField from "../buildingBlocks/CustomField";
 
-function Instrument( {name} ) {
-
+function Instrument({ name }) {
   return (
     <>
-        <FormWrapper headline='Instrument' tooltip='Information about the instrument being used to collect (measure) the raw data annotated by this record'>
-            <div className='flex'>
-                <div>
-                    <CustomField
-                        colorSchema='light'
-                        name={name}
-                        label='Instrument'
-                        required={true}
-                        fieldName='id'
-                        tooltip='The name of the instrument as provided by the manufacturer'
-                    />
-                </div>
-            </div>
-        </FormWrapper>
+      <FormWrapper
+        headline="Instrument"
+        tooltip="Information about the instrument being used to collect (measure) the raw data annotated by this record"
+      >
+        <div className="flex">
+          <div>
+            <CustomField
+              colorSchema="light"
+              name={name}
+              label="Instrument"
+              required
+              fieldName="id"
+              tooltip="The name of the instrument as provided by the manufacturer"
+            />
+          </div>
+        </div>
+      </FormWrapper>
     </>
   );
 }

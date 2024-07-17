@@ -3,30 +3,38 @@ import ArrayField from "../../buildingBlocks/ArrayField";
 import { useFormikContext, getIn } from "formik";
 import CreateOptions from "../../buildingBlocks/CreateOptions";
 
-function Path( { name } ) {
+function Path({ name }) {
+  const { values } = useFormikContext();
 
-    const { values } = useFormikContext();
-
-    const measurementPositionValue = getIn(values, 'metadata.method_specific_parameters.measurement_positions');
-    const measurementPositionOptions = CreateOptions(measurementPositionValue, 'Select Measurement position, if applicable');
+  const measurementPositionValue = getIn(
+    values,
+    "metadata.method_specific_parameters.measurement_positions"
+  );
+  const measurementPositionOptions = CreateOptions(
+    measurementPositionValue,
+    "Select Measurement position, if applicable"
+  );
 
   return (
     <>
-        <div className="-mt-3">
-            <ArrayField
-                name={name}
-                label='Measurement position'
-                tooltip='Name (id) of the measurement position'
-                renderChild={({ arrayName, index }) => (
-                    <OptionField
-                        name={`${arrayName}.${index}.name`}
-                        label={`Measurement position`}
-                        options={measurementPositionOptions}
-                        tooltip='Name (id) of the measurement position'
-                    />
-                )}
-            />
-        </div>
+      <div className="-mt-3">
+        <ArrayField
+          name={name}
+          label="Measurement position"
+          tooltip="Name (id) of the measurement position"
+          renderChild={({ arrayName, index }) => {
+            console.log(`${arrayName}.${index}.name`, "The targeted value");
+            return (
+              <OptionField
+                name={`${arrayName}.${index}.name`}
+                label={`Measurement position`}
+                options={measurementPositionOptions}
+                tooltip="Name (id) of the measurement position"
+              />
+            );
+          }}
+        />
+      </div>
     </>
   );
 }
